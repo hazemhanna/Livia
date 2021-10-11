@@ -1,0 +1,9 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "3VX-ED-0dZ"; */
+"3VX-ED-0dZ.text" = "Label";
+
+/* Class = "UILabel"; text = "Delivered"; ObjectID = "gCr-wY-038"; */
+"gCr-wY-038.text" = "تم التوصيل";
+
+/* Class = "UILabel"; text = "Order Num:"; ObjectID = "hbt-3M-gfD"; */
+"hbt-3M-gfD.text" = "رقم الطلب:";

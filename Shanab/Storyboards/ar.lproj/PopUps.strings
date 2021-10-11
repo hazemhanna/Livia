@@ -1,0 +1,130 @@
+
+/* Class = "UIButton"; normalTitle = "No Account? Register now"; ObjectID = "0Rh-P4-w5a"; */
+"0Rh-P4-w5a.normalTitle" = "ليس لديك حساب؟ قم بالتسجيل";
+
+/* Class = "UILabel"; text = "You have received a new order"; ObjectID = "21O-at-h0Q"; */
+"21O-at-h0Q.text" = "لقد وصلك طلب جديد";
+
+/* Class = "UITextField"; placeholder = "Password Confirmation"; ObjectID = "4Vj-83-tBT"; */
+"4Vj-83-tBT.placeholder" = "تاكيد كلمة السر";
+
+/* Class = "UIButton"; normalTitle = "Reset Password"; ObjectID = "5a8-bb-d1r"; */
+"5a8-bb-d1r.normalTitle" = "اعادة تعيين كلمة السر";
+
+/* Class = "UILabel"; text = "The deposit paid is 100 SAR"; ObjectID = "6tn-P2-B9p"; */
+"6tn-P2-B9p.text" = "العربون المدفوع ١٠٠ ريال";
+
+/* Class = "UILabel"; text = "Other Notes"; ObjectID = "7Xx-kh-7uc"; */
+"7Xx-kh-7uc.text" = "ملاحظات اخرى";
+
+/* Class = "UILabel"; text = "You Should to Login to make A Reservation"; ObjectID = "83f-Pk-mmO"; */
+"83f-Pk-mmO.text" = "يجب التسجيل لعمل حجز ";
+
+/* Class = "UIButton"; normalTitle = "Refuse"; ObjectID = "BAl-vj-6my"; */
+"BAl-vj-6my.normalTitle" = "رفض";
+
+/* Class = "UILabel"; text = "At least 8 characters___the more characters, the better."; ObjectID = "Bp8-ZY-oCa"; */
+"Bp8-ZY-oCa.text" = "علي الاقل ٨ احرف___او اكثر, .";
+
+/* Class = "UIButton"; normalTitle = "Ok"; ObjectID = "ETj-rF-Wox"; */
+"ETj-rF-Wox.normalTitle" = "موافق";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "H96-Qz-lpg"; */
+"H96-Qz-lpg.placeholder" = "الكود";
+
+/* Class = "UIButton"; normalTitle = "Send"; ObjectID = "JHc-ue-mIW"; */
+"JHc-ue-mIW.normalTitle" = "ارسال";
+
+/* Class = "UIButton"; normalTitle = "Enter"; ObjectID = "Ky4-GV-ayq"; */
+"Ky4-GV-ayq.normalTitle" = "دخول";
+
+/* Class = "UIButton"; normalTitle = "Follow Order"; ObjectID = "ORI-X8-DH1"; */
+"ORI-X8-DH1.normalTitle" = "اتباع الطلب";
+
+/* Class = "UILabel"; text = "Are you sure to cancel your reservation? knowing that the cancellation fee will be deducted"; ObjectID = "OoF-dS-r4H"; */
+"OoF-dS-r4H.text" = "هل انت متاكد من الغاء الطلب? علما بان رسوم الالغاء سوف يتم خصمها";
+
+/* Class = "UILabel"; text = "A mixture of letters and numbers."; ObjectID = "Sab-2f-2Dz"; */
+"Sab-2f-2Dz.text" = "خليط من الارقام والاحرف.";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "UTE-PJ-bJ8"; */
+"UTE-PJ-bJ8.normalTitle" = "الغاء";
+
+/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "Vde-yE-WNi"; */
+"Vde-yE-WNi.normalTitle" = "تاكيد";
+
+/* Class = "UILabel"; text = "Inclusion of at least one special character, e.g.,! @ # ?]."; ObjectID = "Wmd-Qe-9zi"; */
+"Wmd-Qe-9zi.text" = "تتضمن علي الاقل حرف مميز, e.g.,! @ # ?].";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "XWb-wV-vSr"; */
+"XWb-wV-vSr.placeholder" = "كلمة المرور";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "Xy8-mr-J6r"; */
+"Xy8-mr-J6r.normalTitle" = "الغاء";
+
+/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "ZT2-Q3-ApY"; */
+"ZT2-Q3-ApY.normalTitle" = "تاكيد";
+
+/* Class = "UIButton"; normalTitle = "Send"; ObjectID = "aDj-LG-Vky"; */
+"aDj-LG-Vky.normalTitle" = "ارسال";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "dkz-xt-WhW"; */
+"dkz-xt-WhW.normalTitle" = "الغاء";
+
+/* Class = "UIButton"; normalTitle = "Send Confirm Message"; ObjectID = "gKj-Dn-NOx"; */
+"gKj-Dn-NOx.normalTitle" = "ارسال رسالة التاكيد";
+
+/* Class = "UILabel"; text = "A mixture of both uppercase and lowecase letters."; ObjectID = "hBP-TI-zJi"; */
+"hBP-TI-zJi.text" = "خليط من الاحرف الصفيرة والاحرف الكبيرة.";
+
+/* Class = "UIButton"; normalTitle = "Accept"; ObjectID = "hmN-AN-0oy"; */
+"hmN-AN-0oy.normalTitle" = "موافق";
+
+/* Class = "UILabel"; text = "Thank you ! your order will be confirmed"; ObjectID = "hsH-T5-EBC"; */
+"hsH-T5-EBC.text" = "شكرا لك! لقد تم تاكيد طلبك";
+
+/* Class = "UILabel"; text = "Customer Rate"; ObjectID = "m7D-xQ-Lnv"; */
+"m7D-xQ-Lnv.text" = "تقييم الطلب";
+
+"fMp-hN-TTH.text" = "تقييم السائق";
+
+/* Class = "UILabel"; text = "Your request has been successfully confirmed"; ObjectID = "mcT-BL-gze"; */
+"mcT-BL-gze.text" = "لقد تم تاكيد طلبك بنجاح";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "nlW-6J-zEg"; */
+"nlW-6J-zEg.placeholder" = "رقم الهاتف";
+
+/* Class = "UILabel"; text = "Your request has been terminated"; ObjectID = "pHu-YH-iod"; */
+"pHu-YH-iod.text" = "لقد تم انهاء طلبك";
+
+/* Class = "UITextField"; placeholder = "confirmation Message"; ObjectID = "qdJ-ri-mlo"; */
+"qdJ-ri-mlo.placeholder" = "رسالة التاكيد";
+
+/* Class = "UILabel"; text = "Guidelines for Strong Password"; ObjectID = "riZ-Kv-vQ0"; */
+"riZ-Kv-vQ0.text" = "الارشادات لكلمة مرور قوية";
+
+/* Class = "UITextField"; placeholder = "Message Confirmation"; ObjectID = "sZ7-fH-ppG"; */
+"sZ7-fH-ppG.placeholder" = "رسالة التاكيد";
+
+/* Class = "UIButton"; normalTitle = "Reset Password"; ObjectID = "sc3-tj-0dK"; */
+"sc3-tj-0dK.normalTitle" = "اعادة تعيين كلمة المرور";
+
+/* Class = "UITextField"; placeholder = "Enter your Email"; ObjectID = "u3r-cW-OLi"; */
+"u3r-cW-OLi.placeholder" = "رقم الهاتف";
+/* Class = "UILabel"; text = "The cancellation fee is 100 SAR"; ObjectID = "uQH-4d-zdm"; */
+"uQH-4d-zdm.text" = "رسوم الالغاء ";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "vC1-IZ-fM8"; */
+"vC1-IZ-fM8.normalTitle" = "تم";
+
+/* Class = "UITextField"; placeholder = "Enter your Email"; ObjectID = "vfR-gj-uP4"; */
+"vfR-gj-uP4.placeholder" = "رقم الهاتف";
+
+/* Class = "UILabel"; text = "Reset Password"; ObjectID = "wlg-Mv-WZP"; */
+"wlg-Mv-WZP.text" = "اعادة تعيين كلمة المرور";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "xxd-KA-IZm"; */
+"xxd-KA-IZm.normalTitle" = "الغاء";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "yNi-vn-ToK"; */
+"yNi-vn-ToK.placeholder" = "كلمة المرور";

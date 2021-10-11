@@ -1,0 +1,18 @@
+
+/* Class = "UIButton"; normalTitle = "متابعة الطلب"; ObjectID = "889-sh-cVQ"; */
+"889-sh-cVQ.normalTitle" = "متابعة الطلب";
+
+/* Class = "UILabel"; text = "status"; ObjectID = "fDE-C0-Xs8"; */
+"fDE-C0-Xs8.text" = "حالة الطلب";
+
+/* Class = "UILabel"; text = "date"; ObjectID = "iCw-JZ-9mE"; */
+"iCw-JZ-9mE.text" = "التاريخ";
+
+/* Class = "UILabel"; text = "date"; ObjectID = "kOo-05-vU4"; */
+"kOo-05-vU4.text" = "التاريخ";
+
+/* Class = "UIButton"; normalTitle = "تفاصيل الطلب"; ObjectID = "vYd-bt-6Kc"; */
+"vYd-bt-6Kc.normalTitle" = "تفاصيل الطلب";
+
+/* Class = "UILabel"; text = "Resturant Name"; ObjectID = "zTx-0P-MbN"; */
+"zTx-0P-MbN.text" = "رقم الطلب";

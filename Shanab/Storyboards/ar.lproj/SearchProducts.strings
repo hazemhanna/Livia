@@ -1,0 +1,14 @@
+
+/* Class = "UIBarButtonItem"; title = "  "; ObjectID = "NSm-wr-k4z"; */
+"NSm-wr-k4z.title" = "  ";
+
+/* Class = "UISearchBar"; placeholder = "Search"; ObjectID = "ag4-Qh-IIg"; */
+"ag4-Qh-IIg.placeholder" = "بحث";
+
+/* Class = "UISegmentedControl"; sKF-lk-GnR.segmentTitles[0] = "Products"; ObjectID = "sKF-lk-GnR"; */
+"sKF-lk-GnR.segmentTitles[0]" = "المنتجات";
+
+/* Class = "UISegmentedControl"; sKF-lk-GnR.segmentTitles[1] = "Restaurants"; ObjectID = "sKF-lk-GnR"; */
+"sKF-lk-GnR.segmentTitles[1]" = "المطاعم";
+
+"eG8-ns-UDr.text" = "بحث";

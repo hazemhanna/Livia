@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Cairo-Regular.ttf">
+            <string>Cairo-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="395" id="KGk-i7-Jjw" customClass="CustomerProfileCell" customModule="Shnp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="380" height="395"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="380" height="395"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9cS-Xa-FPP">
+                        <rect key="frame" x="5" y="5" width="370" height="275"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mvA-fe-cvk" customClass="CustomTextField" customModule="Shnp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="370" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="nML-NZ-YTu"/>
+                                </constraints>
+                                <color key="textColor" red="0.90588235289999997" green="0.3294117647" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yY3-l7-wIW" customClass="CustomTextField" customModule="Shnp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="59" width="370" height="39"/>
+                                <color key="textColor" red="0.90588235289999997" green="0.3294117647" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bUN-U2-Dv1" customClass="CustomTextField" customModule="Shnp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="118" width="370" height="39"/>
+                                <color key="textColor" red="0.90588235289999997" green="0.3294117647" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="PXL-Kk-QwL" customClass="CustomButtons" customModule="Shnp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="177" width="370" height="39"/>
+                                <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="14"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.90588235289999997" green="0.3294117647" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="OpenMap:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="jsj-c2-L2O"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTF-Zk-4Sy" customClass="CustomButtons" customModule="Shnp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="236" width="370" height="39"/>
+                                <color key="backgroundColor" red="0.92754024270000002" green="0.26031208039999998" blue="0.1841255426" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="SaveBN:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="qSE-hh-g0M"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="9cS-Xa-FPP" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="HJj-25-Mx6"/>
+                    <constraint firstItem="9cS-Xa-FPP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="MML-qQ-Qm1"/>
+                    <constraint firstItem="9cS-Xa-FPP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="pGL-n0-Gum"/>
+                    <constraint firstAttribute="bottom" secondItem="9cS-Xa-FPP" secondAttribute="bottom" constant="5" id="wvs-oE-9ah"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="Address" destination="PXL-Kk-QwL" id="U7j-8D-ogs"/>
+                <outlet property="Email" destination="yY3-l7-wIW" id="PPk-1w-Wfh"/>
+                <outlet property="Name" destination="mvA-fe-cvk" id="9Gc-Cx-b2V"/>
+                <outlet property="Phone" destination="bUN-U2-Dv1" id="fQA-Iu-Um5"/>
+            </connections>
+            <point key="canvasLocation" x="181.15942028985509" y="163.05803571428569"/>
+        </tableViewCell>
+    </objects>
+    <designables>
+        <designable name="PTF-Zk-4Sy">
+            <size key="intrinsicContentSize" width="34" height="30"/>
+        </designable>
+        <designable name="PXL-Kk-QwL">
+            <size key="intrinsicContentSize" width="41" height="39"/>
+        </designable>
+        <designable name="bUN-U2-Dv1">
+            <size key="intrinsicContentSize" width="5" height="21"/>
+        </designable>
+        <designable name="mvA-fe-cvk">
+            <size key="intrinsicContentSize" width="5" height="21"/>
+        </designable>
+        <designable name="yY3-l7-wIW">
+            <size key="intrinsicContentSize" width="5" height="21"/>
+        </designable>
+    </designables>
+</document>

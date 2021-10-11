@@ -1,0 +1,18 @@
+
+/* Class = "UILabel"; text = "مصاريف الشحن"; ObjectID = "LRx-Dj-sqO"; */
+"LRx-Dj-sqO.text" = "Delivery Fees";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "M1o-EY-G9T"; */
+"M1o-EY-G9T.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "M3S-L8-ZAh"; */
+"M3S-L8-ZAh.text" = "Label";
+
+/* Class = "UILabel"; text = "حلويات"; ObjectID = "a6T-Qm-LXA"; */
+"a6T-Qm-LXA.text" = "حلويات";
+
+/* Class = "UILabel"; text = "وقت التوصيل"; ObjectID = "fx2-cN-gCn"; */
+"fx2-cN-gCn.text" = "Delivery Time";
+
+/* Class = "UILabel"; text = "الاسرة السعيدة "; ObjectID = "vAo-pc-WSQ"; */
+"vAo-pc-WSQ.text" = "الاسرة السعيدة ";

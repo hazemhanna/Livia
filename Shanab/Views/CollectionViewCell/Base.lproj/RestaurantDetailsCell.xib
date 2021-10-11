@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="RestaurantDetailsCell" customModule="Shnp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="170" height="66"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="170" height="66"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tjs-zB-K1p" customClass="CustomView" customModule="Shnp" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="170" height="66"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best Seller" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejd-tb-cel" customClass="CustomLabel" customModule="Shnp" customModuleProvider="target">
+                                <rect key="frame" x="4.5" y="25" width="161.5" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ejd-tb-cel" firstAttribute="centerX" secondItem="Tjs-zB-K1p" secondAttribute="centerX" id="0KN-yQ-aca"/>
+                            <constraint firstItem="ejd-tb-cel" firstAttribute="centerY" secondItem="Tjs-zB-K1p" secondAttribute="centerY" constant="2" id="Clb-U5-wp5"/>
+                            <constraint firstItem="ejd-tb-cel" firstAttribute="height" secondItem="Tjs-zB-K1p" secondAttribute="height" multiplier="0.3" id="Fqt-LA-LnC"/>
+                            <constraint firstItem="ejd-tb-cel" firstAttribute="width" secondItem="Tjs-zB-K1p" secondAttribute="width" multiplier="0.95" id="GL0-Sa-ISX"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                <real key="value" value="25"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="Tjs-zB-K1p" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="0gw-Mw-k7K"/>
+                <constraint firstAttribute="bottom" secondItem="Tjs-zB-K1p" secondAttribute="bottom" id="0qf-9P-aK8"/>
+                <constraint firstItem="Tjs-zB-K1p" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="DIt-HI-7c2"/>
+                <constraint firstAttribute="trailing" secondItem="Tjs-zB-K1p" secondAttribute="trailing" id="n0v-Qy-ilw"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="170" height="66"/>
+            <connections>
+                <outlet property="nameLB" destination="ejd-tb-cel" id="wc3-Tw-azt"/>
+            </connections>
+            <point key="canvasLocation" x="224.63768115942031" y="129.91071428571428"/>
+        </collectionViewCell>
+    </objects>
+</document>

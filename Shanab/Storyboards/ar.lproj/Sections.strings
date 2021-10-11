@@ -1,0 +1,24 @@
+
+/* Class = "UILabel"; text = "Productive Famlies"; ObjectID = "QP6-RM-vwR"; */
+"QP6-RM-vwR.text" = "الاسر المنتجة";
+
+/* Class = "UILabel"; text = "Restaurants"; ObjectID = "ZcH-NR-rVw"; */
+"ZcH-NR-rVw.text" = "المطاعم";
+
+/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "ayc-YR-hhw"; */
+"ayc-YR-hhw.normalTitle" = "تاكيد";
+
+/* Class = "UINavigationItem"; title = "Restaurants"; ObjectID = "bbI-Au-OtF"; */
+"bbI-Au-OtF.title" = "المطاعم";
+
+/* Class = "UINavigationItem"; title = "Productive Family"; ObjectID = "jMp-dT-XnD"; */
+"jMp-dT-XnD.title" = "الاسر المنتجة";
+
+/* Class = "UINavigationItem"; title = "Food Trucks"; ObjectID = "l23-Dc-c9B"; */
+"l23-Dc-c9B.title" = "فود تراك";
+
+/* Class = "UILabel"; text = "Food Truck"; ObjectID = "tNA-Ch-24S"; */
+"tNA-Ch-24S.text" = "فود تراك";
+
+/* Class = "UINavigationItem"; title = "Order Date"; ObjectID = "yeN-CC-068"; */
+"yeN-CC-068.title" = "تاريخ الطلب";

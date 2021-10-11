@@ -1,0 +1,18 @@
+
+/* Class = "UITextField"; placeholder = "Old Password"; ObjectID = "85l-Ti-Dpg"; */
+"85l-Ti-Dpg.placeholder" = "كلمة المرور القديمة";
+
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "ABt-z7-v9N"; */
+"ABt-z7-v9N.normalTitle" = "حفظ";
+
+/* Class = "UIButton"; normalTitle = "Guidelines for strong password"; ObjectID = "BCp-BO-np2"; */
+"BCp-BO-np2.normalTitle" = "ارشاداتك لعمل كلمة مرور قوية";
+
+/* Class = "UITextField"; placeholder = "New Password"; ObjectID = "N1x-kh-7PD"; */
+"N1x-kh-7PD.placeholder" = "كلمة مرور جديدة";
+
+/* Class = "UINavigationItem"; title = "Change Password"; ObjectID = "eHx-6K-dYm"; */
+"eHx-6K-dYm.title" = "تغيير كلمة السر";
+
+/* Class = "UITextField"; placeholder = "Password Confirmation"; ObjectID = "ufs-w4-rhe"; */
+"ufs-w4-rhe.placeholder" = "تاكيد كلمة السر";

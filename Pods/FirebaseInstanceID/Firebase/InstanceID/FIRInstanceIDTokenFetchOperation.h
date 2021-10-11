@@ -17,18 +17,13 @@
 #import "FIRInstanceIDTokenOperation.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
-FOUNDATION_EXPORT NSString *const kFIRInstanceIDFirebaseUserAgentKey;
-
-FOUNDATION_EXPORT NSString *const kFIRInstanceIDFirebaseHeartbeatKey;
-
 @interface FIRInstanceIDTokenFetchOperation : FIRInstanceIDTokenOperation
 
 - (instancetype)initWithAuthorizedEntity:(NSString *)authorizedEntity
                                    scope:(NSString *)scope
                                  options:(nullable NSDictionary<NSString *, NSString *> *)options
                       checkinPreferences:(FIRInstanceIDCheckinPreferences *)checkinPreferences
-                              instanceID:(NSString *)instanceID;
+                                 keyPair:(FIRInstanceIDKeyPair *)keyPair;
 
 @end
 NS_ASSUME_NONNULL_END

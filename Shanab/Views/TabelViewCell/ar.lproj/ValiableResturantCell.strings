@@ -1,0 +1,15 @@
+
+/* Class = "UILabel"; text = "Delivery fees:"; ObjectID = "4pm-6S-nqu"; */
+"4pm-6S-nqu.text" = "مصاريف التوصيل:";
+
+/* Class = "UILabel"; text = "Delivery time:"; ObjectID = "E0s-ft-D9R"; */
+"E0s-ft-D9R.text" = "وقت التوصيل:";
+
+/* Class = "UILabel"; text = "type"; ObjectID = "MSN-0n-Gph"; */
+"MSN-0n-Gph.text" = "نوع المطعم";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "PBD-VD-rsK"; */
+"PBD-VD-rsK.text" = "Label";
+
+/* Class = "UILabel"; text = "name"; ObjectID = "sWK-Ab-TGl"; */
+"sWK-Ab-TGl.text" = "اسم المطعم";

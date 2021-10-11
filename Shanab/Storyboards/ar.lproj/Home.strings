@@ -1,0 +1,21 @@
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "64W-uf-slK"; */
+"64W-uf-slK.title" = " ";
+
+/* Class = "UITabBarItem"; title = "Order List"; ObjectID = "FxC-xz-tgV"; */
+"FxC-xz-tgV.title" = "طلباتي";
+
+/* Class = "UIButton"; normalTitle = "Restaurants"; ObjectID = "LVC-sk-Ugt"; */
+"LVC-sk-Ugt.normalTitle" = "المطاعم";
+
+/* Class = "UILabel"; text = "Avaliable Restaurants"; ObjectID = "NEb-LB-rUi"; */
+"NEb-LB-rUi.text" = "المتاح";
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "SrK-jv-2oF"; */
+"SrK-jv-2oF.title" = "الرئيسية";
+
+/* Class = "UISearchBar"; placeholder = "Search"; ObjectID = "X6e-SG-B7s"; */
+"X6e-SG-B7s.placeholder" = "ابحث هنا";
+
+/* Class = "UITabBarItem"; title = "Cart"; ObjectID = "mMI-69-dCA"; */
+"mMI-69-dCA.title" = "سلة المشتريات";

@@ -1,0 +1,98 @@
+
+/* Class = "UIButton"; normalTitle = "Am"; ObjectID = "18r-lX-Li0"; */
+"18r-lX-Li0.normalTitle" = "ص";
+
+/* Class = "UILabel"; text = "In Case Resevation Cancling we will deducted 50 SAR"; ObjectID = "2KG-Mt-DmX"; */
+"2KG-Mt-DmX.text" = "في حالة إلفاء الحجز سيتم خصم ٥٠ ريال ";
+
+/* Class = "UIButton"; normalTitle = "Open Air"; ObjectID = "5WG-hR-Vhc"; */
+"5WG-hR-Vhc.normalTitle" = "خارجية";
+
+/* Class = "UITextField"; placeholder = "Choose Appropriate Time"; ObjectID = "6ED-We-6J6"; */
+"6ED-We-6J6.placeholder" = "اختر الوقت المناسب";
+
+/* Class = "UILabel"; text = "Number "; ObjectID = "75S-iZ-aEq"; */
+"75S-iZ-aEq.text" = "العدد ";
+
+/* Class = "UIButton"; normalTitle = "Reservations"; ObjectID = "AOm-Or-i25"; */
+"AOm-Or-i25.normalTitle" = "الحجوزات";
+
+/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "CFG-sP-VIT"; */
+"CFG-sP-VIT.normalTitle" = "تاكيد";
+
+/* Class = "UILabel"; text = "A payment of 100 SAR As Deposit"; ObjectID = "EXc-S4-cCt"; */
+"EXc-S4-cCt.text" = "تم دفع ١٠٠ ريال كعربون";
+
+/* Class = "UILabel"; text = "Time"; ObjectID = "Jb9-wu-FvH"; */
+"Jb9-wu-FvH.text" = "الوقت";
+
+/* Class = "UILabel"; text = "Session"; ObjectID = "KYS-gy-qEL"; */
+"KYS-gy-qEL.text" = "الجلسة";
+
+/* Class = "UIButton"; normalTitle = "In Door"; ObjectID = "MvD-rB-Xpl"; */
+"MvD-rB-Xpl.normalTitle" = "داخلية";
+
+/* Class = "UILabel"; text = "Session"; ObjectID = "OZS-oP-33h"; */
+"OZS-oP-33h.text" = "الجلسة";
+
+/* Class = "UILabel"; text = "Reservation Details"; ObjectID = "Tn3-zE-IPy"; */
+"Tn3-zE-IPy.text" = "تفاصيل الحجز";
+
+/* Class = "UILabel"; text = "Reservation Details"; ObjectID = "U2g-xy-ehA"; */
+"U2g-xy-ehA.text" = "تفاصيل الحجز";
+
+/* Class = "UILabel"; text = "خارجية"; ObjectID = "Ua6-OV-wDD"; */
+"Ua6-OV-wDD.text" = "خارجية";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "V9X-VQ-czU"; */
+"V9X-VQ-czU.text" = "التاريخ";
+
+/* Class = "UILabel"; text = "Reservations"; ObjectID = "Xyg-Li-O3e"; */
+"Xyg-Li-O3e.text" = "طاولة الحجز";
+/* Class = "UINavigationItem"; title = "Reservation List"; ObjectID = "aEZ-eg-OWm"; */
+"aEZ-eg-OWm.title" = "حجوزاتي";
+
+/* Class = "UIButton"; normalTitle = "PM"; ObjectID = "bM7-A4-1XJ"; */
+"bM7-A4-1XJ.normalTitle" = "م";
+
+/* Class = "UINavigationItem"; title = "Table Reservation"; ObjectID = "bSD-wZ-QA6"; */
+"bSD-wZ-QA6.title" = "طاولة الحجز";
+
+/* Class = "UILabel"; text = "Reservation List"; ObjectID = "c7S-zK-rfv"; */
+"c7S-zK-rfv.text" = "حجوزاتي";
+
+/* Class = "UILabel"; text = "11- 5-2021"; ObjectID = "cim-xl-pgz"; */
+"cim-xl-pgz.text" = "11-5-2021";
+
+/* Class = "UITextField"; placeholder = "Enter Appropriate Date"; ObjectID = "dRU-6R-0fZ"; */
+"dRU-6R-0fZ.placeholder" = "اختر التاريخ المناسب";
+
+/* Class = "UINavigationItem"; title = "Reservation Details"; ObjectID = "dkk-8v-EXK"; */
+"dkk-8v-EXK.title" = "تفاصيل الحجز";
+
+/* Class = "UILabel"; text = " + 6"; ObjectID = "feZ-TB-iqQ"; */
+"feZ-TB-iqQ.text" = " + ٦";
+
+/* Class = "UIButton"; normalTitle = "Please enter a deposit of 100 SAR to confirm reservation"; ObjectID = "ghR-Em-85V"; */
+"ghR-Em-85V.normalTitle" = "يرجى دفع ١٠٠ ريال سعودي لتأكيدالحجز";
+
+/* Class = "UINavigationItem"; title = "حجز طاولة"; ObjectID = "gj8-Ex-HgO"; */
+"gj8-Ex-HgO.title" = "حجز طاولة";
+
+/* Class = "UILabel"; text = "10am"; ObjectID = "hsG-Zl-UCo"; */
+"hsG-Zl-UCo.text" = "10am";
+
+/* Class = "UILabel"; text = "Reservation Table"; ObjectID = "iw9-yB-pMc"; */
+"iw9-yB-pMc.text" = "طاولة الحجز";
+
+/* Class = "UIButton"; normalTitle = "Cancel Reservation"; ObjectID = "kkT-X1-VsJ"; */
+"kkT-X1-VsJ.normalTitle" = "الحجوزات الملغاة";
+
+/* Class = "UILabel"; text = "Time"; ObjectID = "lqB-iW-qpA"; */
+"lqB-iW-qpA.text" = "الوقت";
+
+/* Class = "UILabel"; text = "Number Of People"; ObjectID = "to3-vh-SCV"; */
+"to3-vh-SCV.text" = "العدد";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "u6t-ju-n9c"; */
+"u6t-ju-n9c.text" = "التاريخ";

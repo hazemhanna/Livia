@@ -1,0 +1,26 @@
+
+/* Class = "UILabel"; text = "SAR"; ObjectID = "B5a-pQ-p7W"; */
+"B5a-pQ-p7W.text" = "ريال";
+
+/* Class = "UILabel"; text = "Add Notes"; ObjectID = "CPz-2T-Zq6"; */
+"CPz-2T-Zq6.text" = "ملاحظات اخرى";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Ege-xZ-txP"; */
+"Ege-xZ-txP.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "F7G-OB-BoC"; */
+"F7G-OB-BoC.normalTitle" = "تأكيد";
+
+/* Class = "UILabel"; text = "Total"; ObjectID = "O8C-3i-Csx"; */
+"O8C-3i-Csx.text" = "الاجمالي";
+
+/* Class = "UINavigationItem"; title = "Cart"; ObjectID = "WXP-qb-pFE"; */
+"WXP-qb-pFE.title" = "سلة المشتريات";
+
+"K8T-lI-5wi.text" = "سلة المشتريات";
+
+"6dJ-GI-myY.text" = "سعرات حرارية:";
+
+"Ny3-V9-9i7.text" = "تفاصيل السلة";
+
+"fsj-gS-9hj.text" = "ملاحظات أخرى";

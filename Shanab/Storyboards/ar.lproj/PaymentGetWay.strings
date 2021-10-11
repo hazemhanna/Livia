@@ -1,0 +1,79 @@
+
+/* Class = "UIButton"; normalTitle = "Pasherly"; ObjectID = "1Cm-yB-gs4"; */
+"1Cm-yB-gs4.normalTitle" = "باشرلي";
+
+/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "2pY-Ur-6hA"; */
+"2pY-Ur-6hA.normalTitle" = "تاكيد";
+
+/* Class = "UILabel"; text = "Cach"; ObjectID = "4au-0a-41v"; */
+"4au-0a-41v.text" = "كاش";
+
+/* Class = "UILabel"; text = "180 SAR"; ObjectID = "4zx-lG-L83"; */
+"4zx-lG-L83.text" = "180 ريال";
+
+/* Class = "UILabel"; text = "Card Num"; ObjectID = "6QI-eY-ixF"; */
+"6QI-eY-ixF.text" = "رقم البطاقة";
+
+/* Class = "UIButton"; normalTitle = "International"; ObjectID = "8kZ-Xl-DbE"; */
+"8kZ-Xl-DbE.normalTitle" = "سفري";
+
+/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "FYq-bb-rMv"; */
+"FYq-bb-rMv.normalTitle" = "تاكيد";
+
+/* Class = "UILabel"; text = "Order Cost"; ObjectID = "FnB-sW-Up3"; */
+"FnB-sW-Up3.text" = "تكلفة الطلب";
+
+/* Class = "UILabel"; text = "Order Type"; ObjectID = "FrA-wb-PM5"; */
+"FrA-wb-PM5.text" = "نوع الطلب";
+
+/* Class = "UILabel"; text = "Total"; ObjectID = "Lua-xb-vCH"; */
+"Lua-xb-vCH.text" = "الاجمالي";
+
+/* Class = "UILabel"; text = "16 SAR"; ObjectID = "MFK-XU-CPz"; */
+"MFK-XU-CPz.text" = "16 ريال";
+
+/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "Ste-Aj-f99"; */
+"Ste-Aj-f99.normalTitle" = "تأكيد";
+
+/* Class = "UILabel"; text = "Payment Gateway"; ObjectID = "WEh-hK-Zbf"; */
+"WEh-hK-Zbf.text" = "طريقة الدفع";
+
+/* Class = "UILabel"; text = "Validity"; ObjectID = "dUK-zh-io5"; */
+"dUK-zh-io5.text" = "الصلاحية";
+
+/* Class = "UILabel"; text = "Choose Payment Gateway"; ObjectID = "gOd-ev-iT0"; */
+"gOd-ev-iT0.text" = "اختار طريقة الدفع";
+
+/* Class = "UILabel"; text = "15 SAR"; ObjectID = "h03-S1-RYj"; */
+"h03-S1-RYj.text" = "15 ريال";
+
+/* Class = "UIButton"; normalTitle = "Local"; ObjectID = "qmk-Er-DQe"; */
+"qmk-Er-DQe.normalTitle" = "محلي";
+
+/* Class = "UILabel"; text = "Visa"; ObjectID = "y76-QS-fUf"; */
+"y76-QS-fUf.text" = "بالبطاقة";
+
+/* Class = "UILabel"; text = "Fees"; ObjectID = "z1s-uW-qtr"; */
+"z1s-uW-qtr.text" = "الضريبة المضافة";
+
+"Ofe-tf-kxw.normalTitle" = "تأكيد";
+
+"hqo-6N-kNc.normalTitle" = "سفري";
+
+"BKE-W3-dLQ.normalTitle" = "مندوب توصيل";
+
+"Al8-Ys-5wX.normalTitle" = "باشرلي";
+
+"MHJ-S8-X0a.text" = "طريقة الدفع";
+
+"eju-Sz-eyH.normalTitle" = "نقدي";
+
+"j7M-U6-Q2B.normalTitle" = "بطاقة ائتمان";
+
+"URL-SM-uA5.text" = "نوع الطلب";
+
+"WRc-7A-Fal.text" = "التوصيل" ;
+
+"2pY-Ur-6hA.normalTitle" = "تأكيد";
+
+"XEw-p6-5WC.text" = "الأسعار تشمل ضريبة القيمة المضافة";

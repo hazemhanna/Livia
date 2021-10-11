@@ -140,24 +140,24 @@ static NSString *const kFIRInstanceIDLibraryVersion = @"GMSInstanceID-version";
   BOOL checkinPlistExists = [self.checkinStore hasCheckinPlist];
   // Checkin info existed in backup excluded plist. Should not be a fresh install.
   if (checkinPlistExists) {
+    // FCM user can still have the old version of checkin, migration should only happen once.
+    [self.checkinStore migrateCheckinItemIfNeeded];
     return;
   }
 
-  // Resets checkin in keychain if a fresh install.
-  // Keychain can still exist even if app is uninstalled.
+  // reset checkin in keychain if a fresh install.
+  // set the old checkin preferences to unregister pre-registered tokens
   FIRInstanceIDCheckinPreferences *oldCheckinPreferences =
       [self.checkinStore cachedCheckinPreferences];
 
   if (oldCheckinPreferences) {
     [self.checkinStore removeCheckinPreferencesWithHandler:^(NSError *error) {
       if (!error) {
-        FIRInstanceIDLoggerDebug(
-            kFIRInstanceIDMessageCodeStore002,
-            @"Removed cached checkin preferences from Keychain because this is a fresh install.");
+        FIRInstanceIDLoggerDebug(kFIRInstanceIDMessageCodeStore002,
+                                 @"Removed cached checkin preferences from Keychain.");
       } else {
-        FIRInstanceIDLoggerError(
-            kFIRInstanceIDMessageCodeStore003,
-            @"Couldn't remove cached checkin preferences for a fresh install. Error: %@", error);
+        FIRInstanceIDLoggerError(kFIRInstanceIDMessageCodeStore003,
+                                 @"Couldn't remove cached checkin preferences. Error: %@", error);
       }
       if (oldCheckinPreferences.deviceID.length && oldCheckinPreferences.secretToken.length) {
         FIRInstanceIDLoggerDebug(kFIRInstanceIDMessageCodeStore006,

@@ -16,15 +16,14 @@
 
 #import "FIRInstanceIDUtilities.h"
 
-#if TARGET_OS_IOS || TARGET_OS_TV
 #import <UIKit/UIKit.h>
-#endif
 #import <sys/utsname.h>
 
 #import <FirebaseCore/FIROptions.h>
 #import <GoogleUtilities/GULUserDefaults.h>
 #import "FIRInstanceID.h"
 #import "FIRInstanceIDConstants.h"
+#import "FIRInstanceIDDefines.h"
 #import "FIRInstanceIDLogger.h"
 
 // Convert the macro to a string
@@ -78,29 +77,16 @@ NSString *FIRInstanceIDCurrentAppVersion() {
   return version;
 }
 
-NSString *FIRInstanceIDBundleIDByRemovingLastPartFrom(NSString *bundleID) {
-  NSString *bundleIDComponentsSeparator = @".";
-
-  NSMutableArray<NSString *> *bundleIDComponents =
-      [[bundleID componentsSeparatedByString:bundleIDComponentsSeparator] mutableCopy];
-  [bundleIDComponents removeLastObject];
-
-  return [bundleIDComponents componentsJoinedByString:bundleIDComponentsSeparator];
-}
-
 NSString *FIRInstanceIDAppIdentifier() {
-  NSString *bundleID = [[NSBundle mainBundle] bundleIdentifier];
-  if (!bundleID.length) {
+  NSString *bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
+  if (!bundleIdentifier.length) {
     FIRInstanceIDLoggerError(kFIRInstanceIDMessageCodeUtilitiesMissingBundleIdentifier,
                              @"The mainBundle's bundleIdentifier returned '%@'. Bundle identifier "
                              @"expected to be non-empty.",
-                             bundleID);
+                             bundleIdentifier);
     return @"";
   }
-#if TARGET_OS_WATCH
-  return FIRInstanceIDBundleIDByRemovingLastPartFrom(bundleID);
-#endif
-  return bundleID;
+  return bundleIdentifier;
 }
 
 NSString *FIRInstanceIDFirebaseAppID() {
@@ -124,7 +110,7 @@ NSString *FIRInstanceIDDeviceModel() {
 NSString *FIRInstanceIDOperatingSystemVersion() {
 #if TARGET_OS_IOS || TARGET_OS_TV
   return [UIDevice currentDevice].systemVersion;
-#elif TARGET_OS_OSX || TARGET_OS_WATCH
+#elif TARGET_OS_OSX
   return [NSProcessInfo processInfo].operatingSystemVersionString;
 #endif
 }
@@ -200,7 +186,7 @@ NSString *FIRInstanceIDCurrentLocale() {
     return systemLanguage;
   }
 
-  if (@available(macOS 10.12, iOS 10.0, *)) {
+  if (@available(iOS 10.0, *)) {
     return [NSLocale currentLocale].languageCode;
   } else {
     return nil;

@@ -1,0 +1,67 @@
+
+/* Class = "UILabel"; text = "Or"; ObjectID = "09j-ta-egd"; */
+"09j-ta-egd.text" = "أو";
+
+/* Class = "UIButton"; normalTitle = "Language"; ObjectID = "5Gt-wP-00R"; */
+"5Gt-wP-00R.normalTitle" = "اللغة";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "5oM-gu-PVU"; */
+"5oM-gu-PVU.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UINavigationItem"; title = "Countact Us"; ObjectID = "6Rc-f1-Bls"; */
+"6Rc-f1-Bls.title" = "Countact Us";
+
+/* Class = "UIButton"; normalTitle = "English"; ObjectID = "BYa-uh-zU1"; */
+"BYa-uh-zU1.normalTitle" = "اللغة الانجليزية";
+
+/* Class = "UIButton"; normalTitle = "Send"; ObjectID = "Dkh-yD-3QL"; */
+"Dkh-yD-3QL.normalTitle" = "ارسال";
+
+/* Class = "UILabel"; text = "Settings"; ObjectID = "QWd-Bb-nFh"; */
+"QWd-Bb-nFh.text" = "الاعدادت";
+
+/* Class = "UILabel"; text = "Contact Us"; ObjectID = "erf-o5-uZw"; */
+"erf-o5-uZw.text" = "تواصل معنا";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "fPh-y8-fCR"; */
+"fPh-y8-fCR.placeholder" = "البريد الالكتروني";
+
+/* Class = "UITextField"; placeholder = "Message Details"; ObjectID = "qi9-ML-m1D"; */
+"qi9-ML-m1D.placeholder" = "تفاصيل الرسالة";
+
+/* Class = "UINavigationItem"; title = "Setting"; ObjectID = "tXs-OF-xPn"; */
+"tXs-OF-xPn.title" = "الاعدادت";
+
+/* Class = "UITextField"; placeholder = "Phone"; ObjectID = "utC-Yi-JCy"; */
+"utC-Yi-JCy.placeholder" = "الهاتف";
+
+/* Class = "UIBarButtonItem"; title = "  "; ObjectID = "v9M-g7-1QD"; */
+"v9M-g7-1QD.title" = "";
+
+/* Class = "UINavigationItem"; title = "Terms And Conditions"; ObjectID = "x2X-vb-X34"; */
+"x2X-vb-X34.title" = "الشروط والاحكام";
+
+/* Class = "UIButton"; normalTitle = "Message Address"; ObjectID = "x4c-xj-DjB"; */
+"x4c-xj-DjB.normalTitle" = "عنوان الرسالة";
+
+/* Class = "UIButton"; normalTitle = "Arabic"; ObjectID = "xar-rp-DYu"; */
+"xar-rp-DYu.normalTitle" = "اللغة العربية";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "yN0-bi-4dW"; */
+"yN0-bi-4dW.placeholder" = "الاسم";
+
+"Dey-Mw-lit.text" = "الشروط والأحكام";
+
+"R6S-SD-W34.text" = "تغيير كلمة المرور";
+
+"tgB-AG-r1M.placeholder" = "كلمة المرور القديمة";
+
+"HWk-3t-faY.placeholder" = "كلمة المرور الجديدة";
+
+"9e6-lv-UdH.placeholder" = "تأكيد كلمة المرور";
+
+"tdk-wR-6wb.normalTitle" = "إرشادات لكلمة مرورة قوية";
+
+"OuT-Ad-ASe.normalTitle" = "حفظ";
+
+ 

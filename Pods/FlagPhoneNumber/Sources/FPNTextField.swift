@@ -28,7 +28,7 @@ open class FPNTextField: UITextField {
 		return CGSize(width: width, height: height)
 	}
 
-	open var phoneCodeTextField: UITextField = UITextField()
+	public var phoneCodeTextField: UITextField = UITextField()
 
 	private lazy var phoneUtil: NBPhoneNumberUtil = NBPhoneNumberUtil()
 	private var nbPhoneNumber: NBPhoneNumber?
@@ -44,9 +44,7 @@ open class FPNTextField: UITextField {
 
 	open override var textColor: UIColor? {
 		didSet {
-            
-            print(textColor)
-			phoneCodeTextField.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+			phoneCodeTextField.textColor = textColor
 		}
 	}
 
@@ -120,7 +118,6 @@ open class FPNTextField: UITextField {
 
 	private func setupFlagButton() {
 		flagButton.imageView?.contentMode = .scaleAspectFit
-        flagButton.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
 		flagButton.accessibilityLabel = "flagButton"
 		flagButton.addTarget(self, action: #selector(displayCountries), for: .touchUpInside)
 		flagButton.translatesAutoresizingMaskIntoConstraints = false
@@ -129,7 +126,6 @@ open class FPNTextField: UITextField {
 
 	private func setupPhoneCodeTextField() {
 		phoneCodeTextField.font = font
-        phoneCodeTextField.textColor = UIColor.white
 		phoneCodeTextField.isUserInteractionEnabled = false
 		phoneCodeTextField.translatesAutoresizingMaskIntoConstraints = false
 	}
@@ -381,7 +377,6 @@ open class FPNTextField: UITextField {
 		flagButton.setImage(selectedCountry?.flag, for: .normal)
 
 		if let phoneCode = selectedCountry?.phoneCode {
-            phoneCodeTextField.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
 			phoneCodeTextField.text = phoneCode
 		}
 

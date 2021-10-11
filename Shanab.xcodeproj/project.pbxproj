@@ -8,12 +8,37 @@
 
 /* Begin PBXBuildFile section */
 		04056CB2250EA77C0077A604 /* LoginPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04056CB1250EA77C0077A604 /* LoginPopupVC.swift */; };
+		040950E226DB0B5300AEFDFF /* SubscribtionVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040950E126DB0B5300AEFDFF /* SubscribtionVc.swift */; };
+		040950E526DB0B6E00AEFDFF /* MySubscribtionVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040950E426DB0B6E00AEFDFF /* MySubscribtionVc.swift */; };
+		040950E826DB0BB900AEFDFF /* SubscribtionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040950E726DB0BB900AEFDFF /* SubscribtionsModel.swift */; };
+		040950EB26DB0BE700AEFDFF /* SubscribtionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040950EA26DB0BE700AEFDFF /* SubscribtionsPresenter.swift */; };
+		040950EE26DB0BFA00AEFDFF /* MySubscribtionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040950ED26DB0BFA00AEFDFF /* MySubscribtionsPresenter.swift */; };
+		040950F226DB0D9900AEFDFF /* SubscriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040950F026DB0D9900AEFDFF /* SubscriptionCell.swift */; };
+		040950F326DB0D9900AEFDFF /* SubscriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040950F126DB0D9900AEFDFF /* SubscriptionCell.xib */; };
+		040950F726DB0E0D00AEFDFF /* MySbuscribtionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040950F526DB0E0D00AEFDFF /* MySbuscribtionsCell.swift */; };
+		040950F826DB0E0D00AEFDFF /* MySbuscribtionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040950F626DB0E0D00AEFDFF /* MySbuscribtionsCell.xib */; };
 		043A63AB2523B78800D1C466 /* CustomerProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A63A92523B78800D1C466 /* CustomerProfileCell.swift */; };
 		043A63B02523B7AF00D1C466 /* PasswordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A63AE2523B7AF00D1C466 /* PasswordCell.swift */; };
 		043A63B42524957100D1C466 /* DriverRejacteOrderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A63B32524957100D1C466 /* DriverRejacteOrderPresenter.swift */; };
+		047512242711F28100D884D4 /* CartFoodPackegesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047512232711F28100D884D4 /* CartFoodPackegesPresenter.swift */; };
+		04751227271222D400D884D4 /* RewardsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04751226271222D400D884D4 /* RewardsModel.swift */; };
+		0475122A2712418200D884D4 /* WalletVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047512292712418200D884D4 /* WalletVc.swift */; };
+		04751230271252F400D884D4 /* RefundOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475122E271252F400D884D4 /* RefundOrderCell.swift */; };
+		04751231271252F400D884D4 /* RefundOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0475122F271252F400D884D4 /* RefundOrderCell.xib */; };
+		047512352712530D00D884D4 /* RewardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047512332712530D00D884D4 /* RewardCell.swift */; };
+		04751239271258B700D884D4 /* RewardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0475123B271258B700D884D4 /* RewardCell.xib */; };
+		04ABAB7E27110D0000BC0F71 /* MYFoodPackagesCartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ABAB7D27110D0000BC0F71 /* MYFoodPackagesCartVC.swift */; };
+		04ABAB8127110D2700BC0F71 /* MYFoodPackagesSubscribtionsVC .swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ABAB8027110D2700BC0F71 /* MYFoodPackagesSubscribtionsVC .swift */; };
+		04ABAB862711138700BC0F71 /* MyFoodCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ABAB842711138700BC0F71 /* MyFoodCartCell.swift */; };
+		04ABAB8B27111ADE00BC0F71 /* MyFoodCartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04ABAB8D27111ADE00BC0F71 /* MyFoodCartCell.xib */; };
 		04C417BB252F44600016E08F /* SectionDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C417BA252F44600016E08F /* SectionDetailsModel.swift */; };
 		04C4180E253326E90016E08F /* OrderRatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C4180D253326E80016E08F /* OrderRatePresenter.swift */; };
-		38B1441D8A7D9BCB63FF43C1 /* Pods_Shanab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF802D4512B8D04C6AEAE6A5 /* Pods_Shanab.framework */; };
+		04D8132E270FD852004BEC39 /* FoodPackages .swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8132D270FD852004BEC39 /* FoodPackages .swift */; };
+		04D81331270FE0D5004BEC39 /* FoodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D81330270FE0D5004BEC39 /* FoodModel.swift */; };
+		04D81336270FE1C0004BEC39 /* FoodPackgeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D81334270FE1C0004BEC39 /* FoodPackgeCell.swift */; };
+		04D81337270FE1C0004BEC39 /* FoodPackgeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D81335270FE1C0004BEC39 /* FoodPackgeCell.xib */; };
+		04F41D112710ED8B00C31E1C /* FoodPackegesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F41D102710ED8B00C31E1C /* FoodPackegesPresenter.swift */; };
+		375446F1BF6D5717A8FABD5E /* Pods_Shanab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C18599354781E39004C491C /* Pods_Shanab.framework */; };
 		7F1A6C562559461D00A799E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F1A6C552559461D00A799E5 /* GoogleService-Info.plist */; };
 		7F1A6C872559863800A799E5 /* PreviousOrders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1A6C852559863200A799E5 /* PreviousOrders.swift */; };
 		7F1A8579253C8F6600471328 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1A8578253C8F6600471328 /* NotificationModel.swift */; };
@@ -270,18 +295,47 @@
 		04056CAE250E37F10077A604 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Details.strings; sourceTree = "<group>"; };
 		04056CB0250E41BC0077A604 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Location.strings; sourceTree = "<group>"; };
 		04056CB1250EA77C0077A604 /* LoginPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPopupVC.swift; sourceTree = "<group>"; };
+		040950E126DB0B5300AEFDFF /* SubscribtionVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribtionVc.swift; sourceTree = "<group>"; };
+		040950E426DB0B6E00AEFDFF /* MySubscribtionVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySubscribtionVc.swift; sourceTree = "<group>"; };
+		040950E726DB0BB900AEFDFF /* SubscribtionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribtionsModel.swift; sourceTree = "<group>"; };
+		040950EA26DB0BE700AEFDFF /* SubscribtionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribtionsPresenter.swift; sourceTree = "<group>"; };
+		040950ED26DB0BFA00AEFDFF /* MySubscribtionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySubscribtionsPresenter.swift; sourceTree = "<group>"; };
+		040950F026DB0D9900AEFDFF /* SubscriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionCell.swift; sourceTree = "<group>"; };
+		040950F126DB0D9900AEFDFF /* SubscriptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscriptionCell.xib; sourceTree = "<group>"; };
+		040950F526DB0E0D00AEFDFF /* MySbuscribtionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySbuscribtionsCell.swift; sourceTree = "<group>"; };
+		040950F626DB0E0D00AEFDFF /* MySbuscribtionsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MySbuscribtionsCell.xib; sourceTree = "<group>"; };
 		0439D7EE2510C6E700E59537 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Orders.strings; sourceTree = "<group>"; };
 		043A63A72523AEFA00D1C466 /* ShnpRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShnpRelease.entitlements; sourceTree = "<group>"; };
 		043A63A92523B78800D1C466 /* CustomerProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerProfileCell.swift; sourceTree = "<group>"; };
 		043A63AE2523B7AF00D1C466 /* PasswordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCell.swift; sourceTree = "<group>"; };
 		043A63B32524957100D1C466 /* DriverRejacteOrderPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverRejacteOrderPresenter.swift; sourceTree = "<group>"; };
+		047512232711F28100D884D4 /* CartFoodPackegesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartFoodPackegesPresenter.swift; sourceTree = "<group>"; };
+		04751226271222D400D884D4 /* RewardsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsModel.swift; sourceTree = "<group>"; };
+		047512292712418200D884D4 /* WalletVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletVc.swift; sourceTree = "<group>"; };
+		0475122E271252F400D884D4 /* RefundOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefundOrderCell.swift; sourceTree = "<group>"; };
+		0475122F271252F400D884D4 /* RefundOrderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RefundOrderCell.xib; sourceTree = "<group>"; };
+		047512332712530D00D884D4 /* RewardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardCell.swift; sourceTree = "<group>"; };
+		0475123A271258B700D884D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RewardCell.xib; sourceTree = "<group>"; };
+		0475123E271258BF00D884D4 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/RewardCell.strings; sourceTree = "<group>"; };
 		04A427F9250A73C4000E8757 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/AboutApp.strings; sourceTree = "<group>"; };
+		04ABAB7D27110D0000BC0F71 /* MYFoodPackagesCartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MYFoodPackagesCartVC.swift; sourceTree = "<group>"; };
+		04ABAB8027110D2700BC0F71 /* MYFoodPackagesSubscribtionsVC .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MYFoodPackagesSubscribtionsVC .swift"; sourceTree = "<group>"; };
+		04ABAB842711138700BC0F71 /* MyFoodCartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFoodCartCell.swift; sourceTree = "<group>"; };
+		04ABAB8C27111ADE00BC0F71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MyFoodCartCell.xib; sourceTree = "<group>"; };
+		04ABAB8F27111AFC00BC0F71 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/MyFoodCartCell.strings; sourceTree = "<group>"; };
 		04B4A1D225096F3B00DA0BFE /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Authentications.strings; sourceTree = "<group>"; };
 		04B4A1D42509799600DA0BFE /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Sections.strings; sourceTree = "<group>"; };
 		04C417BA252F44600016E08F /* SectionDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDetailsModel.swift; sourceTree = "<group>"; };
 		04C4180D253326E80016E08F /* OrderRatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRatePresenter.swift; sourceTree = "<group>"; };
 		04C41811253471970016E08F /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Home.strings; sourceTree = "<group>"; };
 		04C4183D253596AF0016E08F /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/SearchProducts.strings; sourceTree = "<group>"; };
+		04D8132D270FD852004BEC39 /* FoodPackages .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoodPackages .swift"; sourceTree = "<group>"; };
+		04D81330270FE0D5004BEC39 /* FoodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodModel.swift; sourceTree = "<group>"; };
+		04D81334270FE1C0004BEC39 /* FoodPackgeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPackgeCell.swift; sourceTree = "<group>"; };
+		04D81335270FE1C0004BEC39 /* FoodPackgeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodPackgeCell.xib; sourceTree = "<group>"; };
+		04F41D102710ED8B00C31E1C /* FoodPackegesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPackegesPresenter.swift; sourceTree = "<group>"; };
+		14E966DDEBC72FB7F8EB0395 /* Pods-Shanab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shanab.debug.xcconfig"; path = "Target Support Files/Pods-Shanab/Pods-Shanab.debug.xcconfig"; sourceTree = "<group>"; };
+		2C18599354781E39004C491C /* Pods_Shanab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shanab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F1A6C552559461D00A799E5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7F1A6C5A2559480C00A799E5 /* Shnp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Shnp.entitlements; sourceTree = "<group>"; };
 		7F1A6C852559863200A799E5 /* PreviousOrders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousOrders.swift; sourceTree = "<group>"; };
@@ -302,9 +356,7 @@
 		7FF1AC582550476B006747D7 /* searchResultTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchResultTable.swift; sourceTree = "<group>"; };
 		7FFA7F35254969D900D33A41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DriverListCell.xib; sourceTree = "<group>"; };
 		7FFA7F39254969F900D33A41 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/DriverListCell.strings; sourceTree = "<group>"; };
-		836C4D5733C8AFFFB5ECFCEE /* Pods-Shanab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shanab.debug.xcconfig"; path = "Target Support Files/Pods-Shanab/Pods-Shanab.debug.xcconfig"; sourceTree = "<group>"; };
-		9AE2FD08A107EC0AF53B3833 /* Pods-Shanab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shanab.release.xcconfig"; path = "Target Support Files/Pods-Shanab/Pods-Shanab.release.xcconfig"; sourceTree = "<group>"; };
-		EF802D4512B8D04C6AEAE6A5 /* Pods_Shanab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shanab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2C7EB7B956E1A65AB7AE0A9 /* Pods-Shanab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shanab.release.xcconfig"; path = "Target Support Files/Pods-Shanab/Pods-Shanab.release.xcconfig"; sourceTree = "<group>"; };
 		FA04BFDE24308BF200791CD5 /* CustomerProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerProfileVC.swift; sourceTree = "<group>"; };
 		FA04BFE02430958300791CD5 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		FA04BFE12430958300791CD5 /* ProfileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCell.xib; sourceTree = "<group>"; };
@@ -568,28 +620,64 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38B1441D8A7D9BCB63FF43C1 /* Pods_Shanab.framework in Frameworks */,
+				375446F1BF6D5717A8FABD5E /* Pods_Shanab.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0475122C271252D100D884D4 /* RewardCell */ = {
+			isa = PBXGroup;
+			children = (
+				047512332712530D00D884D4 /* RewardCell.swift */,
+				0475123B271258B700D884D4 /* RewardCell.xib */,
+			);
+			path = RewardCell;
+			sourceTree = "<group>";
+		};
+		0475122D271252D500D884D4 /* RefundOrderCell */ = {
+			isa = PBXGroup;
+			children = (
+				0475122E271252F400D884D4 /* RefundOrderCell.swift */,
+				0475122F271252F400D884D4 /* RefundOrderCell.xib */,
+			);
+			path = RefundOrderCell;
+			sourceTree = "<group>";
+		};
+		04ABAB832711135E00BC0F71 /* MyFoodCartCell */ = {
+			isa = PBXGroup;
+			children = (
+				04ABAB842711138700BC0F71 /* MyFoodCartCell.swift */,
+				04ABAB8D27111ADE00BC0F71 /* MyFoodCartCell.xib */,
+			);
+			path = MyFoodCartCell;
+			sourceTree = "<group>";
+		};
+		04D81333270FE19A004BEC39 /* FoodPackgeCell */ = {
+			isa = PBXGroup;
+			children = (
+				04D81334270FE1C0004BEC39 /* FoodPackgeCell.swift */,
+				04D81335270FE1C0004BEC39 /* FoodPackgeCell.xib */,
+			);
+			path = FoodPackgeCell;
+			sourceTree = "<group>";
+		};
+		25533E7752912AA1492FE16F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C18599354781E39004C491C /* Pods_Shanab.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7740C9363BB9D7A9F6CC923E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				836C4D5733C8AFFFB5ECFCEE /* Pods-Shanab.debug.xcconfig */,
-				9AE2FD08A107EC0AF53B3833 /* Pods-Shanab.release.xcconfig */,
+				14E966DDEBC72FB7F8EB0395 /* Pods-Shanab.debug.xcconfig */,
+				A2C7EB7B956E1A65AB7AE0A9 /* Pods-Shanab.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		D6B2AD98B2BE7FCD1A52F3B7 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				EF802D4512B8D04C6AEAE6A5 /* Pods_Shanab.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		FA46352A245ADAEA00E82653 /* PopUps */ = {
@@ -634,6 +722,10 @@
 		FA62F5FB243328D400A7EEB9 /* TabelViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				0475122D271252D500D884D4 /* RefundOrderCell */,
+				0475122C271252D100D884D4 /* RewardCell */,
+				04ABAB832711135E00BC0F71 /* MyFoodCartCell */,
+				04D81333270FE19A004BEC39 /* FoodPackgeCell */,
 				FAEE422D2428F20B00E12AD2 /* BestSellerCell.swift */,
 				FADCF92924DCA1D1008C3987 /* BestSellerCell.xib */,
 				FA62F60324335D7200A7EEB9 /* ReservationListCell.swift */,
@@ -674,6 +766,10 @@
 				7F7FA584253B5E65001576D4 /* PasswordCell.xib */,
 				7F1A6C852559863200A799E5 /* PreviousOrders.swift */,
 				7F37C38D2559AEE20069CCB3 /* PreviousOrders.xib */,
+				040950F026DB0D9900AEFDFF /* SubscriptionCell.swift */,
+				040950F126DB0D9900AEFDFF /* SubscriptionCell.xib */,
+				040950F526DB0E0D00AEFDFF /* MySbuscribtionsCell.swift */,
+				040950F626DB0E0D00AEFDFF /* MySbuscribtionsCell.xib */,
 			);
 			path = TabelViewCell;
 			sourceTree = "<group>";
@@ -747,7 +843,7 @@
 				FADBB0FE24276CF60044936E /* Shanab */,
 				FADBB0FD24276CF60044936E /* Products */,
 				7740C9363BB9D7A9F6CC923E /* Pods */,
-				D6B2AD98B2BE7FCD1A52F3B7 /* Frameworks */,
+				25533E7752912AA1492FE16F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -849,6 +945,10 @@
 				04C4180D253326E80016E08F /* OrderRatePresenter.swift */,
 				7F50D868256AFE34000D2742 /* VerifyPresenter.swift */,
 				7F4F9599256BAE320084D1B6 /* SendCodePresenter.swift */,
+				040950EA26DB0BE700AEFDFF /* SubscribtionsPresenter.swift */,
+				040950ED26DB0BFA00AEFDFF /* MySubscribtionsPresenter.swift */,
+				04F41D102710ED8B00C31E1C /* FoodPackegesPresenter.swift */,
+				047512232711F28100D884D4 /* CartFoodPackegesPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -932,6 +1032,9 @@
 				04C417BA252F44600016E08F /* SectionDetailsModel.swift */,
 				7F1A8578253C8F6600471328 /* NotificationModel.swift */,
 				7F3C08B0254F0E780014BA14 /* getCodeModel.swift */,
+				040950E726DB0BB900AEFDFF /* SubscribtionsModel.swift */,
+				04D81330270FE0D5004BEC39 /* FoodModel.swift */,
+				04751226271222D400D884D4 /* RewardsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1114,6 +1217,12 @@
 				7F5B2A472541D81200CB5244 /* HomeVC.swift */,
 				FA6B66E024D02E980036BD0E /* CartDetailsVC.swift */,
 				7FF1AC582550476B006747D7 /* searchResultTable.swift */,
+				040950E126DB0B5300AEFDFF /* SubscribtionVc.swift */,
+				040950E426DB0B6E00AEFDFF /* MySubscribtionVc.swift */,
+				04D8132D270FD852004BEC39 /* FoodPackages .swift */,
+				04ABAB7D27110D0000BC0F71 /* MYFoodPackagesCartVC.swift */,
+				04ABAB8027110D2700BC0F71 /* MYFoodPackagesSubscribtionsVC .swift */,
+				047512292712418200D884D4 /* WalletVc.swift */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
@@ -1155,11 +1264,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FADBB11024276CF80044936E /* Build configuration list for PBXNativeTarget "Shanab" */;
 			buildPhases = (
-				0695A0ED411400B6F6EF7E83 /* [CP] Check Pods Manifest.lock */,
+				182B905592A98DADAE639E29 /* [CP] Check Pods Manifest.lock */,
 				FADBB0F824276CF60044936E /* Sources */,
 				FADBB0F924276CF60044936E /* Frameworks */,
 				FADBB0FA24276CF60044936E /* Resources */,
-				18175E1D18D819A3F196DD77 /* [CP] Embed Pods Frameworks */,
+				89C5864FC8571EC5C1C963B5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1239,6 +1348,7 @@
 				7F37C38B2559AEE20069CCB3 /* PreviousOrders.xib in Resources */,
 				FA6B4DA524B3A18300C25F3E /* Orders.storyboard in Resources */,
 				FADCF92224DCA1A2008C3987 /* HeaderCell.xib in Resources */,
+				040950F326DB0D9900AEFDFF /* SubscriptionCell.xib in Resources */,
 				FADCF91324DC8EA6008C3987 /* ReservationListCell.xib in Resources */,
 				FA6B4D5E24B3549A00C25F3E /* Cairo-Bold.ttf in Resources */,
 				FA76FD9524471A5200B0792B /* RestaurantCell.xib in Resources */,
@@ -1246,11 +1356,14 @@
 				FA725BE724C9ADD00038C21E /* PreviousListCell.xib in Resources */,
 				FA62F5FA243328C300A7EEB9 /* OrderReceiptCell.xib in Resources */,
 				FA04BFE32430958300791CD5 /* ProfileCell.xib in Resources */,
+				04D81337270FE1C0004BEC39 /* FoodPackgeCell.xib in Resources */,
 				FA6B4DAC24B3A3BE00C25F3E /* SideMenu.storyboard in Resources */,
+				04751231271252F400D884D4 /* RefundOrderCell.xib in Resources */,
 				FAB7616B24E5615400E2813F /* NotificationsCell.xib in Resources */,
 				FA749A3624D204E200491BD9 /* Localizable.strings in Resources */,
 				FA6B4D5A24B3549A00C25F3E /* Cairo-Regular.ttf in Resources */,
 				FA36C1AB24CEDAFB00E1890F /* SectionCell.xib in Resources */,
+				04ABAB8B27111ADE00BC0F71 /* MyFoodCartCell.xib in Resources */,
 				7F1A6C562559461D00A799E5 /* GoogleService-Info.plist in Resources */,
 				FA6B4DCF24B3BBE800C25F3E /* Reservation.storyboard in Resources */,
 				FA6B4D5B24B3549A00C25F3E /* Cairo-SemiBold.ttf in Resources */,
@@ -1263,7 +1376,9 @@
 				FA6F43E824B71B0D00276A34 /* Products.storyboard in Resources */,
 				FAEEB48324A8E5A500DABE8F /* DriverDetaisTableViewCell.xib in Resources */,
 				FA6B4DBA24B3A67700C25F3E /* AboutApp.storyboard in Resources */,
+				040950F826DB0E0D00AEFDFF /* MySbuscribtionsCell.xib in Resources */,
 				FA5B25BB24349E6C004F52DE /* NewListCell.xib in Resources */,
+				04751239271258B700D884D4 /* RewardCell.xib in Resources */,
 				FA9DD7E124B46E5B009FFB79 /* PaymentGetWay.storyboard in Resources */,
 				FADCF92724DCA1D1008C3987 /* BestSellerCell.xib in Resources */,
 			);
@@ -1272,7 +1387,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0695A0ED411400B6F6EF7E83 /* [CP] Check Pods Manifest.lock */ = {
+		182B905592A98DADAE639E29 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1294,7 +1409,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		18175E1D18D819A3F196DD77 /* [CP] Embed Pods Frameworks */ = {
+		89C5864FC8571EC5C1C963B5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1322,6 +1437,7 @@
 				FA36C1AA24CEDAFB00E1890F /* SectionCell.swift in Sources */,
 				FAD476F7248E41710058A213 /* ReservationDetailsModel.swift in Sources */,
 				FAF8BC11242B6B58004AEF89 /* SearchCell.swift in Sources */,
+				040950F726DB0E0D00AEFDFF /* MySbuscribtionsCell.swift in Sources */,
 				FAAD8CD82444AB78005BB198 /* AllRestaurantsModel.swift in Sources */,
 				FA5B25B524346FE1004F52DE /* OrderDateVC.swift in Sources */,
 				FAFACF132459A1D600BF6CDA /* LoginPresenter.swift in Sources */,
@@ -1330,8 +1446,10 @@
 				FA110DF424ACC191007A403D /* UserOrderDetailsVC.swift in Sources */,
 				FAA4D7CC24ADDD5200E7AA13 /* MealDetailsVC.swift in Sources */,
 				FADBB14424279F200044936E /* Singletone.swift in Sources */,
+				040950E526DB0B6E00AEFDFF /* MySubscribtionVc.swift in Sources */,
 				FA306E12243383850056E1DF /* FoodTracksVC.swift in Sources */,
 				7F1A6C872559863800A799E5 /* PreviousOrders.swift in Sources */,
+				047512352712530D00D884D4 /* RewardCell.swift in Sources */,
 				FADCF91224DC3F11008C3987 /* CartDetailsPresenter.swift in Sources */,
 				FA5B25BA24349E6C004F52DE /* NewListCell.swift in Sources */,
 				7FF1AC592550476F006747D7 /* searchResultTable.swift in Sources */,
@@ -1368,11 +1486,14 @@
 				FA04BFE92430B06300791CD5 /* NotificationsVC.swift in Sources */,
 				FADBB10024276CF60044936E /* AppDelegate.swift in Sources */,
 				FA04BFE72430AFED00791CD5 /* ChangePasswordVC.swift in Sources */,
+				04D8132E270FD852004BEC39 /* FoodPackages .swift in Sources */,
 				FAAD8CD4244463E6005BB198 /* GetAddsModel.swift in Sources */,
 				FA564CD9242A1EBA00A4A627 /* ResetPasswordVC.swift in Sources */,
+				047512242711F28100D884D4 /* CartFoodPackegesPresenter.swift in Sources */,
 				FA0F3ED624321E7A00D3D6C6 /* FavoritesVC.swift in Sources */,
 				FA068B74248648E800E46C3D /* UserListModel.swift in Sources */,
 				FA04BFF22430DA6D00791CD5 /* ReservationCell.swift in Sources */,
+				040950EB26DB0BE700AEFDFF /* SubscribtionsPresenter.swift in Sources */,
 				FAC5A78D24E3DDB7003D64D7 /* CancelReservationPresenter.swift in Sources */,
 				FA63E363245B17BB00E63ADA /* UserProfileChangePasswordPresenter.swift in Sources */,
 				FA15119B243C84D200F0C52E /* SectionsPageVC.swift in Sources */,
@@ -1385,6 +1506,7 @@
 				FA5A16B024FC676C002EF0BD /* SearchInMealsModel.swift in Sources */,
 				FADBB14E24279F200044936E /* BasicBarChartPresenter.swift in Sources */,
 				FAC1BB74247E7C980072D26B /* MailTempaltePresenter.swift in Sources */,
+				04ABAB862711138700BC0F71 /* MyFoodCartCell.swift in Sources */,
 				FA76FD8F24470C2F00B0792B /* CatgeoriesModel.swift in Sources */,
 				FA5E5A4C2487D3BF005213F7 /* NumberListPopUp.swift in Sources */,
 				FADBB1572427B0D90044936E /* LoginVC.swift in Sources */,
@@ -1395,6 +1517,8 @@
 				7F4F959A256BAE320084D1B6 /* SendCodePresenter.swift in Sources */,
 				FA5D7A99245EF04B00F57B2E /* GetCodePresenter.swift in Sources */,
 				FA564CD7242A14EF00A4A627 /* ForgetPasswordVC.swift in Sources */,
+				040950F226DB0D9900AEFDFF /* SubscriptionCell.swift in Sources */,
+				040950E826DB0BB900AEFDFF /* SubscribtionsModel.swift in Sources */,
 				FA110DF024ACA24F007A403D /* FavoritMealsPresernter.swift in Sources */,
 				FAE9B09C244314BF00044CB7 /* AgentRegisterationVC.swift in Sources */,
 				FAF8BC23242BA563004AEF89 /* CartCell.swift in Sources */,
@@ -1406,6 +1530,7 @@
 				FA0F3ED92432207800D3D6C6 /* FavoriteCell.swift in Sources */,
 				FAEE42232428CDA200E12AD2 /* ValiableResturantCell.swift in Sources */,
 				FA749A2E24D1998D00491BD9 /* HeaderCell.swift in Sources */,
+				04ABAB7E27110D0000BC0F71 /* MYFoodPackagesCartVC.swift in Sources */,
 				FADBB14124279F200044936E /* UIBarButtonItem+Badge.swift in Sources */,
 				FADBB10224276CF60044936E /* SceneDelegate.swift in Sources */,
 				04056CB2250EA77C0077A604 /* LoginPopupVC.swift in Sources */,
@@ -1415,8 +1540,10 @@
 				FA6B4D5224B32DC700C25F3E /* DriverOrderListVC.swift in Sources */,
 				FAE7CB7A24A3E972003E7A5C /* TermsAndConditionsVC.swift in Sources */,
 				FAFACF1124598A2F00BF6CDA /* SuccessError_Model.swift in Sources */,
+				04751230271252F400D884D4 /* RefundOrderCell.swift in Sources */,
 				FA62F6002433572300A7EEB9 /* OrderConfirmationPopUp.swift in Sources */,
 				FA6B66E124D02E980036BD0E /* CartDetailsVC.swift in Sources */,
+				04F41D112710ED8B00C31E1C /* FoodPackegesPresenter.swift in Sources */,
 				FA6ACB62244870FB0080AA13 /* RestaurantDetailsCell.swift in Sources */,
 				FAE46DD2247FFB5500B06540 /* ReservationListPresenter.swift in Sources */,
 				FADBB1532427A01C0044936E /* MainVC.swift in Sources */,
@@ -1447,9 +1574,11 @@
 				7F50D869256AFE34000D2742 /* VerifyPresenter.swift in Sources */,
 				FA564CE2242A35B200A4A627 /* SideMenuModel.swift in Sources */,
 				FA62F60524335D7200A7EEB9 /* ReservationListCell.swift in Sources */,
+				04D81331270FE0D5004BEC39 /* FoodModel.swift in Sources */,
 				FAF96CFE24C6D4B9008BAFA8 /* AddressesListPresenter.swift in Sources */,
 				FAF8BC16242B852C004AEF89 /* SectionsVC.swift in Sources */,
 				FAF96D0424C72F09008BAFA8 /* GetCountriesModel.swift in Sources */,
+				0475122A2712418200D884D4 /* WalletVc.swift in Sources */,
 				FADFA95F24A1038200B7A0A1 /* GetProfileModel.swift in Sources */,
 				FAEE6E7324B5CCEE00DAB58F /* CategoriesModel.swift in Sources */,
 				FA83E5DB246D68FE00F59316 /* DriverChangePasswordProfileVC.swift in Sources */,
@@ -1458,9 +1587,12 @@
 				7F5B2A482541D81200CB5244 /* HomeVC.swift in Sources */,
 				FA72840B24AB3F520042AC99 /* MealSearchModel.swift in Sources */,
 				FA306E1024337ED70056E1DF /* RestaurantsVC.swift in Sources */,
+				040950EE26DB0BFA00AEFDFF /* MySubscribtionsPresenter.swift in Sources */,
 				FA5916B424AB77B9006CB226 /* CoreDataService.swift in Sources */,
 				FADBB14824279F200044936E /* CustomizedView.swift in Sources */,
+				04D81336270FE1C0004BEC39 /* FoodPackgeCell.swift in Sources */,
 				FAC69480247157EE0002E4E9 /* DriverLoginPresenter.swift in Sources */,
+				040950E226DB0B5300AEFDFF /* SubscribtionVc.swift in Sources */,
 				FA72840924AB30CC0042AC99 /* RestaurantsSearchModel.swift in Sources */,
 				FA5E5A4E2487DAB2005213F7 /* ReservationDetailsVC.swift in Sources */,
 				FA5B25D32434DC1D004F52DE /* DateFSCalnder.swift in Sources */,
@@ -1501,11 +1633,13 @@
 				FA04BFF52430DDF400791CD5 /* ReservationRequestVC.swift in Sources */,
 				FAEE421824289B4C00E12AD2 /* RegisterationVC.swift in Sources */,
 				FA6B4D4E24B3158B00C25F3E /* UserOrderDetailsPresenter.swift in Sources */,
+				04ABAB8127110D2700BC0F71 /* MYFoodPackagesSubscribtionsVC .swift in Sources */,
 				FA306E0A243369680056E1DF /* ProductiveFamiliesVC.swift in Sources */,
 				FA62F60224335D2700A7EEB9 /* ResevationListVC.swift in Sources */,
 				FA564CDF242A248D00A4A627 /* ListCell.swift in Sources */,
 				FAD476F9248E438B0058A213 /* ReservationDetailsPresenter.swift in Sources */,
 				FADBB14C24279F200044936E /* BeautifulBarChartPresenter.swift in Sources */,
+				04751227271222D400D884D4 /* RewardsModel.swift in Sources */,
 				FAF2945A24C5B89D00C60877 /* AddressListModel.swift in Sources */,
 				FA76FD912447127800B0792B /* CatgeoriesPresenter.swift in Sources */,
 				FA62F5F624331EAC00A7EEB9 /* OrderReceiptVC.swift in Sources */,
@@ -1521,6 +1655,24 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		0475123B271258B700D884D4 /* RewardCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0475123A271258B700D884D4 /* Base */,
+				0475123E271258BF00D884D4 /* ar */,
+			);
+			name = RewardCell.xib;
+			sourceTree = "<group>";
+		};
+		04ABAB8D27111ADE00BC0F71 /* MyFoodCartCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04ABAB8C27111ADE00BC0F71 /* Base */,
+				04ABAB8F27111AFC00BC0F71 /* ar */,
+			);
+			name = MyFoodCartCell.xib;
+			sourceTree = "<group>";
+		};
 		7F37C38D2559AEE20069CCB3 /* PreviousOrders.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1937,12 +2089,12 @@
 		};
 		FADBB11124276CF80044936E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 836C4D5733C8AFFFB5ECFCEE /* Pods-Shanab.debug.xcconfig */;
+			baseConfigurationReference = 14E966DDEBC72FB7F8EB0395 /* Pods-Shanab.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Shanab/Shnp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 5R2Z9F2376;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/Shanab/AppFiles/Info.plist";
@@ -1951,7 +2103,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.9;
+				MARKETING_VERSION = 1.1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Dtag.Shanab;
 				PRODUCT_NAME = Shnp;
 				SEPARATE_SYMBOL_EDIT = NO;
@@ -1964,13 +2116,13 @@
 		};
 		FADBB11224276CF80044936E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9AE2FD08A107EC0AF53B3833 /* Pods-Shanab.release.xcconfig */;
+			baseConfigurationReference = A2C7EB7B956E1A65AB7AE0A9 /* Pods-Shanab.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Shanab/ShnpRelease.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 5R2Z9F2376;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/Shanab/AppFiles/Info.plist";
@@ -1979,7 +2131,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.9;
+				MARKETING_VERSION = 1.1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Dtag.Shanab;
 				PRODUCT_NAME = Shnp;
 				PROVISIONING_PROFILE_SPECIFIER = "";

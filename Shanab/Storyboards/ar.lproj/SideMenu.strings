@@ -1,0 +1,12 @@
+
+/* Class = "UIButton"; normalTitle = "Edit"; ObjectID = "DEi-hI-URT"; */
+"DEi-hI-URT.normalTitle" = "تعديل البيانات";
+
+/* Class = "UILabel"; text = "nour"; ObjectID = "ENG-Ay-PbN"; */
+"ENG-Ay-PbN.text" = "nour";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "RnL-EL-B8k"; */
+"RnL-EL-B8k.normalTitle" = "تسجيل الدخول";
+
+/* Class = "UIButton"; normalTitle = "LogOut"; ObjectID = "xB5-yX-fgD"; */
+"xB5-yX-fgD.normalTitle" = "تسجيل الخروج";

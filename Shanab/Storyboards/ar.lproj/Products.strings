@@ -1,0 +1,53 @@
+
+/* Class = "UILabel"; text = "التوصيل"; ObjectID = "8YW-sH-ZP7"; */
+"8YW-sH-ZP7.text" = "التوصيل";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "C1V-xJ-T40"; */
+"C1V-xJ-T40.title" = " ";
+
+/* Class = "UILabel"; text = "30 ريال"; ObjectID = "DHN-kJ-JRQ"; */
+"DHN-kJ-JRQ.text" = "30 ريال";
+
+/* Class = "UIButton"; normalTitle = "حجز طاولة"; ObjectID = "TPp-bJ-fkN"; */
+"TPp-bJ-fkN.normalTitle" = "حجز طاولة";
+
+/* Class = "UINavigationItem"; title = "تفاصيل الواجبات"; ObjectID = "ZOv-ut-05l"; */
+"ZOv-ut-05l.title" = "تفاصيل الواجبات";
+
+/* Class = "UIBarButtonItem"; title = "  "; ObjectID = "aXO-1r-8qS"; */
+"aXO-1r-8qS.title" = "  ";
+
+/* Class = "UILabel"; text = "الحد الادني"; ObjectID = "ayq-hm-Wfg"; */
+"ayq-hm-Wfg.text" = "الحد الادني";
+
+/* Class = "UILabel"; text = "Pizza"; ObjectID = "bWt-NG-OzW"; */
+"bWt-NG-OzW.text" = "Pizza";
+
+/* Class = "UILabel"; text = "القسم"; ObjectID = "f0Y-EK-2zC"; */
+"f0Y-EK-2zC.text" = "القسم";
+
+/* Class = "UINavigationItem"; title = "تفاصيل المطعم"; ObjectID = "gyg-yA-fxi"; */
+"gyg-yA-fxi.title" = "تفاصيل المطعم";
+
+/* Class = "UILabel"; text = "التوصيل"; ObjectID = "hnn-Yu-EFZ"; */
+"hnn-Yu-EFZ.text" = "التوصيل";
+
+/* Class = "UILabel"; text = "14 ريال"; ObjectID = "k4H-zv-3sd"; */
+"k4H-zv-3sd.text" = "14 ريال";
+
+/* Class = "UILabel"; text = "20 ريال"; ObjectID = "pRu-wU-JHJ"; */
+"pRu-wU-JHJ.text" = "20 ريال";
+
+"ma5-J6-V4o.text" = "المنتجات";
+
+"vxc-r7-dvf.text" = "لا يوجد نتائج";
+
+"joe-in-qc8.normalTitle" = "حجز طاولة";
+
+"TEI-oW-3wI.text" = "الحد الأدنى";
+
+"bDt-u5-5W6.text" = "مصاريف التوصيل";
+
+"FE8-Tr-D7F.text" = "وقت التوصيل";
+
+"tHX-Gf-wQO.text" = "لا يوجد نتائج";
