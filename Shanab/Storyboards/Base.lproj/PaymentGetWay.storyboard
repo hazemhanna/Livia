@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -629,10 +629,10 @@
                                         <rect key="frame" x="28" y="305" width="317" height="96"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="f9I-3E-EXx">
-                                                <rect key="frame" x="0.0" y="0.0" width="317" height="38"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="317" height="18.5"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eju-Sz-eyH" customClass="DLRadioButton">
-                                                        <rect key="frame" x="0.0" y="0.0" width="148.5" height="38"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="148.5" height="18.5"/>
                                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Cach">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -647,16 +647,16 @@
                                                         </connections>
                                                     </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cash" translatesAutoresizingMaskIntoConstraints="NO" id="pbR-MS-Ani">
-                                                        <rect key="frame" x="168.5" y="0.0" width="148.5" height="38"/>
+                                                        <rect key="frame" x="168.5" y="0.0" width="148.5" height="18.5"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="7o3-22-4Az">
-                                                <rect key="frame" x="0.0" y="58" width="317" height="38"/>
+                                                <rect key="frame" x="0.0" y="38.5" width="317" height="19"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j7M-U6-Q2B" customClass="DLRadioButton">
-                                                        <rect key="frame" x="0.0" y="0.0" width="148.5" height="38"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="148.5" height="19"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Visa">
@@ -669,10 +669,35 @@
                                                         <connections>
                                                             <action selector="PaymentRadioButtonAction:" destination="HIf-nk-vau" eventType="touchUpInside" id="bKk-Fa-LaK"/>
                                                             <outletCollection property="otherButtons" destination="eju-Sz-eyH" id="Nl9-Al-r7a"/>
+                                                            <outletCollection property="otherButtons" destination="WuL-yd-vYX" id="0xJ-Ef-gZY"/>
                                                         </connections>
                                                     </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cridateCard" translatesAutoresizingMaskIntoConstraints="NO" id="81s-D3-3mw">
-                                                        <rect key="frame" x="168.5" y="0.0" width="148.5" height="38"/>
+                                                        <rect key="frame" x="168.5" y="0.0" width="148.5" height="19"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="npI-Po-wye">
+                                                <rect key="frame" x="0.0" y="77.5" width="317" height="18.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WuL-yd-vYX" customClass="DLRadioButton">
+                                                        <rect key="frame" x="0.0" y="0.0" width="148.5" height="18.5"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="محفظة الكترونية">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="icon" value="checked"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="checked-green"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="PaymentRadioButtonAction:" destination="HIf-nk-vau" eventType="touchUpInside" id="uLj-fL-QBN"/>
+                                                            <outletCollection property="otherButtons" destination="j7M-U6-Q2B" id="zI1-42-9gK"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cridateCard" translatesAutoresizingMaskIntoConstraints="NO" id="47F-D6-ebJ">
+                                                        <rect key="frame" x="168.5" y="0.0" width="148.5" height="18.5"/>
                                                     </imageView>
                                                 </subviews>
                                             </stackView>
@@ -757,6 +782,8 @@
                         <outlet property="pasherlyBN" destination="Al8-Ys-5wX" id="V07-vG-etk"/>
                         <outlet property="radioButton" destination="hqo-6N-kNc" id="dRs-PD-iqX"/>
                         <outlet property="visa" destination="j7M-U6-Q2B" id="6gs-bz-JYt"/>
+                        <outlet property="wallet" destination="WuL-yd-vYX" id="mrO-Ur-Snx"/>
+                        <outlet property="walletStack" destination="npI-Po-wye" id="B2j-8l-W27"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WAq-9x-OLc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -784,7 +811,7 @@
             <size key="intrinsicContentSize" width="32" height="34"/>
         </designable>
         <designable name="gOd-ev-iT0">
-            <size key="intrinsicContentSize" width="214" height="20.5"/>
+            <size key="intrinsicContentSize" width="228" height="30.5"/>
         </designable>
     </designables>
     <resources>

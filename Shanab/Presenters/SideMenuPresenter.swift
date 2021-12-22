@@ -32,7 +32,7 @@ class SideMenuPresenter {
             self?.SideMenuViewDelegate?.getProfileResult(error, result)
             self?.dismissIndicator()
         }
-       }
+    }
      func getDriverProfile() {
             services.getDriverProfile { [weak self](error: Error?, result: User?) in
                 self?.SideMenuViewDelegate?.getDriverProfileResult(error, result)

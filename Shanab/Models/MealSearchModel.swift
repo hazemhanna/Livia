@@ -17,13 +17,13 @@ struct CollectionDataClass: Codable {
     var id, restaurantID, categoryID, restaurantCategoryID: Int?
     var offerID: Int?
     var nameAr, nameEn, descriptionAr, descriptionEn: String?
-    var points, rate: Int?
+    var points, rate,discount: Int?
     var image: String?
     var status, calories , createdAt, updatedAt: String?
     var favorite : [Favorites]?
     var price: [Price]?
     var collection: [Collection]?
-
+    
     enum CodingKeys: String, CodingKey {
         case id
         case restaurantID = "restaurant_id"
@@ -37,7 +37,7 @@ struct CollectionDataClass: Codable {
         case points, rate, image, status , calories
         case createdAt = "created_at"
         case updatedAt = "updated_at"
-        case  favorite ,price, collection
+        case  favorite ,price, collection,discount
     }
 }
 // MARK: - Collection

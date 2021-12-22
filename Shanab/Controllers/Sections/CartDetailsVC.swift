@@ -130,8 +130,6 @@ class CartDetailsVC: UIViewController {
     @IBAction func AddToCart(_ sender: Any) {
         CartDetailsVCPresenter.showIndicator()
         CartDetailsVCPresenter.postAddToCart(meal_id: details.meal?.id ?? 0, quantity : productCounter , message: notes.text ?? "" , options: [])
-        
-        
     }
     
     @IBAction func sideMenu(_ sender: Any) {

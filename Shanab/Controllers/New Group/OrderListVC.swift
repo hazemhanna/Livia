@@ -20,7 +20,6 @@ class OrderListVC : UIViewController {
     
     @IBOutlet weak var cancelView: UIView!
     @IBOutlet weak var reasonTF: UITextField!
-    @IBOutlet weak var rateView: CosmosView!
     @IBOutlet weak var cancelOrderBtn : UIButton!
     @IBOutlet weak var cancelBtn : UIButton!
     @IBOutlet weak var canceltitle : UILabel!
@@ -35,9 +34,9 @@ class OrderListVC : UIViewController {
     
     var type = "new"
     
-    let TypesApi = ["new", "preparing", "delivering", "delivered" , "competed"]
+    let TypesApi = ["new", "preparing", "delivering", "delivered" , "competed","canceled"]
     
-    let TypeArr = ["new order".localized, "preparing order".localized , "on_way".localized, "arrived".localized, "completed".localized ]
+    let TypeArr = ["new order".localized, "preparing order".localized , "on_way".localized, "arrived".localized, "completed".localized ,"canceled".localized]
     
     var list = [orderList](){
         didSet {
@@ -100,7 +99,7 @@ class OrderListVC : UIViewController {
             self?.UserListVCPresenter.postUserGetList(status: [self?.type ?? ""], currentPage: self?.currentPage ?? 1)
         }
         orderTypsDropDown.direction = .any
-        orderTypsDropDown.width = self.view.frame.width * 1
+        orderTypsDropDown.width = self.view.frame.width / 2
     }
     
     @IBAction func orderType(_ sender: UIButton) {
@@ -114,8 +113,7 @@ class OrderListVC : UIViewController {
     
     @IBAction func canceOrderBtn(_ sender: UIButton) {
         UserListVCPresenter.showIndicator()
-       // UserListVCPresenter.refundOrder(order_id: order_id, rate: rateView.rating, refund_reson: reasonTF.text ?? "")
-        UserListVCPresenter.refundOrder(order_id: 30, rate: rateView.rating, refund_reson: reasonTF.text ?? "")
+        UserListVCPresenter.refundOrder(order_id:   self.order_id , rate: 0.0, refund_reson: reasonTF.text ?? "")
         cancelView.isHidden = true
     }
     
@@ -172,12 +170,20 @@ extension OrderListVC: UITableViewDelegate, UITableViewDataSource , UITableViewD
             self.cancelView.isHidden = false
         }
     
-      if type == "new" ||  type == "preparing"{
+      if type == "new" {
             cell.followBtn.isHidden = true
             cell.cancelBtn.isHidden = false
-        }else{
+        }else if type == "preparing"{
             cell.followBtn.isHidden = false
-            cell.cancelBtn.isHidden = true
+            cell.cancelBtn.isHidden = false
+        }else{
+            if type == "canceled" {
+                cell.followBtn.isHidden = true
+                cell.cancelBtn.isHidden = true
+            }else{
+                cell.followBtn.isHidden = false
+                cell.cancelBtn.isHidden = true
+            }
         }
         
         return cell
@@ -201,6 +207,10 @@ extension OrderListVC: UserListViewDelegate {
     func refundOrder(_ error: Error?, _ list: RefundModelJSON?){
         if let lists = list {
             displayMessage(title: "", message: "Done".localized , status: .success, forController: self)
+            DispatchQueue.global().async {
+                self.list.removeAll()
+                self.UserListVCPresenter.postUserGetList(status: [self.type], currentPage: self.currentPage)
+            }
         }
     }
     

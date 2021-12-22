@@ -14,11 +14,14 @@ class SubscribtionVc: UIViewController {
     
     var paymentController: UIViewController? = nil
 
+    
+    
     private let SubscribtionsVCPresenter = SubscribtionsPresenter(services: Services())
     @IBOutlet weak var MealDetailsTableView: UITableView!
     @IBOutlet weak var tableViewHieght: NSLayoutConstraint!
     
     @IBOutlet weak var confitmBtn : UIButton!
+    @IBOutlet weak var empyView : UIView!
 
     private let TableCellIdentifier = "SubscriptionCell"
     @IBOutlet weak var titleLbl: UILabel!
@@ -45,7 +48,7 @@ class SubscribtionVc: UIViewController {
         titleLbl.text = "subscriptions".localized
         SubscribtionsVCPresenter.showIndicator()
         SubscribtionsVCPresenter.setsubscribtionViewDelegate(subscribtionsViewDelegate: self)
-        SubscribtionsVCPresenter.getSubscribtions(restaurant_id: 3)
+        SubscribtionsVCPresenter.getSubscribtions(restaurant_id: restaurant_id)
         confitmBtn.setTitle("Confirm".localized, for: .normal)
     }
     
@@ -131,6 +134,12 @@ extension SubscribtionVc: SubscribtionsViewDelegate {
     func subscribtions(_ error: Error?, _ result: [Subscription]?) {
         if let sub = result {
             self.subscription = sub
+            if subscription.count > 0 {
+                empyView.isHidden = true
+            }else{
+                empyView.isHidden = false
+            }
+            
         }
     }
     
@@ -181,7 +190,7 @@ extension SubscribtionVc : Initializer {
             print("PAYMENT SUCESS")
             DispatchQueue.main.async {
                 self.SubscribtionsVCPresenter.showIndicator()
-                self.SubscribtionsVCPresenter.ApplyingSubscribtion(restaurant_id: 3,subscribtionId: self.subscribtionId)
+                self.SubscribtionsVCPresenter.ApplyingSubscribtion(restaurant_id: self.restaurant_id,subscribtionId: self.subscribtionId)
             }
             
         case.failure:

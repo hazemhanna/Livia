@@ -21,9 +21,10 @@ class FoodPackages  : UIViewController {
 
     @IBOutlet weak var acceptBtn  : UIButton!
     @IBOutlet weak var refuseBtn  : UIButton!
+    @IBOutlet weak var empyView : UIView!
 
     
-    private let TableCellIdentifier = "FoodPackgeCell"
+    private let TableCellIdentifier = "AddToCartFoodPackgeCell"
     @IBOutlet weak var titleLbl: UILabel!
 
     var foodSubscription  = [FoodSubscription]() {
@@ -40,8 +41,8 @@ class FoodPackages  : UIViewController {
     var delivery_price = Int()
     var food_price = Int()
     var total = Int()
+    var total2 = Int()
 
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,6 +73,7 @@ class FoodPackages  : UIViewController {
     
     
     @IBAction func acceptBtn (_ sender: Any) {
+        self.deliveryDetailsView.isHidden = true
         if Helper.getApiToken() == nil {
             let sb = UIStoryboard(name: "PopUps", bundle: nil).instantiateViewController(withIdentifier: "LoginPopupVC")
             sb.modalPresentationStyle = .overCurrentContext
@@ -84,9 +86,17 @@ class FoodPackages  : UIViewController {
     }
     
     @IBAction func refuseBtn (_ sender: Any) {
-        deliveryDetailsView.isHidden = true
+        self.deliveryDetailsView.isHidden = true
+        if Helper.getApiToken() == nil {
+            let sb = UIStoryboard(name: "PopUps", bundle: nil).instantiateViewController(withIdentifier: "LoginPopupVC")
+            sb.modalPresentationStyle = .overCurrentContext
+            sb.modalTransitionStyle = .crossDissolve
+            self.present(sb, animated: true, completion: nil)
+        }else{
+        vCPresenter.showIndicator()
+        vCPresenter.addFoodSubToCart(restaurant_id: restaurant_id, food_subscription_id: food_subscription_id, has_delivery_subscription: 0, delivery_price: 0 , food_price: food_price, total: total2)
+        }
     }
-    
 }
 
 extension FoodPackages : UITableViewDelegate, UITableViewDataSource {
@@ -96,17 +106,42 @@ extension FoodPackages : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: TableCellIdentifier, for: indexPath) as? FoodPackgeCell else {return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: TableCellIdentifier, for: indexPath) as? AddToCartFoodPackgeCell else {return UITableViewCell()}
         
         if "lang".localized == "ar" {
-            cell.config(imagePath: foodSubscription[indexPath.row].image ?? "" , desc: foodSubscription[indexPath.row].descriptionAr ?? "", deliveryprice: Double(foodSubscription[indexPath.row].subscription?.price ?? 0), pakageTime: foodSubscription[indexPath.row].subscription?.titleAr ?? "", pakageName: foodSubscription[indexPath.row].titleAr ?? "" , PackagePrice: foodSubscription[indexPath.row].price ?? 0 )
-        } else {
-            cell.config(imagePath: foodSubscription[indexPath.row].image ?? "" , desc: foodSubscription[indexPath.row].descriptionEn ?? "", deliveryprice: Double(foodSubscription[indexPath.row].subscription?.price ?? 0), pakageTime: foodSubscription[indexPath.row].subscription?.titleEn ?? "", pakageName: foodSubscription[indexPath.row].titleEn ?? "" , PackagePrice: foodSubscription[indexPath.row].price ?? 0 )
+            cell.config(imagePath: foodSubscription[indexPath.row].image ?? ""
+                        , desc: foodSubscription[indexPath.row].descriptionAr ?? ""
+                        , deliveryprice: Double(foodSubscription[indexPath.row].subscription?.price ?? 0)
+                        , pakageTime: "\(foodSubscription[indexPath.row].days ?? 0)"
+                        , pakageName: foodSubscription[indexPath.row].titleAr ?? ""
+                        ,PackagePrice: foodSubscription[indexPath.row].price ?? 0
+                        , valid: foodSubscription[indexPath.row].available_to ?? "" )
+        }else {
+            cell.config(imagePath: foodSubscription[indexPath.row].image ?? ""
+                        , desc: foodSubscription[indexPath.row].descriptionEn ?? ""
+                        , deliveryprice: Double(foodSubscription[indexPath.row].subscription?.price ?? 0)
+                        , pakageTime: "\(foodSubscription[indexPath.row].days ?? 0)"
+                        , pakageName: foodSubscription[indexPath.row].titleEn ?? ""
+                        , PackagePrice: foodSubscription[indexPath.row].price ?? 0
+                        , valid: foodSubscription[indexPath.row].available_to ?? "" )
 
         }
         
+        
+        cell.addTCart = {
+            self.deliveryDetailsView.isHidden = false
+            self.food_subscription_id = self.foodSubscription[indexPath.row].id ?? 0
+            self.delivery_price = self.foodSubscription[indexPath.row].subscription?.price ?? 0
+            self.food_price = self.foodSubscription[indexPath.row].price ?? 0
+            self.total = (self.foodSubscription[indexPath.row].subscription?.price ?? 0) + (self.foodSubscription[indexPath.row].price ?? 0)
+            self.total2 = (self.foodSubscription[indexPath.row].subscription?.price ?? 0)
+            if "lang".localized == "ar" {
+                self.deliveryPriceLbl.text = "قيمة اشتراك التوصيل \( self.foodSubscription[indexPath.row].subscription?.price ?? 0 )  ريال سعودي"
+            }else{
+                self.deliveryPriceLbl.text = "delivery subscribtion Fee \( self.foodSubscription[indexPath.row].subscription?.price ?? 0 ) SAR"
+            }
+        }
         return cell
-    
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -114,19 +149,6 @@ extension FoodPackages : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        deliveryDetailsView.isHidden = false
-        
-        self.food_subscription_id = foodSubscription[indexPath.row].id ?? 0
-        self.delivery_price = foodSubscription[indexPath.row].subscription?.price ?? 0
-        self.food_price = foodSubscription[indexPath.row].price ?? 0
-        self.total = (foodSubscription[indexPath.row].subscription?.price ?? 0) + (foodSubscription[indexPath.row].price ?? 0)
-        
-        if "lang".localized == "ar" {
-            deliveryPriceLbl.text = "قيمة اشتراك التوصيل \( foodSubscription[indexPath.row].subscription?.price ?? 0 )  ريال سعودي"
-        }else{
-            deliveryPriceLbl.text = "delivery subscribtion Fee \( foodSubscription[indexPath.row].subscription?.price ?? 0 ) SAR"
-
-        }
     }
     
 }
@@ -145,9 +167,16 @@ extension FoodPackages : FoodPackegesViewDelegate {
     }
     
     func getFoodSubscription(_ error: Error?, _ result: [FoodSubscription]?) {
-            if let sub = result {
-            self.foodSubscription = sub
-            }
+        if let sub = result {
+          self.foodSubscription = sub
+        }
+        
+        if foodSubscription.count > 0 {
+            empyView.isHidden = true
+        }else{
+            empyView.isHidden = false
+        }
+        
     }
     
     

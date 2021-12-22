@@ -55,16 +55,17 @@ class ValiableResturantCell: UITableViewCell {
               }
         
         self.name.text = name
-        
         if "lang".localized == "ar" {
             self.price.text = "\(price) ريال|"
             self.time.text = "\(time )دقيقة"
+            self.name.textAlignment = .right
+            self.type.textAlignment = .right
         } else {
             self.price.text = "\(price)SAR|"
             self.time.text = "\(time )Min"
-            
+            self.name.textAlignment = .left
+            self.type.textAlignment = .left
         }
-        
         self.cosmos.rating = rate
         self.type.text = type
     }

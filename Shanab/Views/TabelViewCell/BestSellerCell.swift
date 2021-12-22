@@ -37,7 +37,6 @@ class BestSellerCell: UITableViewCell {
         
     }
     func config(imagePath: String, name: String, mealComponants: String, price: Double, discount: Double) {
-        
         if (!imagePath.contains("http")) {
             guard let imageURL = URL(string: (BASE_URL + "/" + imagePath).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else { return }
             print(imageURL)
@@ -51,9 +50,9 @@ class BestSellerCell: UITableViewCell {
         
         self.name.text = name
         if "lang".localized == "en" {
-            self.discount.text = "discount \(discount)%"
+            self.discount.text = "discount \(discount) SAR"
         } else {
-            self.discount.text = "%\(discount) خصم"
+            self.discount.text = "\(discount) ريال خصم"
         }
         
         if discount == 0.0 {

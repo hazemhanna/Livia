@@ -36,10 +36,10 @@ class OrderFollowingVC: UIViewController {
     var date = String()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         orderNum.text = "\(order?.id ?? 0)"
         orderDate.text = order?.createdAt
         statusLB.text = order?.status?.localized
-        
         
         switch order?.status {
         case "new":
@@ -50,16 +50,12 @@ class OrderFollowingVC: UIViewController {
             TopToView.isActive = true
 
         case "preparing":
-            
             New.image = #imageLiteral(resourceName: "checked-green-1")
             Preparing.image = #imageLiteral(resourceName: "CurrentStatus")
             UpdateBtn.isHidden = true
             BtnHeight.isActive = false
             BottomToStack.isActive = false
-
-
         case "delivering":
-            
             New.image = #imageLiteral(resourceName: "checked-green-1")
             Preparing.image = #imageLiteral(resourceName: "checked-green-1")
             OnWay.image = #imageLiteral(resourceName: "CurrentStatus")

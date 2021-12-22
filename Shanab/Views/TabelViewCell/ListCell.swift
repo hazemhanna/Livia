@@ -8,40 +8,39 @@
 
 import UIKit
 import Kingfisher
+
 class ListCell: UITableViewCell {
+    
     @IBOutlet weak var resturantName: UILabel!
+    @IBOutlet weak var status: UILabel!
+    @IBOutlet weak var orderNum: UILabel!
+    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var followBtn : UIButton!
+    @IBOutlet weak var cancelBtn : UIButton!
+    @IBOutlet weak var statusLbl : UILabel!
+
+
     var goToDetails: (() ->Void)? = nil
     var FollowOrder:(() ->Void)? = nil
     var cancelOrder:(() ->Void)? = nil
 
-    @IBOutlet weak var status: UILabel!
-    @IBOutlet weak var orderNum: UILabel!
-    @IBOutlet weak var date: UILabel!
-
-    @IBOutlet weak var followBtn : UIButton!
-    @IBOutlet weak var cancelBtn : UIButton!
-
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-       
         self.selectionStyle = .none
-
+        self.statusLbl.text = "status".localized
+        self.cancelBtn.setTitle("Cancel Order".localized, for: .normal)
     }
-    func config( date: String, status: String, orderNumber: Int) {
- 
-        self.date.text = date
-        self.status.text = status
-        self.orderNum.text = "\(orderNumber)"
-
     
+    func config( date: String, status: String, orderNumber: Int) {
+        self.date.text = date
+        self.status.text = status.localized
+        self.orderNum.text = "\(orderNumber)"
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        
-    }
+   }
+   
     @IBAction func orderDetails(_ sender: UIButton) {
          goToDetails?()
     }

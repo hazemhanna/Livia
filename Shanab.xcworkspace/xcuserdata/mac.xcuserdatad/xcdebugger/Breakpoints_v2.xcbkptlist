@@ -7,86 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9C18F2E5-825A-46AE-9EDB-A7FF8FFF8D3A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shanab/NetworkServices/Services.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2516"
-            endingLineNumber = "2516"
-            landmarkName = "applyingSubscribtion(restaurant_id:subscription_id:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "55B47752-7AD7-4670-B105-A9C0CE9E85CE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shanab/NetworkServices/Services.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2517"
-            endingLineNumber = "2517"
-            landmarkName = "applyingSubscribtion(restaurant_id:subscription_id:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8E74559C-042A-4392-9432-F663DB600C2B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shanab/NetworkServices/Services.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2519"
-            endingLineNumber = "2519"
-            landmarkName = "applyingSubscribtion(restaurant_id:subscription_id:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FCC9C813-CB12-4B9A-92BF-65BAB4AA1816"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shanab/NetworkServices/Services.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2518"
-            endingLineNumber = "2518"
-            landmarkName = "applyingSubscribtion(restaurant_id:subscription_id:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3C642E14-5D3A-4A17-A16D-042257B496FB"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shanab/NetworkServices/Services.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2515"
-            endingLineNumber = "2515"
-            landmarkName = "applyingSubscribtion(restaurant_id:subscription_id:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "41504816-342A-4FD7-A30D-5A729E0CD5E0"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -167,182 +87,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C044D117-FC71-461F-B0B1-36B395EFEE90"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shanab/NetworkServices/Services.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "217"
-            endingLineNumber = "217"
-            landmarkName = "postLogin(email:password:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "91660370-BE37-4671-821A-E7F3FB265C71"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shanab/NetworkServices/Services.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "218"
-            endingLineNumber = "218"
-            landmarkName = "postLogin(email:password:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E17A7EA2-5005-4A7B-91E8-A8692AACE8A3"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shanab/NetworkServices/Services.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "219"
-            endingLineNumber = "219"
-            landmarkName = "postLogin(email:password:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A0194C5A-8122-4E53-9273-FA99E2AC45E8"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shanab/NetworkServices/Services.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2602"
-            endingLineNumber = "2602"
-            landmarkName = "addFoodSubToCart(restaurant_id:food_subscription_id:has_delivery_subscription:delivery_price:food_price:total:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A0194C5A-8122-4E53-9273-FA99E2AC45E8 - 1d47272ca2b5804"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in Shnp.Services.addFoodSubToCart(restaurant_id: Swift.Int, food_subscription_id: Swift.Int, has_delivery_subscription: Swift.Int, delivery_price: Swift.Int, food_price: Swift.Int, total: Swift.Int, completion: (Swift.Optional&lt;Swift.Error&gt;, Swift.Optional&lt;Shnp.AddFoodPackegeToCart&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Shnp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mac/Desktop/work/DTag/ShnpNew/Shanab/NetworkServices/Services.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "2602"
-                  endingLineNumber = "2602"
-                  offsetFromSymbolStart = "6838">
-               </Location>
-               <Location
-                  uuid = "A0194C5A-8122-4E53-9273-FA99E2AC45E8 - 1d47272ca2b5804"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in Shnp.Services.addFoodSubToCart(restaurant_id: Swift.Int, food_subscription_id: Swift.Int, has_delivery_subscription: Swift.Int, delivery_price: Swift.Int, food_price: Swift.Int, total: Swift.Int, completion: (Swift.Optional&lt;Swift.Error&gt;, Swift.Optional&lt;Shnp.AddFoodPackegeToCart&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Shnp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mac/Desktop/work/DTag/ShnpNew/Shanab/NetworkServices/Services.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "2602"
-                  endingLineNumber = "2602"
-                  offsetFromSymbolStart = "7209">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D22CE864-974D-4063-9449-87E5D1F2227C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shanab/NetworkServices/Services.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2603"
-            endingLineNumber = "2603"
-            landmarkName = "addFoodSubToCart(restaurant_id:food_subscription_id:has_delivery_subscription:delivery_price:food_price:total:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0D60F639-1BD5-495D-825D-ABC6C5C77D2F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shanab/NetworkServices/Services.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2604"
-            endingLineNumber = "2604"
-            landmarkName = "addFoodSubToCart(restaurant_id:food_subscription_id:has_delivery_subscription:delivery_price:food_price:total:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "89248A3F-F5B5-4A2B-AC6F-F7A8178E2E30"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shanab/NetworkServices/Services.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2697"
-            endingLineNumber = "2697"
-            landmarkName = "getMyFoodSub(completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "69BEA0BC-9FEE-4ED2-A826-8C46163A531C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shanab/NetworkServices/Services.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2698"
-            endingLineNumber = "2698"
-            landmarkName = "getMyFoodSub(completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1D09DE23-7726-4406-B3BF-6E73AAB48A7D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shanab/NetworkServices/Services.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2699"
-            endingLineNumber = "2699"
-            landmarkName = "getMyFoodSub(completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "D3BA4111-9DE1-47C7-8141-D85599C17663"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -350,8 +94,8 @@
             filePath = "Shanab/NetworkServices/Services.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2702"
-            endingLineNumber = "2702"
+            startingLineNumber = "2727"
+            endingLineNumber = "2727"
             landmarkName = "getMyFoodSub(completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -366,8 +110,8 @@
             filePath = "Shanab/NetworkServices/Services.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2704"
-            endingLineNumber = "2704"
+            startingLineNumber = "2729"
+            endingLineNumber = "2729"
             landmarkName = "getMyFoodSub(completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -375,95 +119,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4CAB41C4-2015-47B7-B270-DBA5AF9AD4D0"
+            uuid = "E54C4789-CE69-4446-95D3-964AEC532F9E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shanab/NetworkServices/Services.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2694"
-            endingLineNumber = "2694"
-            landmarkName = "getMyFoodSub(completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3A2C4DBA-EC01-4CBA-9CAA-38F96E6E76F8"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shanab/NetworkServices/Services.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2693"
-            endingLineNumber = "2693"
-            landmarkName = "getMyFoodSub(completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2E2B3514-EA47-4811-837B-86CDCB072FC3"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shanab/NetworkServices/Services.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2692"
-            endingLineNumber = "2692"
-            landmarkName = "getMyFoodSub(completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "2E2B3514-EA47-4811-837B-86CDCB072FC3 - 760d24e65f388bb"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Shnp.Services.getMyFoodSub(completion: (Swift.Optional&lt;Swift.Error&gt;, Swift.Optional&lt;Swift.Array&lt;Shnp.MyFoodSubscribtion&gt;&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Shnp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mac/Desktop/work/DTag/ShnpNew/Shanab/NetworkServices/Services.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "2692"
-                  endingLineNumber = "2692"
-                  offsetFromSymbolStart = "1415">
-               </Location>
-               <Location
-                  uuid = "2E2B3514-EA47-4811-837B-86CDCB072FC3 - cb70c88996ec3c84"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in Shnp.Services.getMyFoodSub(completion: (Swift.Optional&lt;Swift.Error&gt;, Swift.Optional&lt;Swift.Array&lt;Shnp.MyFoodSubscribtion&gt;&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Shnp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mac/Desktop/work/DTag/ShnpNew/Shanab/NetworkServices/Services.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "2694"
-                  endingLineNumber = "2694"
-                  offsetFromSymbolStart = "199">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A49D61C6-CCF4-4193-B8AA-9D9F84B17ADD"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shanab/NetworkServices/Services.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2779"
-            endingLineNumber = "2779"
+            startingLineNumber = "2817"
+            endingLineNumber = "2817"
             landmarkName = "refundOrder(order_id:rate:refund_reson:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -471,16 +135,224 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7F242EDF-B9A7-4D89-9128-878C75500F6C"
+            uuid = "DBD1FEA0-35B0-412F-9F80-998BD5F33BD8"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shanab/NetworkServices/Services.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2780"
-            endingLineNumber = "2780"
+            startingLineNumber = "2816"
+            endingLineNumber = "2816"
             landmarkName = "refundOrder(order_id:rate:refund_reson:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F5938DC6-9E0B-4D47-938F-15112A654D7B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shanab/NetworkServices/Services.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2815"
+            endingLineNumber = "2815"
+            landmarkName = "refundOrder(order_id:rate:refund_reson:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D1B9EF30-4580-4C54-A5E1-8DCC08E2D167"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shanab/NetworkServices/Services.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2167"
+            endingLineNumber = "2167"
+            landmarkName = "getNotifications(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8622C79D-7B54-45D8-B0BC-30C1A5D8C848"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shanab/NetworkServices/Services.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2166"
+            endingLineNumber = "2166"
+            landmarkName = "getNotifications(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C2FDC735-CF4B-4341-A093-5CB660BBB618"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shanab/NetworkServices/Services.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2165"
+            endingLineNumber = "2165"
+            landmarkName = "getNotifications(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "22C4D9C0-359A-4E15-83CB-453A24A34CF1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shanab/NetworkServices/Services.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2168"
+            endingLineNumber = "2168"
+            landmarkName = "getNotifications(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A00AF7B6-B38E-4B7C-BAE9-0979A119C814"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shanab/NetworkServices/Services.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2164"
+            endingLineNumber = "2164"
+            landmarkName = "getNotifications(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C84DE36C-BF00-46CB-8308-C9AFFD65D1E8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shanab/NetworkServices/Services.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "459"
+            endingLineNumber = "459"
+            landmarkName = "postUserSetToken(type:device_token:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "74114BF8-F8ED-46A9-A644-31B1F51AC167"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shanab/NetworkServices/Services.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "460"
+            endingLineNumber = "460"
+            landmarkName = "postUserSetToken(type:device_token:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CA0CD8EF-BCCE-4969-AB7F-887B6F596FFC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shanab/NetworkServices/Services.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "462"
+            endingLineNumber = "462"
+            landmarkName = "postUserSetToken(type:device_token:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D06C80F9-1534-4311-A4BC-5BD82FD9D9F0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shanab/NetworkServices/Services.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "457"
+            endingLineNumber = "457"
+            landmarkName = "postUserSetToken(type:device_token:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EB661B09-A13B-48BE-9202-0416AD275818"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shanab/NetworkServices/Services.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "467"
+            endingLineNumber = "467"
+            landmarkName = "postUserSetToken(type:device_token:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "98097FB7-7D99-4A6D-9C24-AB55F800C3FB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shanab/NetworkServices/Services.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "466"
+            endingLineNumber = "466"
+            landmarkName = "postUserSetToken(type:device_token:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "75456CAB-56AA-49EC-AABE-898FEE3478E5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shanab/NetworkServices/Services.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "465"
+            endingLineNumber = "465"
+            landmarkName = "postUserSetToken(type:device_token:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

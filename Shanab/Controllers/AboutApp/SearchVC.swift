@@ -16,12 +16,16 @@ class SearchVC: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchStack: UIStackView!
     @IBOutlet weak var searchTableView: UITableView!
+    @IBOutlet weak var empyView : UIView!
+
+    
     private let cellForTable = "ProductiveFamiliesCell"
     private let MealsCellIdentifier = "BestSellerCell"
     var type = String()
     var id = Int()
     var isSearching = false
     var restaurants_list = [Restaurant]()
+    
     var MealSearch = [CollectionDataClass]() {
         didSet {
             DispatchQueue.main.async {
@@ -37,6 +41,7 @@ class SearchVC: UIViewController {
             }
         }
     }
+    
     private let SearchVCPresenter = SearchPresenter(services: Services())
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -244,6 +249,12 @@ extension SearchVC: SearchViewDelegate {
             self.MealSearch = lists
         }
         
+        if MealSearch.count > 0 {
+            empyView.isHidden = true
+        }else{
+            empyView.isHidden = false
+        }
+        
         self.MealsTableView.reloadData()
 
         
@@ -252,7 +263,11 @@ extension SearchVC: SearchViewDelegate {
         if let lists = restaurantResult {
             
             self.NormalResult =  lists
-            
+            if NormalResult.count > 0 {
+                empyView.isHidden = true
+            }else{
+                empyView.isHidden = false
+            }
         }
         
         self.searchTableView.reloadData()
@@ -273,7 +288,15 @@ extension SearchVC: UISearchBarDelegate {
                 isSearching = true
                 self.searchTableView.isHidden = false
                 self.MealsTableView.isHidden = true
+                
                 self.searchTableView.reloadData()
+                
+                if NormalResult.count > 0 {
+                    empyView.isHidden = true
+                }else{
+                    empyView.isHidden = false
+                }
+                
             } else {
                 
                 SearchVCPresenter.showIndicator()
@@ -282,12 +305,14 @@ extension SearchVC: UISearchBarDelegate {
                 self.MealsTableView.isHidden = false
                 self.searchTableView.isHidden = true
                 self.MealsTableView.reloadData()
+            
+                if MealSearch.count > 0 {
+                    empyView.isHidden = true
+                }else{
+                    empyView.isHidden = false
+                }
+                
             }
-            
-            //}
-            //    //        print(SearchResultVC)
-            
         }
-        
     }
 }

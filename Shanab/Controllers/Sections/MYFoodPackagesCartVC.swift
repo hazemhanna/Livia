@@ -21,9 +21,10 @@ class MYFoodPackagesCartVC  : UIViewController {
     var paymentController: UIViewController? = nil
 
     @IBOutlet weak var MealDetailsTableView: UITableView!
-    
     private let TableCellIdentifier = "MyFoodCartCell"
     @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var empyView : UIView!
+
     var fees = Double()
 
     var foodCart  = [FoodCart]() {
@@ -38,7 +39,7 @@ class MYFoodPackagesCartVC  : UIViewController {
     var restaurant_id = Int()
     var food_subscription_id = Int()
     var delivery_price = Int()
-    var food_price = Int()
+    var food_price = Double()
     var total = Int()
 
     
@@ -77,18 +78,35 @@ extension MYFoodPackagesCartVC   : UITableViewDelegate, UITableViewDataSource {
         
         
         if "lang".localized == "ar" {
-            cell.config(imagePath: foodCart[indexPath.row].restaurant?.image ?? "" , desc: foodCart[indexPath.row].foodSubscription?.descriptionAr ?? "", deliveryprice: Double(foodCart[indexPath.row].foodSubscription?.subscription?.price ?? 0), pakageTime: foodCart[indexPath.row].foodSubscription?.subscription?.titleAr ?? "", pakageName: foodCart[indexPath.row].foodSubscription?.titleAr ?? "" , PackagePrice: foodCart[indexPath.row].foodSubscription?.price ?? 0,total: foodCart[indexPath.row].total ?? 0 )
+            cell.config(imagePath: foodCart[indexPath.row].restaurant?.image ?? ""
+                        , desc: foodCart[indexPath.row].foodSubscription?.descriptionAr ?? ""
+                        , deliveryprice: Double(foodCart[indexPath.row].deliveryPrice ?? 0)
+                        , pakageTime: foodCart[indexPath.row].foodSubscription?.subscription?.titleAr ?? ""
+                        , pakageName: foodCart[indexPath.row].foodSubscription?.titleAr ?? ""
+                        , PackagePrice: Int(foodCart[indexPath.row].foodPrice ?? 0)
+                        ,total: foodCart[indexPath.row].total ?? 0 )
         } else {
-            cell.config(imagePath: foodCart[indexPath.row].restaurant?.image ?? "" , desc: foodCart[indexPath.row].foodSubscription?.descriptionEn ?? "", deliveryprice: Double(foodCart[indexPath.row].foodSubscription?.subscription?.price ?? 0), pakageTime: foodCart[indexPath.row].foodSubscription?.subscription?.titleEn ?? "", pakageName: foodCart[indexPath.row].foodSubscription?.titleEn ?? "" , PackagePrice: foodCart[indexPath.row].foodSubscription?.price ?? 0,total: foodCart[indexPath.row].total ?? 0 )
+            cell.config(imagePath: foodCart[indexPath.row].restaurant?.image ?? ""
+                        , desc: foodCart[indexPath.row].foodSubscription?.descriptionEn ?? ""
+                        , deliveryprice: Double(foodCart[indexPath.row].deliveryPrice ?? 0)
+                        , pakageTime: foodCart[indexPath.row].foodSubscription?.subscription?.titleEn ?? ""
+                        , pakageName: foodCart[indexPath.row].foodSubscription?.titleEn ?? ""
+                        , PackagePrice: Int(foodCart[indexPath.row].foodPrice ?? 0)
+                        ,total: foodCart[indexPath.row].total ?? 0 )
 
         }
-        
+        cell.delete = {
+            self.vCPresenter.showIndicator()
+            self.vCPresenter.setsubscribtionViewDelegate(subscribtionsViewDelegate: self)
+            self.vCPresenter.deletegCart(id: self.foodCart[indexPath.row].id ?? 0 )
+            
+        }
         
         cell.confirm = {
             self.restaurant_id = self.foodCart[indexPath.row].restaurant?.id ?? 0
             self.food_subscription_id = self.foodCart[indexPath.row].foodSubscription?.id ?? 0
-            self.delivery_price = self.foodCart[indexPath.row].foodSubscription?.subscription?.price ?? 0
-            self.food_price = self.foodCart[indexPath.row].foodSubscription?.price ?? 0
+            self.delivery_price = self.foodCart[indexPath.row].deliveryPrice ?? 0
+            self.food_price = self.foodCart[indexPath.row].foodPrice ?? 0.0
             self.total = Int(self.foodCart[indexPath.row].total ?? 0)
             self.fees = self.foodCart[indexPath.row].total ?? 0
             
@@ -129,6 +147,17 @@ extension MYFoodPackagesCartVC   : CartFoodPackegesViewDelegate {
         if let cart = result {
             foodCart = cart
         }
+        if foodCart.count > 0 {
+            empyView.isHidden = true
+        }else{
+            empyView.isHidden = false
+        }
+    }
+    
+    func deleteFoodSubCart(_ error: Error?, _ result: OrderPaymentModelJSON?){
+        displayMessage(title: "", message: "Done".localized , status: .success, forController: self)
+        vCPresenter.showIndicator()
+        vCPresenter.getFoodCart()
     }
     
     func applyFoodSub(_ error: Error?, _ result: ApplyFoodPackege?) {
@@ -187,7 +216,7 @@ extension MYFoodPackagesCartVC : Initializer {
             print("PAYMENT SUCESS")
             DispatchQueue.main.async {
                 self.vCPresenter.showIndicator()
-                self.vCPresenter.applyFoodSub(restaurant_id: self.restaurant_id, food_subscription_id: self.food_subscription_id, has_delivery_subscription: 1, delivery_price: self.delivery_price, food_price: self.food_price, total: self.total)
+                self.vCPresenter.applyFoodSub(restaurant_id: self.restaurant_id, food_subscription_id: self.food_subscription_id, has_delivery_subscription: 1, delivery_price: Double(self.delivery_price), food_price: self.food_price, total: self.total)
             }
             
         case.failure:

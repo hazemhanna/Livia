@@ -11,6 +11,7 @@ import SVProgressHUD
 protocol UserOrderDetailsViewDelegate: class {
     func UserOrderDetailsResult(_ error: Error?, _ result: [DriverOrder]?)
     func getCartResult(_ error: Error?, _ result: String?)
+    func paidOrder(_ error: Error?, _ result: OrderPaymentModelJSON?)
 
 }
 class UserOrderDetailsPresenter {
@@ -41,4 +42,12 @@ class UserOrderDetailsPresenter {
             self?.dismissIndicator()
         }
     }
+    
+    func paidOrder(id: Int) {
+           services.paidOrder(order_id:id) {[weak self] (error: Error?, result: OrderPaymentModelJSON?) in
+            self?.UserOrderDetailsViewDelegate?.paidOrder(error, result)
+               self?.dismissIndicator()
+           }
+       }
+    
 }

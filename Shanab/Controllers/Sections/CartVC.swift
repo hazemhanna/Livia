@@ -86,12 +86,8 @@ class CartVC: UIViewController {
             OnlineCartVCPresenter.setonlineCartViewDelegate(onlineCartViewDelegate: self)
             OnlineCartVCPresenter.showIndicator()
             OnlineCartVCPresenter.getCartItems()
-            
         }
-        
-        
     }
-    
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         self.cartTableView.layer.removeAllAnimations()

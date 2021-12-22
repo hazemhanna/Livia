@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -68,7 +68,7 @@
                                         <rect key="frame" x="45" y="143" width="324" height="30"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="D7h-1k-hv8">
-                                                <rect key="frame" x="214.5" y="0.0" width="93.5" height="30"/>
+                                                <rect key="frame" x="102" y="0.0" width="120" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wallet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ki-N4-eZT">
                                                         <rect key="frame" x="0.0" y="0.0" width="33.5" height="30"/>
@@ -76,14 +76,14 @@
                                                         <color key="textColor" systemColor="systemRedColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="122" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHH-XG-n9v">
-                                                        <rect key="frame" x="41.5" y="0.0" width="23.5" height="30"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHH-XG-n9v">
+                                                        <rect key="frame" x="41.5" y="0.0" width="50" height="30"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="12"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OeM-Vh-TFk">
-                                                        <rect key="frame" x="73" y="0.0" width="20.5" height="30"/>
+                                                        <rect key="frame" x="99.5" y="0.0" width="20.5" height="30"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="11"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -104,12 +104,12 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="DEi-hI-URT" secondAttribute="trailing" id="0uZ-uo-5TJ"/>
+                                            <constraint firstItem="D7h-1k-hv8" firstAttribute="centerX" secondItem="Tzh-db-c1O" secondAttribute="centerX" id="7oF-Yb-ycu"/>
                                             <constraint firstAttribute="bottom" secondItem="D7h-1k-hv8" secondAttribute="bottom" id="CBv-P1-yqo"/>
                                             <constraint firstAttribute="height" constant="30" id="NuH-7C-bB5"/>
                                             <constraint firstAttribute="bottom" secondItem="DEi-hI-URT" secondAttribute="bottom" id="PgF-oM-Gho"/>
                                             <constraint firstItem="DEi-hI-URT" firstAttribute="top" secondItem="Tzh-db-c1O" secondAttribute="top" id="T9K-Tb-HY9"/>
                                             <constraint firstItem="DEi-hI-URT" firstAttribute="leading" secondItem="Tzh-db-c1O" secondAttribute="leading" id="ml3-v3-fRk"/>
-                                            <constraint firstAttribute="trailing" secondItem="D7h-1k-hv8" secondAttribute="trailing" constant="16" id="wb4-wW-XuH"/>
                                             <constraint firstItem="D7h-1k-hv8" firstAttribute="top" secondItem="Tzh-db-c1O" secondAttribute="top" id="wpR-FN-hfD"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
@@ -207,6 +207,7 @@
                         <outlet property="signIn" destination="RnL-EL-B8k" id="O7Y-Pv-kR4"/>
                         <outlet property="wallet" destination="0Ki-N4-eZT" id="dyF-IP-pYw"/>
                         <outlet property="walletValue" destination="rHH-XG-n9v" id="Z4F-xO-hzB"/>
+                        <outlet property="walletView" destination="Tzh-db-c1O" id="739-cz-7BT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Hp-nH-3zx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

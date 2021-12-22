@@ -17,6 +17,7 @@ class MySubscribtionVc : UIViewController {
     @IBOutlet weak var MealDetailsTableView: UITableView!
     private let TableCellIdentifier = "MySbuscribtionsCell"
     @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var empyView : UIView!
 
     var subscription  = [SubscriptionElement]() {
         didSet {
@@ -59,7 +60,7 @@ extension MySubscribtionVc: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TableCellIdentifier, for: indexPath) as? MySbuscribtionsCell else {return UITableViewCell()}
         
         if Helper.getApiToken() != "" || Helper.getApiToken() != nil {
-            if self.subscription[indexPath.row].restaurant?.favorite?.count == 0 {
+            if self.subscription[indexPath.row].restaurant?.favorite == nil {
                 cell.favouritBtn.setImage(#imageLiteral(resourceName: "heart"), for: .normal)
                 cell.isFavourite = false
             } else {
@@ -73,33 +74,40 @@ extension MySubscribtionVc: UITableViewDelegate, UITableViewDataSource {
                 displayMessage(title: "Add favourite".localized, message: "You should login first".localized, status:.warning, forController: self)
             } else {
                 self.SubscribtionsVCPresenter.showIndicator()
-                if !cell.isFavourite {
-                    cell.favouritBtn.setImage(#imageLiteral(resourceName: "heart 2-1"), for: .normal)
-                    self.SubscribtionsVCPresenter.postCreateFavorite(item_id: self.subscription[indexPath.row].restaurant?.id ?? 0, item_type: self.subscription[indexPath.row].restaurant?.type ??  "")
-                } else {
+                if cell.isFavourite {
                     cell.favouritBtn.setImage(#imageLiteral(resourceName: "heart"), for: .normal)
                     self.SubscribtionsVCPresenter.postRemoveFavorite(item_id: self.subscription[indexPath.row].restaurant?.id ?? 0, item_type: self.subscription[indexPath.row].restaurant?.type ??  "")
+                    cell.isFavourite = false
+                } else {
+                    cell.favouritBtn.setImage(#imageLiteral(resourceName: "heart 2-1"), for: .normal)
+                    self.SubscribtionsVCPresenter.postCreateFavorite(item_id: self.subscription[indexPath.row].restaurant?.id ?? 0, item_type: self.subscription[indexPath.row].restaurant?.type ??  "")
+                    cell.isFavourite = true
+
                 }
             }
         }
         
         if "lang".localized == "ar" {
             cell.config(familyName: subscription[indexPath.row].restaurant?.nameAr ?? ""
-                        , time: subscription[indexPath.row].restaurant?.deliveryTime ?? 0
-                        , productName: subscription[indexPath.row].restaurant?.type ?? ""
-                        , price: Double(subscription[indexPath.row].restaurant?.deliveryFee ?? 0)
-                        , rate: String(subscription[indexPath.row].restaurant?.rate ?? 0) ,pakage: subscription[indexPath.row].subscription?.titleAr ?? "", PackagePrice: subscription[indexPath.row].subscription?.price ?? 0)
+                        , time: subscription[indexPath.row].subscription?.createdAt ?? ""
+                        , productName: subscription[indexPath.row].restaurant?.type?.localized ?? ""
+                        , minimum: subscription[indexPath.row].restaurant?.minimum ?? 0
+                        , rate: String(subscription[indexPath.row].restaurant?.rate ?? 0)
+                        ,pakage: subscription[indexPath.row].subscription?.titleAr ?? ""
+                        , PackagePrice: subscription[indexPath.row].subscription?.price ?? 0
+                        ,Valid : subscription[indexPath.row].subscription?.available_to ?? "")
         } else {
             cell.config(familyName: subscription[indexPath.row].restaurant?.nameEn ?? ""
-                        , time: subscription[indexPath.row].restaurant?.deliveryTime ?? 0
-                        , productName: subscription[indexPath.row].restaurant?.type ?? ""
-                        , price: Double(subscription[indexPath.row].restaurant?.deliveryFee ?? 0)
-                        , rate: String(subscription[indexPath.row].restaurant?.rate ?? 0),pakage: subscription[indexPath.row].subscription?.titleEn ?? "", PackagePrice: subscription[indexPath.row].subscription?.price ?? 0)
+                        , time: subscription[indexPath.row].subscription?.createdAt ?? ""
+                        , productName: subscription[indexPath.row].restaurant?.type?.localized ?? ""
+                        , minimum: subscription[indexPath.row].restaurant?.minimum ?? 0
+                        , rate: String(subscription[indexPath.row].restaurant?.rate ?? 0)
+                        ,pakage: subscription[indexPath.row].subscription?.titleEn ?? ""
+                        , PackagePrice: subscription[indexPath.row].subscription?.price ?? 0
+                        ,Valid:subscription[indexPath.row].subscription?.available_to ?? "")
             
         }
-        
         return cell
-    
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -118,6 +126,13 @@ extension MySubscribtionVc: MySubscribtionsViewDelegate {
         if let sub = result {
             self.subscription = sub
         }
+        
+        if subscription.count > 0 {
+            empyView.isHidden = true
+        }else{
+            empyView.isHidden = false
+        }
+        
     }
     
     
@@ -129,6 +144,11 @@ extension MySubscribtionVc: MySubscribtionsViewDelegate {
                 }  else {
                         displayMessage(title: "تمت الاضافة الي المفضلة", message: "", status: .success, forController: self)
                 }
+                
+                SubscribtionsVCPresenter.showIndicator()
+                SubscribtionsVCPresenter.setsubscribtionViewDelegate(subscribtionsViewDelegate: self)
+                SubscribtionsVCPresenter.getSubscribtions()
+                
             } else if resultMsg.item_id != [""] {
                 displayMessage(title: "", message: resultMsg.item_id[0], status: .error, forController: self)
             } else if resultMsg.item_type != [""] {
@@ -144,6 +164,11 @@ extension MySubscribtionVc: MySubscribtionsViewDelegate {
                 } else {
                         displayMessage(title: "تم الحذف من المفضلة", message: "", status: .success, forController: self)
                 }
+                
+                SubscribtionsVCPresenter.showIndicator()
+                SubscribtionsVCPresenter.setsubscribtionViewDelegate(subscribtionsViewDelegate: self)
+                SubscribtionsVCPresenter.getSubscribtions()
+
             } else if resultMsg.item_id != [""] {
                 displayMessage(title: "", message: resultMsg.item_id[0], status: .error, forController: self)
             } else if resultMsg.item_type != [""] {

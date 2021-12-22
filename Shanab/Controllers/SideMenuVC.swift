@@ -19,13 +19,13 @@ class SideMenuVC: UIViewController {
     @IBOutlet weak var wallet : UILabel!
     @IBOutlet weak var walletValue : UILabel!
     @IBOutlet weak var currencyLbl : UILabel!
-
-    
     @IBOutlet weak var StackCenter: NSLayoutConstraint!
-    
     @IBOutlet weak var StackLeading: NSLayoutConstraint!
-    
     @IBOutlet weak var SideMenuTableView: UITableView!
+    
+    @IBOutlet weak var walletView : UIView!
+     var totalWallet = Int()
+    
     private let SideMenuVCPresenter = SideMenuPresenter(services: Services())
     fileprivate let cellIdentifier = "SideMenuCell"
     var sideMenuArr = [SideMenuModel]() {
@@ -51,7 +51,7 @@ class SideMenuVC: UIViewController {
         
         SideMenuVCPresenter.setSideMenuViewDelegate(SideMenuViewDelegate: self)
         if (Helper.getApiToken() ?? "") != "" {
-            
+            walletView.isHidden = false
             if user == "driver" {
                 
                 self.signIn.isHidden = true
@@ -74,6 +74,7 @@ class SideMenuVC: UIViewController {
            
             
         } else {
+            walletView.isHidden = true
             self.profilePic.image = #imageLiteral(resourceName: "Group 6")
             if "lang".localized == "en" {
                  self.name.text = "Shnp"
@@ -112,6 +113,7 @@ class SideMenuVC: UIViewController {
                     SideMenuModel(name: "Profile".localized, id: "Profile", selected: false,sideImage: #imageLiteral(resourceName: "ic_assignment_ind_24px-1")),
                     SideMenuModel(name: "Sections".localized, id: "Sections", selected: false, sideImage: #imageLiteral(resourceName: "burger")),
                     SideMenuModel(name: "Cart".localized, id: "Cart", selected: false,sideImage: #imageLiteral(resourceName: "cart (1)-1")),
+                    SideMenuModel(name: "Notifications".localized, id: "Notifications", selected: false, sideImage: #imageLiteral(resourceName: "icons8-notification")),
                     SideMenuModel(name: "Reservations".localized, id: "Reservations", selected: false, sideImage: #imageLiteral(resourceName: "reservation2")),
                     SideMenuModel(name: "Order List".localized, id: "OrderList", selected: false, sideImage: #imageLiteral(resourceName: "order-food-1")),
                     SideMenuModel(name: "subscriptions".localized, id: "subscriptions", selected: false, sideImage: #imageLiteral(resourceName: "terms")),
@@ -122,7 +124,7 @@ class SideMenuVC: UIViewController {
                     SideMenuModel(name: "Contact Us".localized, id: "Contact Us", selected: false,sideImage: #imageLiteral(resourceName: "contactUs")),
                     SideMenuModel(name: "Terms And Conditions".localized, id: "TermsAndConditions", selected: false, sideImage: #imageLiteral(resourceName: "terms")),
                     SideMenuModel(name: "Settings".localized, id: "Setting", selected: false, sideImage: #imageLiteral(resourceName: "burger"))
-
+                    
                 ]
             } else {
                 self.sideMenuArr = [
@@ -151,6 +153,7 @@ class SideMenuVC: UIViewController {
     
     @IBAction func editProfileBn(_ sender: UIButton) {
         guard let sb = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "WalletVc") as? WalletVc else {return}
+        sb.totalWallet = totalWallet
         self.navigationController?.pushViewController(sb, animated: true)
         
     }
@@ -259,9 +262,9 @@ class SideMenuVC: UIViewController {
     }
     func pushSideMenu(StoryboardName name: String,ForController identifier: String) {
         let main = UIStoryboard(name: name, bundle: nil).instantiateViewController(withIdentifier: identifier)
-        
         self.navigationController!.pushViewController(main, animated: true)
     }
+    
 }
 extension SideMenuVC: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -297,14 +300,10 @@ extension SideMenuVC: SideMenuViewDelegate {
     func getDriverProfileResult(_ error: Error?, _ result: User?) {
         if let profile = result {
             self.name.text = profile.nameAr ?? ""
-            
             if profile.is_available == 0 {
-                
                 self.StatusLB.text = "Unavailable".localized
             } else {
-                
                 self.StatusLB.text = "Available".localized
-
             }
 //            self.StatusLB.text = profile.status
             if let image = profile.image {
@@ -318,7 +317,8 @@ extension SideMenuVC: SideMenuViewDelegate {
         if user == "customer" {
             if let profile = result {
                 self.name.text = profile.nameAr ?? ""
-                self.walletValue.text = String(profile.personal?.wallet ?? 0 )
+                self.walletValue.text = String(profile.total_wallet?.rounded(toPlaces: 2) ?? 0 )
+                self.totalWallet = Int(profile.total_wallet?.rounded(toPlaces: 2) ?? 0 )
                 if let image = profile.image {
                     guard let url = URL(string: BASE_URL + "/" + image) else { return }
                     self.profilePic.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "shanab loading"))
@@ -327,7 +327,7 @@ extension SideMenuVC: SideMenuViewDelegate {
             } else {
                 if let profile = result {
                     self.name.text = profile.nameAr ?? ""
-                    self.walletValue.text = String(profile.personal?.wallet ?? 0 )
+                    self.walletValue.text = String(profile.total_wallet?.rounded(toPlaces: 2) ?? 0 )
                     self.StatusLB.text = "\(profile.is_available ?? 0)"
                     self.editBN.isHidden = true
                     
@@ -338,9 +338,7 @@ extension SideMenuVC: SideMenuViewDelegate {
                 }
             }
         }
-        
     }
-    
 }
 
 

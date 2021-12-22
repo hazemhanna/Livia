@@ -224,19 +224,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MOLHResetable {
             print("Remote Instance ID Token: \(result.token)")
             Helper.saveDeviceToken(token: result.token)
             //                Services.postSetToken(token: result.token, type: "ios") { (error: Error?, result: SuccessError_Model?) in
-            if Helper.getApiToken() ?? "" == "" {
-                switch Helper.getUserRole() ?? "" {
-                case "Customer":
+            if Helper.getApiToken() ?? "" != "" {
+//                switch Helper.getUserRole() ?? "" {
+//                case "Customer":
                     Services.postUserSetToken(type: "ios", device_token: Helper.getDeviceToken() ?? "") { (error: Error?, result: SuccessError_Model?) in
 
+
                     }
-                    case "Driver":
-                        Services.postDriverSetToken(type: "ios", device_token: result.token) {(error: Error?, result: SuccessError_Model?) in
-                            
-                    }
-                    default:
-                        break
-                    }
+//                    case "Driver":
+//                        Services.postDriverSetToken(type: "ios", device_token: result.token) {(error: Error?, result: SuccessError_Model?) in
+//
+//                    }
+//                    default:
+//                        break
+//                    }
                     
                 }
             }

@@ -218,10 +218,13 @@ extension DriverOrderListVC: UIImagePickerControllerDelegate, UINavigationContro
 }
 extension DriverOrderListVC: DriverProfileViewDelegate {
     
+    func checkOrderPayment(_ error: Error?, _ order: OrderPaymentModelJSON?) {
+        
+    }
+    
+    
     func getNotifications(_ error: Error?, _ notifications: [Notifications]?) {
-        
             return
-        
     }
     
     func getDeleteImage(_ error: Error?, _ result: SuccessError_Model?) {

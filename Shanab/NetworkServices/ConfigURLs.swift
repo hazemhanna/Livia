@@ -130,18 +130,17 @@ struct ConfigURLs {
     static var postRateDriver = BASE_URL + "/api/user/order/rateDriver"
     // post Comment
     static var postComment = BASE_URL + "/api/user/order/comment"
-   
     static var Createmail = BASE_URL + "/api/user/mail/create"
-    
     static var VerifyUserEmail = BASE_URL + "/api/user/verifyEmail"
-    
     static var VerifyDriverEmail = BASE_URL + "/api/driver/verifyEmail"
-    
     static var VerifyUserCode = BASE_URL + "/api/user/verifyCode"
-    
     static var VerifyDriverCode = BASE_URL + "/api/driver/verifyCode"
-    
     static let VerifiedEmail = "VerifiedEmail"
-    
     static let VerifiedPhone = "VerifiedPhone"
+    
+    static let checkOrderPayment = "/api/user/order/checkOrderPayment"
+    static let payed = "/api/order/payed"
+
+    
+    
 }

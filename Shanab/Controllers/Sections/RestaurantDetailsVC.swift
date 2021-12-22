@@ -21,7 +21,7 @@ class RestaurantDetailsVC: UIViewController {
     @IBOutlet weak var deliveryFees: UILabel!
     @IBOutlet weak var ProductName: UILabel!
     @IBOutlet weak var TableReservation: UIButton!
-    
+
     @IBOutlet weak var foodPackages : UIButton!
     @IBOutlet weak var subscribtions : UIButton!
 

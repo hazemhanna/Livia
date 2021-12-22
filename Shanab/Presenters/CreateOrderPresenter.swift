@@ -12,6 +12,9 @@ protocol CreateOrderViewDelegate: class {
     func CreateOrderResult(_ error: Error?, _ result: SuccessError_Model?)
     //func getCartResult(_ error: Error?, _ result: [onlineCart]?)
     func postDeleteCart(_ error: Error?, _ result: SuccessError_Model?)
+    func paidOrder(_ error: Error?, _ result: OrderPaymentModelJSON?)
+    func getProfileResult( _ error: Error?, _ result: User?)
+
 }
 class UserCreateOrderPresenter {
     private let services: Services
@@ -51,4 +54,20 @@ class UserCreateOrderPresenter {
                self?.dismissIndicator()
            }
        }
+    
+    func paidOrder(id: Int) {
+           services.paidOrder(order_id:id) {[weak self] (error: Error?, result: OrderPaymentModelJSON?) in
+            self?.CreateOrderViewDelegate?.paidOrder(error, result)
+               self?.dismissIndicator()
+           }
+       }
+    
+    func getUserProfile() {
+        services.getProfile {[weak self] (error: Error?, result: User?) in
+            self?.CreateOrderViewDelegate?.getProfileResult(error, result)
+            self?.dismissIndicator()
+        }
+    }
+    
+    
 }

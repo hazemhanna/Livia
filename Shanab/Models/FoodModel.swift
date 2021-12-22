@@ -31,6 +31,8 @@ struct FoodSubscription: Codable {
     let image: String?
     let createdAt, updatedAt: String?
     let subscription: Subscription?
+    let available_to: String?
+    let days: Int?
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -43,7 +45,7 @@ struct FoodSubscription: Codable {
         case price, image
         case createdAt = "created_at"
         case updatedAt = "updated_at"
-        case subscription
+        case subscription,available_to,days
     }
 }
 
@@ -101,22 +103,22 @@ struct AddFoodPackegeToCartModel: Codable {
 
 //// MARK: - FoodCart
 struct AddFoodPackegeToCart : Codable {
-    let userID: Int?
-    let restaurantID, foodSubscriptionID: String?
-    let days: Int?
-    let hasDeliverySubscription, deliveryPrice, foodPrice, total: String?
+    //let userID: Int?
+    //let restaurantID, foodSubscriptionID: String?
+  //  let days: Int?
+//    let hasDeliverySubscription, deliveryPrice, foodPrice, total: Int?
     let updatedAt, createdAt: String?
     let id: Int?
 
     enum CodingKeys: String, CodingKey {
-        case userID = "user_id"
-        case restaurantID = "restaurant_id"
-        case foodSubscriptionID = "food_subscription_id"
-        case days
-        case hasDeliverySubscription = "has_delivery_subscription"
-        case deliveryPrice = "delivery_price"
-        case foodPrice = "food_price"
-        case total
+//        case userID = "user_id"
+//        case restaurantID = "restaurant_id"
+//        case foodSubscriptionID = "food_subscription_id"
+//        case days
+//        case hasDeliverySubscription = "has_delivery_subscription"
+//        case deliveryPrice = "delivery_price"
+//        case foodPrice = "food_price"
+//        case total
         case updatedAt = "updated_at"
         case createdAt = "created_at"
         case id

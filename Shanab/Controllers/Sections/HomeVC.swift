@@ -14,12 +14,14 @@ import Alamofire
 
 class HomeVC: UIViewController {
     @IBOutlet weak var search: UISearchBar!
-    @IBOutlet weak var tableViewHight: NSLayoutConstraint!
     @IBOutlet weak var RestaurantTableView: UITableView!
     @IBOutlet weak var TypeBN: UIButton!
     @IBOutlet weak var imageSlider: ImageSlideshow!
     @IBOutlet weak var oneImageView: UIImageView!
     @IBOutlet weak var homeSectionsCollectionView: UICollectionView!
+    @IBOutlet weak var notificationBN: UIButton!
+    @IBOutlet weak var tableViewHight: NSLayoutConstraint!
+
     fileprivate let CellIdentifierCollectionView = "HomeCell"
     fileprivate let CellIdentifierTableView = "ValiableResturantCell"
     private let GetAddsVCPresenter = GetAddsPresenter(services: Services())
@@ -57,9 +59,6 @@ class HomeVC: UIViewController {
         RestaurantsTypeDropDown.selectRow(0)
         TypeBN.setTitle(TypeArr[0], for: .normal)
         
-
-        
-        
         homeSectionsCollectionView.delegate = self
         homeSectionsCollectionView.dataSource = self
         homeSectionsCollectionView.register(UINib(nibName: CellIdentifierCollectionView, bundle: nil), forCellWithReuseIdentifier: CellIdentifierCollectionView)
@@ -90,23 +89,28 @@ class HomeVC: UIViewController {
         self.RestaurantTableView.isHidden = false
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(HomeVC.didTap))
         imageSlider.addGestureRecognizer(gestureRecognizer)
-    }
-    
-    
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        self.RestaurantTableView.layer.removeAllAnimations()
-        tableViewHight.constant = RestaurantTableView.contentSize.height
-
-        UIView.animate(withDuration: 0.5) {
-            self.updateViewConstraints()
+        if (Helper.getApiToken() ?? "") != "" {
+          notificationBN.isHidden = false
+        }else{
+            notificationBN.isHidden = true
         }
     }
     
+    
+//    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+//        self.RestaurantTableView.layer.removeAllAnimations()
+//        tableViewHight.constant = RestaurantTableView.contentSize.height
+//
+//        UIView.animate(withDuration: 0.5) {
+//            self.updateViewConstraints()
+//        }
+//    }
     
     override func viewWillLayoutSubviews() {
         super.updateViewConstraints()
       //  self.tableViewHight?.constant = self.RestaurantTableView.contentSize.height
     }
+    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         self.viewWillLayoutSubviews()
     }
@@ -191,10 +195,16 @@ class HomeVC: UIViewController {
         self.navigationController?.pushViewController(details, animated: true)
         
     }
-    func getImageData () -> [InputSource] {
+    
+    @IBAction func notificationhButtonPressed(_ sender: Any) {
+        guard let details = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "NotificationsVC") as? NotificationsVC else { return }
+        self.navigationController?.pushViewController(details, animated: true)
         
+    }
+
+    
+          func getImageData () -> [InputSource] {
         
-            
             var imageS = [InputSource]()
             print("imageURL Count : \(self.imageURLS.count)")
             
@@ -238,18 +248,11 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifierCollectionView, for: indexPath) as? HomeCell else { return UICollectionViewCell()}
-        
-        
-            
             if "lang".localized == "ar" {
-                
-                
                 cell.config(imagePath: self.sections[indexPath.row].image ?? "", name: self.sections[indexPath.row].nameAr ?? "")
             } else {
                 cell.config(imagePath: self.sections[indexPath.row].image ?? "", name: self.sections[indexPath.row].nameEn ?? "")
             }
-            
-        
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -419,10 +422,7 @@ extension HomeVC: GetAddsViewDelegate {
             self.restaurants = restaurantList
         }
         
-            
-            self.RestaurantTableView.addObserver(self, forKeyPath: "contentSize", options: NSKeyValueObservingOptions.new, context: nil)
-
-        
+       // self.RestaurantTableView.addObserver(self, forKeyPath: "contentSize", options: NSKeyValueObservingOptions.new, context: nil)
 
         
     }

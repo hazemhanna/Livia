@@ -54,7 +54,7 @@ struct orderList : Codable {
     var lat, long: String?
     var quantity, rate: Int?
     var message: String?
-    var createdAt, updatedAt: String?
+    var createdAt, updatedAt,refund_reson: String?
     var orderDetail: [OrderDetail]?
     var address: AddressClass?
 
@@ -67,7 +67,7 @@ struct orderList : Codable {
         case createdAt = "created_at"
         case updatedAt = "updated_at"
         case orderDetail = "order_detail"
-        case address
+        case address,refund_reson
     }
     
 }

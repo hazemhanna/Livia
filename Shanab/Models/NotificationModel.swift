@@ -23,10 +23,10 @@ struct  NotificationData: Codable {
 struct Notifications: Codable {
     var id: Int?
     var userType, userID: String?
-    var restaurantID: Int?
+    var restaurantID,order_payed: Int?
     var itemType: String?
     var itemID: Int?
-    var body, title, url: String?
+    var body, title,title_en, url: String?
     var viewed, ajax: Int?
     var createdAt, updatedAt: String?
 
@@ -39,7 +39,7 @@ struct Notifications: Codable {
         case itemID = "item_id"
         case body, title, url
         case viewed = "Viewed"
-        case ajax
+        case ajax,order_payed,title_en
         case createdAt = "created_at"
         case updatedAt = "updated_at"
     }

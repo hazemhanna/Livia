@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -35,19 +35,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HTw-dU-fjU">
-                                <rect key="frame" x="5" y="44" width="404" height="847"/>
+                                <rect key="frame" x="5" y="44" width="404" height="769"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bMA-uH-k2s">
-                                        <rect key="frame" x="2" y="0.0" width="393.5" height="769"/>
+                                        <rect key="frame" x="2" y="0.0" width="393.5" height="1100"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hpi-MV-2P8" customClass="CustomView" customModule="Shnp" customModuleProvider="target">
                                                 <rect key="frame" x="1" y="20" width="391.5" height="45"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OvU-jd-iud">
-                                                        <rect key="frame" x="1" y="5" width="389.5" height="35"/>
+                                                        <rect key="frame" x="16" y="10" width="359.5" height="25"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sxa-aF-XDe">
-                                                                <rect key="frame" x="0.0" y="0.0" width="45" height="35"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="45" height="25"/>
                                                                 <color key="backgroundColor" red="0.10910850850000001" green="0.1144279349" blue="0.12607270079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="45" id="fuc-F0-is4"/>
@@ -57,51 +57,66 @@
                                                                     <action selector="sideMenu:" destination="ywb-Fh-U7A" eventType="touchUpInside" id="mE9-CQ-wzx"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TlC-WP-kEc">
-                                                                <rect key="frame" x="45" y="0.0" width="30" height="35"/>
-                                                                <color key="backgroundColor" red="0.10910850850000001" green="0.1144279349" blue="0.12607270079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="30" id="ah5-sR-11D"/>
-                                                                </constraints>
-                                                                <state key="normal" image="icons8-filter-50 (1)"/>
-                                                                <connections>
-                                                                    <action selector="TypeAction:" destination="ywb-Fh-U7A" eventType="touchUpInside" id="Vmo-PL-OkK"/>
-                                                                </connections>
-                                                            </button>
-                                                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="X6e-SG-B7s">
-                                                                <rect key="frame" x="75" y="0.0" width="314.5" height="35"/>
-                                                                <color key="backgroundColor" red="0.10910850850000001" green="0.1144279349" blue="0.12607270079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <textInputTraits key="textInputTraits"/>
-                                                            </searchBar>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fFZ-jy-krr">
+                                                                <rect key="frame" x="45" y="0.0" width="314.5" height="25"/>
+                                                                <subviews>
+                                                                    <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="X6e-SG-B7s">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="239.5" height="25"/>
+                                                                        <color key="backgroundColor" red="0.10910850850000001" green="0.1144279349" blue="0.12607270079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                    </searchBar>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHP-Z3-PiB">
+                                                                        <rect key="frame" x="239.5" y="0.0" width="25" height="25"/>
+                                                                        <color key="backgroundColor" red="0.10910850850000001" green="0.1144279349" blue="0.12607270079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="25" id="2BX-Uq-CEi"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="17"/>
+                                                                        <state key="normal" image="Group 128">
+                                                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="searchButtonPressed:" destination="ywb-Fh-U7A" eventType="touchUpInside" id="d8x-xn-ybh"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TlC-WP-kEc">
+                                                                        <rect key="frame" x="264.5" y="0.0" width="25" height="25"/>
+                                                                        <color key="backgroundColor" red="0.10910850850000001" green="0.1144279349" blue="0.12607270079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="25" id="ah5-sR-11D"/>
+                                                                        </constraints>
+                                                                        <state key="normal" image="icons8-filter-50 (1)"/>
+                                                                        <connections>
+                                                                            <action selector="TypeAction:" destination="ywb-Fh-U7A" eventType="touchUpInside" id="Vmo-PL-OkK"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEc-xB-J0I">
+                                                                        <rect key="frame" x="289.5" y="0.0" width="25" height="25"/>
+                                                                        <color key="backgroundColor" red="0.10910850850000001" green="0.1144279349" blue="0.12607270079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="25" id="XbK-ti-k0H"/>
+                                                                        </constraints>
+                                                                        <state key="normal" image="icons8-notification-50"/>
+                                                                        <connections>
+                                                                            <action selector="notificationhButtonPressed:" destination="ywb-Fh-U7A" eventType="touchUpInside" id="3Lc-M3-Jzs"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.18557588326900054" green="0.19222238865667265" blue="0.21216190481968911" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </stackView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHP-Z3-PiB">
-                                                        <rect key="frame" x="77.5" y="5" width="311" height="35"/>
-                                                        <color key="backgroundColor" red="0.10910850850000001" green="0.1144279349" blue="0.12607270079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="17"/>
-                                                        <state key="normal" image="Group 128">
-                                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="searchButtonPressed:" destination="ywb-Fh-U7A" eventType="touchUpInside" id="d8x-xn-ybh"/>
-                                                        </connections>
-                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.10910850847002589" green="0.11442793486286766" blue="0.12607270077720212" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="OvU-jd-iud" firstAttribute="top" secondItem="hpi-MV-2P8" secondAttribute="top" constant="5" id="6Id-ae-IqA"/>
+                                                    <constraint firstItem="OvU-jd-iud" firstAttribute="top" secondItem="hpi-MV-2P8" secondAttribute="top" constant="10" id="6Id-ae-IqA"/>
+                                                    <constraint firstAttribute="trailing" secondItem="OvU-jd-iud" secondAttribute="trailing" constant="16" id="Fj0-r3-39d"/>
                                                     <constraint firstAttribute="height" constant="45" id="Fm1-GL-elY"/>
-                                                    <constraint firstItem="iHP-Z3-PiB" firstAttribute="centerX" secondItem="X6e-SG-B7s" secondAttribute="centerX" id="GKp-r3-CIN"/>
-                                                    <constraint firstItem="OvU-jd-iud" firstAttribute="leading" secondItem="hpi-MV-2P8" secondAttribute="leading" constant="1" id="Q9q-Cu-MCW"/>
-                                                    <constraint firstItem="iHP-Z3-PiB" firstAttribute="width" secondItem="X6e-SG-B7s" secondAttribute="width" multiplier="0.99" id="YD7-eO-gAg"/>
+                                                    <constraint firstItem="OvU-jd-iud" firstAttribute="leading" secondItem="hpi-MV-2P8" secondAttribute="leading" constant="16" id="Q9q-Cu-MCW"/>
                                                     <constraint firstItem="OvU-jd-iud" firstAttribute="centerY" secondItem="hpi-MV-2P8" secondAttribute="centerY" id="ZXo-Ug-AP8"/>
-                                                    <constraint firstItem="OvU-jd-iud" firstAttribute="centerX" secondItem="hpi-MV-2P8" secondAttribute="centerX" id="c3u-ku-VOE"/>
-                                                    <constraint firstItem="iHP-Z3-PiB" firstAttribute="centerY" secondItem="X6e-SG-B7s" secondAttribute="centerY" id="gfP-ma-2fA"/>
-                                                    <constraint firstItem="iHP-Z3-PiB" firstAttribute="height" secondItem="X6e-SG-B7s" secondAttribute="height" id="pRb-e1-f3c"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
@@ -153,11 +168,8 @@
                                                 </connections>
                                             </collectionView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e1T-Eg-YJV">
-                                                <rect key="frame" x="5" y="446" width="383.5" height="318"/>
+                                                <rect key="frame" x="5" y="446" width="383.5" height="649"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="318" id="oxw-I5-6c2"/>
-                                                </constraints>
                                                 <connections>
                                                     <outlet property="dataSource" destination="2Ep-O9-XQb" id="EGy-TU-4Fe"/>
                                                     <outlet property="delegate" destination="2Ep-O9-XQb" id="5BP-6Q-Lfy"/>
@@ -178,6 +190,7 @@
                                             <constraint firstItem="hpi-MV-2P8" firstAttribute="centerX" secondItem="bMA-uH-k2s" secondAttribute="centerX" id="dwu-BH-V55"/>
                                             <constraint firstAttribute="trailing" secondItem="WSe-rV-bgc" secondAttribute="trailing" constant="5" id="iqu-be-3uK"/>
                                             <constraint firstAttribute="trailing" secondItem="hpi-MV-2P8" secondAttribute="trailing" constant="1" id="o6o-s9-Og7"/>
+                                            <constraint firstAttribute="height" constant="1100" id="qfl-Wk-sb1"/>
                                             <constraint firstItem="e1T-Eg-YJV" firstAttribute="top" secondItem="51K-E5-mQP" secondAttribute="bottom" constant="16" id="xrG-V3-cr9"/>
                                         </constraints>
                                     </view>
@@ -191,14 +204,13 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Uty-Es-Xrx"/>
-                        <color key="backgroundColor" red="0.91035864637305697" green="0.91035864637305697" blue="0.91035864637305697" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.90980392156862744" green="0.90980392156862744" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="HTw-dU-fjU" secondAttribute="bottom" constant="5" id="INX-lQ-Ljs"/>
+                            <constraint firstItem="Uty-Es-Xrx" firstAttribute="bottom" secondItem="HTw-dU-fjU" secondAttribute="bottom" id="INX-lQ-Ljs"/>
                             <constraint firstItem="HTw-dU-fjU" firstAttribute="leading" secondItem="2Ep-O9-XQb" secondAttribute="leading" constant="5" id="Vjf-sp-I4x"/>
                             <constraint firstItem="HTw-dU-fjU" firstAttribute="top" secondItem="Uty-Es-Xrx" secondAttribute="top" id="eZY-Hl-Q9P"/>
                             <constraint firstItem="bMA-uH-k2s" firstAttribute="width" secondItem="Uty-Es-Xrx" secondAttribute="width" multiplier="0.95" id="thk-xx-i6G"/>
                             <constraint firstAttribute="trailing" secondItem="HTw-dU-fjU" secondAttribute="trailing" constant="5" id="vRu-tw-6Ad"/>
-                            <constraint firstItem="bMA-uH-k2s" firstAttribute="height" secondItem="Uty-Es-Xrx" secondAttribute="height" priority="750" id="zKO-wG-Ti4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="71x-Xr-x0b">
@@ -209,9 +221,9 @@
                         <outlet property="TypeBN" destination="TlC-WP-kEc" id="n7a-4M-KFh"/>
                         <outlet property="homeSectionsCollectionView" destination="51K-E5-mQP" id="lLn-st-kTw"/>
                         <outlet property="imageSlider" destination="WSe-rV-bgc" id="1rJ-Xb-bxz"/>
+                        <outlet property="notificationBN" destination="lEc-xB-J0I" id="ccT-39-6hx"/>
                         <outlet property="oneImageView" destination="mUz-zA-1xS" id="PiQ-vj-55E"/>
                         <outlet property="search" destination="X6e-SG-B7s" id="JnS-wk-n6b"/>
-                        <outlet property="tableViewHight" destination="oxw-I5-6c2" id="dXi-pk-rsc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iWf-i1-5zR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -328,6 +340,7 @@
         <image name="cart (1)-1" width="30" height="30"/>
         <image name="home" width="28" height="28"/>
         <image name="icons8-filter-50 (1)" width="50" height="50"/>
+        <image name="icons8-notification-50" width="50" height="50"/>
         <image name="menu (1)-1" width="22.5" height="21"/>
         <image name="order-food-1" width="25" height="25"/>
         <systemColor name="darkTextColor">

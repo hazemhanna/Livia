@@ -15,12 +15,13 @@ import ImageSlideshow
 class MYFoodPackagesSubscribtionsVC : UIViewController {
     
     private let vCPresenter = FoodPackegesPresenter(services: Services())
-    
     @IBOutlet weak var MealDetailsTableView: UITableView!
-    
     private let TableCellIdentifier = "FoodPackgeCell"
     @IBOutlet weak var titleLbl: UILabel!
 
+    @IBOutlet weak var empyView : UIView!
+
+    
     var foodSubscription  = [MyFoodSubscribtion]() {
         didSet {
             DispatchQueue.main.async {
@@ -63,16 +64,32 @@ extension MYFoodPackagesSubscribtionsVC  : UITableViewDelegate, UITableViewDataS
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TableCellIdentifier, for: indexPath) as? FoodPackgeCell else {return UITableViewCell()}
         
         if "lang".localized == "ar" {
-            cell.config(imagePath: foodSubscription[indexPath.row].restaurant?.image ?? "" , desc: foodSubscription[indexPath.row].foodSubscription?.descriptionAr ?? "", deliveryprice: Double(foodSubscription[indexPath.row].foodSubscription?.subscription?.price ?? 0), pakageTime: foodSubscription[indexPath.row].foodSubscription?.subscription?.titleAr ?? "", pakageName: foodSubscription[indexPath.row].foodSubscription?.titleAr ?? "" , PackagePrice: foodSubscription[indexPath.row].foodSubscription?.price ?? 0 )
+            cell.config(imagePath: foodSubscription[indexPath.row].restaurant?.image ?? ""
+                        , desc: foodSubscription[indexPath.row].foodSubscription?.descriptionAr ?? ""
+                        , deliveryprice: Double(foodSubscription[indexPath.row].deliveryPrice ?? 0)
+                        , pakageTime: foodSubscription[indexPath.row].foodSubscription?.subscription?.titleAr ?? ""
+                        , pakageName: foodSubscription[indexPath.row].foodSubscription?.titleAr ?? ""
+                        , PackagePrice: Int(foodSubscription[indexPath.row].foodPrice ?? 0)
+                        ,valid : foodSubscription[indexPath.row].foodSubscription?.subscription?.available_to ?? ""
+                        ,restaurant: foodSubscription[indexPath.row].restaurant?.nameAr ?? ""
+                        ,creatAt: foodSubscription[indexPath.row].createdAt ?? "" )
         } else {
-            cell.config(imagePath: foodSubscription[indexPath.row].restaurant?.image ?? "" , desc: foodSubscription[indexPath.row].foodSubscription?.descriptionEn ?? "", deliveryprice: Double(foodSubscription[indexPath.row].foodSubscription?.subscription?.price ?? 0), pakageTime: foodSubscription[indexPath.row].foodSubscription?.subscription?.titleEn ?? "", pakageName: foodSubscription[indexPath.row].foodSubscription?.titleEn ?? "" , PackagePrice: foodSubscription[indexPath.row].foodSubscription?.price ?? 0 )
+            cell.config(imagePath: foodSubscription[indexPath.row].restaurant?.image ?? ""
+                        , desc: foodSubscription[indexPath.row].foodSubscription?.descriptionEn ?? ""
+                        , deliveryprice: Double(foodSubscription[indexPath.row].deliveryPrice ?? 0)
+                        , pakageTime: foodSubscription[indexPath.row].foodSubscription?.subscription?.titleEn ?? ""
+                        , pakageName: foodSubscription[indexPath.row].foodSubscription?.titleEn ?? ""
+                        , PackagePrice: Int(foodSubscription[indexPath.row].foodPrice ?? 0)
+                        ,valid : foodSubscription[indexPath.row].foodSubscription?.subscription?.available_to ?? ""
+                        ,restaurant: foodSubscription[indexPath.row].restaurant?.nameEn ?? ""
+                        ,creatAt: foodSubscription[indexPath.row].createdAt ?? "" )
 
         }
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 170
+        return 200
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -94,8 +111,16 @@ extension MYFoodPackagesSubscribtionsVC  : FoodPackegesViewDelegate {
     
     func getMyFoodSub(_ error: Error?, _ result: [MyFoodSubscribtion]?) {
             if let sub = result {
-            self.foodSubscription = sub
+                self.foodSubscription = sub
+                self.foodSubscription.reverse()
             }
+        
+        if foodSubscription.count > 0 {
+            empyView.isHidden = true
+        }else{
+            empyView.isHidden = false
+        }
+        
     }
     
     

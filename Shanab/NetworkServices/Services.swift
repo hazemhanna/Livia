@@ -2182,10 +2182,10 @@ class Services {
     
     func getDriverNotifications(completion: @escaping(_ error: Error?, _ result: [Notifications]?)->Void){
         
+       // let url = ConfigURLs.postDrivergetNotification
         
-        let url = ConfigURLs.postDrivergetNotification
+        let url = ConfigURLs.getNotifications
         let token = Helper.getApiToken() ?? ""
-
         let headers = token != "" ? [
              "token": token
          ] : ["deviceToken" : "euh87f8AOkBqv65UGBT8Yi:APA91bFC9NVEbBSNNEo_oxh5VY9PpBAvTwK1ay304JKdeqcINc5WZ1OJQQKSEZ19m9R1GYiv_sAHbPfPLhtrdTOlYWgxXaG_ZCK3V8Iua5KGO5KtRg8hG9xwvcIkRO-oftJ1VxoeUOIy"]
@@ -2586,22 +2586,47 @@ class Services {
             .validate(statusCode: 200..<300)
             .responseJSON {
                 response in
-                let json = JSON(response.result.value as Any)
-                print(json)
                 do {
-                    let Adds = try
-                        JSONDecoder().decode(AddFoodPackegeToCartModelJSON.self, from: response.data!)
+                    let Adds = try JSONDecoder().decode(AddFoodPackegeToCartModelJSON.self, from: response.data!)
                     if Adds.status == true, let AddsList = Adds.data?.foodCart {
-                        print(AddsList)
                         completion(nil, AddsList, nil)
                     }else{
-                       // completion(error, nil)
                         completion(nil, nil, "duplicated item".localized)
-
                     }
                 } catch {
-                    print(error.localizedDescription)
+                    print(error)
                     completion(error, nil, nil)
+                    
+                }
+            }
+    }
+    
+    
+    func deleteFoodSubCart(id: Int ,completion: @escaping( _ error: Error?, _ result: OrderPaymentModelJSON?) -> Void){
+        let url = "https://shnp.dtagdev.com/api/user/food-subscriptions-cart/delete"
+        
+        let token = Helper.getApiToken() ?? ""
+        let parameters = [
+            "id": id,
+        ] as [String : Any]
+        
+        let headers = token != "" ? [
+            "token": token
+        ] : ["deviceToken" : "euh87f8AOkBqv65UGBT8Yi:APA91bFC9NVEbBSNNEo_oxh5VY9PpBAvTwK1ay304JKdeqcINc5WZ1OJQQKSEZ19m9R1GYiv_sAHbPfPLhtrdTOlYWgxXaG_ZCK3V8Iua5KGO5KtRg8hG9xwvcIkRO-oftJ1VxoeUOIy"]
+        
+        
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers)
+            .validate(statusCode: 200..<300)
+            .responseJSON {
+                response in
+                do {
+                    let Adds = try JSONDecoder().decode(OrderPaymentModelJSON.self, from: response.data!)
+                    if Adds.status == true {
+                        completion(nil, Adds)
+                    }
+                } catch {
+                    print(error)
+                    completion(error, nil)
                     
                 }
             }
@@ -2637,7 +2662,7 @@ class Services {
     }
     
     
-    func applyFoodSub(restaurant_id: Int ,food_subscription_id: Int ,has_delivery_subscription: Int ,delivery_price: Int ,food_price: Int ,total: Int ,completion: @escaping( _ error: Error?, _ result: ApplyFoodPackege?) -> Void){
+    func applyFoodSub(restaurant_id: Int ,food_subscription_id: Int ,has_delivery_subscription: Int ,delivery_price: Double ,food_price: Double ,total: Int ,completion: @escaping( _ error: Error?, _ result: ApplyFoodPackege?) -> Void){
         let url = "https://shnp.dtagdev.com/api/general/food-subscriptions/applying"
         let token = Helper.getApiToken() ?? ""
         
@@ -2803,7 +2828,60 @@ class Services {
     }
     
     
+    func checkOrderPayment(order_id : Int,completion: @escaping(_ error: Error?, _ list: OrderPaymentModelJSON?)->Void) {
+        let url = "https://shnp.dtagdev.com/api/user/order/checkOrderPayment"
+        
+        let parameters = [
+            "order_id": order_id,
+        ] as [String : Any]
+        
+        let token = Helper.getApiToken() ?? ""
+        let headers = token != "" ? [
+            "token": token
+        ] : ["deviceToken" : "euh87f8AOkBqv65UGBT8Yi:APA91bFC9NVEbBSNNEo_oxh5VY9PpBAvTwK1ay304JKdeqcINc5WZ1OJQQKSEZ19m9R1GYiv_sAHbPfPLhtrdTOlYWgxXaG_ZCK3V8Iua5KGO5KtRg8hG9xwvcIkRO-oftJ1VxoeUOIy"]
+        
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers)
+            .validate(statusCode: 200..<300)
+            .responseJSON {
+                response in
+                do {
+                    let list = try JSONDecoder().decode(OrderPaymentModelJSON.self, from: response.data!)
+                        completion(nil, list)
+                } catch {
+                    print(error.localizedDescription)
+                    completion(error, nil)
+                }
+            }
+        
+    }
     
+    func paidOrder(order_id : Int,completion: @escaping(_ error: Error?, _ list: OrderPaymentModelJSON?)->Void) {
+        let url = "https://shnp.dtagdev.com/api/user/order/payed"
+        
+        let parameters = [
+            "order_id": order_id,
+        ] as [String : Any]
+        
+        let token = Helper.getApiToken() ?? ""
+        let headers = token != "" ? [
+            "token": token
+        ] : ["deviceToken" : "euh87f8AOkBqv65UGBT8Yi:APA91bFC9NVEbBSNNEo_oxh5VY9PpBAvTwK1ay304JKdeqcINc5WZ1OJQQKSEZ19m9R1GYiv_sAHbPfPLhtrdTOlYWgxXaG_ZCK3V8Iua5KGO5KtRg8hG9xwvcIkRO-oftJ1VxoeUOIy"]
+        
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers)
+            .validate(statusCode: 200..<300)
+            .responseJSON {
+                response in
+                do {
+                    let list = try JSONDecoder().decode(OrderPaymentModelJSON.self, from: response.data!)
+                        completion(nil, list)
+                } catch {
+                    print(error.localizedDescription)
+                    completion(error, nil)
+                }
+            }
+        
+    }
+  
     
     func RejectOrderFromDriver(order_id:Int , status : String) {
         let url = ConfigURLs.getDriverRejectOrder

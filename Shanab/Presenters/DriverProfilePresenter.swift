@@ -16,7 +16,10 @@ protocol DriverProfileViewDelegate: class {
     func postEditDriverProfileResult(_ error: Error?, _ result: SuccessError_Model?)
     func getDeleteImage(_ error: Error?, _ result: SuccessError_Model?)
     func getNotifications(_ error : Error? ,_ notifications:[Notifications]?)
+    func checkOrderPayment(_ error : Error? ,_ order:OrderPaymentModelJSON?)
 
+    
+    
 }
 class DriverProfilePresenter{
     private let services: Services
@@ -69,6 +72,10 @@ class DriverProfilePresenter{
             self?.dismissIndicator()
         }
     }
+    
+    
+    
+    
     func getDriverProfile() {
         services.getDriverProfile { [weak self](error: Error?, result: User?) in
             self?.DriverProfileViewDelegate?.getDriverProfileResult(error, result)
@@ -81,4 +88,13 @@ class DriverProfilePresenter{
             self.dismissIndicator()
         }
     }
+    
+    
+    func checkOrderPayment(id: Int) {
+        services.checkOrderPayment(order_id: id) {[weak self] (error: Error?, result: OrderPaymentModelJSON?) in
+            self?.DriverProfileViewDelegate?.checkOrderPayment(error, result)
+            self?.dismissIndicator()
+        }
+    }
+    
 }

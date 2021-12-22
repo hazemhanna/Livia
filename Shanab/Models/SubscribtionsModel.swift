@@ -25,13 +25,14 @@ struct Subscription: Codable {
     let price, days: Int?
     let status: String?
     let deleted: Int?
+    let available_to: String?
     let createdAt, updatedAt: String?
 
     enum CodingKeys: String, CodingKey {
         case id
         case titleAr = "title_ar"
         case titleEn = "title_en"
-        case price, days, status, deleted
+        case price, days, status, deleted,available_to
         case createdAt = "created_at"
         case updatedAt = "updated_at"
     }

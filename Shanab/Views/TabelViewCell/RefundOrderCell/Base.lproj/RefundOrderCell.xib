@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,38 +24,56 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uad-SQ-SgT" customClass="CustomView" customModule="Shnp" customModuleProvider="target">
                                 <rect key="frame" x="16" y="8" width="369" height="160"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food-1" translatesAutoresizingMaskIntoConstraints="NO" id="mnC-7z-NW5" customClass="CustomImageView" customModule="Shnp" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="8" width="60" height="60"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="NqN-V1-zJU">
+                                        <rect key="frame" x="8" y="8" width="353" height="105"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Abx-aw-9ls">
+                                                <rect key="frame" x="0.0" y="0.0" width="353" height="20.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="order Number" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23t-uF-6js">
+                                                        <rect key="frame" x="0.0" y="0.0" width="176.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="15"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1018" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZF-ry-Cko">
+                                                        <rect key="frame" x="176.5" y="0.0" width="176.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="15"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pnc-0o-3bG">
+                                                <rect key="frame" x="0.0" y="27.5" width="353" height="77.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="refund order" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GmS-zT-JtV">
+                                                        <rect key="frame" x="0.0" y="0.0" width="87" height="20.5"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14 days " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fY-QH-t9T">
+                                                        <rect key="frame" x="0.0" y="28.5" width="56.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date : " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ggu-2g-zN1">
+                                                        <rect key="frame" x="0.0" y="57" width="43" height="20.5"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTy-uq-6Dy" userLabel="Order Details" customClass="CustomButtons" customModule="Shnp" customModuleProvider="target">
+                                        <rect key="frame" x="251" y="120" width="110" height="32"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="H1Z-Wj-Fgx"/>
-                                            <constraint firstAttribute="width" constant="60" id="lcM-XF-ASp"/>
+                                            <constraint firstAttribute="width" constant="110" id="I1q-5p-OEx"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="30"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="first  " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZF-ry-Cko">
-                                        <rect key="frame" x="76" y="18" width="285" height="20.5"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="15"/>
-                                        <color key="textColor" systemColor="systemRedColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14 days " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fY-QH-t9T">
-                                        <rect key="frame" x="76" y="46.5" width="38" height="14"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="10"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date : " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ggu-2g-zN1">
-                                        <rect key="frame" x="64" y="84" width="297" height="14"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="10"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTy-uq-6Dy" customClass="CustomButtons" customModule="Shnp" customModuleProvider="target">
-                                        <rect key="frame" x="271" y="120" width="90" height="32"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                         <state key="normal" title="Order Details ">
                                             <color key="titleColor" systemColor="systemRedColor"/>
@@ -78,18 +96,11 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="Ggu-2g-zN1" firstAttribute="top" secondItem="mnC-7z-NW5" secondAttribute="bottom" constant="16" id="1cg-B2-E8O"/>
+                                    <constraint firstItem="NqN-V1-zJU" firstAttribute="leading" secondItem="uad-SQ-SgT" secondAttribute="leading" constant="8" id="0Oa-rB-GSc"/>
                                     <constraint firstAttribute="bottom" secondItem="HTy-uq-6Dy" secondAttribute="bottom" constant="8" id="6fq-hz-V2H"/>
-                                    <constraint firstItem="KZF-ry-Cko" firstAttribute="leading" secondItem="mnC-7z-NW5" secondAttribute="trailing" constant="8" id="E1R-Ju-1bW"/>
-                                    <constraint firstItem="8fY-QH-t9T" firstAttribute="leading" secondItem="mnC-7z-NW5" secondAttribute="trailing" constant="8" id="GcQ-3u-tYB"/>
-                                    <constraint firstItem="KZF-ry-Cko" firstAttribute="top" secondItem="uad-SQ-SgT" secondAttribute="top" constant="18" id="XCo-if-Qjj"/>
-                                    <constraint firstItem="8fY-QH-t9T" firstAttribute="top" secondItem="KZF-ry-Cko" secondAttribute="bottom" constant="8" id="cvi-1G-hpS"/>
-                                    <constraint firstItem="Ggu-2g-zN1" firstAttribute="leading" secondItem="uad-SQ-SgT" secondAttribute="leading" constant="64" id="eyI-31-HxT"/>
-                                    <constraint firstAttribute="trailing" secondItem="Ggu-2g-zN1" secondAttribute="trailing" constant="8" id="fOp-8i-9ES"/>
-                                    <constraint firstItem="mnC-7z-NW5" firstAttribute="top" secondItem="uad-SQ-SgT" secondAttribute="top" constant="8" id="kZA-9d-bbh"/>
-                                    <constraint firstItem="mnC-7z-NW5" firstAttribute="leading" secondItem="uad-SQ-SgT" secondAttribute="leading" constant="8" id="u2E-BZ-5uk"/>
-                                    <constraint firstAttribute="trailing" secondItem="KZF-ry-Cko" secondAttribute="trailing" constant="8" id="veb-oB-Z61"/>
+                                    <constraint firstItem="NqN-V1-zJU" firstAttribute="top" secondItem="uad-SQ-SgT" secondAttribute="top" constant="8" id="Duj-Qs-W6T"/>
                                     <constraint firstAttribute="trailing" secondItem="HTy-uq-6Dy" secondAttribute="trailing" constant="8" id="yfM-5T-RVR"/>
+                                    <constraint firstAttribute="trailing" secondItem="NqN-V1-zJU" secondAttribute="trailing" constant="8" id="zgn-Fg-say"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="NO"/>
@@ -128,8 +139,8 @@
             <connections>
                 <outlet property="dateLble" destination="Ggu-2g-zN1" id="iBd-EO-R9u"/>
                 <outlet property="descLbl" destination="8fY-QH-t9T" id="Nla-YW-SKJ"/>
-                <outlet property="resturantImage" destination="mnC-7z-NW5" id="Lnl-hJ-hyb"/>
-                <outlet property="resturantName" destination="KZF-ry-Cko" id="PLB-wy-iUI"/>
+                <outlet property="orderNumLbl" destination="KZF-ry-Cko" id="Sjh-F6-gEU"/>
+                <outlet property="statusLbl" destination="GmS-zT-JtV" id="kn5-oJ-W99"/>
             </connections>
             <point key="canvasLocation" x="142.75362318840581" y="99.776785714285708"/>
         </tableViewCell>
@@ -138,12 +149,8 @@
         <designable name="HTy-uq-6Dy">
             <size key="intrinsicContentSize" width="90" height="32"/>
         </designable>
-        <designable name="mnC-7z-NW5">
-            <size key="intrinsicContentSize" width="2296" height="1532"/>
-        </designable>
     </designables>
     <resources>
-        <image name="food-1" width="2296" height="1532"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

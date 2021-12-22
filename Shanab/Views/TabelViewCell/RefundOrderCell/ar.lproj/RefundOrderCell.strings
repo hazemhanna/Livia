@@ -1,0 +1,18 @@
+
+/* Class = "UILabel"; text = "order Number"; ObjectID = "23t-uF-6js"; */
+"23t-uF-6js.text" = "طلب الرقم";
+
+/* Class = "UILabel"; text = "14 days "; ObjectID = "8fY-QH-t9T"; */
+"8fY-QH-t9T.text" = "14 days ";
+
+/* Class = "UILabel"; text = "date : "; ObjectID = "Ggu-2g-zN1"; */
+"Ggu-2g-zN1.text" = "date : ";
+
+/* Class = "UILabel"; text = "refund order"; ObjectID = "GmS-zT-JtV"; */
+"GmS-zT-JtV.text" = "طلب مسترجع";
+
+/* Class = "UIButton"; normalTitle = "Order Details "; ObjectID = "HTy-uq-6Dy"; */
+"HTy-uq-6Dy.normalTitle" = "تفاصيل الطلب";
+
+/* Class = "UILabel"; text = "1018"; ObjectID = "KZF-ry-Cko"; */
+"KZF-ry-Cko.text" = "1018";

@@ -27,11 +27,10 @@ class CartCell: UITableViewCell {
     @IBOutlet weak var price: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.selectionStyle = .none
-
+        
         quantityLB.adjustsFontSizeToFitWidth = true
         quantityLB.minimumScaleFactor = 0.5
-        self.translatesAutoresizingMaskIntoConstraints = false
+
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -55,8 +54,6 @@ class CartCell: UITableViewCell {
         self.orderName.text = name
         self.price.text = "\(price)"
         self.components.text = components
-        
-        
         
     }
     

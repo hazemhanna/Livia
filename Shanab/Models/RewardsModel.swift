@@ -42,3 +42,11 @@ struct RefundModelJSON: Codable {
     var status: Bool?
     var message: String?
 }
+
+
+struct OrderPaymentModelJSON: Codable {
+    var status: Bool?
+    var message: String?
+    var errors: String?
+}
+

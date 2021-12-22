@@ -20,7 +20,7 @@ class AdditionsVC: UIViewController {
     @IBOutlet weak var oneImageView: UIImageView!
     @IBOutlet weak var mealComponentsLB: UILabel!
     @IBOutlet weak var price: UILabel!
-    
+    @IBOutlet weak var discount : UILabel!
     @IBOutlet weak var RestaurantName: UILabel!
     
     fileprivate let cellIdentifier = "AdditionsCell"
@@ -241,7 +241,7 @@ extension AdditionsVC: UITableViewDelegate, UITableViewDataSource {
                             case .Arr(let price):
                                 self.price.text = "\((OldPrice! + Double((price[0].price ?? 0.0) * Double(quan))).rounded(toPlaces: 2))"  + "S.R".localized
                             case .double(let price):
-                                self.price.text = "\((OldPrice! - Double(price)).rounded(toPlaces: 2))"  + "S.R".localized
+                                self.price.text = "\((OldPrice! - Double(price)).rounded(toPlaces: 2))"
 
                             default:
                                 break
@@ -269,7 +269,7 @@ extension AdditionsVC: UITableViewDelegate, UITableViewDataSource {
                     
                 case .double(let price):
                     
-                    self.price.text = "\((OldPrice! + Double(price)).rounded(toPlaces: 2))"  + "S.R".localized
+                    self.price.text = "\((OldPrice! + Double(price)).rounded(toPlaces: 2))"
 
                 default:
                     break
@@ -366,14 +366,14 @@ extension AdditionsVC: AdditionsViewDelegate {
                 self.AdditionTableView.isHidden = false
             }
             
-            self.price.text = "\(lists.price?[0].price?.rounded(toPlaces: 2) ?? 0.0)"  + "S.R".localized
+            self.discount.text = "\(lists.price?[0].price?.rounded(toPlaces: 2) ?? 0.0)"
             self.MealPrice = lists.price?[0].price?.rounded(toPlaces: 2)  ?? 0.0
             
-
+            let total = Double(lists.price?[0].price ?? 0) - Double(lists.discount ?? 0)
+            self.price.text = "\(total)"
         }
         
-        
-        self.AdditionTableView.addObserver(self, forKeyPath: "contentSize", options: NSKeyValueObservingOptions.new, context: nil)
+    self.AdditionTableView.addObserver(self, forKeyPath: "contentSize", options: NSKeyValueObservingOptions.new, context: nil)
 
     }
     

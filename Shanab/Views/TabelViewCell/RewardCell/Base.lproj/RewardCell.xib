@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,14 +24,20 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dOZ-nE-Lhq" customClass="CustomView" customModule="Shnp" customModuleProvider="target">
                                 <rect key="frame" x="8" y="8" width="303" height="158"/>
                                 <subviews>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تم استخدامها " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vaz-w0-oFq">
+                                        <rect key="frame" x="8" y="8" width="70.5" height="19.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jt2-Ls-D9g">
-                                        <rect key="frame" x="8" y="8" width="35.5" height="19.5"/>
+                                        <rect key="frame" x="8" y="35.5" width="35.5" height="19.5"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="9JB-Hf-KkK">
-                                        <rect key="frame" x="64" y="59.5" width="35.5" height="19.5"/>
+                                        <rect key="frame" x="64" y="71" width="35.5" height="19.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6HX-Ah-gwz">
                                                 <rect key="frame" x="0.0" y="0.0" width="35.5" height="19.5"/>
@@ -51,7 +57,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="LgZ-IP-0JQ"/>
                                             <constraint firstItem="od2-Dh-y8e" firstAttribute="centerX" secondItem="uqC-YM-uHG" secondAttribute="centerX" id="Lzm-6x-Nm7"/>
@@ -68,11 +74,13 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="uqC-YM-uHG" firstAttribute="centerX" secondItem="dOZ-nE-Lhq" secondAttribute="centerX" id="4z6-yt-Ezw"/>
+                                    <constraint firstItem="Vaz-w0-oFq" firstAttribute="leading" secondItem="dOZ-nE-Lhq" secondAttribute="leading" constant="8" id="59t-DD-B6O"/>
+                                    <constraint firstItem="jt2-Ls-D9g" firstAttribute="top" secondItem="Vaz-w0-oFq" secondAttribute="bottom" constant="8" id="87f-Nr-8kE"/>
                                     <constraint firstAttribute="bottom" secondItem="uqC-YM-uHG" secondAttribute="bottom" constant="8" id="IJl-0Z-AGO"/>
+                                    <constraint firstItem="Vaz-w0-oFq" firstAttribute="top" secondItem="dOZ-nE-Lhq" secondAttribute="top" constant="8" id="OdY-iK-5A5"/>
                                     <constraint firstItem="9JB-Hf-KkK" firstAttribute="leading" secondItem="dOZ-nE-Lhq" secondAttribute="leading" constant="64" id="d4b-il-u0Y"/>
                                     <constraint firstItem="jt2-Ls-D9g" firstAttribute="leading" secondItem="dOZ-nE-Lhq" secondAttribute="leading" constant="8" id="hY1-Ed-O6P"/>
-                                    <constraint firstItem="jt2-Ls-D9g" firstAttribute="top" secondItem="dOZ-nE-Lhq" secondAttribute="top" constant="8" id="pJ6-Fo-wc5"/>
-                                    <constraint firstItem="9JB-Hf-KkK" firstAttribute="top" secondItem="jt2-Ls-D9g" secondAttribute="bottom" constant="32" id="t4W-wX-hUT"/>
+                                    <constraint firstItem="9JB-Hf-KkK" firstAttribute="top" secondItem="jt2-Ls-D9g" secondAttribute="bottom" constant="16" id="t4W-wX-hUT"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="NO"/>
@@ -110,6 +118,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="dateLble" destination="6HX-Ah-gwz" id="LaK-Fo-cHw"/>
+                <outlet property="paidLble" destination="Vaz-w0-oFq" id="ib4-dP-WYA"/>
                 <outlet property="titleLbl" destination="jt2-Ls-D9g" id="2WK-zY-Y8y"/>
                 <outlet property="valueLble" destination="od2-Dh-y8e" id="FtW-tE-8pp"/>
             </connections>
@@ -119,6 +128,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

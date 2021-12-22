@@ -16,6 +16,7 @@ class NotificationsVC: UIViewController {
     
     private let  ProileVCPresenter = DriverProfilePresenter(services: Services())
 
+    var paid = false
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,7 +25,6 @@ class NotificationsVC: UIViewController {
         notificationsTableView.delegate = self
         notificationsTableView.dataSource = self
         notificationsTableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
-        
         ProileVCPresenter.getNotifications()
        
     }
@@ -54,8 +54,22 @@ extension NotificationsVC: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? NotificationsCell else {return UITableViewCell()}
         
         let data = NotificationArr[indexPath.row]
-        cell.config(name: "\(data.itemID ?? 0)", status: data.body ?? "")
-//        cell.config(name: "" , status: "")
+        if "lang".localized == "ar" {
+        cell.config(name: "\(data.itemID ?? 0)", status:  data.userType ?? "" ,body : data.body ?? "" ,title : data.title ?? "")
+        }else{
+            cell.config(name: "\(data.itemID ?? 0)", status:  data.userType ?? "" ,body : data.body ?? "" ,title : data.title_en ?? "")
+
+        }
+        cell.pay = {
+            guard let Details = UIStoryboard(name: "Details", bundle: nil).instantiateViewController(withIdentifier: "UserOrderDetailsVC") as? UserOrderDetailsVC else { return }
+            Details.id =  data.itemID ?? 0
+            Details.status = "new"
+            Details.fromNotification = true
+            self.navigationController?.pushViewController(Details, animated: true)
+        }
+        
+        cell.orderId = data.itemID ?? 0
+        cell.data = data
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -74,6 +88,11 @@ extension NotificationsVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension NotificationsVC : DriverProfileViewDelegate {
+   
+    func checkOrderPayment(_ error: Error?, _ order: OrderPaymentModelJSON?) {
+    
+    }
+    
     func DriverChangeImageResult(_ error: Error?, _ result: SuccessError_Model?) {
         print("")
     }
@@ -102,8 +121,7 @@ extension NotificationsVC : DriverProfileViewDelegate {
     
     
     func getNotifications(_ error: Error?, _ notifications: [Notifications]?) {
-        
-        NotificationArr = notifications?.reversed() ?? []
+        NotificationArr = notifications ?? []
         self.notificationsTableView.reloadData()
     }
 }

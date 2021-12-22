@@ -18,7 +18,10 @@ class MyFoodCartCell: UITableViewCell {
     @IBOutlet weak var deliveryPriceLbl: UILabel!
     @IBOutlet weak var totalLbl : UILabel!
 
+    @IBOutlet weak var deliverStack : UIStackView!
+
     var confirm: (() ->Void)? = nil
+    var delete : (() ->Void)? = nil
 
     
     override func awakeFromNib() {
@@ -43,6 +46,12 @@ class MyFoodCartCell: UITableViewCell {
         descLbl.text = desc
         self.totalLbl.text = "\(total)"
         
+        if deliveryprice == 0{
+            deliverStack.isHidden = true
+        }else{
+            deliverStack.isHidden = false
+        }
+        
         guard let imageURL = URL(string: "https://shnp.dtagdev.com" + "/" + imagePath) else { return }
         self.resturantImage.kf.setImage(with: imageURL, placeholder: #imageLiteral(resourceName: "shanab loading"))
     }
@@ -52,4 +61,11 @@ class MyFoodCartCell: UITableViewCell {
     @IBAction func confirmBtn(_ sender: UIButton) {
         confirm?()
     }
+    
+    @IBAction func deleteBtn(_ sender: UIButton) {
+        delete?()
+    }
+    
+    
+    
 }

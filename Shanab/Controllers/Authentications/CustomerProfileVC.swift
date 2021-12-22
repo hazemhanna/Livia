@@ -227,18 +227,33 @@ extension CustomerProfileVC: UITableViewDataSource, UITableViewDelegate {
             let cell = ProfileTableView.dequeueReusableCell(withIdentifier: "NotificationsCell", for: indexPath) as! NotificationsCell
             
             let data = NotificationArr[indexPath.row]
-            cell.config(name: data.title ?? "", status: data.body ?? "")
+          //cell.config(name: "\(data.itemID ?? 0)", status:  data.userType ?? "" ,body : data.body ?? "" ,title : data.title ?? "")
+            
+            if "lang".localized == "ar" {
+            cell.config(name: "\(data.itemID ?? 0)", status:  data.userType ?? "" ,body : data.body ?? "" ,title : data.title ?? "")
+            }else{
+           cell.config(name: "\(data.itemID ?? 0)", status:  data.userType ?? "" ,body : data.body ?? "" ,title : data.title_en ?? "")
+           }
+            cell.pay = {
+                guard let Details = UIStoryboard(name: "Details", bundle: nil).instantiateViewController(withIdentifier: "UserOrderDetailsVC") as? UserOrderDetailsVC else { return }
+                Details.id =  data.itemID ?? 0
+                Details.status = "new"
+                Details.fromNotification = true
+                self.navigationController?.pushViewController(Details, animated: true)
+            }
+            
             return cell
         } else {return UITableViewCell()}
         
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if SelectedItem == 0 {
             return 400
         } else if SelectedItem == 1 {
             return 350
         } else {
-            return 90
+            return 90.0
         }
     }
     
@@ -259,9 +274,7 @@ extension CustomerProfileVC: UserProfileViewDelegate {
     
     
     func getUserProfileUpdated(_ error: Error?, _ message: SuccessError_Model?, _ result: User?) {
-        
         if let Msg = message {
-            
             if Msg.name != [""] {
                 displayMessage(title: "", message: Msg.name[0], status: .error, forController: self)
             } else if Msg.address != [""] {
@@ -275,11 +288,11 @@ extension CustomerProfileVC: UserProfileViewDelegate {
             self.profile = res
             Constants.address = profile?.address ?? "No address for this user".localized
             ProfileTableView.reloadData()
+            displayMessage(title: "", message: "تم", status: .success, forController: self)
         }
     }
     
     func getNotifications(_ error: Error?, _ notifications: [Notifications]?) {
-        
         NotificationArr = notifications ?? []
         self.ProfileTableView.reloadData()
     }
@@ -301,10 +314,7 @@ extension CustomerProfileVC: UserProfileViewDelegate {
     func getchingAllData(_ profile: User?, _ restaurants: [Restaurant]?) {
         self.profile = profile
         Constants.address = profile?.address ?? "No address for this user".localized
-        
         ProfileTableView.reloadData()
-        
-        
     }
     
     func UserChangeProfileResult(_ error: Error?, _ result: SuccessError_Model?) {
@@ -314,8 +324,5 @@ extension CustomerProfileVC: UserProfileViewDelegate {
     func getUserProfileResult(_ error: Error?, _ result: User?) {
         
     }
-    
-    
-    
     
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -48,12 +48,23 @@
                                             <constraint firstItem="zTx-0P-MbN" firstAttribute="width" secondItem="nWv-Ic-SuA" secondAttribute="width" multiplier="0.3" priority="750" id="FGh-Et-wEF"/>
                                         </constraints>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDE-C0-Xs8">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="akS-6H-NXB">
                                         <rect key="frame" x="0.0" y="39" width="409" height="18.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yhZ-sR-Lua">
+                                                <rect key="frame" x="0.0" y="0.0" width="47" height="18.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDE-C0-Xs8">
+                                                <rect key="frame" x="55" y="0.0" width="354" height="18.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="s2M-0i-lQh">
                                         <rect key="frame" x="0.0" y="77.5" width="409" height="19"/>
                                         <subviews>
@@ -79,10 +90,10 @@
                         </subviews>
                     </stackView>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="94u-Qq-MKy">
-                        <rect key="frame" x="84" y="116.5" width="251" height="30"/>
+                        <rect key="frame" x="21" y="116.5" width="377" height="30"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYd-bt-6Kc" customClass="CustomButtons" customModule="Shnp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="70.5" height="30"/>
+                                <rect key="frame" x="0.0" y="0.0" width="112.5" height="30"/>
                                 <state key="normal" title="Order Details">
                                     <color key="titleColor" red="0.91954845190000001" green="0.26827093959999998" blue="0.21753334999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -103,7 +114,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="889-sh-cVQ" customClass="CustomButtons" customModule="Shnp" customModuleProvider="target">
-                                <rect key="frame" x="90.5" y="0.0" width="70" height="30"/>
+                                <rect key="frame" x="132.5" y="0.0" width="112" height="30"/>
                                 <state key="normal" title="Fllow Order">
                                     <color key="titleColor" red="0.91954845190000001" green="0.26827093959999998" blue="0.21753334999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -124,7 +135,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mRz-j8-7uT" customClass="CustomButtons" customModule="Shnp" customModuleProvider="target">
-                                <rect key="frame" x="180.5" y="0.0" width="70.5" height="30"/>
+                                <rect key="frame" x="264.5" y="0.0" width="112.5" height="30"/>
                                 <state key="normal" title="Cancel Order">
                                     <color key="titleColor" red="0.91954845190000001" green="0.26827093959999998" blue="0.21753334999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -155,7 +166,7 @@
                     <constraint firstItem="94u-Qq-MKy" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.186335" id="T0W-yu-eGf"/>
                     <constraint firstItem="1AK-Cu-ky3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="U3A-4O-DrR"/>
                     <constraint firstItem="94u-Qq-MKy" firstAttribute="top" secondItem="1AK-Cu-ky3" secondAttribute="bottom" constant="10" id="hVD-JC-PtS"/>
-                    <constraint firstItem="94u-Qq-MKy" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.6" id="taO-qB-fyr"/>
+                    <constraint firstItem="94u-Qq-MKy" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.9" id="taO-qB-fyr"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -166,6 +177,7 @@
                 <outlet property="orderNum" destination="Z9E-0P-AaP" id="NyX-Ee-qiB"/>
                 <outlet property="resturantName" destination="zTx-0P-MbN" id="rOz-jP-QFd"/>
                 <outlet property="status" destination="fDE-C0-Xs8" id="RF7-gs-yRg"/>
+                <outlet property="statusLbl" destination="yhZ-sR-Lua" id="31t-WA-0fb"/>
             </connections>
             <point key="canvasLocation" x="138.40579710144928" y="122.20982142857142"/>
         </tableViewCell>

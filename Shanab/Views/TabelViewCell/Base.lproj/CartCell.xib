@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -21,7 +21,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="460" height="255"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pizza" translatesAutoresizingMaskIntoConstraints="NO" id="B2i-OB-qgF" customClass="CustomImageView" customModule="Shnp" customModuleProvider="target">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile pic" translatesAutoresizingMaskIntoConstraints="NO" id="B2i-OB-qgF" customClass="CustomImageView" customModule="Shnp" customModuleProvider="target">
                         <rect key="frame" x="10" y="10" width="184" height="235"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
@@ -34,7 +34,7 @@
                         <rect key="frame" x="204" y="10" width="246" height="235"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="atE-bi-Tvw">
-                                <rect key="frame" x="0.0" y="36.5" width="246" height="162"/>
+                                <rect key="frame" x="0.0" y="37" width="246" height="161.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ihX-jd-egM">
                                         <rect key="frame" x="0.0" y="0.0" width="246" height="32"/>
@@ -92,13 +92,13 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="394-Aq-YTA">
-                                        <rect key="frame" x="0.0" y="131.5" width="246" height="30.5"/>
+                                        <rect key="frame" x="0.0" y="131.5" width="246" height="30"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Txt-cM-7ox">
-                                                <rect key="frame" x="0.0" y="0.0" width="246" height="30.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="246" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6S-oH-me9" customClass="CustomLabel" customModule="Shnp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="86" height="30.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="86" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -116,7 +116,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Grm-I5-sI0">
-                                                        <rect key="frame" x="91" y="0.0" width="88.5" height="30.5"/>
+                                                        <rect key="frame" x="91" y="0.0" width="88.5" height="30"/>
                                                         <state key="normal" title="SAR">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -125,7 +125,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IdP-VO-ucO" customClass="CustomButtons" customModule="Shnp" customModuleProvider="target">
-                                                        <rect key="frame" x="184.5" y="0.0" width="61.5" height="30.5"/>
+                                                        <rect key="frame" x="184.5" y="0.0" width="61.5" height="30"/>
                                                         <color key="backgroundColor" red="0.91954845190000001" green="0.26827093959999998" blue="0.21753334999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" image="shopping-cart (9)"/>
                                                         <userDefinedRuntimeAttributes>
@@ -181,19 +181,19 @@
     </objects>
     <designables>
         <designable name="B2i-OB-qgF">
-            <size key="intrinsicContentSize" width="2702" height="1801.5"/>
+            <size key="intrinsicContentSize" width="400" height="257.5"/>
         </designable>
         <designable name="IdP-VO-ucO">
             <size key="intrinsicContentSize" width="25" height="25"/>
         </designable>
         <designable name="R6S-oH-me9">
-            <size key="intrinsicContentSize" width="55.5" height="30.5"/>
+            <size key="intrinsicContentSize" width="41.5" height="20.5"/>
         </designable>
     </designables>
     <resources>
         <image name="+5" width="25" height="25"/>
         <image name="minus" width="20" height="20"/>
-        <image name="pizza" width="2702" height="1801.5"/>
+        <image name="profile pic" width="400" height="257.5"/>
         <image name="remove-1" width="25" height="25"/>
         <image name="shopping-cart (9)" width="25" height="25"/>
         <systemColor name="darkTextColor">
