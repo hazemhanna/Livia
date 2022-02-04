@@ -427,7 +427,6 @@ extension DriverOrderListVC: UICollectionViewDataSource, UICollectionViewDelegat
         return CGSize(width: width, height: 300)
     }
     
-    
 }
 
 extension DriverOrderListVC : UICollectionViewDataSourcePrefetching {
