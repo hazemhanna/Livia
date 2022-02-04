@@ -14,10 +14,7 @@ class NotificationsCell: UITableViewCell {
     @IBOutlet weak var paidBtn : UIButton!
     @IBOutlet weak var paidLbl : UILabel!
 
-    var data : Notifications?
     var pay : (() ->Void)? = nil
-    var orderId = Int()
-
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
@@ -56,7 +53,7 @@ class NotificationsCell: UITableViewCell {
                 self.paidLbl.isHidden = false
             }
             }else{
-                self.paidBtn.isHidden = false
+                self.paidBtn.isHidden = true
                 self.paidLbl.isHidden = true
             }
         }else{

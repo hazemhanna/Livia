@@ -33,8 +33,8 @@ class UserListPresenter {
     func dismissIndicator() {
         SVProgressHUD.dismiss()
     }
-    func postUserGetList(status: [String] , currentPage : Int) {
-        services.postUserGetOrder(status: status, currentPage: currentPage) {[weak self] (_ error: Error?, _ list: orderpagination?) in
+    func postUserGetList(status: [String] , currentPage : Int,type : String) {
+        services.postUserGetOrder(status: status, currentPage: currentPage, type : type) {[weak self] (_ error: Error?, _ list: orderpagination?) in
             self?.UserListViewDelegate?.UserListResult(error, list)
             
             DispatchQueue.main.async {

@@ -44,3 +44,10 @@ struct Notifications: Codable {
         case updatedAt = "updated_at"
     }
 }
+
+
+struct OrdersNumber: Codable {
+    var message : String?
+    var status : Bool?
+}
+

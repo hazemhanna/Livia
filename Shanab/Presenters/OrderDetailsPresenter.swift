@@ -12,13 +12,11 @@ protocol DriverOrderDetailsViewDelegate: class {
     func DriverOrderDetailsResult(_ error: Error?, _ details: [DriverOrder]?)
      func DriverChangeStatusResult(_ error: Error?, _ result: SuccessError_Model?)
      func getDriverProfileResult(_ error: Error?, _ result: User?)
-    
     func getCartResult(_ error: Error?, _ result: String?)
-    
     func postDriverRejactOrderResult(_ error: Error?, _ result: SuccessError_Model?)
-
-
+    func getWebView(_ error: Error?, _ result: WebViewModel?)
 }
+
 class DriverOrderDetailsPresenter {
     private let services: Services
     private weak var DriverOrderDetailsViewDelegate: DriverOrderDetailsViewDelegate?
@@ -76,6 +74,11 @@ class DriverOrderDetailsPresenter {
             self?.DriverOrderDetailsViewDelegate?.postDriverRejactOrderResult(error, result)
             self?.dismissIndicator()
         }
-        
     }
+    func getWebView(order_id : Int) {
+           services.getWebViewLink(order_id : order_id) {[weak self] (error: Error?, result: WebViewModel?) in
+            self?.DriverOrderDetailsViewDelegate?.getWebView(error, result)
+               self?.dismissIndicator()
+           }
+       }
 }

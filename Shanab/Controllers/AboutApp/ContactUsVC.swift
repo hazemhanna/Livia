@@ -45,7 +45,8 @@ class ContactUsVC: UIViewController {
         MailTemplateVCPresenter.showIndicator()
         sectionArr.removeAll()
         MailTemplateVCPresenter.getSettings()
-        
+        MailTemplateVCPresenter.getUserProfile()
+
         let customer_type = Helper.getUserRole()
         //email.isEnabled = false
         //email.text = Helper.getemail()
@@ -314,6 +315,23 @@ extension ContactUsVC: UICollectionViewDelegateFlowLayout {
 
 
 extension ContactUsVC: MailTempalteViewDelegate {
+    
+    func getProfileResult(_ error: Error?, _ result: User?) {
+        if Helper.getUserRole() == "customer" {
+            if let profile = result {
+                self.name.text = profile.nameAr ?? ""
+                self.email.text = profile.personal?.email ?? ""
+                self.phone.text = profile.phone ?? ""
+            } else {
+                if let profile = result {
+                    self.name.text = profile.nameAr ?? ""
+                    self.email.text = profile.personal?.email ?? ""
+                    self.phone.text = profile.phone ?? ""
+                }
+            }
+        }
+    }
+    
     func CreateEmail(_ error: Error?, _ result: SuccessError_Model?) {
         
         if result?.successMessage != "" {

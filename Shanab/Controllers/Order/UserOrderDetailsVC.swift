@@ -23,7 +23,12 @@ class UserOrderDetailsVC: UIViewController ,PKPaymentAuthorizationViewController
     @IBOutlet weak var TableHeight: NSLayoutConstraint!
     @IBOutlet weak var confirmBtn : UIButton!
     @IBOutlet weak var TaxLb2: UILabel!
+    @IBOutlet weak var webLink: UILabel!
+    @IBOutlet weak var titlewebLink : UILabel!
+
+    
     fileprivate let cellIdentifier = "OrderReceiptCell"
+    
     
     var paymentController: UIViewController? = nil
     var paymentRequest:PKPaymentRequest = {
@@ -63,6 +68,13 @@ class UserOrderDetailsVC: UIViewController ,PKPaymentAuthorizationViewController
         detailsTableView.estimatedRowHeight = 120
         confirmBtn.setTitle("pay".localized, for: .normal)
         TaxLb2.text = "taxs".localized
+        UserOrderDetailsVCPresenter.getWebView(order_id : id)
+        
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.openWebView(_:)))
+        webLink.isUserInteractionEnabled = true
+        webLink.addGestureRecognizer(gestureRecognizer)
+        titlewebLink.text = "bill".localized
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,6 +86,17 @@ class UserOrderDetailsVC: UIViewController ,PKPaymentAuthorizationViewController
         }else{
             confirmBtn.isHidden = true
         }
+    }
+    
+    @objc func openWebView(_ sender: UITapGestureRecognizer) {
+        if let url = URL(string: webLink.text ?? "") {
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url, options: [:])
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        }
+        
     }
     
    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -89,7 +112,6 @@ class UserOrderDetailsVC: UIViewController ,PKPaymentAuthorizationViewController
     }
     
     @IBAction func conffirm(_ sender: Any) {
-    
         initializeSDK()
     }
     
@@ -100,18 +122,15 @@ class UserOrderDetailsVC: UIViewController ,PKPaymentAuthorizationViewController
                 self.presentAlert(resut: result)
                 return
             }
-            
             self.present(nonNilController, animated: true, completion: nil)
-
-//        self.navigationController?.pushViewController(nonNilController, animated: true)
-     
         }
-        
     }
-
-    
 }
 extension UserOrderDetailsVC: UserOrderDetailsViewDelegate {
+    
+    func getWebView(_ error: Error?, _ result: WebViewModel?) {
+        self.webLink.text = result?.link ?? ""
+    }
     
     func paidOrder(_ error: Error?, _ result: OrderPaymentModelJSON?) {
         if result?.status ?? false {
@@ -148,9 +167,7 @@ extension UserOrderDetailsVC: UserOrderDetailsViewDelegate {
                     self.details[count].meal?.price?[0].price = discount
                 } else {
                     orderCost = Double(orderCost + (Double(item.quantity ?? 0) * (item.meal?.price?[0].price ?? 0.0))).rounded(toPlaces: 2)
-
                 }
-                
             for options in (item.option ?? []) {
                 orderCost = Double(orderCost + ((options.price ?? 0.0))).rounded(toPlaces: 2)
                 }
@@ -158,25 +175,18 @@ extension UserOrderDetailsVC: UserOrderDetailsViewDelegate {
             }
             
            // let vatD = Double((Double(vat)?.rounded(toPlaces: 2) ?? 0.0)/100).rounded(toPlaces:2)
-            
           //  let orderCostWithVat = orderCost + (orderCost * vatD)
-            
             orderPrice.text = "\(orderCost.rounded(toPlaces:2))"
-          
             totalPriceLB.text = "\(result?[0].total?.rounded(toPlaces: 2) ?? 0.0)"
-            
             total = (result?[0].total?.rounded(toPlaces: 2) ?? 0.0)
-            
             let feesCalcoulation = Double(( total - orderCost)).rounded(toPlaces: 1)
-            
             self.orderTyper.text = ("orderType".localized) + " " + (result?[0].type?.localized ?? "")
             
             if result?[0].type != "sfry" {
                 fees.text = "\(feesCalcoulation)"
             } else {
-                fees.text = "0.0" //"\(((orderCost * vatD).rounded(toPlaces: 1)))"
+                fees.text = "0.0"
             }
-            
           self.detailsTableView.addObserver(self, forKeyPath: "contentSize", options: NSKeyValueObservingOptions.new, context: nil)
         
         }
@@ -241,21 +251,13 @@ extension UserOrderDetailsVC {
     func paymentAuthorizationViewControllerDidFinish(_ controller: PKPaymentAuthorizationViewController) {
           controller.dismiss(animated: true, completion: nil)
         UWInitialization(self) { (controller , result) in
-            
-            
             self.paymentController = controller
             guard let nonNilController = self.paymentController else {
                 self.presentAlert(resut: result)
                 return
             }
-            
             self.present(nonNilController, animated: true, completion: nil)
-
-//            self.navigationController?.pushViewController(nonNilController, animated: true)
-     
         }
-//            self.initializeSDK()
-//          isSucessStatus ? self.initializeSDK() : nil
       }
       
       func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController, didAuthorizePayment payment: PKPayment, handler completion: @escaping (PKPaymentAuthorizationResult) -> Void) {
@@ -263,8 +265,6 @@ extension UserOrderDetailsVC {
         print(self.paymentString)
           completion(PKPaymentAuthorizationResult(status: .success, errors: nil))
       }
-    
-    
 }
 
 extension UserOrderDetailsVC : Initializer {

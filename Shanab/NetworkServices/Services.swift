@@ -1129,11 +1129,12 @@ class Services {
             }
     }
     //MARK: post User Get Order
-    func postUserGetOrder(status: [String], currentPage : Int ,completion: @escaping(_ error: Error?, _ list: orderpagination?)->Void) {
+    func postUserGetOrder(status: [String], currentPage : Int,type : String ,completion: @escaping(_ error: Error?, _ list: orderpagination?)->Void) {
         let url = ConfigURLs.postUserGetOrder
         let parameters = [
             "status": status,
-            "page":currentPage
+            "page":currentPage,
+            "type":type
         ] as [String : Any]
         
         let token = Helper.getApiToken() ?? ""
@@ -2182,9 +2183,13 @@ class Services {
     
     func getDriverNotifications(completion: @escaping(_ error: Error?, _ result: [Notifications]?)->Void){
         
-       // let url = ConfigURLs.postDrivergetNotification
+       var url = String ()
+        if Helper.getUserRole() ?? "" == "customer" {
+            url = ConfigURLs.getNotifications
+        }else{
+            url = ConfigURLs.postDrivergetNotification
+        }
         
-        let url = ConfigURLs.getNotifications
         let token = Helper.getApiToken() ?? ""
         let headers = token != "" ? [
              "token": token
@@ -2882,6 +2887,53 @@ class Services {
         
     }
   
+    
+    func getWebViewLink(order_id : Int,completion: @escaping(_ error: Error?, _ list: WebViewModel?)->Void) {
+        let url = "http://shnp.dtagdev.com/api/user/order/get_code?order_id=\(order_id)"
+        let token = Helper.getApiToken() ?? ""
+        let headers = token != "" ? [
+            "token": token
+        ] : ["deviceToken" : "euh87f8AOkBqv65UGBT8Yi:APA91bFC9NVEbBSNNEo_oxh5VY9PpBAvTwK1ay304JKdeqcINc5WZ1OJQQKSEZ19m9R1GYiv_sAHbPfPLhtrdTOlYWgxXaG_ZCK3V8Iua5KGO5KtRg8hG9xwvcIkRO-oftJ1VxoeUOIy"]
+        
+        Alamofire.request(url, method: .post, parameters: nil, encoding: URLEncoding.default, headers: headers)
+            .validate(statusCode: 200..<300)
+            .responseJSON {
+                response in
+                do {
+                    let list = try JSONDecoder().decode(WebViewModel.self, from: response.data!)
+                        completion(nil, list)
+                } catch {
+                    print(error.localizedDescription)
+                    completion(error, nil)
+                }
+            }
+        
+    }
+    
+    func orderNumber(driver_id : Int,completion: @escaping(_ error: Error?, _ list: OrdersNumber?)->Void) {
+        let url = "https://shnp.dtagdev.com/api/driver/ordersCount?driver_id=\(driver_id)"
+        let token = Helper.getApiToken() ?? ""
+        let headers = token != "" ? [
+            "token": token
+        ] : ["deviceToken" : "euh87f8AOkBqv65UGBT8Yi:APA91bFC9NVEbBSNNEo_oxh5VY9PpBAvTwK1ay304JKdeqcINc5WZ1OJQQKSEZ19m9R1GYiv_sAHbPfPLhtrdTOlYWgxXaG_ZCK3V8Iua5KGO5KtRg8hG9xwvcIkRO-oftJ1VxoeUOIy"]
+        
+        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers)
+            .validate(statusCode: 200..<300)
+            .responseJSON {
+                response in
+                do {
+                    let list = try JSONDecoder().decode(OrdersNumber.self, from: response.data!)
+                        completion(nil, list)
+                } catch {
+                    print(error.localizedDescription)
+                    completion(error, nil)
+                }
+            }
+        
+    }
+    
+
+
     
     func RejectOrderFromDriver(order_id:Int , status : String) {
         let url = ConfigURLs.getDriverRejectOrder

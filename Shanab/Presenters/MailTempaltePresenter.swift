@@ -12,7 +12,8 @@ protocol MailTempalteViewDelegate: class {
     func mailTempalteResult(_ error: Error?, _ result: [Tempalte]?)
     func SupprortingResult(_ error: Error?, _ result: [Setting]?)
     func CreateEmail(_ error: Error? , _ result : SuccessError_Model?)
-    
+    func getProfileResult( _ error: Error?, _ result: User?)
+
 }
 class MailTempaltePresenter {
     private let services: Services
@@ -49,6 +50,14 @@ class MailTempaltePresenter {
             
             self?.dismissIndicator()
             self?.MailTempalteViewDelegate?.CreateEmail(error, result)
+        }
+    }
+    
+    
+    func getUserProfile() {
+        services.getProfile {[weak self] (error: Error?, result: User?) in
+            self?.MailTempalteViewDelegate?.getProfileResult(error, result)
+            self?.dismissIndicator()
         }
     }
     

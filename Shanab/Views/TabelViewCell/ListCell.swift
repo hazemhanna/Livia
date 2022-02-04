@@ -29,12 +29,29 @@ class ListCell: UITableViewCell {
         self.selectionStyle = .none
         self.statusLbl.text = "status".localized
         self.cancelBtn.setTitle("Cancel Order".localized, for: .normal)
+        
     }
     
     func config( date: String, status: String, orderNumber: Int) {
         self.date.text = date
         self.status.text = status.localized
         self.orderNum.text = "\(orderNumber)"
+        
+        if status  == "new" {
+            self.followBtn.isHidden = true
+            self.cancelBtn.isHidden = false
+          }else if status == "preparing"{
+              self.followBtn.isHidden = false
+              self.cancelBtn.isHidden = false
+          }else{
+              if status == "canceled" {
+                  self.followBtn.isHidden = true
+                  self.cancelBtn.isHidden = true
+              }else{
+                  self.followBtn.isHidden = false
+                  self.cancelBtn.isHidden = true
+              }
+          }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -13,7 +13,7 @@ import SwiftMessages
 import Alamofire
 
 class HomeVC: UIViewController {
-    @IBOutlet weak var search: UISearchBar!
+    
     @IBOutlet weak var RestaurantTableView: UITableView!
     @IBOutlet weak var TypeBN: UIButton!
     @IBOutlet weak var imageSlider: ImageSlideshow!
@@ -32,6 +32,7 @@ class HomeVC: UIViewController {
     var sliderType = String()
     var isSearching = false
     var type = "restaurant"
+    let token = Helper.getApiToken() ?? ""
     var MealSearch = [Collection]()
     let RestaurantsTypeDropDown = DropDown()
     var sections = [Category]() {
@@ -69,7 +70,6 @@ class HomeVC: UIViewController {
         RestaurantTableView.register(UINib(nibName: CellIdentifierTableView, bundle: nil), forCellReuseIdentifier: CellIdentifierTableView)
         
 
-        search.layer.cornerRadius = 20
         GetAddsVCPresenter.setGetAddsViewDelegate(GetAddsViewDelegate: self)
         imageSlider.layer.cornerRadius = 25
         GetAddsVCPresenter.showIndicator()
@@ -190,10 +190,10 @@ class HomeVC: UIViewController {
         RestaurantsTypeDropDown.direction = .bottom
         RestaurantsTypeDropDown.width = self.view.frame.width * 1
     }
+    
     @IBAction func searchButtonPressed(_ sender: Any) {
         guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as? SearchVC else { return }
         self.navigationController?.pushViewController(details, animated: true)
-        
     }
     
     @IBAction func notificationhButtonPressed(_ sender: Any) {
@@ -204,24 +204,15 @@ class HomeVC: UIViewController {
 
     
           func getImageData () -> [InputSource] {
-        
             var imageS = [InputSource]()
             print("imageURL Count : \(self.imageURLS.count)")
-            
-        
             if self.imageURLS.count != 0 {
-                
-                
-                
                 for imageURL in imageURLS {
                     if (imageURL.image?.contains("http"))! {
                         guard let url = URL(string: (imageURL.image ?? "")) else {return imageS}
                         print(url)
-                        
-                            
                         let alamofireSource = KingfisherSource(url: url)
                         imageS.append(alamofireSource)
-
                     } else {
                        guard let url = URL(string: BASE_URL + "/" + (imageURL.image ?? "")) else {return imageS}
 //                        print(url)

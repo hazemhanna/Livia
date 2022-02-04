@@ -50,3 +50,13 @@ struct OrderPaymentModelJSON: Codable {
     var errors: String?
 }
 
+// MARK: - WebViewModel
+struct WebViewModel: Codable {
+    let link: String?
+    let messagee: MessageeModel?
+}
+
+// MARK: - Messagee
+struct MessageeModel: Codable {
+    let original: String?
+}

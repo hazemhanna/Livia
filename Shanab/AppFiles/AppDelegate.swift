@@ -56,18 +56,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MOLHResetable {
 
     }
     func PaymentconfigureSDK() {
-//            let terminalId = "shnp"
-//            let password =  "shnp@URWAY_951"
-//            let merchantKey =  "156b28d726dce16a57301ec4e8a75034858511d81e64f87f1e06a96a61b9c6c9"
-//            let url = "https://payments.urway-tech.com/URWAYPGService/transaction/jsonProcess/JSONrequest"
-
+        //        let terminalId = "shnp"
+        //        let password =  "shnp@123"
+        //        let merchantKey =  "364903a1a12ba1816ba41d8b2ea0468be82353646cae2368a97aafd071577f14"
+        //        let url = "https://payments-dev.urway-tech.com/URWAYPGService/transaction/jsonProcess/JSONrequest"
         
-        let terminalId = "shnp"
-        let password =  "shnp@123"
-        let merchantKey =  "364903a1a12ba1816ba41d8b2ea0468be82353646cae2368a97aafd071577f14"
-        let url = "https://payments-dev.urway-tech.com/URWAYPGService/transaction/jsonProcess/JSONrequest"
-        UWConfiguration(password: password, merchantKey: merchantKey, terminalID: terminalId, url: url)
-       
+            let terminalId = "shnp"
+            let password =  "shnp@URWAY_951"
+            let merchantKey =  "156b28d726dce16a57301ec4e8a75034858511d81e64f87f1e06a96a61b9c6c9"
+            let url = "https://payments.urway-tech.com/URWAYPGService/transaction/jsonProcess/JSONrequest"
+            UWConfiguration(password: password, merchantKey: merchantKey, terminalID: terminalId, url: url)
     }
     
     static var item_id = Int()

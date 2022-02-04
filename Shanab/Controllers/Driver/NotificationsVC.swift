@@ -13,7 +13,8 @@ class NotificationsVC: UIViewController {
     var NotificationArr = [Notifications]()
     @IBOutlet weak var profileCollectionView: UICollectionView!
     fileprivate let cellIdentifier = "NotificationsCell"
-    
+    let user = Helper.getUserRole() ?? ""
+
     private let  ProileVCPresenter = DriverProfilePresenter(services: Services())
 
     var paid = false
@@ -67,27 +68,41 @@ extension NotificationsVC: UITableViewDelegate, UITableViewDataSource {
             Details.fromNotification = true
             self.navigationController?.pushViewController(Details, animated: true)
         }
+        if user == "driver" {
+            cell.paidBtn.isHidden = true
+            cell.paidLbl.isHidden = true
+        }else{
+          //  cell.paidBtn.isHidden = cell.paidLbl.isHidden = false
+        }
         
-        cell.orderId = data.itemID ?? 0
-        cell.data = data
         return cell
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90.0
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if user == "driver" {
         guard let Details = UIStoryboard(name: "Details", bundle: nil).instantiateViewController(withIdentifier: "OrderReceiptVC") as? OrderReceiptVC else { return }
         Details.id = self.NotificationArr[indexPath.row].itemID ?? 0
         self.navigationController?.pushViewController(Details, animated: true)
+        }else{
+        let data = NotificationArr[indexPath.row]
+        guard let Details = UIStoryboard(name: "Details", bundle: nil).instantiateViewController(withIdentifier: "UserOrderDetailsVC") as? UserOrderDetailsVC else { return }
+        Details.id =  data.itemID ?? 0
+        Details.status = "new"
+        Details.fromNotification = false
+        self.navigationController?.pushViewController(Details, animated: true)
+        }
     }
-    
-    
 }
 
 extension NotificationsVC : DriverProfileViewDelegate {
+    func orderNumber(_ error: Error?, _ order: OrdersNumber?) {
+        
+    }
+    
    
     func checkOrderPayment(_ error: Error?, _ order: OrderPaymentModelJSON?) {
     

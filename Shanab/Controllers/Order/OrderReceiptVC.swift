@@ -33,17 +33,29 @@ class OrderReceiptVC: UIViewController {
     @IBOutlet weak var orderReceiptTableView: UITableView!
     @IBOutlet weak var fees: UILabel!
     @IBOutlet weak var total: UILabel!
-    @IBOutlet weak var cosmos: CosmosView!
     @IBOutlet weak var orderPrice: UILabel!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var AcceptOrderView: UIView!
-    
     @IBOutlet weak var TaxLb: UILabel!
+    @IBOutlet weak var webLink: UILabel!
+    @IBOutlet weak var orderNumber: UILabel!
+    @IBOutlet weak var restaurantAddress: UILabel!
+    @IBOutlet weak var titlewebLink : UILabel!
+    @IBOutlet weak var TableHeight: NSLayoutConstraint!
+    @IBOutlet weak var ProgressView: UIView!
+    @IBOutlet weak var TopToView: NSLayoutConstraint?
+    @IBOutlet weak var TopToProgress: NSLayoutConstraint?
     
     var totalOrderPrice: Double = 0.0
     var vat = ""
-
     var id = Int()
+    var orderPrices = [Order]()
+    fileprivate let cellIdentifier = "OrderReceiptCell"
+    var lat , long : Double?
+    var restauranlat , restaurantlong : Double?
+
+    
+    var status = "new"
     var details = [OrderDetail]() {
         didSet {
             DispatchQueue.main.async {
@@ -51,22 +63,6 @@ class OrderReceiptVC: UIViewController {
             }
         }
     }
-    
-    @IBOutlet weak var TopToView: NSLayoutConstraint?
-    
-    @IBOutlet weak var TopToProgress: NSLayoutConstraint?
-    
-    var orderPrices = [Order]()
-    fileprivate let cellIdentifier = "OrderReceiptCell"
-    
-    var lat , long : Double?
-    
-    @IBOutlet weak var TableHeight: NSLayoutConstraint!
-    
-    @IBOutlet weak var ProgressView: UIView!
-    
-    var status = "new"
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,7 +78,27 @@ class OrderReceiptVC: UIViewController {
         customerPic.setRounded()
         DriverOrderDetailsVCPresenter.setDriverOrderDetailsViewDelegate(DriverOrderDetailsViewDelegate: self)
         DriverOrderDetailsVCPresenter.getCartItems()
+        DriverOrderDetailsVCPresenter.getWebView(order_id : id)
+
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.openWebView(_:)))
+        webLink.isUserInteractionEnabled = true
+        webLink.addGestureRecognizer(gestureRecognizer)
+        titlewebLink.text = "bill".localized
+        orderNumber.text = "order Number".localized + ": \(id)"
+
     }
+    
+    @objc func openWebView(_ sender: UITapGestureRecognizer) {
+        if let url = URL(string: webLink.text ?? "") {
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url, options: [:])
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        }
+        
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
       //  self.address.text = UserDefaults.standard.string(forKey: "Address") ?? ""
@@ -124,6 +140,13 @@ class OrderReceiptVC: UIViewController {
         UIApplication.shared.open(URL(string: "https://maps.google.com/?saddr=&daddr=\(lat ?? 0.0),\(long ?? 0.0)&directionsmode=driving")!, options: [:], completionHandler: nil)
 
     }
+    
+    
+    @IBAction func restauranlocationMap(_ sender: Any) {
+        UIApplication.shared.open(URL(string: "https://maps.google.com/?saddr=&daddr=\(restauranlat ?? 0.0),\(restaurantlong ?? 0.0)&directionsmode=driving")!, options: [:], completionHandler: nil)
+
+    }
+    
     @IBAction func menu(_ sender: Any) {
         self.setupSideMenu()
     }
@@ -215,6 +238,11 @@ extension OrderReceiptVC: UITableViewDelegate, UITableViewDataSource {
     }
 }
 extension OrderReceiptVC: DriverOrderDetailsViewDelegate {
+    
+    func getWebView(_ error: Error?, _ result: WebViewModel?) {
+        self.webLink.text = result?.link ?? ""
+    }
+    
     func getCartResult(_ error: Error?, _ result: String?) {
         
         if let vat = result {
@@ -228,17 +256,7 @@ extension OrderReceiptVC: DriverOrderDetailsViewDelegate {
     
     func getDriverProfileResult(_ error: Error?, _ result: User?) {
         if let profile = result {
-//            self.phone.text = profile.phone ?? ""
-//            if "lang".localized == "ar" {
-//                self.name.text = profile.nameAr ?? ""
-//            } else {
-//                self.name.text = profile.nameEn ?? ""
-//            }
-//
-//            if let image = profile.image {
-//                guard let url = URL(string: image) else { return }
-//                self.customerPic.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "logo-1"))
-//            }
+
         }
     }
     
@@ -329,6 +347,12 @@ extension OrderReceiptVC: DriverOrderDetailsViewDelegate {
             self.address.text = detail[0].address?.address ?? ""
             self.lat = detail[0].address?.lat
             self.long = detail[0].address?.long
+            self.restaurantAddress.text = self.details[0].restaurant?.address ?? ""
+            
+            self.restauranlat = Double(self.details[0].restaurant?.latitude ?? "")
+            self.restaurantlong =  Double(self.details[0].restaurant?.longitude ?? "")
+        
+
             
 //            self.details.forEach {
 //                orderPrices.append(Order(price: $0.price ?? -1.0))
@@ -338,68 +362,46 @@ extension OrderReceiptVC: DriverOrderDetailsViewDelegate {
             var orderCost = Double()
             var count = 0
             for item in self.details {
-                                
                 if item.meal?.hasOffer == 1 {
-                    
                     var discount = (Double(item.meal?.discount ?? 0))
-                    
                     if item.meal?.discountType == "percentage" {
-                        
                         discount /= 100
                         discount = ((item.meal?.price?[0].price ?? 0.0) - ((item.meal?.price?[0].price ?? 0.0 ) * Double(discount))).rounded(toPlaces: 2)
-                        
                         orderCost = Double(orderCost + (Double(item.quantity ?? 0) * discount)).rounded(toPlaces: 2)
-
-                        
                     } else {
-                        
                         discount = ((item.meal?.price?[0].price ?? 0.0) -  Double(discount)).rounded(toPlaces: 2)
-                        
                         orderCost = Double(orderCost + (Double(item.quantity ?? 0) * discount)).rounded(toPlaces: 2)
-
                     }
-                    
                     self.details[count].meal?.price?[0].price = discount
                     print(self.details[count].meal?.price?[0].price)
-                    
                 } else {
-                    
                     orderCost = Double(orderCost + (Double(item.quantity ?? 0) * (item.meal?.price?[0].price ?? 0.0))).rounded(toPlaces: 2)
-
                 }
-                
                 for options in (item.option ?? []) {
-                    
                     orderCost = Double(orderCost + ((options.price ?? 0.0))).rounded(toPlaces: 2)
-                    
                 }
-        
                 count += 1
             }
             
             let vatD = Double((Double(vat)?.rounded(toPlaces: 2) ?? 0.0)/100).rounded(toPlaces:2)
-            
-            print(vatD)
             let orderCostWithVat = orderCost + (orderCost * vatD)
            // orderPrice.text = "\(orderCost)"
-
             orderPrice.text = "\(orderCost.rounded(toPlaces:2))"
-            
             total.text = "\(detail[0].total?.rounded(toPlaces: 2) ?? 0.0)"
+//            print(detail[0].total , "\n" , orderCostWithVat , "\n" , orderCost )
+//            let feesCalcoulation = Double(((detail[0].total ?? 0.0) - orderCostWithVat)).rounded(toPlaces: 1)
+//
             
             
-            print(detail[0].total , "\n" , orderCostWithVat , "\n" , orderCost )
-
-            let feesCalcoulation = Double(((detail[0].total ?? 0.0) - orderCostWithVat)).rounded(toPlaces: 1)
+            let total = (detail[0].total?.rounded(toPlaces: 2) ?? 0.0)
+            
+            let feesCalcoulation = Double(( total - orderCost)).rounded(toPlaces: 1)
+            
             
             if detail[0].type != "sfry" {
-                
                 fees.text = "\(feesCalcoulation)"
-
             } else {
-                
                 fees.text = "0.0"
-
             }
             
         }

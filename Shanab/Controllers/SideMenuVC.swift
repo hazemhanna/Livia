@@ -37,42 +37,35 @@ class SideMenuVC: UIViewController {
     }
     let token = Helper.getApiToken() ?? ""
     let user = Helper.getUserRole() ?? ""
+    
     override func viewDidLoad() {
         profilePic.setRounded()
         super.viewDidLoad()
-        
-       
         SideMenuTableView.dataSource = self
         SideMenuTableView.delegate = self
         SideMenuTableView.rowHeight = UITableView.automaticDimension
                       SideMenuTableView.estimatedRowHeight = UITableView.automaticDimension
         SideMenuTableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
         SideMenuTableView.tableFooterView = UIView()
-        
         SideMenuVCPresenter.setSideMenuViewDelegate(SideMenuViewDelegate: self)
         if (Helper.getApiToken() ?? "") != "" {
             walletView.isHidden = false
             if user == "driver" {
-                
                 self.signIn.isHidden = true
                 self.StatusLB.isHidden = false
                 self.profilePic.isHidden = false
                 self.StackLeading.isActive = true
                 self.StackCenter.isActive = false
                 self.editBN.isHidden = true
-                
-            } else {
-                
+                walletView.isHidden = true
+            }else {
                 self.signIn.isHidden = true
                 self.StatusLB.isHidden = true
                 self.profilePic.isHidden = true
                 self.StackLeading.isActive = false
                 self.StackCenter.isActive = true
                 self.editBN.isHidden = false
-
             }
-           
-            
         } else {
             walletView.isHidden = true
             self.profilePic.image = #imageLiteral(resourceName: "Group 6")
@@ -83,19 +76,13 @@ class SideMenuVC: UIViewController {
             }
             self.SignOut.isHidden = true
             editBN.isHidden = true
-            
             self.profilePic.isHidden = false
             self.StatusLB.isHidden = true
             self.StackLeading.isActive = true
             self.StackCenter.isActive = false
-        
         }
-        
-        
         wallet.text = "wallet".localized
         currencyLbl.text = "SAR".localized
-        
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -104,7 +91,6 @@ class SideMenuVC: UIViewController {
                 SideMenuVCPresenter.getUserProfile()
             } else {
                 SideMenuVCPresenter.getDriverProfile()
-                
             }
             
             if user == "customer" {
@@ -117,13 +103,13 @@ class SideMenuVC: UIViewController {
                     SideMenuModel(name: "Reservations".localized, id: "Reservations", selected: false, sideImage: #imageLiteral(resourceName: "reservation2")),
                     SideMenuModel(name: "Order List".localized, id: "OrderList", selected: false, sideImage: #imageLiteral(resourceName: "order-food-1")),
                     SideMenuModel(name: "subscriptions".localized, id: "subscriptions", selected: false, sideImage: #imageLiteral(resourceName: "terms")),
-                    SideMenuModel(name: "foodPackages".localized, id: "foodPackages", selected: false, sideImage: #imageLiteral(resourceName: "terms")),
+                    SideMenuModel(name: "foodPackages".localized, id: "foodPackages", selected: false, sideImage: #imageLiteral(resourceName: "NoPath - Copy (10)")),
                     SideMenuModel(name: "FoodCart".localized, id: "FoodCart", selected: false,sideImage: #imageLiteral(resourceName: "cart (1)-1")),
-                    SideMenuModel(name: "Favorit Restaurants".localized, id: "Favorites", selected: false, sideImage: #imageLiteral(resourceName: "heart")),
-                    SideMenuModel(name: "Favorite Meals".localized, id: "FavoriteMeals", selected: false, sideImage: #imageLiteral(resourceName: "heart-1")),
+                    SideMenuModel(name: "Favorit Restaurants".localized, id: "Favorites", selected: false, sideImage: #imageLiteral(resourceName: "order-food-1")),
+                    SideMenuModel(name: "Favorite Meals".localized, id: "FavoriteMeals", selected: false, sideImage: #imageLiteral(resourceName: "favorite (1)")),
                     SideMenuModel(name: "Contact Us".localized, id: "Contact Us", selected: false,sideImage: #imageLiteral(resourceName: "contactUs")),
                     SideMenuModel(name: "Terms And Conditions".localized, id: "TermsAndConditions", selected: false, sideImage: #imageLiteral(resourceName: "terms")),
-                    SideMenuModel(name: "Settings".localized, id: "Setting", selected: false, sideImage: #imageLiteral(resourceName: "burger"))
+                    SideMenuModel(name: "Settings".localized, id: "Setting", selected: false, sideImage: #imageLiteral(resourceName: "Screen Shot 2021-12-31 at 6.42.33 PM"))
                     
                 ]
             } else {
@@ -133,10 +119,7 @@ class SideMenuVC: UIViewController {
                     SideMenuModel(name: "Notifications".localized, id: "Notifications", selected: false, sideImage: #imageLiteral(resourceName: "icons8-notification")),
                     SideMenuModel(name: "Contact Us".localized, id: "Contact Us", selected: false,sideImage: #imageLiteral(resourceName: "contactUs")),
                     SideMenuModel(name: "Terms And Conditions".localized, id: "TermsAndConditions", selected: false, sideImage: #imageLiteral(resourceName: "terms")),
-                     SideMenuModel(name: "Settings".localized, id: "Setting", selected: false, sideImage: #imageLiteral(resourceName: "burger")),
-                    
-                    
-                    
+                     SideMenuModel(name: "Settings".localized, id: "Setting", selected: false, sideImage: #imageLiteral(resourceName: "Screen Shot 2021-12-31 at 6.42.33 PM")),
                 ]
             }
             
@@ -145,7 +128,7 @@ class SideMenuVC: UIViewController {
                 SideMenuModel(name: "Home".localized, id: "home", selected: false, sideImage: #imageLiteral(resourceName: "home")),
                 SideMenuModel(name: "Contact Us".localized, id: "Contact Us", selected: false,sideImage: #imageLiteral(resourceName: "cridateCard")),
                 SideMenuModel(name: "Terms And Conditions".localized, id: "TermsAndConditions" , selected: false, sideImage: #imageLiteral(resourceName: "terms")),
-             SideMenuModel(name: "Settings".localized, id: "Setting", selected: false, sideImage: #imageLiteral(resourceName: "burger"))]
+             SideMenuModel(name: "Settings".localized, id: "Setting", selected: false, sideImage: #imageLiteral(resourceName: "Screen Shot 2021-12-31 at 6.42.33 PM"))]
         }
         
     }
@@ -199,10 +182,8 @@ class SideMenuVC: UIViewController {
         switch sideMenuArr[indexPath.row].sideMenuId {
         case "home":
             guard let window = UIApplication.shared.keyWindow else { return }
-
             switch Singletone.instance.appUserType {
             case .Customer:
-
             let sb = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeTabBar") as! UITabBarController
             sb.selectedIndex = 0
             window.rootViewController = sb
@@ -225,10 +206,8 @@ class SideMenuVC: UIViewController {
             pushSideMenu(StoryboardName: "Orders", ForController: "OrderListVC")
         case "Profile":
             pushSideMenu(StoryboardName: "Profile", ForController: "CustomerProfileVC")
-            
         case "subscriptions":
             pushSideMenu(StoryboardName: "Products", ForController: "MySubscribtionVc")
-            
         case "foodPackages":
             pushSideMenu(StoryboardName: "Products", ForController: "MYFoodPackagesSubscribtionsVC")
         case "FoodCart":
@@ -247,18 +226,14 @@ class SideMenuVC: UIViewController {
             pushSideMenu(StoryboardName: "AboutApp", ForController: "SettingVC")
         case "DriverOrderList":            
             let main = UIStoryboard(name: "Orders", bundle: nil).instantiateViewController(withIdentifier: "DriverOrderListVC") as! DriverOrderListVC
-            
             main.orderSelected = .other
-            
+            main.homePage = false
             self.navigationController!.pushViewController(main, animated: true)
-
         case "Notifications":
             pushSideMenu(StoryboardName: "Profile", ForController: "NotificationsVC")
-            
         default:
             break
         }
-        
     }
     func pushSideMenu(StoryboardName name: String,ForController identifier: String) {
         let main = UIStoryboard(name: name, bundle: nil).instantiateViewController(withIdentifier: identifier)

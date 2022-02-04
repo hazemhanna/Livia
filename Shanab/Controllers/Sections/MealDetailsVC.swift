@@ -219,14 +219,20 @@ extension MealDetailsVC: MealsDetailsViewDelegate {
                 displayMessage(title: "", message: meals.message[0], status: .error, forController: self)
             } else if meals.options != [""] {
                 displayMessage(title: "", message: meals.options[0], status: .error, forController: self)
+            }else{
+                if "lang".localized == "en" {
+                displayMessage(title: "", message: "Please Make Your Cart Including Only One Restaurant", status: .error, forController: self)
+                }else{
+                displayMessage(title: "", message: " يرجى جعل عربة التسوق الخاصة بك تشمل مطعم واحد فقط ", status: .error, forController: self)
+                }
             }
         }
     }
     
     func RestaurantDetailsResult(_ error: Error?, _ details: RestaurantDetail?) {
         
-        
     }
+    
     func FavoriteResult(_ error: Error?, _ result: SuccessError_Model?) {
         if let resultMsg = result {
             if resultMsg.successMessage != "" {

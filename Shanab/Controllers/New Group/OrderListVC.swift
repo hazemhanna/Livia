@@ -32,11 +32,11 @@ class OrderListVC : UIViewController {
     let orderTypsDropDown = DropDown()
     fileprivate let cellIdentifier = "ListCell"
     
-    var type = "new"
-    
-    let TypesApi = ["new", "preparing", "delivering", "delivered" , "competed","canceled"]
-    
-    let TypeArr = ["new order".localized, "preparing order".localized , "on_way".localized, "arrived".localized, "completed".localized ,"canceled".localized]
+    var type = "all"
+    var status = "all"
+
+    let TypesApi = ["all","new", "preparing", "delivering", "delivered", "competed", "canceled"]
+    let TypeArr = ["all order".localized,"new order".localized, "preparing order".localized , "on_way".localized, "arrived".localized, "completed".localized ,"canceled".localized]
     
     var list = [orderList](){
         didSet {
@@ -51,18 +51,14 @@ class OrderListVC : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         listTableView.tableFooterView  = UIView()
-        
         cancelreason.text = "What is the Cancel Reason?".localized
         canceltitle.text = "Are you sure ?".localized
         cancelBtn.setTitle("Cancel".localized, for: .normal)
         cancelOrderBtn.setTitle("Cancel Order".localized, for: .normal)
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
         if  Helper.getApiToken() == "" || Helper.getApiToken() == nil {
-            
             displayMessage(title: "", message: "You should login first".localized, status:.warning, forController: self)
             LoginView.isHidden = false
         } else {
@@ -77,14 +73,13 @@ class OrderListVC : UIViewController {
             
             DispatchQueue.global().async {
                 self.list.removeAll()
-                self.UserListVCPresenter.postUserGetList(status: [self.type], currentPage: self.currentPage)
-
-                
+                self.UserListVCPresenter.postUserGetList(status: ["all"], currentPage: self.currentPage, type : "all")
             }
             SetuporderTypesDropDown()
         }
         
     }
+    
     func SetuporderTypesDropDown() {
         orderTypsDropDown.anchorView = orderType
         orderTypsDropDown.bottomOffset = CGPoint(x: 0, y: orderTypsDropDown.anchorView?.plainView.bounds.height ?? 0 + 50)
@@ -92,11 +87,15 @@ class OrderListVC : UIViewController {
         orderTypsDropDown.selectionAction = {[weak self] (index, item) in
             self?.orderType.setTitleColor(#colorLiteral(red: 0.8121929765, green: 0.2939046025, blue: 0.2674312294, alpha: 1), for: .normal)
             self?.orderType.setTitle(item, for: .normal)
-            self?.type = self?.TypesApi[index] ?? ""
+            self?.status = self?.TypesApi[index] ?? ""
             self?.currentPage = 1
             self?.list.removeAll()
             self?.UserListVCPresenter.showIndicator()
-            self?.UserListVCPresenter.postUserGetList(status: [self?.type ?? ""], currentPage: self?.currentPage ?? 1)
+            if index == 0 {
+                self?.UserListVCPresenter.postUserGetList(status: [self?.status ?? ""], currentPage: self?.currentPage ?? 1, type: "all")
+            }else {
+                self?.UserListVCPresenter.postUserGetList(status: [self?.status ?? ""], currentPage: self?.currentPage ?? 1, type: "one")
+            }
         }
         orderTypsDropDown.direction = .any
         orderTypsDropDown.width = self.view.frame.width / 2
@@ -135,7 +134,7 @@ extension OrderListVC: UITableViewDelegate, UITableViewDataSource , UITableViewD
      func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         for index in indexPaths {
             if index.row >= list.count - 4  && !isFatching{
-                self.UserListVCPresenter.postUserGetList(status: [self.type], currentPage: currentPage )
+                self.UserListVCPresenter.postUserGetList(status: [self.type], currentPage: currentPage, type: type )
                 isFatching = true
                 break
             }
@@ -170,21 +169,6 @@ extension OrderListVC: UITableViewDelegate, UITableViewDataSource , UITableViewD
             self.cancelView.isHidden = false
         }
     
-      if type == "new" {
-            cell.followBtn.isHidden = true
-            cell.cancelBtn.isHidden = false
-        }else if type == "preparing"{
-            cell.followBtn.isHidden = false
-            cell.cancelBtn.isHidden = false
-        }else{
-            if type == "canceled" {
-                cell.followBtn.isHidden = true
-                cell.cancelBtn.isHidden = true
-            }else{
-                cell.followBtn.isHidden = false
-                cell.cancelBtn.isHidden = true
-            }
-        }
         
         return cell
     }
@@ -209,7 +193,7 @@ extension OrderListVC: UserListViewDelegate {
             displayMessage(title: "", message: "Done".localized , status: .success, forController: self)
             DispatchQueue.global().async {
                 self.list.removeAll()
-                self.UserListVCPresenter.postUserGetList(status: [self.type], currentPage: self.currentPage)
+                self.UserListVCPresenter.postUserGetList(status: [self.type], currentPage: self.currentPage, type: self.type )
             }
         }
     }

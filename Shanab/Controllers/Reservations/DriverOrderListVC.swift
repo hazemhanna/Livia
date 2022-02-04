@@ -21,22 +21,28 @@ class DriverOrderListVC: UIViewController {
     @IBOutlet weak var orderType: UIButton!
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var phoneLB: UILabel!
-    let DriverStatusDropDown = DropDown()
-    @IBOutlet weak var available: UIButton!
+    @IBOutlet weak var orderNumber : UILabel!
+    @IBOutlet weak var orderNumber2 : UILabel!
     
+    @IBOutlet weak var titleLbl : UILabel!
+    @IBOutlet weak var notificationBtn: UIButton!
+    
+    @IBOutlet weak var DriverListCollectionView: UICollectionView!
+    @IBOutlet weak var PreviousTableView: UITableView!
+    @IBOutlet weak var available: UIButton!
+
+    let DriverStatusDropDown = DropDown()
     var orderSelected : OrdersTypeE = .completed
     var ChangeAvailablity = String()
     var isAvailable = Int()
     var type = "new"
-    var id = Int()
     let TypesArr = ["new", "OnWay", "Arrived", "completed"]
     let StatusArr = ["Available".localized, "Unavailable".localized]
-    @IBOutlet weak var DriverListCollectionView: UICollectionView!
-    
-    @IBOutlet weak var PreviousTableView: UITableView!
-    
-    
     fileprivate let cellIdentifier = "DriverListCell"
+    
+    var id = Int()
+    var homePage = true
+    
     private let DriverProfileVCPresenter = DriverProfilePresenter(services: Services())
     let picker = UIImagePickerController()
     var SelectedIndex = -1
@@ -66,6 +72,7 @@ class DriverOrderListVC: UIViewController {
         DriverProfileVCPresenter.showIndicator()
         DriverProfileVCPresenter.getDriverProfile()
         
+        
         PreviousTableView.delegate = self
         PreviousTableView.dataSource = self
         PreviousTableView.prefetchDataSource = self
@@ -87,7 +94,22 @@ class DriverOrderListVC: UIViewController {
         }
         SetupDriverStatusDropDown()
         
+        if homePage {
+            titleLbl.text = "Shanab".localized
+            notificationBtn.isHidden = false
+        }else{
+            titleLbl.text = "privouse Order".localized
+            notificationBtn.isHidden = true
+        }
+        
     }
+    
+    @IBAction func notificationhButtonPressed(_ sender: Any) {
+        guard let details = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "NotificationsVC") as? NotificationsVC else { return }
+        self.navigationController?.pushViewController(details, animated: true)
+        
+    }
+
     override func viewWillAppear(_ animated: Bool) {
            super.viewWillAppear(true)
            if AppDelegate.notification_flag {
@@ -97,7 +119,7 @@ class DriverOrderListVC: UIViewController {
                   self.present(sb, animated: true, completion: nil)
                   
         }
-           }
+    }
     
     @IBAction func StatusBtn(_ sender: Any) {
         
@@ -218,6 +240,19 @@ extension DriverOrderListVC: UIImagePickerControllerDelegate, UINavigationContro
 }
 extension DriverOrderListVC: DriverProfileViewDelegate {
     
+    func orderNumber(_ error: Error?, _ order: OrdersNumber?) {
+        let newString = order?.message
+        let array = newString?.components(separatedBy: ":")
+        if "lang".localized == "ar" {
+            orderNumber.text = "عدد الطلبات السابقة :" + (array?.last ?? "")
+            orderNumber2.text = "عدد الطلبات السابقة :" + (array?.last ?? "")
+        }else {
+            orderNumber.text = order?.message
+            orderNumber2.text = order?.message
+        }
+    }
+    
+    
     func checkOrderPayment(_ error: Error?, _ order: OrderPaymentModelJSON?) {
         
     }
@@ -252,7 +287,7 @@ extension DriverOrderListVC: DriverProfileViewDelegate {
     }
     func getDriverProfileResult(_ error: Error?, _ result: User?) {
         if let profile = result {
-            
+            DriverProfileVCPresenter.orderNumber(id: profile.id ?? 0)
             self.phoneLB.text = profile.phone ?? ""
             if "lang".localized == "ar" {
                  self.DriverName.text = profile.nameAr ?? ""
@@ -375,7 +410,7 @@ extension DriverOrderListVC: UICollectionViewDataSource, UICollectionViewDelegat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? DriverListCell else {return UICollectionViewCell()}
         let client = list[indexPath.row].client ?? Client()
-        cell.config(Name: client.nameAr ?? "", imagePath: client.image ?? "", rate: Double(list[indexPath.row].rate ?? 0) , address: client.address ?? "")
+        cell.config(Name: client.nameAr ?? "", imagePath: client.image ?? "", rate: Double(list[indexPath.row].rate ?? 0) , address: client.address ?? "",orderId : list[indexPath.row].id ?? 0 )
         
         cell.goToDetails = {
             guard let Details = UIStoryboard(name: "Details", bundle: nil).instantiateViewController(withIdentifier: "OrderReceiptVC") as? OrderReceiptVC else { return }
@@ -389,7 +424,7 @@ extension DriverOrderListVC: UICollectionViewDataSource, UICollectionViewDelegat
         
         let width = (collectionView.bounds.width / 2) - 10
         
-        return CGSize(width: width, height: width * 1.25)
+        return CGSize(width: width, height: 300)
     }
 }
 

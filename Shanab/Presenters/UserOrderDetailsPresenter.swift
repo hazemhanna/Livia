@@ -12,7 +12,8 @@ protocol UserOrderDetailsViewDelegate: class {
     func UserOrderDetailsResult(_ error: Error?, _ result: [DriverOrder]?)
     func getCartResult(_ error: Error?, _ result: String?)
     func paidOrder(_ error: Error?, _ result: OrderPaymentModelJSON?)
-
+    func getWebView(_ error: Error?, _ result: WebViewModel?)
+    
 }
 class UserOrderDetailsPresenter {
     private let services: Services
@@ -46,6 +47,13 @@ class UserOrderDetailsPresenter {
     func paidOrder(id: Int) {
            services.paidOrder(order_id:id) {[weak self] (error: Error?, result: OrderPaymentModelJSON?) in
             self?.UserOrderDetailsViewDelegate?.paidOrder(error, result)
+               self?.dismissIndicator()
+           }
+       }
+    
+    func getWebView(order_id : Int) {
+           services.getWebViewLink(order_id : order_id) {[weak self] (error: Error?, result: WebViewModel?) in
+            self?.UserOrderDetailsViewDelegate?.getWebView(error, result)
                self?.dismissIndicator()
            }
        }

@@ -21,27 +21,23 @@ public func displayMessage(title: String, message: String, status: Theme, forCon
     successConfig.presentationStyle = .top
     successConfig.presentationContext = .window(windowLevel: UIWindow.Level.normal)
     SwiftMessages.show(config: successConfig, view: success)
-    
 }
-
 
 //MARK: - Localization and languages
 public func localizedStringFor(key:String)->String {
     return NSLocalizedString(key, comment: "")
 }
+
 //MARK:- Display QRCode
 public func generateQRCode(from string: String) -> UIImage? {
     let data = string.data(using: String.Encoding.ascii)
-
     if let filter = CIFilter(name: "CIQRCodeGenerator") {
         filter.setValue(data, forKey: "inputMessage")
         let transform = CGAffineTransform(scaleX: 3, y: 3)
-
         if let output = filter.outputImage?.transformed(by: transform) {
             return UIImage(ciImage: output)
         }
     }
-
     return nil
 }
 

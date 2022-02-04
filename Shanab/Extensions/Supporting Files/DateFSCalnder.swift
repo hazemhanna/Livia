@@ -39,7 +39,6 @@ extension Date {
         dateFormatter.dateFormat = "MM/dd/yyyy"
         return dateFormatter.date(from: customString) ?? Date()
     }
-    
     func reduceToMonthDayYear() -> Date {
         let calendar = Calendar.current
         let month = calendar.component(.month, from: self)
@@ -55,14 +54,11 @@ extension Date {
     }
 }
 extension String {
-    func toDate(withFormat format: String = "yyyy-MM-dd HH:mm:ss")-> Date?{
-        
+ func toDate(withFormat format: String = "yyyy-MM-dd HH:mm:ss")-> Date?{
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en")
         dateFormatter.dateFormat = format
         let date = dateFormatter.date(from: self)
-        
         return date
-        
     }
 }

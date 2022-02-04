@@ -134,7 +134,7 @@ extension FoodPackages : UITableViewDelegate, UITableViewDataSource {
             self.delivery_price = self.foodSubscription[indexPath.row].subscription?.price ?? 0
             self.food_price = self.foodSubscription[indexPath.row].price ?? 0
             self.total = (self.foodSubscription[indexPath.row].subscription?.price ?? 0) + (self.foodSubscription[indexPath.row].price ?? 0)
-            self.total2 = (self.foodSubscription[indexPath.row].subscription?.price ?? 0)
+            self.total2 = (self.foodSubscription[indexPath.row].price ?? 0)
             if "lang".localized == "ar" {
                 self.deliveryPriceLbl.text = "قيمة اشتراك التوصيل \( self.foodSubscription[indexPath.row].subscription?.price ?? 0 )  ريال سعودي"
             }else{

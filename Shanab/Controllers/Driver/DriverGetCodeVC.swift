@@ -69,10 +69,8 @@ extension DriverGetCodeVC: DriverGetCodeViewDelegate {
                 
             } else if resultMsg.email != [""] {
                 displayMessage(title: "error", message: resultMsg.email[0], status: .error, forController: self)
-                
             }
         }
     }
-    
-    
 }
+

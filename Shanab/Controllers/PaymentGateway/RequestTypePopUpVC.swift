@@ -115,12 +115,14 @@ class RequestTypePopUpVC: UIViewController {
     func CreateOrder() {
         var payment = ""
         var OrderT = ""
+        var orderCost = Double()
+
                 let longitude = Constants.long
                 let latitude = Constants.lat
                 let createOrderCart  = Singletone.instance.cart.map { (onLineCart) -> createOrderModel in
                     let items = mealItems(meal_id: onLineCart.mealID ?? 0, quantity: onLineCart.quantity ?? 0, message: onLineCart.message ?? "")
+                    
                     let options = onLineCart.optionsContainer?.map({ (option) -> optionsInOrder in
-                        
                         print(option)
                         return optionsInOrder(option_id: option.options?.id ?? 0, quntity: option.quantity ?? 0)
                         
@@ -133,10 +135,14 @@ class RequestTypePopUpVC: UIViewController {
         switch OrderType {
         case .sefry:
             OrderT = "sfry"
+            self.total  += 0
         case .delivery:
             OrderT = "delivery"
+            self.total  += fee
         case .basherly:
             OrderT = "basherly"
+            self.total  += fee
+
         default:
             break
         }
@@ -169,8 +175,6 @@ class RequestTypePopUpVC: UIViewController {
     
 }
 
-
-
 extension RequestTypePopUpVC : CreateOrderViewDelegate {
     func getProfileResult(_ error: Error?, _ result: User?) {
         self.totalWallet = (result?.total_wallet?.rounded(toPlaces: 2) ?? 0 )
@@ -197,7 +201,6 @@ extension RequestTypePopUpVC : CreateOrderViewDelegate {
         }
     }
     
-    
     func CreateOrderResult(_ error: Error?, _ result: SuccessError_Model?) {
         if let resultMsg = result {
             if resultMsg.successMessage != "" {
@@ -220,8 +223,6 @@ extension RequestTypePopUpVC : CreateOrderViewDelegate {
             }
         }
     }
-    
-    
     
 }
 
