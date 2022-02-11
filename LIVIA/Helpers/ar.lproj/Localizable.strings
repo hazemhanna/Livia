@@ -1,0 +1,197 @@
+/* 
+  Localizable.strings
+  Shanab
+
+  Created by Macbook on 7/6/20.
+  Copyright © 2020 Dtag. All rights reserved.
+*/
+"lang" = "ar";
+"Home" = "الصفحة الرئيسية";
+"Sections" = "الاقسام";
+"Cart" = "سلة المشتريات";
+"Reservations" = "الحجوزات";
+"Order List" = "طلباتي";
+"Profile" = "الملف الشخصي";
+"Favorit Restaurants" = "المطاعم المفضلة";
+"Favorite Meals" = "الواجبات المفضلة";
+"Contact Us" = "تواصل معنا";
+"Terms And Conditions" = "الشروط والاحكام";
+"Settings" = "الاعدادت";
+"Pervious List" = "الطلبات السابقة";
+"Notifications" = "الاشعارات";
+"restaurant" = "مطاعم";
+"family" = "اسر منتجة";
+"truck" = "فودتراك";
+"new order" = "الطلبات الجديدة";
+
+"new" = "جديد";
+"preparing" = "جاري التحضير";
+"delivering" = "في الطريق";
+"delivered" = "تم التوصيل";
+"competed" = "منتهي";
+
+"preparing order" = "طلبات قيد التحضير";
+
+"on_way" = "طلبات قيد التوصيل";
+"completed" = "طلبات منتهية";
+"arrived" = "طلبات تم التوصيل";
+
+"S.R" = "ريال سعودي";
+"You should login first" = "يجب عليك تسجيل الدخول أولاًَ";
+
+"Add favourite" = "الأضافة إلي المفضلة";
+
+"Apartment needed" = "مطلوب رقم الشقة";
+
+"Building needed" = "مطلوب رقم المنزل";
+
+"Floor needed" = "مطلوب رقم الدور";
+
+"Latitude needed" = "مطلوب خطوط الطول";
+
+"Longitude needed" = "مطلوب خطوط العرض";
+
+"No address for this user" = "لا يوجد عنوان للمستخدم";
+
+"Choose payment method" = "اختر طريقة الدفع";
+
+"Enter your email" = "آدخل بريدك الألكتروني";
+
+"Done" = "تم";
+
+"Item deleted from cart" = "تم حذف الطلب من سلة التسوق";
+
+"Complain" = "شكوى";
+"Proposal" = "أقتراح";
+"Enter Your Email" = "ادخل بريدك الألكتروني";
+
+"Enter Your phone number" = "ادخل رقم الجوال";
+
+"Enter message" = "ادخل رسالتك";
+
+"Choose the message address" = "اختر عنوان الرسالة";
+
+"Enter Your name" = "ادخل اسمك";
+
+"Your message was sent" = "تم أرسال رسالتك";
+
+"Select the number of people" = "اختر عدد الأشخاص";
+
+"Choose the date" = "اختر التاريخ";
+
+"Choose time" = "اختر الوقت";
+
+
+"Please enter a deposit of " = "يرجى دفع ";
+
+"S.R to confirm reservation" = "ريال سعودي لتأكيد الحجز";
+
+
+"Item deleted from cart" = "تم حذف العنصر من السلة";
+
+"Order added successfully" = "تم أضافة الطلب بنجاح";
+
+"You logged out now" = "تم تسجيل خروجك";
+
+"phone or password wrong" = "كلمة المرور أو رقم الهاتف غير صحيحين";
+
+"Add to cart" = "أضافة إلى السلة";
+
+"Password changed" = "تم تغيير كلمة المرور";
+
+"The code has been send" = "تم أرسال الكود";
+
+"User not found" = "مستخدم غير موجود";
+
+"Reservation cancelled" = "تم إلغاء الحجز";
+
+"Code is invalid" = "الكود خاطئ";
+
+"Enter new password" = "ادخل كلمة المرور الجديدة";
+
+"Enter confirm password" = "ادخل تأكيد كلمة المرور";
+"The total price includes " = "إجمالي السعر يشتمل على ";
+"VAT tax" = "ضريبة القيمة المضافة";
+
+"Message was sent" = "تم إرسال الرسالة";
+
+"Available" = "متاح";
+
+"Unavailable" = "غير متاح";
+
+"new password is empty" = "كلمة المرور الجديدة فارغة";
+"Confirm password is empty" = "تأكيد كلمة المرور فارغ";
+"Old password is empty" = "كلمة المرور القديمة فارغة";
+
+"Gallrey" = "المعرض";
+"Camera" = "الكاميرا";
+"Cancel" = "إلغاء";
+"Delete image" = "حذف الصورة";
+
+"Image Deleted" = "تم حذف الصورة";
+
+"logged in successfully" = "تم تسجييل الدخول بنجاح";
+
+"Enter your password" = "ادخل كلمة المرور الخاصة بك";
+
+"The deposit paid " = "العربون المدفوع ";
+
+"In Case Resevation Cancling we will deducted " = "في حالة إلفاء الحجز سيتم خصم ";
+
+"Order rated" = "تم تقييم الطلب";
+
+"Email is invalid" = "البريد الإلكتروني غير صحيح";
+
+"Enter your phone number" = "ادخل رقم الجوال";
+
+"Enter your phone" = "ادخل رقم الجوال";
+
+"Code sent to your email" = "تم أرسال الكود على بريدك الألكتروني";
+
+"Code sent to your phone" = "تم ارسال الكود على رقم الجوال";
+
+"Enter verification code" = "ادخل كود التفعيل";
+
+"Account verified" = "تم تأكيد الحساب";
+
+"Minutes" = "دقيقة";
+"subscriptions" = "الاشتراكات";
+"foodPackages" = "باقات الطعام";
+"Accept" = "قبول";
+"refuse" = "رفض";
+"delivery" = "التوصيل";
+"foodPackagesSub" = "اشتراكات باقات الطعام";
+"FoodCart" = "سلة باقات الطعام";
+"duplicated item" = "عنصر موجود بالفعل";
+"wallet" = "المحفظة الالكترونية";
+"SAR" = "ريال سعودي";
+"date" = "التاريخ :";
+"rewards" = "مكافات";
+"refund" = "طلبات مرتجعة";
+"Are you sure ?"="هل انت متاكد من الغاء الطلب ؟ ";
+"What is the Cancel Reason?" = "ما هو سبب الغاء الطلب";
+"Cancel Order" = "الغاء الطلب";
+"Cancel" = "رجوع";
+"Confirm" = "تاكيد";
+"pay" = "ادفع";
+"paid" = "تم الدفع";
+"status" = "الحالة";
+"days" = "ايام";
+"taxs" = "الرقم الضريبي : 310633825800003";
+"canceled" = "ملغي";
+"canceled2" = "الطلبات الملغاة";
+"refunded" = "مسترجع";
+"orderType" = "نوع الطلب :";
+"sfry" = "سفري";
+"delivery" = "مندوب توصيل";
+"basherly" = "باشرلي";
+"all order" = "كل الطلبات";
+"prvious order" = "الطلبات السابقة";
+
+"emptyCart" = " سلة المشتريات فارغة";
+"You should login first" = "يجب تسجيل الدخول اولا";
+"minumam" = "الحد الادني لهذا المطعم هو";
+"bill" = "للاطلاع علي الفاتورة يرجي الضغط علي  هذا اللينك";
+"Shanab" = "شنب";
+"privouse Order" = "الطلبات السابقة";
+"order Number" = "رقم الطلب";

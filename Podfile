@@ -1,10 +1,12 @@
 # Uncomment the next line to define a global platform for your project
-#source 'https://github.com/CocoaPods/Specs.git'
- platform :ios, '11.0'
+# platform :ios, '9.0'
 
-target 'Shanab' do
-    
+target 'Livia' do
   # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Livia
+  
   use_frameworks!
   pod 'SideMenu', '~> 5.0.3'
   pod 'SwiftMessages'

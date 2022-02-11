@@ -1,0 +1,18 @@
+
+/* Class = "UITabBarItem"; title = "Filter"; ObjectID = "4K4-qh-nyI"; */
+"4K4-qh-nyI.title" = "التصفية";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "64W-uf-slK"; */
+"64W-uf-slK.title" = " ";
+
+/* Class = "UITabBarItem"; title = "Order List"; ObjectID = "FxC-xz-tgV"; */
+"FxC-xz-tgV.title" = "طلباتي";
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "SrK-jv-2oF"; */
+"SrK-jv-2oF.title" = "الرئيسية";
+
+/* Class = "UITabBarItem"; title = "Cart"; ObjectID = "mMI-69-dCA"; */
+"mMI-69-dCA.title" = "السلة";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "siM-KE-uZu"; */
+"siM-KE-uZu.title" = "Item";

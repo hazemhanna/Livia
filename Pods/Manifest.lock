@@ -84,14 +84,14 @@ PODS:
     - nanopb/encode (= 0.3.9011)
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
-  - Parchment (3.0.1)
-  - Protobuf (3.17.0)
+  - Parchment (3.1.0)
+  - Protobuf (3.19.1)
   - SideMenu (5.0.3)
   - StepView (1.0.5)
   - SVProgressHUD (2.2.5)
-  - SwiftMessages (9.0.2):
-    - SwiftMessages/App (= 9.0.2)
-  - SwiftMessages/App (9.0.2)
+  - SwiftMessages (9.0.5):
+    - SwiftMessages/App (= 9.0.5)
+  - SwiftMessages/App (9.0.5)
   - SwiftyJSON (5.0.1)
   - Urway (1.1.4)
 
@@ -188,15 +188,15 @@ SPEC CHECKSUMS:
   Kingfisher: 9c8f2cc6710334e06f32ba2b45e77707d5e2f0c9
   MOLH: e45827d200aeb1310641090fd8cd03ad2b42ae72
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
-  Parchment: 466a1cfb6151780db8acb4bbedc2d9c6bfa1e2ff
-  Protobuf: 7327d4444215b5f18e560a97f879ff5503c4581c
+  Parchment: 6250722ed0456d68f6bae03118eda722a28486f3
+  Protobuf: 3724efa50cb2846d7ccebc8691c574e85fd74471
   SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
   StepView: e69413ca377b42c5777d446854bb036ff8e988fd
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  SwiftMessages: 77b847d1405f99046ffbd0d856bc7d73e6892686
+  SwiftMessages: 9cca50659fa22bb523b4dd2a958d4442e843a354
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   Urway: 7c516643172ca7bc3f1ef0b70e40b0397f51cbac
 
-PODFILE CHECKSUM: 1e2580fd4e62871ceeb84bd5d88fe14bd8d5cc4d
+PODFILE CHECKSUM: 7e23057dc320feb08950dbffe438b2a816e72822
 
-COCOAPODS: 1.10.2
+COCOAPODS: 1.11.2

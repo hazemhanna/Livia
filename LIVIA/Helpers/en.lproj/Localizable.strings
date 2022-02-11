@@ -1,0 +1,187 @@
+/* 
+  Localizable.strings
+  Shanab
+
+  Created by Macbook on 7/6/20.
+  Copyright © 2020 Dtag. All rights reserved.
+*/
+"lang" = "en";
+"Home" = "Home";
+"Sections" = "Sections";
+"Cart" = "Cart";
+"Reservations" = "Reservations";
+"Order List" = "Order List";
+"Profile" = "Profile";
+"Favorit Restaurants" = "Favorit Restaurants";
+"Favorite Meals" = "Favorite Meals";
+"Contact Us" = "Contact Us";
+"Terms And Conditions " = "Terms And Conditions";
+"Settings" = "Settings";
+"Pervious List" = "Pervious List";
+"Notifications" = "Notifications";
+"restaurant" = "restaurant";
+"truck" = "truck";
+"family" = "family";
+"new order" = "new orders";
+"new" = "new";
+"preparing" = "preparing";
+"delivering" = "delivering";
+"delivered" = "delivered";
+"competed" = "competed";
+
+"on_way" = "Onway";
+"preparing order" = "preparing";
+"completed" = "completed";
+"arrived" = "Arrived";
+
+"S.R" = "SAR";
+"You should login first" = "You should login first";
+"Add favourite" = "Add favourite";
+
+"Apartment needed" = "Apartment needed";
+
+"Building needed" = "Building needed";
+
+"Floor needed" = "Floor needed";
+
+"No address for this user" = "No address for this user";
+
+"Choose payment method" = "Choose payment method";
+
+"Enter your email" = "Enter your email";
+
+"Done" = "Done";
+
+"Item deleted from cart" = "Item deleted from cart";
+
+"Complain" = "Complain";
+"Proposal" = "Proposal";
+
+"Enter Your Email" = "Enter Your Email";
+
+"Enter Your phone number" = "Enter Your phone number";
+
+"Enter message" =  "Enter message";
+
+"Choose the message address" = "Choose the message address";
+
+"Enter Your name" = "Enter Your name";
+
+"Your message was sent" = "Your message was sent";
+
+"Select the number of people" = "Select the number of people";
+
+"Choose the date" = "Choose the date";
+
+"Choose time" = "Choose time";
+
+"Please enter a deposit of " = "Please enter a deposit of ";
+
+"S.R to confirm reservation" = "SAR to confirm reservation";
+
+"Item deleted from cart" = "Item deleted from cart";
+
+"Order added successfully" = "Order added successfully";
+
+"You logged out now" = "You logged out now";
+
+"phone or password wrong" =  "phone or password wrong";
+
+"Add to cart" = "Add to cart";
+
+"Password changed" = "Password changed";
+
+"The code has been send" = "The code has been send";
+
+"User not found" = "User not found";
+
+"Reservation cancelled" = "Reservation cancelled";
+
+"Code is invalid" = "Code is invalid";
+
+"Enter new password" = "Enter new password";
+
+"Enter confirm password" = "Enter confirm password";
+
+"The total price includes " = "The total price includes ";
+"VAT tax" = "VAT tax";
+"Message was sent" = "Message was sent";
+
+"Available" = "Available";
+"Unavailable" = "Unavailable";
+
+"new password is empty" = "new password is empty";
+"Confirm password is empty" = "Confirm password is empty";
+"Old password is empty" = "Old password is empty";
+
+"Choose your Picture" = "Choose your Picture";
+"Gallrey" = "Gallrey";
+"Camera" = "Camera";
+"Cancel" = "Cancel";
+"Delete image" = "Delete image";
+
+"Image Deleted" = "Image Deleted";
+
+"logged in successfully" = "logged in successfully";
+
+"Enter your password" = "Enter your password";
+
+"Enter your phone number" = "Enter your phone number";
+
+"The deposit paid " = "The deposit paid ";
+
+"In Case Resevation Cancling we will deducted " = "In Case Resevation Canceling we will deducted ";
+
+"Order rated" = "Order rated";
+
+"Email is invalid" = "Email is invalid";
+
+"Enter verification code" = "Enter verification code";
+
+"Account verified" = "Account verified";
+
+"Enter your phone" = "Enter your or phone";
+
+"Code sent to your email" = "Code sent to your email";
+
+"Code sent to your phone" = "Code sent to your phone";
+
+"Minutes" = "Minutes";
+"subscriptions" = "subscriptions";
+"foodPackages" = "Food Packages";
+"Accept" = "Accept";
+"refuse" = "Refuse";
+"delivery" = "delivery";
+"foodPackagesSub" = "Food Packages Subscribtions";
+"FoodCart" = "Food Packages Cart ";
+"duplicated item" = "duplicated item";
+"wallet" = "wallet";
+"SAR" = "SAR";
+"date" = "date:";
+"rewards" = "Rewards";
+"refund" = "Refund Order";
+"Are you sure ?"="Are you sure ?";
+"What is the Cancel Reason?" = "What is the Cancel Reason?";
+"Cancel Order" = "Cancel Order";
+"Cancel" = "Cancel";
+"Confirm" = "Confirm";
+"pay" = "pay";
+"paid" = "paid";
+"status" = "status";
+"days" = "days";
+"taxs" = "taxs number : 310633825800003";
+"canceled" = "canceled";
+"canceled2" = "canceled";
+"refunded" = "refunded";
+"orderType" = "order Type :";
+"sfry" = "sfry";
+"delivery" = "delivery";
+"basherly" = "basherly";
+"all order" = "all orders";
+"prvious order" = "prvious orders";
+"emptyCart" = "empty Cart";
+"minumam" = "minumam price for this restaurant is";
+"bill" = "to see your bill press this link";
+"Shanab" = "Shanab";
+"privouse Order" = "privouse Order";
+"order Number" = "order Number";

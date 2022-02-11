@@ -39,7 +39,7 @@ public class UWInitializer {
     var address: String?
     var city: String?
     var cardToken: String?
-    var cardOperation: String?
+    var cardOperation: String!
     var state: String?
     var zipCode: String?
     var udf1: String?
@@ -71,7 +71,7 @@ public class UWInitializer {
          createTokenIsEnabled: Bool? = true,
          merchantIP: String? = nil,
          cardToken: String? = nil,
-         cardOper: String? = nil,
+         cardOper: String,
          state: String? = nil,
          transid: String? = nil,
          merchantidentifier: String? = nil,
