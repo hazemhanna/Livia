@@ -22,6 +22,8 @@ class MainVC: UIViewController , CLLocationManagerDelegate {
         checklocationAuthorization()
         locationManager.startUpdatingLocation()
 
+        
+        
     }
     
     
