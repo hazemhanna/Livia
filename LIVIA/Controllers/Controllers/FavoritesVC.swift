@@ -71,11 +71,7 @@ extension FavoritesVC: UITableViewDataSource, UITableViewDelegate {
        return 150
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "RestaurantDetailsVC") as? RestaurantDetailsVC else { return }
-        details.restaurant_id = ClientFavoriteList[indexPath.row].restaurant?.id ?? 0
-    
-        //               details.image = ClientFavoriteList[indexPath.row]. ?? ""
-        self.navigationController?.pushViewController(details, animated: true)
+  
     }
 }
 extension FavoritesVC: UserFavoritesViewDelegate {

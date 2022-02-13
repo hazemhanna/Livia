@@ -140,14 +140,7 @@ class CartDetailsVC: UIViewController {
         self.quantityLB.text = "\(self.productCounter)"
     }
     @IBAction func AdditionsButtonPressed(_ sender: UIButton) {
-        guard let Details = UIStoryboard(name: "Orders", bundle: nil).instantiateViewController(withIdentifier: "AdditionsVC") as? AdditionsVC else { return }
-        let meal = details.meal ?? Meal()
-        Details.meal_id = meal.id ?? 0
-        Details.mealName = meal.nameAr ?? ""
-        Details.mealComponents = meal.descriptionAr ?? ""
-        Details.mealCalory = meal.calories ?? ""
-        Details.imagePath = details.meal?.image ?? ""
-        self.navigationController?.pushViewController(Details, animated: true)
+   
     }
 }
 extension CartDetailsVC: CartDetailsViewDelegate {

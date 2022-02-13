@@ -79,20 +79,7 @@ extension FavoriteMealsVC: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-         guard let details = UIStoryboard(name: "Orders", bundle: nil).instantiateViewController(withIdentifier: "AdditionsVC") as? AdditionsVC else { return }
-           let meal_items = ClientFavoriteList[indexPath.row].meal ?? Meal()
-         details.meal_id = meal_items.id ?? 0
-        if "lang".localized == "ar" {
-            details.mealName = meal_items.nameAr ?? ""
-             details.mealComponents = meal_items.descriptionAr ?? ""
-        } else {
-            details.mealName = meal_items.nameEn ?? ""
-            details.mealComponents = meal_items.descriptionEn ?? ""
-        }
-        details.imagePath = meal_items.image ?? ""
-        details.mealCalory = meal_items.calories ?? ""
-        details.image = meal_items.image ?? ""
-        self.navigationController?.pushViewController(details, animated: true)
+       
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         150

@@ -187,8 +187,11 @@
         </tableViewCell>
     </objects>
     <designables>
-        <designable name="cMy-Jy-oZD">
-            <size key="intrinsicContentSize" width="294" height="266"/>
+        <designable name="HLA-Rv-f76">
+            <size key="intrinsicContentSize" width="30.5" height="31"/>
+        </designable>
+        <designable name="fQh-Qo-4Aq">
+            <size key="intrinsicContentSize" width="33" height="31"/>
         </designable>
         <designable name="iFZ-zI-HXr">
             <size key="intrinsicContentSize" width="21.5" height="30.5"/>

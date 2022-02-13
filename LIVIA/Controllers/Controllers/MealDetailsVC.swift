@@ -152,20 +152,7 @@ extension MealDetailsVC: UITableViewDelegate, UITableViewDataSource {
         return 200
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let details = UIStoryboard(name: "Orders", bundle: nil).instantiateViewController(withIdentifier: "AdditionsVC") as? AdditionsVC else { return }
         
-        details.meal_id =  self.meals[indexPath.row].id ?? 0
-        details.imagePath = self.meals[indexPath.row].image ?? ""
-        details.mealCalory = self.meals[indexPath.row].calories ?? ""
-        if "lang".localized == "en" {
-            details.mealName = self.meals[indexPath.row].nameEn ?? ""
-            details.mealComponents = self.meals[indexPath.row].descriptionEn ?? ""
-        } else {
-            details.mealName = self.meals[indexPath.row].nameAr ?? ""
-            details.mealComponents = self.meals[indexPath.row].descriptionAr ?? ""
-        }
-        
-        self.navigationController?.pushViewController(details, animated: true)
     }
 }
 

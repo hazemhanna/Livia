@@ -626,6 +626,14 @@
 			path = NotificationsVC;
 			sourceTree = "<group>";
 		};
+		04381C7127B71860003F7973 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FAEE422B2428EAA800E12AD2 /* RestaurantDetailsVC.swift */,
+			);
+			path = Products;
+			sourceTree = "<group>";
+		};
 		0475122C271252D100D884D4 /* RewardCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -879,11 +887,11 @@
 		FADBB114242782CB0044936E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FAE9B0972443123400044CB7 /* Controllers */,
 				FAB916F62462D9A100B335E3 /* PaymentGateway */,
 				FA46352A245ADAEA00E82653 /* PopUps */,
 				FAE9B0992443132400044CB7 /* Authentications */,
 				FAE9B098244312BD00044CB7 /* Reservations */,
-				FAE9B0972443123400044CB7 /* Sections */,
 				FAA4D7CA24ADD55000E7AA13 /* AboutApp */,
 				FAE9B095244311CF00044CB7 /* Order */,
 				FA564CE7242A395600A4A627 /* SideMenuVC.swift */,
@@ -1183,14 +1191,14 @@
 			path = Order;
 			sourceTree = "<group>";
 		};
-		FAE9B0972443123400044CB7 /* Sections */ = {
+		FAE9B0972443123400044CB7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				040F84A527B5DEFF0005241D /* NotificationsVC */,
 				040F84A427B5D8BF0005241D /* CartVc */,
 				040F84A127B5D6320005241D /* HomeVc */,
 				FA15119A243C84D200F0C52E /* SectionsPageVC.swift */,
-				FAEE422B2428EAA800E12AD2 /* RestaurantDetailsVC.swift */,
+				04381C7127B71860003F7973 /* Products */,
 				FA2CC3D424604C170026BC24 /* MyAddressesVC.swift */,
 				FAA4D7CB24ADDD5200E7AA13 /* MealDetailsVC.swift */,
 				FAF8BC15242B852C004AEF89 /* SectionsVC.swift */,
@@ -1210,7 +1218,7 @@
 				04ABAB8027110D2700BC0F71 /* MYFoodPackagesSubscribtionsVC .swift */,
 				047512292712418200D884D4 /* WalletVc.swift */,
 			);
-			path = Sections;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		FAE9B098244312BD00044CB7 /* Reservations */ = {

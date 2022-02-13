@@ -176,38 +176,6 @@ extension SearchVC: UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if type ==  "restaurant" {
-
-            guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "RestaurantDetailsVC") as? RestaurantDetailsVC else { return }
-            details.restaurant_id = NormalResult[indexPath.row].id ?? 0
-            details.image = NormalResult[indexPath.row].image ?? ""
-            details.name = NormalResult[indexPath.row].nameEn ?? ""
-            if "lang".localized == "en" {
-                details.name = NormalResult[indexPath.row].nameEn ?? ""
-            } else {
-                details.name = NormalResult[indexPath.row].nameAr ?? ""
-            }
-            self.navigationController?.pushViewController(details, animated: true)
-        } else {
-            
-            guard let details = UIStoryboard(name: "Orders", bundle: nil).instantiateViewController(withIdentifier: "AdditionsVC") as? AdditionsVC else { return }
-            details.restaurant_id = self.MealSearch[indexPath.row].restaurantID ?? 0
-            details.meal_id =  self.MealSearch[indexPath.row].id ?? 0
-            details.imagePath = self.MealSearch[indexPath.row].image ?? ""
-            details.mealCalory = self.MealSearch[indexPath.row].calories ?? ""
-            if "lang".localized == "ar" {
-                details.mealName = self.MealSearch[indexPath.row].nameAr ?? ""
-                details.mealComponents = self.MealSearch[indexPath.row].descriptionAr ?? ""
-                details.imagePath = self.MealSearch[indexPath.row].image ?? ""
-                
-            } else {
-                details.mealName = self.MealSearch[indexPath.row].nameEn ?? ""
-                details.mealComponents = self.MealSearch[indexPath.row].descriptionEn ?? ""
-                details.imagePath = self.MealSearch[indexPath.row].image ?? ""
-            }
-            
-            self.navigationController?.pushViewController(details, animated: true)
-        }
         
   
     }
