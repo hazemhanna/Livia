@@ -226,15 +226,9 @@ extension OrderReceiptVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? OrderReceiptCell else {return UITableViewCell()}
-        let meal = details[indexPath.row].meal ?? Meal()
-        if "lang".localized == "ar"{
-            cell.config(name: meal.nameAr ?? "" , number: details[indexPath.row].quantity ?? 0 , price: "\(details[indexPath.row].meal?.price?[0].price?.rounded(toPlaces: 2) ?? 0.0)", options: self.details[indexPath.row].option ?? [Option](), restaurant: meal.restaurant?.nameAr ??    "" )
-          
+
             return cell
-        } else {
-            cell.config(name: meal.nameEn ?? "" , number: details[indexPath.row].quantity ?? 0 , price: "\(details[indexPath.row].meal?.price?[0].price?.rounded(toPlaces: 2) ?? 0.0)", options: self.details[indexPath.row].option ?? [Option](), restaurant: meal.restaurant?.nameEn ?? "" )
-            return cell
-        }
+       
     }
 }
 extension OrderReceiptVC: DriverOrderDetailsViewDelegate {
@@ -274,140 +268,7 @@ extension OrderReceiptVC: DriverOrderDetailsViewDelegate {
     
     
     func DriverOrderDetailsResult(_ error: Error?, _ details: [DriverOrder]?) {
-        
-        
-        
-        if let detail = details {
-            self.details = detail[0].orderDetail ?? [OrderDetail]()
-            
-            status = detail[0].status ?? "new"
-            
-            if detail[0].status == "new" {
-                                    
-                TopToProgress?.isActive = false
-                TopToView?.isActive = true
-
-                ProgressView.isHidden = true
-                
-                if detail[0].approved == 0 {
-                    
-                    AcceptOrderView.alpha = 1
-                } else {
-                    
-                    AcceptOrderView.alpha = 0
-
-                }
-                
-            } else if detail[0].status == "preparing" {
-                
-                TopToProgress?.isActive = true
-                TopToView?.isActive = false
-                ProgressView.isHidden = false
-                self.OnWayBn.isEnabled = true
-                
-                newIStatusmage.image = #imageLiteral(resourceName: "icons8-sync")
-                
-            } else if detail[0].status == "delivered" {
-                TopToProgress?.isActive = true
-                TopToView?.isActive = false
-                ProgressView.isHidden = false
-                
-                newIStatusmage.image = #imageLiteral(resourceName: "icons8-ok")
-                onwayStatusImage.image = #imageLiteral(resourceName: "icons8-ok")
-
-                arrivedStatusImage.image = #imageLiteral(resourceName: "icons8-sync")
-
-            } else if detail[0].status == "delivering" {
-                
-                TopToProgress?.isActive = true
-                TopToView?.isActive = false
-                ProgressView.isHidden = false
-
-
-                
-                newIStatusmage.image = #imageLiteral(resourceName: "icons8-ok")
-                onwayStatusImage.image = #imageLiteral(resourceName: "icons8-sync")
-
-            } else if detail[0].status == "competed" {
-                
-                TopToProgress?.isActive = true
-                TopToView?.isActive = false
-                ProgressView.isHidden = false
-
-                
-                newIStatusmage.image = #imageLiteral(resourceName: "icons8-ok")
-                onwayStatusImage.image = #imageLiteral(resourceName: "icons8-ok")
-                arrivedStatusImage.image = #imageLiteral(resourceName: "icons8-ok")
-                completedImageStatus.image = #imageLiteral(resourceName: "icons8-ok")
-
-            }
-            
-            self.name.text = detail[0].client?.user?.name ?? ""
-            self.phone.text = detail[0].client?.user?.phone ?? ""
-            self.address.text = detail[0].address?.address ?? ""
-            self.lat = detail[0].address?.lat
-            self.long = detail[0].address?.long
-            self.restaurantAddress.text = self.details[0].restaurant?.address ?? ""
-            
-            self.restauranlat = Double(self.details[0].restaurant?.latitude ?? "")
-            self.restaurantlong =  Double(self.details[0].restaurant?.longitude ?? "")
-        
-
-            
-//            self.details.forEach {
-//                orderPrices.append(Order(price: $0.price ?? -1.0))
-//            }
-//            self.calculateTotalPrice()
-            
-            var orderCost = Double()
-            var count = 0
-            for item in self.details {
-                if item.meal?.hasOffer == 1 {
-                    var discount = (Double(item.meal?.discount ?? 0))
-                    if item.meal?.discountType == "percentage" {
-                        discount /= 100
-                        discount = ((item.meal?.price?[0].price ?? 0.0) - ((item.meal?.price?[0].price ?? 0.0 ) * Double(discount))).rounded(toPlaces: 2)
-                        orderCost = Double(orderCost + (Double(item.quantity ?? 0) * discount)).rounded(toPlaces: 2)
-                    } else {
-                        discount = ((item.meal?.price?[0].price ?? 0.0) -  Double(discount)).rounded(toPlaces: 2)
-                        orderCost = Double(orderCost + (Double(item.quantity ?? 0) * discount)).rounded(toPlaces: 2)
-                    }
-                    self.details[count].meal?.price?[0].price = discount
-                    print(self.details[count].meal?.price?[0].price)
-                } else {
-                    orderCost = Double(orderCost + (Double(item.quantity ?? 0) * (item.meal?.price?[0].price ?? 0.0))).rounded(toPlaces: 2)
-                }
-                for options in (item.option ?? []) {
-                    orderCost = Double(orderCost + ((options.price ?? 0.0))).rounded(toPlaces: 2)
-                }
-                count += 1
-            }
-            
-            let vatD = Double((Double(vat)?.rounded(toPlaces: 2) ?? 0.0)/100).rounded(toPlaces:2)
-            let orderCostWithVat = orderCost + (orderCost * vatD)
-           // orderPrice.text = "\(orderCost)"
-            orderPrice.text = "\(orderCost.rounded(toPlaces:2))"
-            total.text = "\(detail[0].total?.rounded(toPlaces: 2) ?? 0.0)"
-//            print(detail[0].total , "\n" , orderCostWithVat , "\n" , orderCost )
-//            let feesCalcoulation = Double(((detail[0].total ?? 0.0) - orderCostWithVat)).rounded(toPlaces: 1)
-//
-            
-            
-            let total = (detail[0].total?.rounded(toPlaces: 2) ?? 0.0)
-            
-            let feesCalcoulation = Double(( total - orderCost)).rounded(toPlaces: 1)
-            
-            
-            if detail[0].type != "sfry" {
-                fees.text = "\(feesCalcoulation)"
-            } else {
-                fees.text = "0.0"
-            }
-            
-        }
-        
         self.orderReceiptTableView.addObserver(self, forKeyPath: "contentSize", options: NSKeyValueObservingOptions.new, context: nil)
-
     }
     
     func DriverChangeStatusResult(_ error: Error?, _ result: SuccessError_Model?) {

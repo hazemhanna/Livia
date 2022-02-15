@@ -60,14 +60,7 @@ class MealDetailsVC: UIViewController {
     
     @IBAction func cartItems(_ sender: Any) {
         
-        
         self.navigationController?.popViewController(animated: true)
-//        guard let window = UIApplication.shared.keyWindow else { return }
-//
-//        guard let details = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeTabBar") as? UITabBarController else { return }
-//
-//        details.selectedIndex = 2
-//        window.rootViewController = details
     }
 }
 extension MealDetailsVC: UITableViewDelegate, UITableViewDataSource {
@@ -137,15 +130,8 @@ extension MealDetailsVC: UITableViewDelegate, UITableViewDataSource {
             
         }
         
-        
-        if "lang".localized == "ar" {
-            cell.config(imagePath: meals[indexPath.row].image ?? "", name: meals[indexPath.row].nameAr ?? "",  mealComponants: meals[indexPath.row].descriptionAr ?? "", price: Double(meals[indexPath.row].price?[0].price?.rounded(toPlaces: 2) ?? 0.0), discount: Double(meals[indexPath.row].discount ?? 0))
             return cell
-        } else {
-            cell.config(imagePath: meals[indexPath.row].image ?? "", name: meals[indexPath.row].nameEn ?? "",  mealComponants: meals[indexPath.row].descriptionEn ?? "", price: Double(meals[indexPath.row].price?[0].price?.rounded(toPlaces: 2) ?? 0), discount: Double(meals[indexPath.row].discount ?? 0))
-            
-            return cell
-        }
+     
         
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

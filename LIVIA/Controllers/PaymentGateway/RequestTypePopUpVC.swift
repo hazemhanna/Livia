@@ -176,9 +176,7 @@ class RequestTypePopUpVC: UIViewController {
 }
 
 extension RequestTypePopUpVC : CreateOrderViewDelegate {
-    func getProfileResult(_ error: Error?, _ result: User?) {
-        self.totalWallet = (result?.total_wallet?.rounded(toPlaces: 2) ?? 0 )
-        
+    func getProfileResult(_ error: Error?, _ result: User?) {        
         if  self.totalWallet == 0 {
             walletStack.isHidden = true
         }else{

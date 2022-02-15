@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -28,28 +28,28 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0F-2B-Z0A" customClass="CustomLabel" customModule="Shnp" customModuleProvider="target">
-                                <rect key="frame" x="140" y="10" width="309" height="30.5"/>
+                                <rect key="frame" x="140" y="10" width="309" height="20.5"/>
                                 <color key="backgroundColor" red="0.8613201976" green="0.27668035029999999" blue="0.25139385460000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Hx-q4-c3I" customClass="CustomLabel" customModule="Shnp" customModuleProvider="target">
-                                <rect key="frame" x="140" y="50.5" width="309" height="30.5"/>
+                                <rect key="frame" x="140" y="40.5" width="309" height="20.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view userInteractionEnabled="NO" contentMode="center" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4yE-zp-Ic6" customClass="CosmosView" customModule="Cosmos">
-                                <rect key="frame" x="140" y="86" width="309" height="45"/>
+                                <rect key="frame" x="140" y="66" width="309" height="45"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="NpO-pM-6x6"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tE0-z4-RSk" customClass="CustomButtons" customModule="Shnp" customModuleProvider="target">
-                                <rect key="frame" x="140" y="121" width="309" height="14"/>
+                                <rect key="frame" x="140" y="101" width="309" height="30"/>
                                 <state key="normal" title="Order details">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -135,13 +135,10 @@
     </objects>
     <designables>
         <designable name="0Hx-q4-c3I">
-            <size key="intrinsicContentSize" width="55.5" height="30.5"/>
-        </designable>
-        <designable name="4yE-zp-Ic6">
-            <size key="intrinsicContentSize" width="120" height="20"/>
+            <size key="intrinsicContentSize" width="41.5" height="20.5"/>
         </designable>
         <designable name="T0F-2B-Z0A">
-            <size key="intrinsicContentSize" width="55.5" height="30.5"/>
+            <size key="intrinsicContentSize" width="41.5" height="20.5"/>
         </designable>
         <designable name="tE0-z4-RSk">
             <size key="intrinsicContentSize" width="89" height="30"/>

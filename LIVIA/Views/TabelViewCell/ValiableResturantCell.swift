@@ -19,7 +19,6 @@ class ValiableResturantCell: UITableViewCell {
     
     var isFavourite = Bool()
     var goToFavorites: (() ->Void)? = nil
-
     
     override func awakeFromNib() {
         super.awakeFromNib()

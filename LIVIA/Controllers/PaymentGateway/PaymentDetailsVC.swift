@@ -83,8 +83,6 @@ class PaymentDetailsVC: UIViewController , PKPaymentAuthorizationViewControllerD
         print(fee)
         Shipping.text = "\(fee)"
         let taxValue = orderCost * (tax / 100)
-        Tax.text = "\(taxValue.rounded(toPlaces: 2))"
-        Total.text = "\((orderCost + fee + taxValue).rounded(toPlaces: 2))"
         
         switch pay {
             

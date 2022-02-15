@@ -11,47 +11,23 @@ import Kingfisher
 
 class ListCell: UITableViewCell {
     
-    @IBOutlet weak var resturantName: UILabel!
-    @IBOutlet weak var status: UILabel!
     @IBOutlet weak var orderNum: UILabel!
     @IBOutlet weak var date: UILabel!
-    @IBOutlet weak var followBtn : UIButton!
-    @IBOutlet weak var cancelBtn : UIButton!
-    @IBOutlet weak var statusLbl : UILabel!
-
-
+    @IBOutlet weak var detailstn : UIButton!
+    
     var goToDetails: (() ->Void)? = nil
-    var FollowOrder:(() ->Void)? = nil
-    var cancelOrder:(() ->Void)? = nil
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
-        self.statusLbl.text = "status".localized
-        self.cancelBtn.setTitle("Cancel Order".localized, for: .normal)
         
     }
     
     func config( date: String, status: String, orderNumber: Int) {
+        
         self.date.text = date
-        self.status.text = status.localized
         self.orderNum.text = "\(orderNumber)"
         
-        if status  == "new" {
-            self.followBtn.isHidden = true
-            self.cancelBtn.isHidden = false
-          }else if status == "preparing"{
-              self.followBtn.isHidden = false
-              self.cancelBtn.isHidden = false
-          }else{
-              if status == "canceled" {
-                  self.followBtn.isHidden = true
-                  self.cancelBtn.isHidden = true
-              }else{
-                  self.followBtn.isHidden = false
-                  self.cancelBtn.isHidden = true
-              }
-          }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -62,12 +38,6 @@ class ListCell: UITableViewCell {
          goToDetails?()
     }
     
-    @IBAction func orderFollwing(_ sender: UIButton) {
-        FollowOrder?()
-    }
-    
-    @IBAction func caancelOrder(_ sender: UIButton) {
-        cancelOrder?()
-    }
+   
     
 }

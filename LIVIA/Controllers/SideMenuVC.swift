@@ -54,10 +54,7 @@ class SideMenuVC: UIViewController {
                     SideMenuModel(name: "Notifications".localized, id: "Notifications", selected: false, sideImage: #imageLiteral(resourceName: "icons8-notification")),
                     SideMenuModel(name: "Reservations".localized, id: "Reservations", selected: false, sideImage: #imageLiteral(resourceName: "reservation2")),
                     SideMenuModel(name: "Order List".localized, id: "OrderList", selected: false, sideImage: #imageLiteral(resourceName: "order-food-1")),
-                    SideMenuModel(name: "subscriptions".localized, id: "subscriptions", selected: false, sideImage: #imageLiteral(resourceName: "terms")),
                     SideMenuModel(name: "foodPackages".localized, id: "foodPackages", selected: false, sideImage: #imageLiteral(resourceName: "NoPath - Copy (10)")),
-                    SideMenuModel(name: "FoodCart".localized, id: "FoodCart", selected: false,sideImage: #imageLiteral(resourceName: "cart (1)-1")),
-                    SideMenuModel(name: "Favorit Restaurants".localized, id: "Favorites", selected: false, sideImage: #imageLiteral(resourceName: "order-food-1")),
                     SideMenuModel(name: "Favorite Meals".localized, id: "FavoriteMeals", selected: false, sideImage: #imageLiteral(resourceName: "favorite (1)")),
                     SideMenuModel(name: "Contact Us".localized, id: "Contact Us", selected: false,sideImage: #imageLiteral(resourceName: "contactUs")),
                     SideMenuModel(name: "Terms And Conditions".localized, id: "TermsAndConditions", selected: false, sideImage: #imageLiteral(resourceName: "terms")),
@@ -124,12 +121,9 @@ class SideMenuVC: UIViewController {
             pushSideMenu(StoryboardName: "Products", ForController: "MySubscribtionVc")
         case "foodPackages":
             pushSideMenu(StoryboardName: "Products", ForController: "MYFoodPackagesSubscribtionsVC")
-        case "FoodCart":
-            pushSideMenu(StoryboardName: "Products", ForController: "MYFoodPackagesCartVC")
+
         case "Reservations":
-            pushSideMenu(StoryboardName: "Reservation", ForController: "ResevationListVC")
-        case "Favorites":
-            pushSideMenu(StoryboardName: "Orders", ForController: "FavoritesVC")
+            pushSideMenu(StoryboardName: "Orders", ForController: "OrderListVC")
         case "FavoriteMeals":
             pushSideMenu(StoryboardName: "Orders", ForController: "FavoriteMealsVC")
         case "Contact Us":
@@ -138,11 +132,6 @@ class SideMenuVC: UIViewController {
             pushSideMenu(StoryboardName: "AboutApp", ForController: "TermsAndConditionsVC")
         case "Setting":
             pushSideMenu(StoryboardName: "AboutApp", ForController: "SettingVC")
-        case "DriverOrderList":            
-            let main = UIStoryboard(name: "Orders", bundle: nil).instantiateViewController(withIdentifier: "DriverOrderListVC") as! DriverOrderListVC
-            main.orderSelected = .other
-            main.homePage = false
-            self.navigationController!.pushViewController(main, animated: true)
         case "Notifications":
             pushSideMenu(StoryboardName: "Profile", ForController: "NotificationsVC")
         default:

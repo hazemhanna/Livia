@@ -19,8 +19,6 @@ class CartDetailsVC: UIViewController {
     
     @IBOutlet weak var Restaurant: UILabel!
     
-    
-    
     var productCounter = 1
     var mealId = Int()
     var mealName = String()
