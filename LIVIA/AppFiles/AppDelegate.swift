@@ -60,7 +60,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MOLHResetable {
         IQKeyboardManager.shared.enable = true
         FirebaseApp.configure()
         Messaging.messaging().delegate = self
-       
+
+        UITabBar.appearance().unselectedItemTintColor = #colorLiteral(red: 0.00800000038, green: 0.1019999981, blue: 0.2705882353, alpha: 1)
+        
         if #available(iOS 10.0, *) {
           UNUserNotificationCenter.current().delegate = self
           let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]

@@ -93,21 +93,11 @@ class SideMenuVC: UIViewController {
         switch sideMenuArr[indexPath.row].sideMenuId {
         case "home":
             guard let window = UIApplication.shared.keyWindow else { return }
-            switch Singletone.instance.appUserType {
-            case .Customer:
             let sb = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeTabBar") as! UITabBarController
             sb.selectedIndex = 0
             window.rootViewController = sb
             UIView.transition(with: window, duration: 0.5, options: .curveEaseInOut, animations: nil, completion: nil)
             
-            case .Driver:
-                let sb = UIStoryboard(name: "Orders", bundle: nil).instantiateViewController(withIdentifier: "DriverProfileNav")
-                window.rootViewController = sb
-                window.makeKeyAndVisible()
-                
-            default:
-                break
-            }
             //pushSideMenu(StoryboardName: "Home", ForController: "HomeTabBar")
         case "Sections":
             pushSideMenu(StoryboardName: "Orders", ForController: "SectionsPageVC")
@@ -116,9 +106,8 @@ class SideMenuVC: UIViewController {
         case "OrderList":
             pushSideMenu(StoryboardName: "Orders", ForController: "OrderListVC")
         case "Profile":
-            pushSideMenu(StoryboardName: "Profile", ForController: "CustomerProfileVC")
-        case "subscriptions":
-            pushSideMenu(StoryboardName: "Products", ForController: "MySubscribtionVc")
+            pushSideMenu(StoryboardName: "Profile", ForController: "WalletVc")
+     
         case "foodPackages":
             pushSideMenu(StoryboardName: "Products", ForController: "MYFoodPackagesSubscribtionsVC")
 
