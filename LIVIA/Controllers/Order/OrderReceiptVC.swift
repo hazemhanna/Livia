@@ -9,8 +9,9 @@
 import UIKit
 import Cosmos
 import MapKit
+
 class OrderReceiptVC: UIViewController {
-    private let DriverOrderDetailsVCPresenter = DriverOrderDetailsPresenter(services: Services())
+
     @IBOutlet weak var customerPic: UIImageView!
     @IBOutlet weak var MapKit: MKMapView!
     @IBOutlet weak var completedImageStatus: UIImageView!
@@ -49,20 +50,13 @@ class OrderReceiptVC: UIViewController {
     var totalOrderPrice: Double = 0.0
     var vat = ""
     var id = Int()
-    var orderPrices = [Order]()
+
     fileprivate let cellIdentifier = "OrderReceiptCell"
     var lat , long : Double?
     var restauranlat , restaurantlong : Double?
 
     
     var status = "new"
-    var details = [OrderDetail]() {
-        didSet {
-            DispatchQueue.main.async {
-                self.orderReceiptTableView.reloadData()
-            }
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,10 +70,7 @@ class OrderReceiptVC: UIViewController {
         orderReceiptTableView.dataSource = self
         orderReceiptTableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
         customerPic.setRounded()
-        DriverOrderDetailsVCPresenter.setDriverOrderDetailsViewDelegate(DriverOrderDetailsViewDelegate: self)
-        DriverOrderDetailsVCPresenter.getCartItems()
-        DriverOrderDetailsVCPresenter.getWebView(order_id : id)
-
+    
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.openWebView(_:)))
         webLink.isUserInteractionEnabled = true
         webLink.addGestureRecognizer(gestureRecognizer)
@@ -115,18 +106,6 @@ class OrderReceiptVC: UIViewController {
     }
     
     @IBAction func AcceptOrRefuse(_ sender: UIButton) {
-        
-        DriverOrderDetailsVCPresenter.showIndicator()
-        
-        if sender.tag == 1 {
-            
-            DriverOrderDetailsVCPresenter.postWorkerCancelOrder(order_id: id , status: "accepted")
-        } else if sender.tag == 0 {
-            
-            DriverOrderDetailsVCPresenter.postWorkerCancelOrder(order_id: id , status: "refused")
-
-            
-        }
         
     }
     
@@ -168,11 +147,7 @@ class OrderReceiptVC: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func onWayStatus(_ sender: Any) {
-        
-        print(details[0].status)
-        
-        if status == "preparing" {
-            DriverOrderDetailsVCPresenter.DriverChangeStatus(id: id , status : "delivering")
+            if status == "preparing" {
             self.OnWayBn.isEnabled = false
             self.parperStatusBn.isEnabled = false
             self.completedBn.isEnabled = false
@@ -186,8 +161,6 @@ class OrderReceiptVC: UIViewController {
     @IBAction func arrivedBN(_ sender: Any) {
         
         if status == "delivering" {
-
-            DriverOrderDetailsVCPresenter.DriverChangeStatus(id: id , status : "delivered")
             self.arrivedBn.isEnabled = false
             self.parperStatusBn.isEnabled = false
             self.completedBn.isEnabled = true
@@ -201,7 +174,6 @@ class OrderReceiptVC: UIViewController {
         
         if status == "delivered" {
 
-        DriverOrderDetailsVCPresenter.DriverChangeStatus(id: id , status : "competed")
         self.completedBn.isEnabled = false
         self.parperStatusBn.isEnabled = false
         self.completedBn.isEnabled = true
@@ -220,8 +192,7 @@ class OrderReceiptVC: UIViewController {
 extension OrderReceiptVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        print(details.count)
-        return details.count
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -231,86 +202,4 @@ extension OrderReceiptVC: UITableViewDelegate, UITableViewDataSource {
        
     }
 }
-extension OrderReceiptVC: DriverOrderDetailsViewDelegate {
-    
-    func getWebView(_ error: Error?, _ result: WebViewModel?) {
-        self.webLink.text = result?.link ?? ""
-    }
-    
-    func getCartResult(_ error: Error?, _ result: String?) {
-        
-        if let vat = result {
-            self.vat = vat
-            
-            self.TaxLb.text = ("The total price includes ".localized + "VAT tax".localized)
-        DriverOrderDetailsVCPresenter.getDriverOrderDetails(id: id)
 
-        }
-    }
-    
-    func getDriverProfileResult(_ error: Error?, _ result: User?) {
-        if let profile = result {
-
-        }
-    }
-    
-    
-    func calculateTotalPrice() {
-        var price: Double = 0.0
-        self.orderPrices.forEach { (order) in
-            price += order.price
-            self.orderPrice.text = "\(price)"
-            self.fees.text = "\(50)"
-            self.total.text = "\(price + 50)"
-        }
-        print(price)
-    }
-    
-    
-    func DriverOrderDetailsResult(_ error: Error?, _ details: [DriverOrder]?) {
-        self.orderReceiptTableView.addObserver(self, forKeyPath: "contentSize", options: NSKeyValueObservingOptions.new, context: nil)
-    }
-    
-    func DriverChangeStatusResult(_ error: Error?, _ result: SuccessError_Model?) {
-        if let status = result {
-            if status.successMessage != "" {
-                displayMessage(title: "Done".localized, message:"", status: .success, forController: self)
-                TopToProgress?.isActive = true
-                TopToView?.isActive = false
-
-                DriverOrderDetailsVCPresenter.getDriverOrderDetails(id: id)
-
-            } else if status.id != [""] {
-                displayMessage(title: "", message: status.id[0], status: .error, forController: self)
-            }
-        }
-    }
-    
-    
-    func postDriverRejactOrderResult(_ error: Error?, _ result: SuccessError_Model?) {
-        if let resultMsg = result {
-            if resultMsg.successMessage != "" {
-                displayMessage(title: "", message: "Done".localized, status: .success, forController: self)
-                
-                guard let window = UIApplication.shared.keyWindow else { return }
-
-                let main = UIStoryboard(name: "Orders", bundle: nil).instantiateViewController(withIdentifier: "DriverProfileNav")
-                
-              //  main.orderSelected = .completed
-                window.rootViewController = main
-
-            } else if resultMsg.order_id != [""] {
-                displayMessage(title: "", message: resultMsg.order_id[0], status: .error, forController: self)
-            }
-        }
-    }
-    
-}
-
-class Order {
-    var price: Double
-    
-    init(price: Double) {
-        self.price = price
-    }
-}

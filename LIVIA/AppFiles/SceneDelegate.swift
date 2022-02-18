@@ -19,8 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.window = self.window
         
-       // let sb = UIStoryboard(name: "Authentications", bundle: nil).instantiateViewController(withIdentifier: "LoginNav")
-        let sb = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeTabBar")
+        let sb = UIStoryboard(name: "Authentications", bundle: nil).instantiateViewController(withIdentifier: "LoginNav")
+       // let sb = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeTabBar")
         UIApplication.shared.windows.first?.rootViewController = sb
         UIApplication.shared.windows.first?.makeKeyAndVisible()
 

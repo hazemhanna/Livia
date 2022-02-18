@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 class OrderFollowingVC: UIViewController {
+    
     @IBOutlet weak var orderNum: UILabel!
     @IBOutlet weak var orderDate: UILabel!
     @IBOutlet weak var statusLB: UILabel!
@@ -19,7 +20,7 @@ class OrderFollowingVC: UIViewController {
     @IBOutlet weak var Arrived: UIImageView!
     @IBOutlet weak var Completed: UIImageView!
     
-    var order : orderList?
+   
     
     @IBOutlet weak var TopToView: NSLayoutConstraint!
     
@@ -36,25 +37,22 @@ class OrderFollowingVC: UIViewController {
     var date = String()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        orderNum.text = "\(order?.id ?? 0)"
-        orderDate.text = order?.createdAt
-        statusLB.text = order?.status?.localized
-        
-        switch order?.status {
+   
+        switch "new" {
         case "new":
             New.image = #imageLiteral(resourceName: "icons8-sync")
             UpdateBtn.isHidden = true
             BtnHeight.isActive = false
             BottomToStack.isActive = false
             TopToView.isActive = true
-
+            
         case "preparing":
             New.image = #imageLiteral(resourceName: "checked-green-1")
             Preparing.image = #imageLiteral(resourceName: "CurrentStatus")
             UpdateBtn.isHidden = true
             BtnHeight.isActive = false
             BottomToStack.isActive = false
+            
         case "delivering":
             New.image = #imageLiteral(resourceName: "checked-green-1")
             Preparing.image = #imageLiteral(resourceName: "checked-green-1")
@@ -63,10 +61,7 @@ class OrderFollowingVC: UIViewController {
             BtnHeight.isActive = false
             BottomToStack.isActive = false
             TopToView.isActive = true
-
-            
         case "delvivered":
-            
             New.image = #imageLiteral(resourceName: "checked-green-1")
             Preparing.image = #imageLiteral(resourceName: "checked-green-1")
             OnWay.image = #imageLiteral(resourceName: "checked-green-1")
@@ -88,8 +83,6 @@ class OrderFollowingVC: UIViewController {
             BtnHeight.isActive = true
             BottomToStack.isActive = true
             TopToView.isActive = false
-
-            
         default:
             break
         }
@@ -98,14 +91,6 @@ class OrderFollowingVC: UIViewController {
     
     @IBAction func UpdateRate(_ sender: UIButton) {
         
-        let sb = UIStoryboard(name: "PopUps", bundle: nil).instantiateViewController(withIdentifier: "RatingVC") as! RatingVC
-        
-        sb.order_id = order?.id ?? 0
-        
-    
-        sb.modalPresentationStyle = .overCurrentContext
-        sb.modalTransitionStyle = .crossDissolve
-        self.present(sb, animated: true, completion: nil)
     }
     
     
@@ -117,15 +102,9 @@ class OrderFollowingVC: UIViewController {
     }
     
     @IBAction func cart(_ sender: Any) {
-//        guard let window = UIApplication.shared.keyWindow else { return }
-//
-//        guard let details = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeTabBar") as? UITabBarController else { return }
-//
-//        details.selectedIndex = 2
-//        window.rootViewController = details
-        
-        self.navigationController?.popViewController(animated: true)
+      self.navigationController?.popViewController(animated: true)
     }
+    
     @IBAction func Comlpeleted(_ sender: Any) {
         let sb = UIStoryboard(name: "PopUps", bundle: nil).instantiateViewController(withIdentifier: "RatingVC")
         sb.modalPresentationStyle = .overCurrentContext
@@ -133,4 +112,5 @@ class OrderFollowingVC: UIViewController {
         self.present(sb, animated: true, completion: nil)
         
     }
+    
 }

@@ -13,7 +13,7 @@ class NotificationsVC: UIViewController {
     @IBOutlet weak var notificationsTableView: UITableView!
 
     
-    var NotificationArr = [Notifications]()
+  //  var NotificationArr = [Notifications]()
     
     fileprivate let cellIdentifier = "NotificationsCell"
     let user = Helper.getUserRole() ?? ""

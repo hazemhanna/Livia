@@ -9,21 +9,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>AlamofireNetworkActivityLogger.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Charts.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Clocket.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Cosmos.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -70,21 +55,6 @@
 			<false/>
 		</dict>
 		<key>FirebaseMessaging.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>FlagPhoneNumber-FlagPhoneNumber.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>FlagPhoneNumber.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Gallery.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -144,11 +114,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>StepView.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>SwiftMessages-SwiftMessages.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -160,11 +125,6 @@
 			<false/>
 		</dict>
 		<key>SwiftyJSON.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Urway.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

@@ -18,13 +18,13 @@ class OrderListVC : UIViewController {
     fileprivate let cellIdentifier = "ListCell"
     
     
-    var list = [orderList](){
-        didSet {
-            DispatchQueue.main.async {
-                self.listTableView.reloadData()
-            }
-        }
-    }
+//    var list = [orderList](){
+//        didSet {
+//            DispatchQueue.main.async {
+//                self.listTableView.reloadData()
+//            }
+//        }
+//    }
     
     
     override func viewDidLoad() {
@@ -56,6 +56,11 @@ extension OrderListVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ListCell else { return UITableViewCell()}
+        cell.goToDetails = {
+            guard let Details = UIStoryboard(name: "Details", bundle: nil).instantiateViewController(withIdentifier: "UserOrderDetailsVC") as? UserOrderDetailsVC else { return }
+            self.navigationController?.pushViewController(Details, animated: true)
+            
+        }
         return cell
     }
    

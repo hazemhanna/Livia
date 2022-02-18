@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Urway
-import PassKit
 
 class UserOrderDetailsVC: UIViewController{
     

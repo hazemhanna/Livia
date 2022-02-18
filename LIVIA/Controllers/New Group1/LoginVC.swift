@@ -25,10 +25,16 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func login(_ sender: UIButton) {
-        guard self .validate() else {return}
-        
+      //  guard self .validate() else {return}
       //  guard let email = EmailTF.text else {return}
        // guard let password = passwordTF.text else {return}
+        
+        guard let window = UIApplication.shared.keyWindow else { return }
+        let sb = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeTabBar") as! UITabBarController
+        sb.selectedIndex = 0
+        window.rootViewController = sb
+        UIView.transition(with: window, duration: 0.5, options: .curveEaseInOut, animations: nil, completion: nil)
+        
         
     }
     
@@ -49,9 +55,11 @@ class LoginVC: UIViewController {
 
         self.navigationController?.pushViewController(sb, animated: true)
     }
+
     
 }
 extension LoginVC{
+    
     
     
 }

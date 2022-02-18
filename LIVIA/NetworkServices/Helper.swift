@@ -22,32 +22,18 @@ class Helper {
             print("api_token: \(api_token)")
             switch Helper.getUserRole() {
             case "customer":
-                Services.postUserSetToken(type: "ios", device_token: Helper.getDeviceToken() ?? "") { (error: Error?, result: SuccessError_Model?) in
-                    if let resultM = result {
-                        if resultM.successMessage != "" {
-                            let sb = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeTabBar")
-                            window.rootViewController = sb
-                            //Singletone.instance.appUserType = .Customer
-                            UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromLeft, animations: nil, completion: nil)
-                        }
-                        
-                    }
-                }
-                
-            case "driver":
-                Services.postDriverSetToken(type: "ios", device_token: Helper.getDeviceToken() ?? "") { (error: Error?, result: SuccessError_Model?) in
-                    if let resultM = result {
-                        if resultM.successMessage != "" {
-                            let sb = UIStoryboard(name: "Orders", bundle: nil).instantiateViewController(withIdentifier: "DriverProfileNav")
-                            window.rootViewController = sb
-                            
-                            Singletone.instance.appUserType = .Driver
-                            UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromRight, animations: nil, completion: nil)
-                        }
-                        
-                    }
-                }
-                
+                print("true")
+//                Services.postUserSetToken(type: "ios", device_token: Helper.getDeviceToken() ?? "") { (error: Error?, result: SuccessError_Model?) in
+//                    if let resultM = result {
+//                        if resultM.successMessage != "" {
+//                            let sb = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeTabBar")
+//                            window.rootViewController = sb
+//                            UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromLeft, animations: nil, completion: nil)
+//                        }
+//
+//                    }
+//                }
+                    
             default:
                 break
                 

@@ -20,20 +20,11 @@ class SettingVC: UIViewController {
     @IBOutlet weak var DriverForgetPassword: UIView!
     
     @IBOutlet weak var english: UIButton!
-    private let DriverChangePasswordProfileProfileVCPresenter = DriverChangeProfileProfilePresenter(services: Services())
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        DriverChangePasswordProfileProfileVCPresenter.DriverChangePasswordProfileProfileViewDelegate(DriverChangePasswordProfileProfileViewDelegate: self)
         
-        if Helper.getUserRole() == "driver" {
-            
-            DriverForgetPassword.isHidden = false
-        } else {
-            
-            DriverForgetPassword.isHidden = true
-
-        }
-        
+        DriverForgetPassword.isHidden = true
         
         if "lang".localized == "ar" {
             self.languageType.setTitle("اللغة", for: .normal)
@@ -68,30 +59,7 @@ class SettingVC: UIViewController {
         sb.modalTransitionStyle = .crossDissolve
         self.present(sb, animated: true, completion: nil)
     }
-    @IBAction func save(_ sender: UIButton) {
-        guard self.validate() else { return }
-        guard let password = self.newPasswordTF.text else {return}
-        guard let old_password = self.oldPasswordTF.text else {return}
-        guard let password_confirmation = self.passwordConfirmationTF.text else {return}
-        DriverChangePasswordProfileProfileVCPresenter.showIndicator()
-        DriverChangePasswordProfileProfileVCPresenter.postsetDriverChangePasswordProfileProfile(password: password, old_password: old_password, password_confirmation: password_confirmation)
-        
-        
-    }
-    private func validate() -> Bool {
-        if self.newPasswordTF.text!.isEmpty {
-            displayMessage(title: "", message: "new password is empty".localized, status: .error, forController: self)
-            return false
-        } else if self.passwordConfirmationTF.text!.isEmpty {
-            displayMessage(title: "", message: "Confirm password is empty".localized, status: .error, forController: self)
-            return false
-        } else if self.oldPasswordTF.text!.isEmpty {
-            displayMessage(title: "", message: "Old password is empty".localized, status: .error, forController: self)
-            return false
-        } else {
-            return true
-        }
-    }
+
     
     
     
@@ -134,23 +102,6 @@ class SettingVC: UIViewController {
         default:
             break
         }
-    }
-}
-extension SettingVC: DriverChangePasswordProfileProfileViewDelegate {
-    func DriverChangePasswordProfileProfileResult(_ error: Error?, _ result: SuccessError_Model?) {
-        if let resultMsg = result {
-            if resultMsg.successMessage != "" {
-                displayMessage(title: "", message: "Done".localized, status: .success, forController: self)
-            } else if resultMsg.old_password != [""] {
-                displayMessage(title: "", message: "", status: .error, forController: self)
-            } else if resultMsg.password != [""] {
-                displayMessage(title: "", message: "", status: .error, forController: self)
-            } else if resultMsg.password_confirmation != [""] {
-                displayMessage(title: "", message: "", status: .error, forController: self)
-            }
-        }
-        
-        
     }
 }
 

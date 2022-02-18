@@ -12,7 +12,6 @@ import DropDown
 
 class WalletVc: UIViewController {
     
-    private let UserListVCPresenter = UserListPresenter(services: Services())
     
     @IBOutlet weak var listTableView: UITableView!
     @IBOutlet weak var orderbtn : UIButton!
@@ -24,15 +23,6 @@ class WalletVc: UIViewController {
     var type = "order"
     var totalWallet = Int()
     
-    var list = [orderList](){
-        didSet {
-            DispatchQueue.main.async {
-                self.listTableView.reloadData()
-            }
-        }
-    }
-    
-    var rewards  = [Reward]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +43,7 @@ class WalletVc: UIViewController {
     
     @IBAction func rewardBtn(_ sender: UIButton) {
         if sender.tag == 0 {
-            self.orderbtn.backgroundColor = #colorLiteral(red: 0.00800000038, green: 0.1019999981, blue: 0.2705882353, alpha: 1)
+            self.orderbtn.backgroundColor = #colorLiteral(red: 1, green: 0.4078431373, blue: 0.5294117647, alpha: 1)
             self.rewardsBtn.backgroundColor = .white
             self.type = "order"
             self.orderbtn.setTitleColor(UIColor.white, for: .normal)
@@ -61,7 +51,7 @@ class WalletVc: UIViewController {
             self.listTableView.reloadData()
         }else{
             self.orderbtn.backgroundColor = .white
-            self.rewardsBtn.backgroundColor = #colorLiteral(red: 0.00800000038, green: 0.1019999981, blue: 0.2705882353, alpha: 1)
+            self.rewardsBtn.backgroundColor = #colorLiteral(red: 1, green: 0.4078431373, blue: 0.5294117647, alpha: 1)
             self.type = "reward"
             self.orderbtn.setTitleColor(UIColor.black, for: .normal)
             self.rewardsBtn.setTitleColor(UIColor.white, for: .normal)

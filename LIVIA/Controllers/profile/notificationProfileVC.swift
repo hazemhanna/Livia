@@ -46,11 +46,7 @@ class notificationProfileVC: UIViewController {
             self.navigationController?.pushViewController(sb, animated: true)
         }
     }
-    
 }
-
-
-
 
 extension notificationProfileVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -63,7 +59,7 @@ extension notificationProfileVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-     return 80.0
+     return 90.0
     }
 }
 

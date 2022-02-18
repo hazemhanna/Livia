@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FlagPhoneNumber
 
 class RegisterationVC: UIViewController {
   
@@ -26,14 +25,22 @@ class RegisterationVC: UIViewController {
     
     
     @IBAction func register(_ sender: UIButton) {
-        guard self.validate() else {return}
-        guard let name = name.text else {return}
-        guard let email = email.text else {return}
-        guard let password = password.text else {return}
-        guard let confirmation = password_confirmation.text else {return}
-        guard var phone = phone.text else {return}
-        guard var address = address.text else {return}
-
+//        guard self.validate() else {return}
+//        guard let name = name.text else {return}
+//        guard let email = email.text else {return}
+//        guard let password = password.text else {return}
+//        guard let confirmation = password_confirmation.text else {return}
+//        guard var phone = phone.text else {return}
+//        guard var address = address.text else {return}
+       
+        
+        guard let window = UIApplication.shared.keyWindow else { return }
+        let sb = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeTabBar") as! UITabBarController
+        sb.selectedIndex = 0
+        window.rootViewController = sb
+        UIView.transition(with: window, duration: 0.5, options: .curveEaseInOut, animations: nil, completion: nil)
+        
+        
     }
     
     private func validate() ->Bool {
@@ -62,6 +69,9 @@ class RegisterationVC: UIViewController {
         guard let sb = UIStoryboard(name: "Authentications", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as? LoginVC else {return}
         self.navigationController?.pushViewController(sb, animated: true)
     }
+    
+ 
+    
     
 }
 

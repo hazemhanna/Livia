@@ -22,7 +22,8 @@ class OrderReceiptCell: UITableViewCell {
         self.selectionStyle = .none
         
     }
-    func config(name: String, number: Int, price: String, options: [Option] , restaurant : String) {
+    
+    func config(name: String, number: Int, price: String , restaurant : String) {
         self.name.text = name
         self.number.text = "\(number)"
         print(price)

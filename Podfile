@@ -24,31 +24,8 @@ target 'Livia' do
   pod 'Firebase/Analytics'
   pod 'FirebaseMessaging', '3.4.0'
   pod 'FirebaseInstanceID', '3.8.0'
-#  pod 'FirebaseInstanceId'
-
-#  pod 'FirebaseCore', :git => 'https://github.com/firebase/firebase-ios-sdk.git', :branch => 'master'
-#  pod 'FirebaseMessaging', :path => '/path/to/firebase-ios-sdk'
-
   pod 'MOLH'
-  pod 'Gallery'
-  pod 'Charts'
-  pod 'StepView'
   pod 'FSCalendar'
-  pod 'FlagPhoneNumber'
-  pod 'Urway', :git => 'https://github.com/ameralshabebi/UrwayFramework.git'
-  
-  #pod 'Urway'
-  pod 'Clocket'
-  pod 'AlamofireNetworkActivityLogger'
-  
-#  post_install do |installer|
-#    installer.pods_project.build_configurations.each do |config|
-#      config.build_settings.delete('CODE_SIGNING_ALLOWED')
-#      config.build_settings.delete('CODE_SIGNING_REQUIRED')
-#    end
-#  end
-
-
 
 end
 post_install do |installer|

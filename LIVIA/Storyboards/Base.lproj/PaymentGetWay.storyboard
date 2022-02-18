@@ -811,12 +811,12 @@
             <size key="intrinsicContentSize" width="32" height="34"/>
         </designable>
         <designable name="gOd-ev-iT0">
-            <size key="intrinsicContentSize" width="228" height="30.5"/>
+            <size key="intrinsicContentSize" width="214" height="20.5"/>
         </designable>
     </designables>
     <resources>
         <image name="cash" width="25" height="25"/>
-        <image name="checked" width="22" height="22"/>
+        <image name="checked" width="33" height="33"/>
         <image name="checked-green" width="22" height="22"/>
         <image name="cridateCard" width="25" height="25"/>
         <image name="icons8-paypal" width="25" height="25"/>

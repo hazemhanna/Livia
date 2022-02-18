@@ -10,6 +10,11 @@ import UIKit
 
 class ProfilePopUp: UIViewController {
     
+    @IBOutlet weak var wallettn : UIButton!
+    @IBOutlet weak var notificationtn : UIButton!
+    @IBOutlet weak var passwordtn : UIButton!
+    @IBOutlet weak var profilebtn : UIButton!
+
     var goToWallet: (() ->Void)? = nil
 
     var goTochangeProfile: (() ->Void)? = nil
@@ -19,6 +24,11 @@ class ProfilePopUp: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        wallettn.setTitle("wallet".localized, for: .normal)
+        passwordtn.setTitle("Password changed".localized, for: .normal)
+        notificationtn.setTitle("Notifications".localized, for: .normal)
+        profilebtn.setTitle("changeProfile".localized, for: .normal)
+
     }
     
     @IBAction func walletAction(_ sender: UIButton) {

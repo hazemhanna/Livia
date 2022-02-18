@@ -33,20 +33,20 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="livia logo" translatesAutoresizingMaskIntoConstraints="NO" id="f0A-zC-hBc">
-                                <rect key="frame" x="107" y="32" width="200" height="200"/>
+                                <rect key="frame" x="107" y="32" width="200" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="ZDw-Ps-UEu"/>
-                                    <constraint firstAttribute="height" constant="200" id="lsH-W4-N66"/>
+                                    <constraint firstAttribute="height" constant="100" id="lsH-W4-N66"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tdh-1l-viX">
-                                <rect key="frame" x="150.5" y="232" width="113.5" height="37.5"/>
+                                <rect key="frame" x="150.5" y="148" width="113.5" height="37.5"/>
                                 <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="20"/>
                                 <color key="textColor" name="navigation"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Qrc-a2-5OY">
-                                <rect key="frame" x="41.5" y="301.5" width="331" height="400"/>
+                                <rect key="frame" x="41.5" y="217.5" width="331" height="400"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GLD-GW-teO" customClass="CustomTextField" customModule="Shnp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="331" height="50"/>
@@ -186,7 +186,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urn-Jp-9LG" customClass="CustomButtons" customModule="Shnp" customModuleProvider="target">
-                                <rect key="frame" x="91.5" y="711.5" width="231" height="50"/>
+                                <rect key="frame" x="91.5" y="627.5" width="231" height="50"/>
                                 <color key="backgroundColor" name="navigation"/>
                                 <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="20"/>
                                 <state key="normal" title="Register">
@@ -203,7 +203,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kw6-8e-eyG">
-                                <rect key="frame" x="91.5" y="781.5" width="231" height="44"/>
+                                <rect key="frame" x="91.5" y="697.5" width="231" height="44"/>
                                 <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="17"/>
                                 <state key="normal" title="Have account? Login now">
                                     <color key="titleColor" name="navigation"/>
@@ -216,7 +216,7 @@
                         <viewLayoutGuide key="safeArea" id="V4P-O1-Hse"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Tdh-1l-viX" firstAttribute="top" secondItem="f0A-zC-hBc" secondAttribute="bottom" id="2I9-2T-8fm"/>
+                            <constraint firstItem="Tdh-1l-viX" firstAttribute="top" secondItem="f0A-zC-hBc" secondAttribute="bottom" constant="16" id="2I9-2T-8fm"/>
                             <constraint firstItem="f0A-zC-hBc" firstAttribute="centerX" secondItem="UcH-uu-eWI" secondAttribute="centerX" id="2NK-KQ-9ok"/>
                             <constraint firstItem="Qrc-a2-5OY" firstAttribute="top" secondItem="Tdh-1l-viX" secondAttribute="bottom" constant="32" id="2Os-9j-etf"/>
                             <constraint firstItem="m1L-CM-oOi" firstAttribute="top" secondItem="UcH-uu-eWI" secondAttribute="top" id="6Wv-YM-zwX"/>

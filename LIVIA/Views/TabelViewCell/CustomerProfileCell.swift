@@ -9,6 +9,7 @@
 import UIKit
 
 class CustomerProfileCell: UITableViewCell {
+    
     var Save:(() ->Void)? = nil
     var AddressMap : (() -> Void)? = nil
     
@@ -21,12 +22,6 @@ class CustomerProfileCell: UITableViewCell {
     @IBOutlet weak var Phone: CustomTextField!
     
     
-    var profile: User? {
-        didSet {
-            guard let profile = profile else { return }
-            print(profile)
-        }
-    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

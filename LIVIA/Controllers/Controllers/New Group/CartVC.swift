@@ -18,11 +18,11 @@ class CartVC: UIViewController {
     
     fileprivate let cellIdentifier = "ValiableResturantCell"
     
-    var CartIems = [onlineCart]() {
-        didSet {
-            self.cartTableView.reloadData()
-        }
-    }
+//    var CartIems = [string]() {
+//        didSet {
+//            self.cartTableView.reloadData()
+//        }
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,8 +58,7 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource {
     }
  
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let Details = UIStoryboard(name: "Cart", bundle: nil).instantiateViewController(withIdentifier: "CartDetailsVC") as? CartDetailsVC else { return }
-        self.navigationController?.pushViewController(Details, animated: true)
+
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

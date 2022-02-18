@@ -1,48 +1,126 @@
 
+/* Class = "UILabel"; text = " Alaa Youssef"; ObjectID = "2wM-tY-gyG"; */
+"2wM-tY-gyG.text" = " Alaa Youssef";
+
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "3YW-rN-d1s"; */
+"3YW-rN-d1s.normalTitle" = "حفظ";
+
 /* Class = "UINavigationItem"; title = "Profile"; ObjectID = "4hA-E4-rX0"; */
-"4hA-E4-rX0.title" = "Profile";
+"4hA-E4-rX0.title" = "الملف الشخصي";
 
-/* Class = "UILabel"; text = "Profile"; ObjectID = "4hf-i3-MQi"; */
-"4hf-i3-MQi.text" = "الأشعارات";
-
-/* Class = "UITextField"; placeholder = "Address"; ObjectID = "5kX-3R-Zep"; */
-"5kX-3R-Zep.placeholder" = "العنوان";
+/* Class = "UILabel"; text = "Notifications"; ObjectID = "4hf-i3-MQi"; */
+"4hf-i3-MQi.text" = "الاشعارات";
 
 /* Class = "UINavigationItem"; title = "Change Password"; ObjectID = "74L-16-fuN"; */
 "74L-16-fuN.title" = "تغيير كلمة المرور";
 
-/* Class = "UITextField"; placeholder = "User Name"; ObjectID = "Pg6-0N-CzI"; */
-"Pg6-0N-CzI.placeholder" = "اسم المستخدم";
+/* Class = "UIBarButtonItem"; title = "  "; ObjectID = "93l-2F-wIL"; */
+"93l-2F-wIL.title" = "  ";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Bj0-Yi-exZ"; */
+"Bj0-Yi-exZ.normalTitle" = "المحفظة الالكترونية";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Djq-Eo-PNn"; */
+"Djq-Eo-PNn.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "GSd-Jb-49U"; */
+"GSd-Jb-49U.placeholder" = "البريد الالكتروني";
+
+/* Class = "UILabel"; text = "profile"; ObjectID = "Kss-Hf-ydL"; */
+"Kss-Hf-ydL.text" = "الملف الشخصي";
+
+/* Class = "UILabel"; text = "رصيد محفظتك : ١٥٠ جنية "; ObjectID = "LWr-nQ-Fbu"; */
+"LWr-nQ-Fbu.text" = "رصيد محفظتك : ١٥٠ جنية ";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Lgo-RT-sCi"; */
+"Lgo-RT-sCi.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "رصيد محفظتك : ١٥٠ جنية "; ObjectID = "Lvz-6k-rLy"; */
+"Lvz-6k-rLy.text" = "رصيد محفظتك : ١٥٠ جنية ";
+
+/* Class = "UILabel"; text = " Alaa Youssef"; ObjectID = "MsA-1U-p7m"; */
+"MsA-1U-p7m.text" = " Alaa Youssef";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "N8z-EM-Eaw"; */
+"N8z-EM-Eaw.title" = "Item";
+
+/* Class = "UIButton"; configuration.title = "Notiification"; ObjectID = "OSi-1z-Fzm"; */
+"OSi-1z-Fzm.configuration.title" = "الاشعارات";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "OSi-1z-Fzm"; */
+"OSi-1z-Fzm.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "Address"; ObjectID = "P7d-mN-rOB"; */
+"P7d-mN-rOB.placeholder" = "العنوان";
+
+/* Class = "UIButton"; normalTitle = "Cancel Orders"; ObjectID = "P7f-a5-Nuc"; */
+"P7f-a5-Nuc.normalTitle" = "طلبات مرتجعة";
 
 /* Class = "UILabel"; text = "Profile"; ObjectID = "QRJ-pW-j9i"; */
 "QRJ-pW-j9i.text" = "الملف الشخصي";
 
-/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "QlO-2X-nIs"; */
-"QlO-2X-nIs.normalTitle" = "حفظ";
+/* Class = "UIButton"; configuration.title = "password"; ObjectID = "RRa-aM-nE4"; */
+"RRa-aM-nE4.configuration.title" = "تفيير كلمة المرور";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "RRa-aM-nE4"; */
+"RRa-aM-nE4.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Rewards"; ObjectID = "VXd-hX-oBw"; */
+"VXd-hX-oBw.normalTitle" = "المكافات";
+
+/* Class = "UIButton"; configuration.title = "Wallet"; ObjectID = "WL5-XF-DLN"; */
+"WL5-XF-DLN.configuration.title" = "المحفظة الالكتروتية";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "WL5-XF-DLN"; */
+"WL5-XF-DLN.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = " Alaa Youssef"; ObjectID = "WrF-fl-1Ve"; */
+"WrF-fl-1Ve.text" = " Alaa Youssef";
 
 /* Class = "UITextField"; placeholder = "New Password Confirmation"; ObjectID = "XHj-sU-k2a"; */
 "XHj-sU-k2a.placeholder" = "تاكيد كلمة المرور";
 
+/* Class = "UILabel"; text = " Alaa Youssef"; ObjectID = "ZDO-ET-cHE"; */
+"ZDO-ET-cHE.text" = " Alaa Youssef";
+
 /* Class = "UITabBarItem"; title = "Item"; ObjectID = "Zr9-xk-34S"; */
 "Zr9-xk-34S.title" = "Item";
 
-/* Class = "UITextField"; placeholder = "Phone"; ObjectID = "cQP-ee-7Dp"; */
-"cQP-ee-7Dp.placeholder" = "الهاتف";
+/* Class = "UITextField"; placeholder = "User Name"; ObjectID = "cg1-bu-4lc"; */
+"cg1-bu-4lc.placeholder" = "اسم المستخدم";
 
-/* Class = "UITextField"; placeholder = "Email"; ObjectID = "dav-0m-MO6"; */
-"dav-0m-MO6.placeholder" = "البريد الالكتروني";
+/* Class = "UILabel"; text = "Profile"; ObjectID = "fIh-7d-zHY"; */
+"fIh-7d-zHY.text" = "الملف الشخصي";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "g1c-4O-XTK"; */
+"g1c-4O-XTK.normalTitle" = "Button";
 
 /* Class = "UIButton"; normalTitle = "Save"; ObjectID = "gUW-F8-k6g"; */
 "gUW-F8-k6g.normalTitle" = "حفظ";
 
-/* Class = "UITabBarItem"; title = "الباسورد"; ObjectID = "lMs-2h-laI"; */
-"lMs-2h-laI.title" = "الباسورد";
+/* Class = "UINavigationItem"; title = "Profile"; ObjectID = "grq-H4-4hk"; */
+"grq-H4-4hk.title" = "الملف الشخصي";
 
-/* Class = "UIButton"; normalTitle = "Guidelines for strong password"; ObjectID = "n16-k5-Oei"; */
-"n16-k5-Oei.normalTitle" = "الارشادات لكلمة مرور قوية";
+/* Class = "UILabel"; text = "رصيد محفظتك : ١٥٠ جنية "; ObjectID = "hE2-k9-dAY"; */
+"hE2-k9-dAY.text" = "رصيد محفظتك : ١٥٠ جنية ";
+
+/* Class = "UIButton"; configuration.title = "change Profile"; ObjectID = "hIz-cz-kxh"; */
+"hIz-cz-kxh.configuration.title" = " تغيير الملف الشخصي";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "hIz-cz-kxh"; */
+"hIz-cz-kxh.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Button"; ObjectID = "ox9-mf-dr3"; */
+"ox9-mf-dr3.configuration.title" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ox9-mf-dr3"; */
+"ox9-mf-dr3.normalTitle" = "Button";
 
 /* Class = "UILabel"; text = "Profile"; ObjectID = "oyn-dJ-Wk9"; */
 "oyn-dJ-Wk9.text" = "الملف الشخصي";
+
+/* Class = "UITextField"; placeholder = "Phone"; ObjectID = "pBC-8P-BCX"; */
+"pBC-8P-BCX.placeholder" = "رقم الهاتف";
 
 /* Class = "UIBarButtonItem"; title = "  "; ObjectID = "pef-wa-Ay8"; */
 "pef-wa-Ay8.title" = "  ";
@@ -50,8 +128,11 @@
 /* Class = "UITextField"; placeholder = "New Password"; ObjectID = "rL8-Z5-BtF"; */
 "rL8-Z5-BtF.placeholder" = "كلمة المرور الجديدة";
 
+/* Class = "UILabel"; text = "رصيد محفظتك : ١٥٠ جنية "; ObjectID = "sF2-Zo-Mk8"; */
+"sF2-Zo-Mk8.text" = "رصيد محفظتك : ١٥٠ جنية ";
+
 /* Class = "UITextField"; placeholder = "Old Password"; ObjectID = "u8w-LQ-fyA"; */
-"u8w-LQ-fyA.placeholder" = "كلمة المرور";
+"u8w-LQ-fyA.placeholder" = "كلمة المرور القديمة";
 
 /* Class = "UINavigationItem"; title = "Notifications"; ObjectID = "wbX-ua-XQa"; */
-"wbX-ua-XQa.title" = "Notifications";
+"wbX-ua-XQa.title" = "الاشعارات";

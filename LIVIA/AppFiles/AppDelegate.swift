@@ -14,8 +14,6 @@ import Firebase
 import FirebaseMessaging
 import IQKeyboardManagerSwift
 import MOLH
-import AlamofireNetworkActivityLogger
-import Urway
 import CoreLocation
 
 
@@ -41,9 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MOLHResetable {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        NetworkActivityLogger.shared.level = .debug
-        NetworkActivityLogger.shared.startLogging()
-        
+       
         UIApplication.shared.applicationIconBadgeNumber = 0
         MOLH.shared.activate(true)
         MOLH.shared.specialKeyWords = ["Cancel","Done"]
@@ -110,9 +106,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MOLHResetable {
             print("Remote Instance ID Token: \(result.token)")
             Helper.saveDeviceToken(token: result.token)
             if Helper.getApiToken() ?? "" != "" {
-                    Services.postUserSetToken(type: "ios", device_token: Helper.getDeviceToken() ?? "") { (error: Error?, result: SuccessError_Model?) in
-                        
-                    }
+//                   Services.postUserSetToken(type: "ios", device_token: Helper.getDeviceToken() ?? "") { (error: Error?, result: SuccessError_Model?) in
+//
+//                    }
                 }
             }
             
