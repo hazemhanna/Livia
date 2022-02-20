@@ -8,8 +8,11 @@
 
 import UIKit
 import DLRadioButton
+
 class ProductDetails: UIViewController {
+    
     @IBOutlet weak var AdditionTableView: UITableView!
+    
     @IBOutlet weak var quantityTF: UILabel!
     @IBOutlet weak var stackViewST: UIStackView!
     @IBOutlet weak var mealNameLB: UILabel!
@@ -57,9 +60,7 @@ class ProductDetails: UIViewController {
     }
     
     @IBAction func cart(_ sender: Any) {
-
         setupSideMenu()
-        
     }
     @IBAction func Increase(_ sender: UIButton) {
         self.productCounter += 1

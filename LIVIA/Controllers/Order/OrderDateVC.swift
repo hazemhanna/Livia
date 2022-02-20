@@ -9,9 +9,12 @@
 import UIKit
 import FSCalendar
 class OrderDateVC: UIViewController {
-    var dateString = String()
+    
     @IBOutlet weak var orderCalender: FSCalendar!
+    
     var selectedDate: ((String) -> Void)?
+    var dateString = String()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         orderCalender.delegate = self
@@ -27,9 +30,11 @@ class OrderDateVC: UIViewController {
     
 }
 extension OrderDateVC: FSCalendarDelegate, FSCalendarDataSource {
+    
     func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
 
-        guard let cell = calendar.dequeueReusableCell(withIdentifier: "Cell", for: date, at: position) as? FSCalendarCell else {return FSCalendarCell()}
+         let cell = calendar.dequeueReusableCell(withIdentifier: "Cell", for: date, at: position)
+                
         return cell
     }
    
@@ -37,13 +42,15 @@ extension OrderDateVC: FSCalendarDelegate, FSCalendarDataSource {
         let manthAgo = Calendar.current.date(byAdding: .day, value: 0, to: Date()) ?? Date()
         return manthAgo
     }
+    
     func  calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
         calendar.frame = CGRect(x: 0, y: 0, width: bounds.size.width, height: bounds.size.height)
         self.view.layoutIfNeeded()
     }
+    
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy/MM/dd"
-        dateString = dateFormatter.string(from: date) ?? ""
+        dateString = dateFormatter.string(from: date)
     }
 }

@@ -14,6 +14,7 @@ class ProductsVc : UIViewController {
     @IBOutlet weak var bestSellerTableView: UITableView!
 
     fileprivate let cellIdentifier = "ValiableResturantCell"
+    var productCounter = Int()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +40,20 @@ extension ProductsVc: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ValiableResturantCell else {return UITableViewCell()}
+        
+        cell.increase = {
+            self.productCounter += 1
+            cell.quantityTF.text = "\(self.productCounter)"
+        }
+        
+        cell.decrease = {
+            if self.productCounter > 1 {
+                self.productCounter -= 1
+                cell.quantityTF.text = "\(self.productCounter)"
+            }
+
+        }
+        
         return cell
     }
     

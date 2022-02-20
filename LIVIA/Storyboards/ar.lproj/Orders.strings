@@ -2,97 +2,53 @@
 /* Class = "UILabel"; text = "No Orders Yet"; ObjectID = "2El-Wl-2WU"; */
 "2El-Wl-2WU.text" = "لا يوجد طلبات";
 
-/* Class = "UILabel"; text = "Order List"; ObjectID = "3KF-0R-YtU"; */
-"3KF-0R-YtU.text" = "الطلبات الحالية";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "5ph-Wk-j6v"; */
-"5ph-Wk-j6v.text" = "Label";
-
 /* Class = "UINavigationItem"; title = "Sections"; ObjectID = "5tV-QY-PYh"; */
 "5tV-QY-PYh.title" = "Sections";
 
-/* Class = "UIButton"; normalTitle = "Status"; ObjectID = "6ec-tD-c0H"; */
-"6ec-tD-c0H.normalTitle" = "حالة الطلب";
-
-/* Class = "UILabel"; text = "ghon due"; ObjectID = "8MX-jM-EYq"; */
-"8MX-jM-EYq.text" = "ghon due";
-
-/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "9PH-o6-emn"; */
-"9PH-o6-emn.normalTitle" = "حفظ";
+/* Class = "UILabel"; text = "رسوم التوصيل : ٤٠ جنية"; ObjectID = "AFK-Se-XXM"; */
+"AFK-Se-XXM.text" = "رسوم التوصيل : ٤٠ جنية";
 
 /* Class = "UIBarButtonItem"; title = "  "; ObjectID = "Bw4-a1-TAi"; */
 "Bw4-a1-TAi.title" = "  ";
 
-/* Class = "UILabel"; text = "1"; ObjectID = "EDC-GT-HrF"; */
-"EDC-GT-HrF.text" = "1";
-
-/* Class = "UIBarButtonItem"; title = " "; ObjectID = "FrX-R5-8tP"; */
-"FrX-R5-8tP.title" = " ";
+/* Class = "UINavigationItem"; title = "Cart"; ObjectID = "CSW-qL-pN8"; */
+"CSW-qL-pN8.title" = "سلة المشتريات";
 
 /* Class = "UILabel"; text = "Order List"; ObjectID = "HgR-vC-VJj"; */
 "HgR-vC-VJj.text" = "طلباتي";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "KFl-7B-U4w"; */
-"KFl-7B-U4w.text" = "Label";
+/* Class = "UILabel"; text = "Other notes"; ObjectID = "LDj-17-wVA"; */
+"LDj-17-wVA.text" = "ملاحظات اخري";
 
-/* Class = "UINavigationItem"; title = "Favorites"; ObjectID = "Lxz-tk-9IZ"; */
-"Lxz-tk-9IZ.title" = "Favorites";
+/* Class = "UILabel"; text = "اجمالي التكلفة : ١٤٠ جنية"; ObjectID = "MEm-h6-isv"; */
+"MEm-h6-isv.text" = "اجمالي التكلفة : ١٤٠ جنية";
 
-/* Class = "UILabel"; text = "Other Notes"; ObjectID = "MZo-Dv-7pV"; */
-"MZo-Dv-7pV.text" = "ملاحظات اخرى";
+/* Class = "UILabel"; text = "Order Details"; ObjectID = "ONP-oG-2Ry"; */
+"ONP-oG-2Ry.text" = "تفاصيل الطلب";
 
 /* Class = "UINavigationItem"; title = " Order List"; ObjectID = "Pu2-y6-LhH"; */
-"Pu2-y6-LhH.title" = " Order List";
+"Pu2-y6-LhH.title" = " طلباتي";
 
-/* Class = "UILabel"; text = "No Results"; ObjectID = "Tg6-fN-Y19"; */
-"Tg6-fN-Y19.text" = "لا يوجد نتائج";
-
-/* Class = "UILabel"; text = "No Order Yet"; ObjectID = "UHg-rp-07v"; */
-"UHg-rp-07v.text" = "لا يوجد طلبات";
-
-/* Class = "UINavigationItem"; title = " Driver List"; ObjectID = "UwA-zf-5fX"; */
-"UwA-zf-5fX.title" = " Driver List";
+/* Class = "UIButton"; normalTitle = "show bill"; ObjectID = "ULh-tw-qyW"; */
+"ULh-tw-qyW.normalTitle" = "عرض الفاتورة";
 
 /* Class = "UIBarButtonItem"; title = " "; ObjectID = "Vc3-P7-PEV"; */
 "Vc3-P7-PEV.title" = " ";
 
 /* Class = "UILabel"; text = "Favorite Meals"; ObjectID = "Vx8-Xk-5Vr"; */
-"Vx8-Xk-5Vr.text" = "الواجبات المفضلة";
+"Vx8-Xk-5Vr.text" = "المفضلة";
 
-/* Class = "UIBarButtonItem"; title = "  "; ObjectID = "Xme-FR-0f0"; */
-"Xme-FR-0f0.title" = "  ";
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "ZPK-UI-jKG"; */
+"ZPK-UI-jKG.normalTitle" = "الغاء الطلب";
 
 /* Class = "UIBarButtonItem"; title = " "; ObjectID = "ZeX-kr-FCS"; */
 "ZeX-kr-FCS.title" = " ";
 
-/* Class = "UILabel"; text = "023456789456"; ObjectID = "cDJ-fA-wlk"; */
-"cDJ-fA-wlk.text" = "023456789456";
-
-/* Class = "UILabel"; text = "Favorite Restaurants"; ObjectID = "cct-zV-hKK"; */
-"cct-zV-hKK.text" = "المطاعم المفضلة";
-
-/* Class = "UILabel"; text = "Sections"; ObjectID = "iiK-7W-uRG"; */
-"iiK-7W-uRG.text" = "الأقسام";
-
-/* Class = "UIButton"; normalTitle = "Status"; ObjectID = "la4-pf-cfa"; */
-"la4-pf-cfa.normalTitle" = "حالة الطلب";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "lxp-kg-Tik"; */
-"lxp-kg-Tik.text" = "Label";
-
 /* Class = "UINavigationItem"; title = "Favorite Meals"; ObjectID = "pnk-xR-imn"; */
-"pnk-xR-imn.title" = "Favorite Meals";
+"pnk-xR-imn.title" = "المفضلة";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "sh7-mr-Rb7"; */
-"sh7-mr-Rb7.text" = "Label";
+/* Class = "UILabel"; text = "الاقسام"; ObjectID = "wNn-2U-SDd"; */
+"wNn-2U-SDd.text" = "الاقسام";
 
-/* Class = "UILabel"; text = "Sections"; ObjectID = "wNn-2U-SDd"; */
-"wNn-2U-SDd.text" = "الأقسام";
-
-/* Class = "UILabel"; text = "Order List"; ObjectID = "wcC-pl-odU"; */
-"wcC-pl-odU.text" = "طلباتي";
-
-/* Class = "UIBarButtonItem"; title = "  "; ObjectID = "x4M-AH-k5F"; */
-"x4M-AH-k5F.title" = "  ";
-
-"UIB-vi-v4B.text" = "سعرات حرارية: ";
+/* Class = "UIButton"; normalTitle = "follow"; ObjectID = "zrc-XK-F2C"; */
+"zrc-XK-F2C.normalTitle" = "متابعة الطلب";

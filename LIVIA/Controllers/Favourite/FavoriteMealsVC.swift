@@ -11,7 +11,7 @@ import UIKit
 class FavoriteMealsVC: UIViewController {
    
     @IBOutlet weak var favoriteMealsTableView: UITableView!
-    fileprivate let cellIdentifier = "ValiableResturantCell"
+    fileprivate let cellIdentifier = "FavouriteCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +24,10 @@ class FavoriteMealsVC: UIViewController {
         self.setupSideMenu()
     }
     
+    @IBAction func backBtn(_ sender: Any) {
+      self.navigationController?.popViewController(animated: true)
+    }
+    
     
 }
 extension FavoriteMealsVC: UITableViewDataSource, UITableViewDelegate {
@@ -33,8 +37,7 @@ extension FavoriteMealsVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ValiableResturantCell else {return UITableViewCell()}
-        cell.FavoriteBN.setImage(UIImage(named: "222"), for: .normal)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? FavouriteCell else {return UITableViewCell()}
         return cell
     }
     
@@ -43,7 +46,7 @@ extension FavoriteMealsVC: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        150
+        120
     }
     
 }

@@ -102,8 +102,8 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
-                <outlet property="descLbl" destination="6TE-EM-aT1" id="spP-Ws-NNu"/>
-                <outlet property="packageLbl" destination="Mtd-vW-lyX" id="VRl-nV-g27"/>
+                <outlet property="PriceLbl" destination="6TE-EM-aT1" id="dF2-t3-boV"/>
+                <outlet property="packageLbl" destination="Mtd-vW-lyX" id="PsJ-9x-tka"/>
                 <outlet property="resturantImage" destination="bpV-4A-Tvg" id="PX4-Te-Yfg"/>
                 <outlet property="timeLbl" destination="Mah-hB-sY4" id="Atj-uU-OTb"/>
                 <outlet property="validLbl" destination="7Mp-t2-hxf" id="KOk-IG-tSC"/>

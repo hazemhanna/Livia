@@ -16,13 +16,27 @@ class ValiableResturantCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var FavoriteBN: UIButton!
     @IBOutlet weak var price: UILabel!
-    
+    @IBOutlet weak var quantityTF: UILabel!
+
+    @IBOutlet weak var contentStackView: UIStackView!
+
     var isFavourite = Bool()
     var goToFavorites: (() ->Void)? = nil
     
+    var increase: (() ->Void)? = nil
+    var decrease: (() ->Void)? = nil
+
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
+        
+        if "lang".localized == "ar" {
+            name.textAlignment = .left
+            type.textAlignment = .left
+        }else{
+            name.textAlignment = .right
+            type.textAlignment = .right
+        }
     }
     
   
@@ -52,5 +66,16 @@ class ValiableResturantCell: UITableViewCell {
     @IBAction func AddToFavorite(_ sender: Any) {
         goToFavorites?()
     }
+    
+    
+    @IBAction func Increase(_ sender: UIButton) {
+        increase?()
+    }
+
+    @IBAction func decreaseBN(_ sender: UIButton) {
+        decrease?()
+    }
+
+    
     
 }

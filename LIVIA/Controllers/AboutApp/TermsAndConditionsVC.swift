@@ -10,19 +10,17 @@ import UIKit
 
 class TermsAndConditionsVC: UIViewController {
     
-    @IBOutlet weak var termsAndCondetionsTV: UITextView!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var TermsAndCond: UITextView!
-    @IBOutlet weak var TermsLb: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
      
         if "lang".localized == "ar" {
-            TermsLb.textAlignment = .right
+            TermsAndCond.textAlignment = .right
         }else{
-            TermsLb.textAlignment = .left
+            TermsAndCond.textAlignment = .left
         }
     }
     

@@ -50,63 +50,105 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-8" translatesAutoresizingMaskIntoConstraints="NO" id="xVB-Jw-glz">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8OF-g7-dCC">
+                                <rect key="frame" x="136" y="16" width="166" height="89"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWK-Ab-TGl">
+                                        <rect key="frame" x="0.0" y="0.0" width="48.5" height="37.5"/>
+                                        <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="20"/>
+                                        <color key="textColor" name="navigation"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSN-0n-Gph">
+                                        <rect key="frame" x="0.0" y="42.5" width="28" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="jNB-6V-hbe"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
+                                        <color key="textColor" name="navigation"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="price : 40 EGP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBD-VD-rsK">
+                                        <rect key="frame" x="0.0" y="77.5" width="58" height="11.5"/>
+                                        <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="10"/>
+                                        <color key="textColor" name="navigation"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g4l-rS-qKE">
                                 <rect key="frame" x="212" y="75" width="90" height="30"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLA-Rv-f76" customClass="CustomButtons" customModule="Shnp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="35.5" height="30"/>
-                                        <color key="backgroundColor" name="button"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="-">
-                                            <color key="baseForegroundColor" name="navigation"/>
-                                        </buttonConfiguration>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="7"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vFE-5w-6QY">
-                                        <rect key="frame" x="27.5" y="0.0" width="35" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-5" translatesAutoresizingMaskIntoConstraints="NO" id="xVB-Jw-glz">
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFZ-zI-HXr" customClass="CustomLabel" customModule="Shnp" customModuleProvider="target">
-                                                <rect key="frame" x="7" y="0.0" width="21.5" height="30.5"/>
-                                                <color key="backgroundColor" red="0.90980392156862744" green="0.69019607843137254" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" name="navigation"/>
-                                                <nil key="highlightedColor"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLA-Rv-f76" customClass="CustomButtons" customModule="Shnp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="33.5" height="30"/>
+                                                <color key="backgroundColor" name="button"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="-">
+                                                    <color key="baseForegroundColor" name="navigation"/>
+                                                </buttonConfiguration>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="15"/>
+                                                        <real key="value" value="7"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
-                                            </label>
+                                                <connections>
+                                                    <action selector="decreaseBN:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="0wB-90-Cz9"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vFE-5w-6QY">
+                                                <rect key="frame" x="28.5" y="0.0" width="33" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFZ-zI-HXr" customClass="CustomLabel" customModule="Shnp" customModuleProvider="target">
+                                                        <rect key="frame" x="6" y="0.0" width="21.5" height="30.5"/>
+                                                        <color key="backgroundColor" red="0.90980392156862744" green="0.69019607843137254" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" name="navigation"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" name="button"/>
+                                                <constraints>
+                                                    <constraint firstItem="iFZ-zI-HXr" firstAttribute="centerY" secondItem="vFE-5w-6QY" secondAttribute="centerY" id="7bx-7X-h2x"/>
+                                                    <constraint firstItem="iFZ-zI-HXr" firstAttribute="centerX" secondItem="vFE-5w-6QY" secondAttribute="centerX" id="HHw-uK-maP"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQh-Qo-4Aq" customClass="CustomButtons" customModule="Shnp" customModuleProvider="target">
+                                                <rect key="frame" x="56.5" y="0.0" width="33.5" height="30"/>
+                                                <color key="backgroundColor" name="button"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="+">
+                                                    <color key="baseForegroundColor" name="navigation"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="7"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="Increase:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="xAP-uM-Xa2"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
-                                        <color key="backgroundColor" name="button"/>
-                                        <constraints>
-                                            <constraint firstItem="iFZ-zI-HXr" firstAttribute="centerY" secondItem="vFE-5w-6QY" secondAttribute="centerY" id="7bx-7X-h2x"/>
-                                            <constraint firstItem="iFZ-zI-HXr" firstAttribute="centerX" secondItem="vFE-5w-6QY" secondAttribute="centerX" id="HHw-uK-maP"/>
-                                        </constraints>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQh-Qo-4Aq" customClass="CustomButtons" customModule="Shnp" customModuleProvider="target">
-                                        <rect key="frame" x="54.5" y="0.0" width="35.5" height="30"/>
-                                        <color key="backgroundColor" name="button"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="+">
-                                            <color key="baseForegroundColor" name="navigation"/>
-                                        </buttonConfiguration>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="7"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
+                                    </stackView>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="E7F-D6-nFT"/>
-                                    <constraint firstAttribute="width" constant="90" id="gog-oE-9nu"/>
+                                    <constraint firstAttribute="trailing" secondItem="xVB-Jw-glz" secondAttribute="trailing" id="EtW-9g-V4i"/>
+                                    <constraint firstAttribute="width" constant="90" id="FIE-WU-oGs"/>
+                                    <constraint firstItem="xVB-Jw-glz" firstAttribute="top" secondItem="g4l-rS-qKE" secondAttribute="top" id="NiZ-mk-PRs"/>
+                                    <constraint firstAttribute="bottom" secondItem="xVB-Jw-glz" secondAttribute="bottom" id="bb8-Ug-37D"/>
+                                    <constraint firstAttribute="height" constant="30" id="nXm-9K-Sjj"/>
+                                    <constraint firstItem="xVB-Jw-glz" firstAttribute="leading" secondItem="g4l-rS-qKE" secondAttribute="leading" id="rCA-Zb-zlU"/>
                                 </constraints>
-                            </stackView>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTI-g0-Cwx">
                                 <rect key="frame" x="280" y="8" width="30" height="30"/>
                                 <constraints>
@@ -118,43 +160,17 @@
                                     <action selector="AddToFavorite:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="h7R-Z1-x2n"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8OF-g7-dCC">
-                                <rect key="frame" x="136" y="16" width="166" height="89"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWK-Ab-TGl">
-                                        <rect key="frame" x="0.0" y="0.0" width="166" height="37.5"/>
-                                        <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="20"/>
-                                        <color key="textColor" name="navigation"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSN-0n-Gph">
-                                        <rect key="frame" x="0.0" y="42.5" width="166" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="jNB-6V-hbe"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
-                                        <color key="textColor" name="navigation"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="price : 40 EGP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBD-VD-rsK">
-                                        <rect key="frame" x="0.0" y="77.5" width="166" height="11.5"/>
-                                        <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="10"/>
-                                        <color key="textColor" name="navigation"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="8OF-g7-dCC" firstAttribute="top" secondItem="IJu-ql-JEC" secondAttribute="top" constant="16" id="9vj-MH-neo"/>
                             <constraint firstAttribute="trailing" secondItem="8OF-g7-dCC" secondAttribute="trailing" constant="16" id="AlM-yY-uxH"/>
-                            <constraint firstAttribute="trailing" secondItem="xVB-Jw-glz" secondAttribute="trailing" constant="16" id="Fk1-tG-IY1"/>
+                            <constraint firstAttribute="bottom" secondItem="g4l-rS-qKE" secondAttribute="bottom" constant="16" id="Psf-l7-UvP"/>
                             <constraint firstAttribute="trailing" secondItem="HTI-g0-Cwx" secondAttribute="trailing" constant="8" id="PtG-OA-3Qg"/>
                             <constraint firstItem="HTI-g0-Cwx" firstAttribute="top" secondItem="IJu-ql-JEC" secondAttribute="top" constant="8" id="RBi-Lz-Ha4"/>
-                            <constraint firstAttribute="bottom" secondItem="xVB-Jw-glz" secondAttribute="bottom" constant="16" id="Tnu-EN-pi7"/>
                             <constraint firstItem="8OF-g7-dCC" firstAttribute="leading" secondItem="Y1e-Nd-2eb" secondAttribute="trailing" constant="16" id="Ywo-Qg-1jX"/>
                             <constraint firstItem="Y1e-Nd-2eb" firstAttribute="leading" secondItem="IJu-ql-JEC" secondAttribute="leading" id="aMu-9M-zZE"/>
+                            <constraint firstAttribute="trailing" secondItem="g4l-rS-qKE" secondAttribute="trailing" constant="16" id="bv1-PC-Uxg"/>
                             <constraint firstAttribute="bottom" secondItem="Y1e-Nd-2eb" secondAttribute="bottom" id="fHH-jV-7Vl"/>
                             <constraint firstItem="Y1e-Nd-2eb" firstAttribute="top" secondItem="IJu-ql-JEC" secondAttribute="top" id="fOv-Ek-1jS"/>
                             <constraint firstAttribute="bottom" secondItem="8OF-g7-dCC" secondAttribute="bottom" constant="16" id="ij2-mS-cBk"/>
@@ -178,8 +194,10 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="FavoriteBN" destination="HTI-g0-Cwx" id="kIY-KE-bPN"/>
+                <outlet property="contentStackView" destination="8OF-g7-dCC" id="jWk-qS-aQF"/>
                 <outlet property="name" destination="sWK-Ab-TGl" id="FDB-h9-s0v"/>
                 <outlet property="price" destination="PBD-VD-rsK" id="mJG-cd-R54"/>
+                <outlet property="quantityTF" destination="iFZ-zI-HXr" id="VEw-1T-uCs"/>
                 <outlet property="resturantImage" destination="cMy-Jy-oZD" id="Jij-Gk-1ov"/>
                 <outlet property="type" destination="MSN-0n-Gph" id="Egs-GL-nPh"/>
             </connections>

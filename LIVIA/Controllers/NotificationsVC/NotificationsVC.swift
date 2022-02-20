@@ -32,6 +32,10 @@ class NotificationsVC: UIViewController {
         self.setupSideMenu()
     }
     
+    @IBAction func backBtn(_ sender: Any) {
+      self.navigationController?.popViewController(animated: true)
+    }
+    
 
 }
 extension NotificationsVC: UITableViewDelegate, UITableViewDataSource {

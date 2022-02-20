@@ -51,6 +51,8 @@ class SideMenuVC: UIViewController {
                     SideMenuModel(name: "Profile".localized, id: "Profile", selected: false,sideImage: #imageLiteral(resourceName: "ic_assignment_ind_24px-1")),
                     SideMenuModel(name: "Sections".localized, id: "Sections", selected: false, sideImage: #imageLiteral(resourceName: "burger")),
                     SideMenuModel(name: "Cart".localized, id: "Cart", selected: false,sideImage: #imageLiteral(resourceName: "cart (1)-1")),
+                    SideMenuModel(name: "Reserve Table".localized, id: "ReserveTable", selected: false, sideImage: #imageLiteral(resourceName: "reservation2")),
+
                     SideMenuModel(name: "Notifications".localized, id: "Notifications", selected: false, sideImage: #imageLiteral(resourceName: "icons8-notification")),
                     SideMenuModel(name: "Reservations".localized, id: "Reservations", selected: false, sideImage: #imageLiteral(resourceName: "reservation2")),
                     SideMenuModel(name: "Order List".localized, id: "OrderList", selected: false, sideImage: #imageLiteral(resourceName: "order-food-1")),
@@ -58,7 +60,9 @@ class SideMenuVC: UIViewController {
                     SideMenuModel(name: "Favorite Meals".localized, id: "FavoriteMeals", selected: false, sideImage: #imageLiteral(resourceName: "favorite (1)")),
                     SideMenuModel(name: "Contact Us".localized, id: "Contact Us", selected: false,sideImage: #imageLiteral(resourceName: "contactUs")),
                     SideMenuModel(name: "Terms And Conditions".localized, id: "TermsAndConditions", selected: false, sideImage: #imageLiteral(resourceName: "terms")),
-                    SideMenuModel(name: "Settings".localized, id: "Setting", selected: false, sideImage: #imageLiteral(resourceName: "Screen Shot 2021-12-31 at 6.42.33 PM"))
+                    SideMenuModel(name: "Settings".localized, id: "Setting", selected: false, sideImage: #imageLiteral(resourceName: "Screen Shot 2021-12-31 at 6.42.33 PM")),
+                  
+                    SideMenuModel(name: "Login".localized, id: "Login", selected: false, sideImage: #imageLiteral(resourceName: "Screen Shot 2021-12-31 at 6.42.33 PM"))
                     
                 ]
      
@@ -123,6 +127,13 @@ class SideMenuVC: UIViewController {
             pushSideMenu(StoryboardName: "AboutApp", ForController: "SettingVC")
         case "Notifications":
             pushSideMenu(StoryboardName: "Profile", ForController: "NotificationsVC")
+            
+        case "ReserveTable":
+            pushSideMenu(StoryboardName: "Reservation", ForController: "ReservationRequestVc")
+            
+        case "Login":
+            pushSideMenu(StoryboardName: "Authentications", ForController: "LoginVC")
+            
         default:
             break
         }
@@ -140,7 +151,7 @@ extension SideMenuVC: UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? SideMenuCell else {return UITableViewCell()}
-        let sideImage = sideMenuArr[indexPath.row].sideMenuImage
+
         cell.config(name: sideMenuArr[indexPath.row].sideMenuName, selected: sideMenuArr[indexPath.row].sideMenuSelected)
         cell.selectedBackgroundView?.backgroundColor = .clear
         cell.selectionStyle = .none

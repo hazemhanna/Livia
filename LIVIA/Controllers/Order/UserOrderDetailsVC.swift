@@ -40,9 +40,7 @@ class UserOrderDetailsVC: UIViewController{
         detailsTableView.rowHeight = UITableView.automaticDimension
         detailsTableView.estimatedRowHeight = 120
      
-        
 
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {

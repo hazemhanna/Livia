@@ -11,21 +11,14 @@ import DropDown
 import DLRadioButton
 import MOLH
 class SettingVC: UIViewController {
+    
     @IBOutlet weak var languageType: UIButton!
-    @IBOutlet weak var oldPasswordTF: UITextField!
     @IBOutlet weak var arabic: UIButton!
-    @IBOutlet weak var newPasswordTF: UITextField!
-    @IBOutlet weak var passwordConfirmationTF: UITextField!
-    
-    @IBOutlet weak var DriverForgetPassword: UIView!
-    
     @IBOutlet weak var english: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        DriverForgetPassword.isHidden = true
-        
+            
         if "lang".localized == "ar" {
             self.languageType.setTitle("اللغة", for: .normal)
             self.languageType.contentHorizontalAlignment = .right
@@ -49,15 +42,7 @@ class SettingVC: UIViewController {
     }
     
     @IBAction func Menu(_ sender: Any) {
-        
         setupSideMenu()
-    }
-    
-    @IBAction func strongPassword(_ sender: UIButton) {
-        let sb = UIStoryboard(name: "PopUps", bundle: nil).instantiateViewController(withIdentifier: "StrongPasswordPopupVC")
-        sb.modalPresentationStyle = .overCurrentContext
-        sb.modalTransitionStyle = .crossDissolve
-        self.present(sb, animated: true, completion: nil)
     }
 
     

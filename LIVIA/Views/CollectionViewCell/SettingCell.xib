@@ -16,7 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="56" height="48"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brooke-lark-HlNcigvUi4Q-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="2aA-KM-vFc">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook (-1" translatesAutoresizingMaskIntoConstraints="NO" id="2aA-KM-vFc">
                         <rect key="frame" x="5" y="5" width="46" height="38"/>
                     </imageView>
                     <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nnc-Rm-ZNa">
@@ -46,6 +46,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="brooke-lark-HlNcigvUi4Q-unsplash" width="5760" height="3840"/>
+        <image name="facebook (-1" width="83" height="83"/>
     </resources>
 </document>

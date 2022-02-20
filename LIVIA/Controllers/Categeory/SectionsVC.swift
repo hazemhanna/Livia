@@ -27,6 +27,11 @@ class SectionsVC: UIViewController {
     @IBAction func sideMenu(_ sender: Any) {
         self.setupSideMenu()
     }
+
+    @IBAction func backBtn(_ sender: Any) {
+      self.navigationController?.popViewController(animated: true)
+    }
+    
 }
 
 
