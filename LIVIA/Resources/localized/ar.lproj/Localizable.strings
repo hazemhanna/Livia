@@ -25,6 +25,7 @@
 "family" = "اسر منتجة";
 "truck" = "فودتراك";
 "new order" = "الطلبات الجديدة";
+"login" = "نسجيل دخول";
 
 "new" = "جديد";
 "preparing" = "جاري التحضير";
@@ -199,3 +200,13 @@
 "Shanab" = "شنب";
 "privouse Order" = "الطلبات السابقة";
 "order Number" = "رقم الطلب";
+"fillter" = "التصفية";
+"fillterBY" = "رتب حسب";
+
+"lowestPrice" = "الاقل سعرا";
+"heighstPrice" = "الاعلي سعرا";
+"AToZ" = "من الالف الي الياء ";
+"offers" = "عروض وخصومات";
+"mostOrders" = "الاكثر طلبا";
+"details" = "التفاصيل";
+"MyReservations" = "حجوزاتي";

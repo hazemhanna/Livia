@@ -1,15 +1,16 @@
 //
-//  ListCell.swift
-//  Shanab
+//  ReservationCell.swift
+//  Livia
 //
-//  Created by Macbook on 3/24/20.
-//  Copyright © 2020 Dtag. All rights reserved.
+//  Created by MAC on 22/02/2022.
+//  Copyright © 2022 Dtag. All rights reserved.
 //
+
 
 import UIKit
 import Kingfisher
 
-class ListCell: UITableViewCell {
+class ReservationCell : UITableViewCell {
     
     @IBOutlet weak var orderNum: UILabel!
     @IBOutlet weak var date: UILabel!

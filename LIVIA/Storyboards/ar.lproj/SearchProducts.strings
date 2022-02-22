@@ -1,14 +1,18 @@
 
+/* Class = "UILabel"; text = "Scan Code Form The Table"; ObjectID = "5gl-mp-CBf"; */
+"5gl-mp-CBf.text" = "اسحب الكود من الطاولة";
+
 /* Class = "UIBarButtonItem"; title = "  "; ObjectID = "NSm-wr-k4z"; */
 "NSm-wr-k4z.title" = "  ";
 
+/* Class = "UIBarButtonItem"; title = "  "; ObjectID = "a4l-HQ-UJj"; */
+"a4l-HQ-UJj.title" = "  ";
+
 /* Class = "UISearchBar"; placeholder = "Search"; ObjectID = "ag4-Qh-IIg"; */
-"ag4-Qh-IIg.placeholder" = "بحث";
+"ag4-Qh-IIg.placeholder" = "البحث";
 
-/* Class = "UISegmentedControl"; sKF-lk-GnR.segmentTitles[0] = "Products"; ObjectID = "sKF-lk-GnR"; */
-"sKF-lk-GnR.segmentTitles[0]" = "المنتجات";
+/* Class = "UILabel"; text = "Search"; ObjectID = "eG8-ns-UDr"; */
+"eG8-ns-UDr.text" = "البحث";
 
-/* Class = "UISegmentedControl"; sKF-lk-GnR.segmentTitles[1] = "Restaurants"; ObjectID = "sKF-lk-GnR"; */
-"sKF-lk-GnR.segmentTitles[1]" = "المطاعم";
-
-"eG8-ns-UDr.text" = "بحث";
+/* Class = "UILabel"; text = "No PRoducts"; ObjectID = "uaK-UC-7Ie"; */
+"uaK-UC-7Ie.text" = "لا يوجد";

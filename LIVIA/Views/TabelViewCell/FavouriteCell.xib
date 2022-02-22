@@ -50,6 +50,32 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="mLC-VL-4QC">
+                                <rect key="frame" x="136" y="16" width="165" height="98"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="بيتزا" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTw-Jx-l4V">
+                                        <rect key="frame" x="0.0" y="0.0" width="165" height="32"/>
+                                        <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
+                                        <color key="textColor" name="navigation"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="بيتزا خضروات" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSd-yt-XR1">
+                                        <rect key="frame" x="0.0" y="37" width="165" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="yqG-9C-EVj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
+                                        <color key="textColor" name="navigation"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="السعر : ٤٠ جنية" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wm0-hL-Swd">
+                                        <rect key="frame" x="0.0" y="72" width="165" height="26"/>
+                                        <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="14"/>
+                                        <color key="textColor" name="navigation"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72K-Tr-qwT">
                                 <rect key="frame" x="279" y="8" width="30" height="30"/>
                                 <constraints>
@@ -57,6 +83,9 @@
                                     <constraint firstAttribute="width" secondItem="72K-Tr-qwT" secondAttribute="height" multiplier="1:1" id="OhF-nw-rEq"/>
                                 </constraints>
                                 <state key="normal" image="222"/>
+                                <connections>
+                                    <action selector="RemoveFromeFavorite:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="iqP-6z-YrT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEn-DG-xgn">
                                 <rect key="frame" x="269" y="82" width="40" height="40"/>
@@ -65,33 +94,10 @@
                                     <constraint firstAttribute="height" constant="40" id="hb0-NO-DaP"/>
                                 </constraints>
                                 <state key="normal" image="Group 488"/>
+                                <connections>
+                                    <action selector="AddToCart:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="B5O-Ye-Fnh"/>
+                                </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="mLC-VL-4QC">
-                                <rect key="frame" x="136" y="16" width="165" height="98"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTw-Jx-l4V">
-                                        <rect key="frame" x="0.0" y="0.0" width="165" height="37.5"/>
-                                        <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="20"/>
-                                        <color key="textColor" name="navigation"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSd-yt-XR1">
-                                        <rect key="frame" x="0.0" y="42.5" width="165" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="yqG-9C-EVj"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
-                                        <color key="textColor" name="navigation"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="price : 40 EGP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wm0-hL-Swd">
-                                        <rect key="frame" x="0.0" y="77.5" width="165" height="20.5"/>
-                                        <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="10"/>
-                                        <color key="textColor" name="navigation"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -122,6 +128,13 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="FavoriteBN" destination="72K-Tr-qwT" id="u3E-D9-z32"/>
+                <outlet property="details" destination="RSd-yt-XR1" id="iAm-xb-nWU"/>
+                <outlet property="name" destination="RTw-Jx-l4V" id="fil-Im-Y0R"/>
+                <outlet property="price" destination="wm0-hL-Swd" id="sRE-PF-eGv"/>
+                <outlet property="productImage" destination="wOX-lF-hOz" id="0m2-oq-GzG"/>
+            </connections>
             <point key="canvasLocation" x="136.95652173913044" y="101.11607142857143"/>
         </tableViewCell>
     </objects>

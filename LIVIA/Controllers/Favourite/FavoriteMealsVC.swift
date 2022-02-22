@@ -38,10 +38,26 @@ extension FavoriteMealsVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? FavouriteCell else {return UITableViewCell()}
+        
+        cell.RemoveFromeFavorite = {
+            if cell.isFavourite{
+                cell.FavoriteBN.setImage(UIImage(named: "222"), for: .normal)
+                cell.isFavourite = true
+            }else{
+                cell.FavoriteBN.setImage(UIImage(named: "heart"), for: .normal)
+                cell.isFavourite = false
+            }
+        }
+        cell.AddToCart = {
+         displayMessage(title: "", message: "Add to cart".localized, status:.success, forController: self)
+        }
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }
+        self.navigationController?.pushViewController(details, animated: true)
         
     }
 

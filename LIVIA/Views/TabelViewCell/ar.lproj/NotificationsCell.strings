@@ -1,9 +1,6 @@
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "3VX-ED-0dZ"; */
-"3VX-ED-0dZ.text" = "123";
+/* Class = "UILabel"; text = "22/2/2020 23:32"; ObjectID = "gCr-wY-038"; */
+"gCr-wY-038.text" = "22/2/2020 23:32";
 
-/* Class = "UILabel"; text = "Delivered"; ObjectID = "gCr-wY-038"; */
-"gCr-wY-038.text" = "تم التوصيل";
-
-/* Class = "UILabel"; text = "Order Num:"; ObjectID = "hbt-3M-gfD"; */
-"hbt-3M-gfD.text" = "رقم الطلب:";
+/* Class = "UILabel"; text = "Delivered Delivered Delivered "; ObjectID = "hbt-3M-gfD"; */
+"hbt-3M-gfD.text" = "Delivered Delivered Delivered ";

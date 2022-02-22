@@ -16,15 +16,28 @@ class ReservationRequestVc : UIViewController {
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var indoorBtn : UIButton!
     @IBOutlet weak var outdoorBtn : UIButton!
-    @IBOutlet weak var selectCateDropDown: TextFieldDropDown!
+    @IBOutlet weak var selectCateDropDown: TextFieldDropDown!    
+    @IBOutlet weak var noteTF: UITextField!
+    @IBOutlet weak var dateTF: UITextField!
+
     var numbers = ["1","2","3","4","5"]
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCatDropDown()
         titleLbl.text = "Reserve Table".localized
         selectCateDropDown.text  = "People Number".localized
+        
+        if "lang".localized == "ar" {
+            noteTF.textAlignment = .right
+            dateTF.textAlignment = .right
+            selectCateDropDown.textAlignment = .right
+
+        }else{
+            noteTF.textAlignment = .left
+            dateTF.textAlignment = .left
+            selectCateDropDown.textAlignment = .left
+        }
     }
     
     @IBAction func sideMenu(_ sender: Any) {
@@ -58,7 +71,7 @@ class ReservationRequestVc : UIViewController {
     }
     
     @IBAction func dateAction(_ sender: UIButton) {
-        let main = UIStoryboard(name: "Sections", bundle: nil).instantiateViewController(withIdentifier: "OrderDateVC")
+        let main = UIStoryboard(name: "Reservation", bundle: nil).instantiateViewController(withIdentifier: "OrderDateVC")
         self.navigationController?.pushViewController(main, animated: true)
     }
 

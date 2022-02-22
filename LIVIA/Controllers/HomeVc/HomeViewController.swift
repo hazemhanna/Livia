@@ -24,7 +24,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var notificationBN: UIButton!
 
     fileprivate let CellIdentifierCollectionView = "HomeCell"
-    fileprivate let CellIdentifierTableView = "ValiableResturantCell"
+    fileprivate let CellIdentifierTableView = "FavouriteCell"
 
     var productCounter = Int()
 
@@ -83,9 +83,16 @@ class HomeViewController: UIViewController {
 //           self.imageSlider.setImageInputs(image)
 //        }
     }
+    
+    @IBAction func scanhButtonPressed(_ sender: Any) {
+        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "ScanVc") as? ScanVc else { return }
+        self.navigationController?.pushViewController(details, animated: true)
+    }
+    
 
     @IBAction func searchButtonPressed(_ sender: Any) {
-      
+        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as? SearchVC else { return }
+        self.navigationController?.pushViewController(details, animated: true)
     }
 
     @IBAction func notificationhButtonPressed(_ sender: Any) {
@@ -93,8 +100,9 @@ class HomeViewController: UIViewController {
         self.navigationController?.pushViewController(details, animated: true)
 
     }
-    
 }
+
+
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 6
@@ -106,10 +114,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let details = UIStoryboard(name: "Orders", bundle: nil).instantiateViewController(withIdentifier: "SectionsPageVC") as? SectionsVC else { return }
-        
+        guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductsVc") as? ProductsVc else { return }
         self.navigationController?.pushViewController(details, animated: true)
     }
+    
 }
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -120,27 +128,29 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         
     }
 }
+
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
-
+        return 16
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifierTableView, for: indexPath) as? ValiableResturantCell else {return UITableViewCell()}
-        
-        cell.increase = {
-            self.productCounter += 1
-            cell.quantityTF.text = "\(self.productCounter)"
-        }
-        
-        cell.decrease = {
-            if self.productCounter > 1 {
-                self.productCounter -= 1
-                cell.quantityTF.text = "\(self.productCounter)"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifierTableView, for: indexPath) as? FavouriteCell else {return UITableViewCell()}
+        cell.FavoriteBN.setImage(UIImage(named: "heart"), for: .normal)
+        cell.RemoveFromeFavorite = {
+            if cell.isFavourite{
+                cell.FavoriteBN.setImage(UIImage(named: "heart"), for: .normal)
+                cell.isFavourite = false
+            }else{
+                cell.FavoriteBN.setImage(UIImage(named: "222"), for: .normal)
+                cell.isFavourite = true
             }
-
         }
-      return cell
+        cell.AddToCart = {
+         displayMessage(title: "", message: "Add to cart".localized, status:.success, forController: self)
+        }
+        
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -148,9 +158,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductsVc") as? ProductsVc else { return }
+        guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }
         self.navigationController?.pushViewController(details, animated: true)
+        
     }
-    
+
 }
 

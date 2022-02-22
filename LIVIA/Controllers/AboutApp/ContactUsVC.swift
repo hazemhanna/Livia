@@ -12,7 +12,6 @@ import MessageUI
 class ContactUsVC: UIViewController {
     
     @IBOutlet weak var socialMediaCollectionView: UICollectionView!
-
     @IBOutlet weak var phone: UITextField!
     @IBOutlet weak var messageDetails: UITextField!
     @IBOutlet weak var messageAddress: UIButton!
@@ -176,27 +175,29 @@ extension ContactUsVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifeir, for: indexPath) as? SettingCell else {return UICollectionViewCell()}
         
-   
-        
+        if indexPath.row == 0{
+            cell.config(imagePath: #imageLiteral(resourceName: "facebook"))
+        }else if indexPath.row == 1{
+            cell.config(imagePath: #imageLiteral(resourceName: "facebook (-1"))
+        }else if indexPath.row == 2{
+            cell.config(imagePath: #imageLiteral(resourceName: "Insta"))
+        }else if indexPath.row == 3{
+            cell.config(imagePath: #imageLiteral(resourceName: "snapchat (2)"))
+        }
         return cell
-        
-        
-        
-    }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-      
-        
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
 }
-
 
 extension ContactUsVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let flowayout = collectionViewLayout as? UICollectionViewFlowLayout
         let space: CGFloat = (flowayout?.minimumInteritemSpacing ?? 0.0) + (flowayout?.sectionInset.left ?? 0.0) + (flowayout?.sectionInset.right ?? 0.0)
-        let size: CGFloat = (collectionView.frame.size.width - space) / 5
-        return CGSize(width: size, height: size)
+        let size: CGFloat = (collectionView.frame.size.width - space) / 4.2
+        return CGSize(width: size, height: 70)
     }
     
 }

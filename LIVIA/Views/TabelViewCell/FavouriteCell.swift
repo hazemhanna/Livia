@@ -7,18 +7,68 @@
 //
 
 import UIKit
+import Kingfisher
 
 class FavouriteCell: UITableViewCell {
+    
+    @IBOutlet weak var productImage: UIImageView!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var details: UILabel!
+    @IBOutlet weak var FavoriteBN: UIButton!
+    @IBOutlet weak var price: UILabel!
+    
+    
+    var AddToCart: (() ->Void)? =  nil
+    var RemoveFromeFavorite: (() ->Void)? = nil
+    var isFavourite  =  false
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        if "lang".localized == "ar" {
+            name.textAlignment = .right
+            details.textAlignment = .right
+            price.textAlignment = .right
+        }else{
+            name.textAlignment = .left
+            details.textAlignment = .left
+            price.textAlignment = .left
+        }
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
+        
     }
+    func config(name: String, details: String, imagePath: String , price : Double) {
+        if (!imagePath.contains("http")) {
+            guard let imageURL = URL(string: (BASE_URL + "/" + imagePath).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else { return }
+            print(imageURL)
+            self.productImage.kf.setImage(with: imageURL)
+        }  else if imagePath != "" {
+            guard let imageURL = URL(string: imagePath) else { return }
+            self.productImage.kf.setImage(with: imageURL)
+            
+        } else if imagePath != "" {
+            
+            self.productImage.image = #imageLiteral(resourceName: "shanab loading")
+            
+            
+        }
+        self.name.text = name
+        self.details.text = details
+        self.price.text = "\(price)"
+    }
+    
+    @IBAction func AddToCart(_ sender: Any) {
+        AddToCart?()
+    }
+    
+    @IBAction func RemoveFromeFavorite(_ sender: Any) {
+        RemoveFromeFavorite?()
+      
+    }
+    
     
 }

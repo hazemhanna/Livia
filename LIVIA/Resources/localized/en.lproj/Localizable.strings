@@ -35,6 +35,7 @@
 "preparing order" = "preparing";
 "completed" = "completed";
 "arrived" = "Arrived";
+"login" = "login";
 
 "S.R" = "SAR";
 "You should login first" = "You should login first";
@@ -191,3 +192,13 @@
 "Shanab" = "Shanab";
 "privouse Order" = "privouse Order";
 "order Number" = "order Number";
+"fillter" = "fillter";
+"fillterBY" = "fillter by";
+
+"lowestPrice" = "lowest Price";
+"heighstPrice" = "heighst Price";
+"AToZ" = "A To Z";
+"offers" = "offers";
+"mostOrders" = "most Orders";
+"details" = "Details";
+"MyReservations" = "My Reservations";

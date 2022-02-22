@@ -1,0 +1,18 @@
+
+/* Class = "UILabel"; text = "12/12/2021"; ObjectID = "25W-RE-scy"; */
+"25W-RE-scy.text" = "12/12/2021";
+
+/* Class = "UIButton"; configuration.title = "Details"; ObjectID = "Rdh-vo-359"; */
+"Rdh-vo-359.configuration.title" = "التفاصيل";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Rdh-vo-359"; */
+"Rdh-vo-359.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "reservation date :"; ObjectID = "qQY-wJ-MnJ"; */
+"qQY-wJ-MnJ.text" = "تاريخ الحجز :";
+
+/* Class = "UILabel"; text = "1233"; ObjectID = "xjE-JC-m9V"; */
+"xjE-JC-m9V.text" = "1233";
+
+/* Class = "UILabel"; text = "reservation Number:"; ObjectID = "z3K-W7-M55"; */
+"z3K-W7-M55.text" = "رقم الحجز";

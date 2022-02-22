@@ -62,7 +62,7 @@ class SideMenuVC: UIViewController {
                     SideMenuModel(name: "Terms And Conditions".localized, id: "TermsAndConditions", selected: false, sideImage: #imageLiteral(resourceName: "terms")),
                     SideMenuModel(name: "Settings".localized, id: "Setting", selected: false, sideImage: #imageLiteral(resourceName: "Screen Shot 2021-12-31 at 6.42.33 PM")),
                   
-                    SideMenuModel(name: "Login".localized, id: "Login", selected: false, sideImage: #imageLiteral(resourceName: "Screen Shot 2021-12-31 at 6.42.33 PM"))
+                    SideMenuModel(name: "login".localized, id: "Login", selected: false, sideImage: #imageLiteral(resourceName: "Screen Shot 2021-12-31 at 6.42.33 PM"))
                     
                 ]
      
@@ -111,12 +111,10 @@ class SideMenuVC: UIViewController {
             pushSideMenu(StoryboardName: "Orders", ForController: "OrderListVC")
         case "Profile":
             pushSideMenu(StoryboardName: "Profile", ForController: "WalletVc")
-     
         case "foodPackages":
             pushSideMenu(StoryboardName: "Products", ForController: "MYFoodPackagesSubscribtionsVC")
-
         case "Reservations":
-            pushSideMenu(StoryboardName: "Orders", ForController: "OrderListVC")
+            pushSideMenu(StoryboardName: "Reservation", ForController: "MyReservationsVC")
         case "FavoriteMeals":
             pushSideMenu(StoryboardName: "Orders", ForController: "FavoriteMealsVC")
         case "Contact Us":

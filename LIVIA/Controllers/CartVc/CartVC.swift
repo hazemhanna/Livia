@@ -18,7 +18,8 @@ class CartVC: UIViewController {
     @IBOutlet weak var discreption: UITextField!
     
     fileprivate let cellIdentifier = "ValiableResturantCell"
-    
+    var productCounter = Int()
+
 //    var CartIems = [onlineCart]() {
 //        didSet {
 //            self.cartTableView.reloadData()
@@ -50,6 +51,12 @@ class CartVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    
+    @IBAction func confirmBtn(_ sender: Any) {
+        guard let details = UIStoryboard(name: "PopUps", bundle: nil).instantiateViewController(withIdentifier: "OrderConfirmationPopUp") as? OrderConfirmationPopUp else { return }
+        self.navigationController?.present(details, animated: true, completion: nil)
+        
+    }
 }
 
 extension CartVC: UITableViewDelegate, UITableViewDataSource {
@@ -65,6 +72,18 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ValiableResturantCell else {return UITableViewCell()}
         cell.FavoriteBN.setImage(UIImage(named: "remove"), for: .normal)
+        
+        cell.increase = {
+            self.productCounter += 1
+            cell.quantityTF.text = "\(self.productCounter)"
+        }
+        
+        cell.decrease = {
+            if self.productCounter > 1 {
+                self.productCounter -= 1
+                cell.quantityTF.text = "\(self.productCounter)"
+            }
+        }
         return cell
     }
     
