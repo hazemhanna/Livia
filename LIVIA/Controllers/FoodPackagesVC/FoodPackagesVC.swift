@@ -12,7 +12,7 @@ import Foundation
 import UIKit
 import ImageSlideshow
 
-class MYFoodPackagesSubscribtionsVC : UIViewController {
+class FoodPackagesVC : UIViewController {
     
     @IBOutlet weak var MealDetailsTableView: UITableView!
     @IBOutlet weak var titleLbl: UILabel!
@@ -40,7 +40,7 @@ class MYFoodPackagesSubscribtionsVC : UIViewController {
     }
 }
 
-extension MYFoodPackagesSubscribtionsVC  : UITableViewDelegate, UITableViewDataSource {
+extension FoodPackagesVC  : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
@@ -58,5 +58,10 @@ extension MYFoodPackagesSubscribtionsVC  : UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "FoodPackagesDetailsVC") as? FoodPackagesDetailsVC else { return }
+        self.navigationController?.pushViewController(details, animated: true)
+        
+        
     }
 }

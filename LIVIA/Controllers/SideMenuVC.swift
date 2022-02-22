@@ -112,7 +112,7 @@ class SideMenuVC: UIViewController {
         case "Profile":
             pushSideMenu(StoryboardName: "Profile", ForController: "WalletVc")
         case "foodPackages":
-            pushSideMenu(StoryboardName: "Products", ForController: "MYFoodPackagesSubscribtionsVC")
+            pushSideMenu(StoryboardName: "Products", ForController: "FoodPackagesVC")
         case "Reservations":
             pushSideMenu(StoryboardName: "Reservation", ForController: "MyReservationsVC")
         case "FavoriteMeals":

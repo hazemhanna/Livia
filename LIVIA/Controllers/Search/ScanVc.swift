@@ -11,7 +11,7 @@ import Foundation
 import UIKit
 
 class ScanVc: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -19,6 +19,5 @@ class ScanVc: UIViewController {
     @IBAction func backButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-    
     
 }
