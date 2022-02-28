@@ -71,9 +71,6 @@ extension OrderListVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let Details = UIStoryboard(name: "Orders", bundle: nil).instantiateViewController(withIdentifier: "OrderDetailsVC") as? OrderDetailsVC else { return }
         self.navigationController?.pushViewController(Details, animated: true)
-        
-        
-        
     }
     
   

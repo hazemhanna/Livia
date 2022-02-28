@@ -11,15 +11,35 @@ import UIKit
 class SectionsVC: UIViewController {
 
     @IBOutlet weak var sectionCollectionView: UICollectionView!
+    fileprivate let cellIdentifier = "SectionCell"
+
+    var meals = [RestaurantMeal]() {
+        didSet{
+            DispatchQueue.main.async {
+                self.sectionCollectionView.reloadData()
+            }
+        }
+    }
     
  
-    fileprivate let cellIdentifier = "SectionCell"
     override func viewDidLoad() {
         super.viewDidLoad()
         sectionCollectionView.delegate = self
         sectionCollectionView.dataSource = self
         sectionCollectionView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
-         
+        
+        meals.append(RestaurantMeal(nameAr: "بيتزا ", image: #imageLiteral(resourceName: "Screen Shot 2022-02-27 at 10.59.12 PM"), descriptionAr: "بيتزا"))
+
+        meals.append(RestaurantMeal(nameAr: "برجر", image: #imageLiteral(resourceName: "Set of cartoon pizzas with different stuffing"), descriptionAr: "برجر"))
+        
+        meals.append(RestaurantMeal(nameAr: "مشروبات", image:#imageLiteral(resourceName: "Set of cartoon pizzas with different stuffing-2"), descriptionAr: "سلطة"))
+        
+        meals.append(RestaurantMeal(nameAr: "فطار", image: #imageLiteral(resourceName: "Screen Shot 2022-02-27 at 10.59.04 PM"), descriptionAr: "بيتزا"))
+
+        meals.append(RestaurantMeal(nameAr: "سلطة ", image: #imageLiteral(resourceName: "Screen Shot 2022-02-27 at 10.58.56 PM"), descriptionAr: "بيتزا"))
+        
+        meals.append(RestaurantMeal(nameAr: "مقبلات ", image:#imageLiteral(resourceName: "Screen Shot 2022-02-27 at 10.59.20 PM"), descriptionAr: "بيتزا"))
+
     }
     
 
@@ -37,12 +57,12 @@ class SectionsVC: UIViewController {
 
 extension SectionsVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return meals.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? SectionCell else { return UICollectionViewCell()}
-     
+        cell.config(imagePath: meals[indexPath.row].image, name: meals[indexPath.row].nameAr ?? "")
         return cell
 
         

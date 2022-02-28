@@ -135,6 +135,31 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xm4-L9-JTJ">
+                                <rect key="frame" x="0.0" y="105.5" width="414" height="790.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="livia logo" translatesAutoresizingMaskIntoConstraints="NO" id="QVO-Y3-Ui7">
+                                        <rect key="frame" x="107" y="100" width="200" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="JLJ-Uh-yPA"/>
+                                            <constraint firstAttribute="width" constant="200" id="L4q-6t-gxb"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لا يوجد وجبات مفضلة" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Suw-vm-I8r">
+                                        <rect key="frame" x="134" y="300" width="146" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.2117912471" green="0.2075385451" blue="0.2240747511" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Suw-vm-I8r" firstAttribute="centerX" secondItem="xm4-L9-JTJ" secondAttribute="centerX" id="K1d-3f-aFy"/>
+                                    <constraint firstItem="Suw-vm-I8r" firstAttribute="top" secondItem="QVO-Y3-Ui7" secondAttribute="bottom" id="bEB-UD-IBA"/>
+                                    <constraint firstItem="QVO-Y3-Ui7" firstAttribute="top" secondItem="xm4-L9-JTJ" secondAttribute="top" constant="100" id="cXr-aF-p9H"/>
+                                    <constraint firstItem="QVO-Y3-Ui7" firstAttribute="centerX" secondItem="xm4-L9-JTJ" secondAttribute="centerX" id="gq5-EJ-OtK"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wDQ-Kl-Geu">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="89.5"/>
                                 <subviews>
@@ -183,13 +208,17 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="AyN-xE-T94" firstAttribute="firstBaseline" secondItem="wDQ-Kl-Geu" secondAttribute="baseline" constant="16" id="76a-Rk-dPM"/>
+                            <constraint firstItem="xm4-L9-JTJ" firstAttribute="top" secondItem="wDQ-Kl-Geu" secondAttribute="bottom" constant="16" id="88k-Pe-2QB"/>
                             <constraint firstItem="wDQ-Kl-Geu" firstAttribute="top" secondItem="ts7-1F-htK" secondAttribute="top" id="DSS-ja-QBb"/>
+                            <constraint firstAttribute="bottom" secondItem="xm4-L9-JTJ" secondAttribute="bottom" id="F0j-tA-pZG"/>
                             <constraint firstItem="AyN-xE-T94" firstAttribute="leading" secondItem="wmX-nZ-amX" secondAttribute="leading" id="QJ0-1j-cPr"/>
+                            <constraint firstItem="xm4-L9-JTJ" firstAttribute="leading" secondItem="wmX-nZ-amX" secondAttribute="leading" id="XY2-Lm-E2M"/>
                             <constraint firstItem="wmX-nZ-amX" firstAttribute="bottom" secondItem="AyN-xE-T94" secondAttribute="bottom" id="b2i-zX-T3b"/>
                             <constraint firstItem="wDQ-Kl-Geu" firstAttribute="height" secondItem="ts7-1F-htK" secondAttribute="height" multiplier="0.1" id="eyg-Q3-f72"/>
                             <constraint firstItem="wmX-nZ-amX" firstAttribute="trailing" secondItem="wDQ-Kl-Geu" secondAttribute="trailing" id="hZi-HB-MTe"/>
                             <constraint firstItem="wmX-nZ-amX" firstAttribute="trailing" secondItem="AyN-xE-T94" secondAttribute="trailing" id="l2d-te-qmP"/>
                             <constraint firstItem="wmX-nZ-amX" firstAttribute="top" secondItem="Vx8-Xk-5Vr" secondAttribute="top" constant="5" id="mJt-vl-aN2"/>
+                            <constraint firstItem="xm4-L9-JTJ" firstAttribute="trailing" secondItem="wmX-nZ-amX" secondAttribute="trailing" id="nzJ-NH-ZQV"/>
                             <constraint firstItem="wDQ-Kl-Geu" firstAttribute="leading" secondItem="wmX-nZ-amX" secondAttribute="leading" id="tkx-ql-6wT"/>
                         </constraints>
                     </view>
@@ -200,7 +229,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="emptyView" destination="xm4-L9-JTJ" id="IS4-M5-OK7"/>
                         <outlet property="favoriteMealsTableView" destination="AyN-xE-T94" id="Roc-FY-Ru1"/>
+                        <outlet property="noProduct" destination="Suw-vm-I8r" id="Qgv-5L-rrU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZs-7Z-3pl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

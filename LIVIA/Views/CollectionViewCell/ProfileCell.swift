@@ -9,6 +9,7 @@
 import UIKit
 
 class ProfileCell: UICollectionViewCell {
+    
     @IBOutlet weak var cellName: UILabel!
     @IBOutlet weak var cellImage: UIImageView!
     
@@ -18,13 +19,13 @@ class ProfileCell: UICollectionViewCell {
         }
     }
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         cellName.adjustsFontSizeToFitWidth = true
         cellName.minimumScaleFactor = 0.5
         
     }
+    
     func config(name: String, selected: Bool, imagePath: UIImage) {
                self.cellImage.image = imagePath
                self.cellName.text = name
@@ -36,5 +37,5 @@ class ProfileCell: UICollectionViewCell {
                    self.cellName.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
                }
                
-           }
+      }
 }

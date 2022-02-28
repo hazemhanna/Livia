@@ -26,6 +26,7 @@
 "truck" = "فودتراك";
 "new order" = "الطلبات الجديدة";
 "login" = "نسجيل دخول";
+"logOut" = "نسجيل خروج";
 
 "new" = "جديد";
 "preparing" = "جاري التحضير";
@@ -102,7 +103,7 @@
 
 "Add to cart" = "أضافة إلى السلة";
 
-"Password changed" = "تم تغيير كلمة المرور";
+"Password changed" = "تغيير كلمة المرور";
 
 "The code has been send" = "تم أرسال الكود";
 
@@ -160,7 +161,7 @@
 "Account verified" = "تم تأكيد الحساب";
 
 "Minutes" = "دقيقة";
-"subscriptions" = "الاشتراكات";
+"subscriptions" = "اشتراكاتي";
 "foodPackages" = "باقات الطعام";
 "Accept" = "قبول";
 "refuse" = "رفض";
@@ -182,7 +183,7 @@
 "paid" = "تم الدفع";
 "status" = "الحالة";
 "days" = "ايام";
-"taxs" = "الرقم الضريبي : 310633825800003";
+"taxs" = "الرقم الضريبي : 0000000000000";
 "canceled" = "ملغي";
 "canceled2" = "الطلبات الملغاة";
 "refunded" = "مسترجع";

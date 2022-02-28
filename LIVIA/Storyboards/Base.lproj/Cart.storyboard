@@ -16,6 +16,9 @@
         <array key="Cairo-Regular.ttf">
             <string>Cairo-Regular</string>
         </array>
+        <array key="Cairo-SemiBold.ttf">
+            <string>Cairo-SemiBold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Cart-->
@@ -104,6 +107,9 @@
                                                         <real key="value" value="20"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="confirmBtn:" destination="Bfr-hM-bi9" eventType="touchUpInside" id="xUY-g6-Gfp"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -135,44 +141,110 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lFZ-t2-pnq">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="89.5"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Fs-Ly-FY7">
-                                        <rect key="frame" x="10" y="43" width="30" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="VtM-k2-kyn"/>
-                                            <constraint firstAttribute="width" secondItem="1Fs-Ly-FY7" secondAttribute="height" multiplier="1:1" id="ma7-03-FqO"/>
-                                        </constraints>
-                                        <state key="normal" image="open-menu"/>
-                                        <connections>
-                                            <action selector="menu:" destination="Bfr-hM-bi9" eventType="touchUpInside" id="mBd-oL-UGt"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cart" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8T-lI-5wi">
-                                        <rect key="frame" x="50" y="39" width="314" height="37.5"/>
-                                        <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="20"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FNK-dN-jhK">
+                                        <rect key="frame" x="16" y="48.5" width="382" height="25"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdC-Jq-dh5">
+                                                <rect key="frame" x="0.0" y="0.0" width="45" height="25"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="45" id="mAn-iT-Obf"/>
+                                                </constraints>
+                                                <state key="normal" image="open-menu"/>
+                                                <connections>
+                                                    <action selector="menu:" destination="Bfr-hM-bi9" eventType="touchUpInside" id="VIO-YL-dVD"/>
+                                                </connections>
+                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ijA-fp-mS9">
+                                                <rect key="frame" x="45" y="0.0" width="337" height="25"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MHU-Bt-zl9" customClass="CustomView" customModule="Shnp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="218" height="25"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="السلة" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9N-8E-tJm">
+                                                                <rect key="frame" x="8" y="-6" width="51" height="37.5"/>
+                                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="20"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="c9N-8E-tJm" firstAttribute="centerY" secondItem="MHU-Bt-zl9" secondAttribute="centerY" id="6VV-vq-QjW"/>
+                                                            <constraint firstItem="c9N-8E-tJm" firstAttribute="leading" secondItem="MHU-Bt-zl9" secondAttribute="leading" constant="8" id="evP-PY-ohc"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAa-My-lmC">
+                                                        <rect key="frame" x="226" y="0.0" width="25" height="25"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="25" id="03I-QM-7go"/>
+                                                            <constraint firstAttribute="width" constant="25" id="XMh-8A-LNp"/>
+                                                        </constraints>
+                                                        <state key="normal" image="loupe-5"/>
+                                                        <connections>
+                                                            <action selector="scanhButtonPressed:" destination="Bfr-hM-bi9" eventType="touchUpInside" id="K4X-UQ-6mn"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Line 41" translatesAutoresizingMaskIntoConstraints="NO" id="uPb-pJ-w9s">
+                                                        <rect key="frame" x="259" y="0.0" width="2" height="25"/>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rF6-8I-TgP">
+                                                        <rect key="frame" x="269" y="0.0" width="25" height="25"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="25" id="ApC-X6-sAq"/>
+                                                            <constraint firstAttribute="width" constant="25" id="zhD-q0-hDp"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="17"/>
+                                                        <state key="normal" image="loupe-1">
+                                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="notificationhButtonPressed:" destination="Bfr-hM-bi9" eventType="touchUpInside" id="wcy-m0-pR2"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Line 41" translatesAutoresizingMaskIntoConstraints="NO" id="WwR-kG-ztP">
+                                                        <rect key="frame" x="302" y="0.0" width="2" height="25"/>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGF-4r-MKF">
+                                                        <rect key="frame" x="312" y="0.0" width="25" height="25"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="25" id="9Bd-4b-HLp"/>
+                                                            <constraint firstAttribute="width" constant="25" id="PHK-2g-NN9"/>
+                                                        </constraints>
+                                                        <state key="normal" image="loupe-2"/>
+                                                        <connections>
+                                                            <action selector="searchButtonPressed:" destination="Bfr-hM-bi9" eventType="touchUpInside" id="1GP-hc-T9o"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" name="navigation"/>
                                 <constraints>
-                                    <constraint firstItem="1Fs-Ly-FY7" firstAttribute="leading" secondItem="lFZ-t2-pnq" secondAttribute="leading" constant="10" id="0un-DO-iCh"/>
-                                    <constraint firstItem="K8T-lI-5wi" firstAttribute="centerX" secondItem="lFZ-t2-pnq" secondAttribute="centerX" id="ABR-qU-wZY"/>
-                                    <constraint firstItem="K8T-lI-5wi" firstAttribute="leading" secondItem="1Fs-Ly-FY7" secondAttribute="trailing" constant="10" id="OgO-MK-C5X"/>
-                                    <constraint firstItem="1Fs-Ly-FY7" firstAttribute="centerY" secondItem="K8T-lI-5wi" secondAttribute="centerY" id="w9d-yJ-qVR"/>
+                                    <constraint firstItem="FNK-dN-jhK" firstAttribute="centerX" secondItem="lFZ-t2-pnq" secondAttribute="centerX" id="hpy-wa-b39"/>
+                                    <constraint firstAttribute="bottom" secondItem="FNK-dN-jhK" secondAttribute="bottom" constant="16" id="ocs-R7-ann"/>
+                                    <constraint firstAttribute="trailing" secondItem="FNK-dN-jhK" secondAttribute="trailing" constant="16" id="v3Y-Lw-GNx"/>
+                                    <constraint firstItem="FNK-dN-jhK" firstAttribute="leading" secondItem="lFZ-t2-pnq" secondAttribute="leading" constant="16" id="w8Q-UZ-1Uv"/>
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sfC-Qu-2rf">
                                 <rect key="frame" x="0.0" y="89.5" width="414" height="772.5"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="livia logo" translatesAutoresizingMaskIntoConstraints="NO" id="x3y-DU-obe">
-                                        <rect key="frame" x="157" y="138.5" width="100" height="100"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="livia logo" translatesAutoresizingMaskIntoConstraints="NO" id="x3y-DU-obe">
+                                        <rect key="frame" x="107" y="138.5" width="200" height="200"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="Y3v-pW-iia"/>
-                                            <constraint firstAttribute="width" constant="100" id="n4g-TE-mwd"/>
+                                            <constraint firstAttribute="height" constant="200" id="Y3v-pW-iia"/>
+                                            <constraint firstAttribute="width" constant="200" id="n4g-TE-mwd"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="you have no products" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bsU-rI-XQP">
-                                        <rect key="frame" x="125" y="254.5" width="164" height="20.5"/>
+                                        <rect key="frame" x="125" y="354.5" width="164" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -193,7 +265,6 @@
                             <constraint firstItem="JNH-SO-Tcy" firstAttribute="bottom" secondItem="rKH-6b-gSl" secondAttribute="bottom" id="1ET-7W-yRY"/>
                             <constraint firstItem="lFZ-t2-pnq" firstAttribute="width" secondItem="cvA-5y-pZS" secondAttribute="width" id="4Cu-ME-eD7"/>
                             <constraint firstItem="sfC-Qu-2rf" firstAttribute="top" secondItem="lFZ-t2-pnq" secondAttribute="bottom" id="Dh8-cP-ea7"/>
-                            <constraint firstItem="JNH-SO-Tcy" firstAttribute="top" secondItem="K8T-lI-5wi" secondAttribute="top" constant="5" id="LFo-bI-F7Y"/>
                             <constraint firstItem="lFZ-t2-pnq" firstAttribute="top" secondItem="cvA-5y-pZS" secondAttribute="top" id="LzN-xP-JIb"/>
                             <constraint firstItem="JNH-SO-Tcy" firstAttribute="trailing" secondItem="sfC-Qu-2rf" secondAttribute="trailing" id="OCF-fL-TAU"/>
                             <constraint firstItem="sfC-Qu-2rf" firstAttribute="leading" secondItem="JNH-SO-Tcy" secondAttribute="leading" id="QTu-bp-lid"/>
@@ -238,7 +309,6 @@
                                         <state key="normal" image="open-menu"/>
                                         <connections>
                                             <action selector="SideMenu:" destination="Kaa-J3-FDb" eventType="touchUpInside" id="j4L-zH-P3i"/>
-                                            <action selector="menu:" destination="Bfr-hM-bi9" eventType="touchUpInside" id="Xxu-Hr-GvR"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cart details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ny3-V9-9i7">
@@ -256,7 +326,6 @@
                                         <state key="normal" image="back-arrow"/>
                                         <connections>
                                             <action selector="Back:" destination="Kaa-J3-FDb" eventType="touchUpInside" id="soX-6b-cVJ"/>
-                                            <action selector="backButton:" destination="Bfr-hM-bi9" eventType="touchUpInside" id="Ro7-E2-cQJ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -534,10 +603,14 @@
         <image name="Group 488" width="68" height="68"/>
         <image name="Group 492" width="23" height="23"/>
         <image name="Group 493" width="23" height="23"/>
+        <image name="Line 41" width="2" height="66"/>
         <image name="back-arrow" width="16" height="16"/>
         <image name="brooke-lark-HlNcigvUi4Q-unsplash" width="5760" height="3840"/>
         <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="livia logo" width="479" height="479"/>
+        <image name="loupe-1" width="35" height="35"/>
+        <image name="loupe-2" width="30" height="30"/>
+        <image name="loupe-5" width="38" height="38"/>
         <image name="menu (1)" width="22.5" height="21"/>
         <image name="open-menu" width="38" height="38"/>
         <namedColor name="navigation">

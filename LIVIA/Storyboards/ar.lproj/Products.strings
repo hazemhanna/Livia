@@ -1,53 +1,78 @@
 
-/* Class = "UILabel"; text = "التوصيل"; ObjectID = "8YW-sH-ZP7"; */
-"8YW-sH-ZP7.text" = "التوصيل";
+/* Class = "UILabel"; text = "35جتية"; ObjectID = "06z-IM-yEE"; */
+"06z-IM-yEE.text" = "35جتية";
 
-/* Class = "UIBarButtonItem"; title = " "; ObjectID = "C1V-xJ-T40"; */
-"C1V-xJ-T40.title" = " ";
+/* Class = "UIBarButtonItem"; title = "  "; ObjectID = "4I5-IC-c3t"; */
+"4I5-IC-c3t.title" = "  ";
 
-/* Class = "UILabel"; text = "30 ريال"; ObjectID = "DHN-kJ-JRQ"; */
-"DHN-kJ-JRQ.text" = "30 ريال";
+/* Class = "UILabel"; text = "1"; ObjectID = "8ft-IN-a6h"; */
+"8ft-IN-a6h.text" = "1";
 
-/* Class = "UIButton"; normalTitle = "حجز طاولة"; ObjectID = "TPp-bJ-fkN"; */
-"TPp-bJ-fkN.normalTitle" = "حجز طاولة";
+/* Class = "UILabel"; text = "لمدة ١٤ يوم حتي ١٠/٢٠/٢٠٢٠"; ObjectID = "8xy-UU-9h9"; */
+"8xy-UU-9h9.text" = "لمدة ١٤ يوم";
 
-/* Class = "UINavigationItem"; title = "تفاصيل الواجبات"; ObjectID = "ZOv-ut-05l"; */
-"ZOv-ut-05l.title" = "تفاصيل الواجبات";
+/* Class = "UILabel"; text = "السعر : ١٤٠ جنية"; ObjectID = "9Lj-9K-5Db"; */
+"9Lj-9K-5Db.text" = "السعر : ١٤٠ جنية";
 
-/* Class = "UIBarButtonItem"; title = "  "; ObjectID = "aXO-1r-8qS"; */
-"aXO-1r-8qS.title" = "  ";
+/* Class = "UINavigationItem"; title = "Restaurant Details"; ObjectID = "Agj-Zq-PRA"; */
+"Agj-Zq-PRA.title" = "Restaurant Details";
 
-/* Class = "UILabel"; text = "الحد الادني"; ObjectID = "ayq-hm-Wfg"; */
-"ayq-hm-Wfg.text" = "الحد الادني";
+/* Class = "UILabel"; text = "Offers"; ObjectID = "JGV-49-b71"; */
+"JGV-49-b71.text" = "العروض";
 
-/* Class = "UILabel"; text = "Pizza"; ObjectID = "bWt-NG-OzW"; */
-"bWt-NG-OzW.text" = "Pizza";
+/* Class = "UILabel"; text = "لا"; ObjectID = "PCP-Xe-06Z"; */
+"PCP-Xe-06Z.text" = "لا";
 
-/* Class = "UILabel"; text = "القسم"; ObjectID = "f0Y-EK-2zC"; */
-"f0Y-EK-2zC.text" = "القسم";
+/* Class = "UINavigationItem"; title = "Meals Details"; ObjectID = "RaJ-TS-ckB"; */
+"RaJ-TS-ckB.title" = "Meals Details";
 
-/* Class = "UINavigationItem"; title = "تفاصيل المطعم"; ObjectID = "gyg-yA-fxi"; */
-"gyg-yA-fxi.title" = "تفاصيل المطعم";
+/* Class = "UIBarButtonItem"; title = "    "; ObjectID = "SvC-qT-Eiw"; */
+"SvC-qT-Eiw.title" = "    ";
 
-/* Class = "UILabel"; text = "التوصيل"; ObjectID = "hnn-Yu-EFZ"; */
-"hnn-Yu-EFZ.text" = "التوصيل";
+/* Class = "UILabel"; text = "الباقة الذهبية"; ObjectID = "TyR-0E-G1F"; */
+"TyR-0E-G1F.text" = "الباقة الذهبية";
 
-/* Class = "UILabel"; text = "14 ريال"; ObjectID = "k4H-zv-3sd"; */
-"k4H-zv-3sd.text" = "14 ريال";
+/* Class = "UILabel"; text = "رسوم التوصيل : ٤٠ جنية"; ObjectID = "XIv-ii-aaW"; */
+"XIv-ii-aaW.text" = "رسوم التوصيل : ٤٠ جنية";
 
-/* Class = "UILabel"; text = "20 ريال"; ObjectID = "pRu-wU-JHJ"; */
-"pRu-wU-JHJ.text" = "20 ريال";
+/* Class = "UILabel"; text = "لا يوجد"; ObjectID = "aEi-Y5-3Sa"; */
+"aEi-Y5-3Sa.text" = "لا يوجد";
 
-"ma5-J6-V4o.text" = "المنتجات";
+/* Class = "UIBarButtonItem"; title = "    "; ObjectID = "aXO-1r-8qS"; */
+"aXO-1r-8qS.title" = "    ";
 
-"vxc-r7-dvf.text" = "لا يوجد نتائج";
+/* Class = "UILabel"; text = "Other Notes"; ObjectID = "btD-LL-EBj"; */
+"btD-LL-EBj.text" = "تفاصيل اخري";
 
-"joe-in-qc8.normalTitle" = "حجز طاولة";
+/* Class = "UILabel"; text = "Food Packages"; ObjectID = "dT6-Cb-zmW"; */
+"dT6-Cb-zmW.text" = "باقات الطعام";
 
-"TEI-oW-3wI.text" = "الحد الأدنى";
+/* Class = "UIBarButtonItem"; title = "  "; ObjectID = "ed6-3U-a1f"; */
+"ed6-3U-a1f.title" = "  ";
 
-"bDt-u5-5W6.text" = "مصاريف التوصيل";
+/* Class = "UILabel"; text = " المكونات طماطم وسلطة حضراء وزيتون المكونات طماطم وسلطة حضراء وزيتون المكونات طماطم وسلطة حضراء وزيتون  المكونات طماطم وسلطة حضراء وزيتون المكونات طماطم وسلطة حضراء وزيتون المكونات طماطم وسلطة حضراء وزيتون  "; ObjectID = "ggS-Zr-6zA"; */
+"ggS-Zr-6zA.text" = " المكونات طماطم  وجرجير وزيتون وعيش محمص";
 
-"FE8-Tr-D7F.text" = "وقت التوصيل";
+/* Class = "UINavigationItem"; title = "Restaurant Details"; ObjectID = "gyg-yA-fxi"; */
+"gyg-yA-fxi.title" = "Restaurant Details";
 
-"tHX-Gf-wQO.text" = "لا يوجد نتائج";
+/* Class = "UILabel"; text = "في حالة اختيارك لاشتراك التوصيل سوف يتم اضافتة للباقة "; ObjectID = "lxy-1s-Hvh"; */
+"lxy-1s-Hvh.text" = "في حالة اختيارك لاشتراك التوصيل سوف يتم اضافتة للباقة ";
+
+/* Class = "UILabel"; text = "نعم"; ObjectID = "m6H-TX-YOR"; */
+"m6H-TX-YOR.text" = "نعم";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "mTD-Hl-mmD"; */
+"mTD-Hl-mmD.title" = " ";
+
+/* Class = "UILabel"; text = "البيتزا"; ObjectID = "tCn-RU-Pwt"; */
+"tCn-RU-Pwt.text" = "البيتزا";
+
+/* Class = "UILabel"; text = " وسلطة حضراء وزيتون المكونات طماطم وسلطة  "; ObjectID = "vfb-9Z-M5W"; */
+"vfb-9Z-M5W.text" = " وسلطة حضراء وزيتون المكونات طماطم وسلطة  ";
+
+/* Class = "UILabel"; text = "سلطة حضراء"; ObjectID = "x5L-EQ-oZE"; */
+"x5L-EQ-oZE.text" = "سلطة حضراء";
+
+/* Class = "UILabel"; text = "اشتراك التوصيل"; ObjectID = "zCy-mS-UqW"; */
+"zCy-mS-UqW.text" = "اشتراك التوصيل";

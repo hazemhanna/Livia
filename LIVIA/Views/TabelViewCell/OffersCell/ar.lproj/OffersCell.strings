@@ -1,0 +1,24 @@
+
+/* Class = "UIButton"; configuration.title = "+"; ObjectID = "4aO-hk-WxZ"; */
+"4aO-hk-WxZ.configuration.title" = "+";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "4aO-hk-WxZ"; */
+"4aO-hk-WxZ.normalTitle" = "+";
+
+/* Class = "UILabel"; text = "name"; ObjectID = "B3o-El-CPx"; */
+"B3o-El-CPx.text" = "بيتزا خضروات";
+
+/* Class = "UILabel"; text = "price : 40 EGP"; ObjectID = "Ugb-kJ-7p9"; */
+"Ugb-kJ-7p9.text" = "السعر :٤٠ جنية بدلا من ٥٠";
+
+/* Class = "UIButton"; configuration.title = "-"; ObjectID = "oXH-oI-Khv"; */
+"oXH-oI-Khv.configuration.title" = "-";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "oXH-oI-Khv"; */
+"oXH-oI-Khv.normalTitle" = "-";
+
+/* Class = "UILabel"; text = "1"; ObjectID = "qnG-YQ-f61"; */
+"qnG-YQ-f61.text" = "1";
+
+/* Class = "UILabel"; text = "type"; ObjectID = "tXL-ZI-8ZK"; */
+"tXL-ZI-8ZK.text" = "بيتزا";

@@ -7,8 +7,7 @@
 //
 
 import Foundation
-
-var BASE_URL = " "
+var BASE_URL = "https://shnp.app"
 struct ConfigURLs {
-    static var postLogin = BASE_URL + ""
+    
 }

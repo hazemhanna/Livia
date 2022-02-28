@@ -8,7 +8,7 @@
 
 import UIKit
 class SideMenuVC: UIViewController {
-
+    
     @IBOutlet weak var editBN: UIButton!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var wallet : UILabel!
@@ -16,10 +16,8 @@ class SideMenuVC: UIViewController {
     @IBOutlet weak var StackCenter: NSLayoutConstraint!
     @IBOutlet weak var SideMenuTableView: UITableView!
     @IBOutlet weak var walletView : UIView!
-    
-    
-
     fileprivate let cellIdentifier = "SideMenuCell"
+   
     var sideMenuArr = [SideMenuModel]() {
         didSet {
             DispatchQueue.main.async {
@@ -31,18 +29,17 @@ class SideMenuVC: UIViewController {
     let token = Helper.getApiToken() ?? ""
     let user = Helper.getUserRole() ?? ""
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         SideMenuTableView.dataSource = self
         SideMenuTableView.delegate = self
         SideMenuTableView.rowHeight = UITableView.automaticDimension
-                      SideMenuTableView.estimatedRowHeight = UITableView.automaticDimension
+        SideMenuTableView.estimatedRowHeight = UITableView.automaticDimension
         SideMenuTableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
-
-        
-        
     }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
        // if token != "" {
@@ -52,18 +49,17 @@ class SideMenuVC: UIViewController {
                     SideMenuModel(name: "Sections".localized, id: "Sections", selected: false, sideImage: #imageLiteral(resourceName: "burger")),
                     SideMenuModel(name: "Cart".localized, id: "Cart", selected: false,sideImage: #imageLiteral(resourceName: "cart (1)-1")),
                     SideMenuModel(name: "Reserve Table".localized, id: "ReserveTable", selected: false, sideImage: #imageLiteral(resourceName: "reservation2")),
-
                     SideMenuModel(name: "Notifications".localized, id: "Notifications", selected: false, sideImage: #imageLiteral(resourceName: "icons8-notification")),
                     SideMenuModel(name: "Reservations".localized, id: "Reservations", selected: false, sideImage: #imageLiteral(resourceName: "reservation2")),
                     SideMenuModel(name: "Order List".localized, id: "OrderList", selected: false, sideImage: #imageLiteral(resourceName: "order-food-1")),
+                    SideMenuModel(name: "subscriptions".localized, id: "subscriptions", selected: false, sideImage: #imageLiteral(resourceName: "NoPath - Copy (10)")),
                     SideMenuModel(name: "foodPackages".localized, id: "foodPackages", selected: false, sideImage: #imageLiteral(resourceName: "NoPath - Copy (10)")),
+                    SideMenuModel(name: "FoodCart".localized, id: "FoodCart", selected: false,sideImage: #imageLiteral(resourceName: "cart (1)-1")),
                     SideMenuModel(name: "Favorite Meals".localized, id: "FavoriteMeals", selected: false, sideImage: #imageLiteral(resourceName: "favorite (1)")),
                     SideMenuModel(name: "Contact Us".localized, id: "Contact Us", selected: false,sideImage: #imageLiteral(resourceName: "contactUs")),
                     SideMenuModel(name: "Terms And Conditions".localized, id: "TermsAndConditions", selected: false, sideImage: #imageLiteral(resourceName: "terms")),
                     SideMenuModel(name: "Settings".localized, id: "Setting", selected: false, sideImage: #imageLiteral(resourceName: "Screen Shot 2021-12-31 at 6.42.33 PM")),
-                  
-                    SideMenuModel(name: "login".localized, id: "Login", selected: false, sideImage: #imageLiteral(resourceName: "Screen Shot 2021-12-31 at 6.42.33 PM"))
-                    
+                    SideMenuModel(name: "logOut".localized, id: "Login", selected: false, sideImage: #imageLiteral(resourceName: "Screen Shot 2021-12-31 at 6.42.33 PM"))
                 ]
      
             
@@ -101,8 +97,7 @@ class SideMenuVC: UIViewController {
             sb.selectedIndex = 0
             window.rootViewController = sb
             UIView.transition(with: window, duration: 0.5, options: .curveEaseInOut, animations: nil, completion: nil)
-            
-            //pushSideMenu(StoryboardName: "Home", ForController: "HomeTabBar")
+        
         case "Sections":
             pushSideMenu(StoryboardName: "Orders", ForController: "SectionsPageVC")
         case "Cart":
@@ -110,9 +105,13 @@ class SideMenuVC: UIViewController {
         case "OrderList":
             pushSideMenu(StoryboardName: "Orders", ForController: "OrderListVC")
         case "Profile":
-            pushSideMenu(StoryboardName: "Profile", ForController: "WalletVc")
+            pushSideMenu(StoryboardName: "Profile", ForController: "MainProfileVC")
         case "foodPackages":
             pushSideMenu(StoryboardName: "Products", ForController: "FoodPackagesVC")
+        case "FoodCart":
+            pushSideMenu(StoryboardName: "Products", ForController: "MYFoodPackagesCartVC")
+        case "subscriptions":
+            pushSideMenu(StoryboardName: "Products", ForController: "SubscriptionsVc")
         case "Reservations":
             pushSideMenu(StoryboardName: "Reservation", ForController: "MyReservationsVC")
         case "FavoriteMeals":
@@ -136,6 +135,7 @@ class SideMenuVC: UIViewController {
             break
         }
     }
+    
     func pushSideMenu(StoryboardName name: String,ForController identifier: String) {
         let main = UIStoryboard(name: name, bundle: nil).instantiateViewController(withIdentifier: identifier)
         self.navigationController!.pushViewController(main, animated: true)
@@ -169,8 +169,6 @@ extension SideMenuVC: UITableViewDelegate,UITableViewDataSource {
         SideMenuTableView.reloadData()
         selectedCell(indexPath: indexPath)
     }
-    
-    
 }
 
 

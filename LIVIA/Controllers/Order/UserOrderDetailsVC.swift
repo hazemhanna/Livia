@@ -18,7 +18,8 @@ class UserOrderDetailsVC: UIViewController{
     @IBOutlet weak var TaxLb: UILabel!
     @IBOutlet weak var detailsTableView: UITableView!
     @IBOutlet weak var TableHeight: NSLayoutConstraint!
-    
+    @IBOutlet weak var TaxLb2: UILabel!
+
     fileprivate let cellIdentifier = "OrderReceiptCell"
     
     var details = [Int]() {
@@ -39,7 +40,8 @@ class UserOrderDetailsVC: UIViewController{
         detailsTableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
         detailsTableView.rowHeight = UITableView.automaticDimension
         detailsTableView.estimatedRowHeight = 120
-     
+        TaxLb2.text = "taxs".localized
+        self.TaxLb.text = ("The total price includes ".localized + "VAT tax".localized)
 
     }
     
@@ -47,11 +49,7 @@ class UserOrderDetailsVC: UIViewController{
         details.append(1)
         details.append(1)
         details.append(1)
-
-        
     }
-    
-
     
    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         self.detailsTableView.layer.removeAllAnimations()

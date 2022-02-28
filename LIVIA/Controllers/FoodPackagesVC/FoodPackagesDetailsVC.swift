@@ -13,6 +13,9 @@ import UIKit
 class FoodPackagesDetailsVC : UIViewController {
     
     @IBOutlet weak var titleLbl: UILabel!
+    
+    @IBOutlet weak var yesBtN : UIButton!
+    @IBOutlet weak var noBtN : UIButton!
 
 
     
@@ -28,5 +31,22 @@ class FoodPackagesDetailsVC : UIViewController {
     @IBAction func backBtn(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    
+    @IBAction func confirm(_ sender: UIButton) {
+        displayMessage(title: "", message: "تم الاضافة الي السلة بنجاح".localized, status:.success, forController: self)
+    }
+    
+    @IBAction func yesBtn(_ sender: UIButton) {
+       if sender.tag == 0 {
+           yesBtN.setImage(#imageLiteral(resourceName: "select"), for: .normal)
+           noBtN.setImage(#imageLiteral(resourceName: "check"), for: .normal)
+        }else{
+            noBtN.setImage(#imageLiteral(resourceName: "select"), for: .normal)
+            yesBtN.setImage(#imageLiteral(resourceName: "check"), for: .normal)
+        }
+    }
+    
+    
 }
 

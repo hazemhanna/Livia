@@ -43,25 +43,26 @@ class ValiableResturantCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-//    func config(name: String,price: Double, imagePath: String, type: String) {
-//
-//          if imagePath != "" {
-//            guard let imageURL = URL(string: imagePath) else { return }
-//            self.resturantImage.kf.setImage(with: imageURL)
-//            }
-//
-//        self.name.text = name
-//        if "lang".localized == "ar" {
-//            self.price.text = "\(price) ريال|"
-//            self.name.textAlignment = .right
-//            self.type.textAlignment = .right
-//        } else {
-//            self.price.text = "\(price)SAR|"
-//            self.name.textAlignment = .left
-//            self.type.textAlignment = .left
-//        }
-//        self.type.text = type
-//    }
+    func config(name: String,price: Double, imagePath: UIImage, type: String) {
+
+          //if imagePath != "" {
+          //  guard let imageURL = URL(string: imagePath) else { return }
+        self.resturantImage.image = imagePath //.kf.setImage(with: imageURL)
+           // }
+
+        self.name.text = name
+        self.type.text = type
+
+        if "lang".localized == "ar" {
+            self.price.text = "\(price) جنية"
+            self.name.textAlignment = .right
+            self.type.textAlignment = .right
+        } else {
+            self.price.text = "\(price) EGP"
+            self.name.textAlignment = .left
+            self.type.textAlignment = .left
+        }
+    }
     
     @IBAction func AddToFavorite(_ sender: Any) {
         goToFavorites?()

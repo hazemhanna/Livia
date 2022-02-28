@@ -28,7 +28,7 @@ class WalletVc: UIViewController {
         super.viewDidLoad()
         orderbtn.setTitle("refund".localized, for: .normal)
         rewardsBtn.setTitle("rewards".localized, for: .normal)
-        titleLbl.text = "profile".localized
+        titleLbl.text = "Profile".localized
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,6 +37,7 @@ class WalletVc: UIViewController {
             listTableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
             listTableView.register(UINib(nibName: cellIdentifier2, bundle: nil), forCellReuseIdentifier: cellIdentifier2)
     }
+    
     @IBAction func sideMenu(_ sender: Any) {
         self.setupSideMenu()
     }
@@ -100,6 +101,10 @@ extension WalletVc: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if type == "order"{
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? RefundOrderCell else { return UITableViewCell()}
+            cell.goToDetails = {
+                guard let Details = UIStoryboard(name: "Orders", bundle: nil).instantiateViewController(withIdentifier: "OrderDetailsVC") as? OrderDetailsVC else { return }
+                self.navigationController?.pushViewController(Details, animated: true)
+            }
         return cell
         }else{
             guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier2, for: indexPath) as? RewardCell else { return UITableViewCell()}
@@ -110,4 +115,12 @@ extension WalletVc: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
              return 100
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if type == "order"{
+            guard let Details = UIStoryboard(name: "Details", bundle: nil).instantiateViewController(withIdentifier: "UserOrderDetailsVC") as? UserOrderDetailsVC else { return }
+            self.navigationController?.pushViewController(Details, animated: true)
+        }
+    }
+    
 }

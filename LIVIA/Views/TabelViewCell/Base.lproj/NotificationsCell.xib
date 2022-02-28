@@ -26,19 +26,14 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TWK-fv-Mtg" customClass="CustomView" customModule="Shnp" customModuleProvider="target">
                         <rect key="frame" x="17.5" y="5" width="314" height="62"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9UN-oU-ohf">
-                                <rect key="frame" x="16" y="8" width="187.5" height="28.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Delivered Delivered Delivered " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbt-3M-gfD">
-                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="28.5"/>
-                                        <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
-                                        <color key="textColor" name="navigation"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22/2/2020 23:32" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCr-wY-038">
-                                <rect key="frame" x="194.5" y="44.5" width="111.5" height="28.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Delivered Delivered Delivered " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbt-3M-gfD">
+                                <rect key="frame" x="8" y="8" width="187.5" height="28.5"/>
+                                <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
+                                <color key="textColor" name="navigation"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22/2/2020 23:32 pm" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCr-wY-038">
+                                <rect key="frame" x="170.5" y="25.5" width="135.5" height="28.5"/>
                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
                                 <color key="textColor" name="navigation"/>
                                 <nil key="highlightedColor"/>
@@ -46,10 +41,11 @@
                         </subviews>
                         <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="gCr-wY-038" firstAttribute="top" secondItem="9UN-oU-ohf" secondAttribute="bottom" constant="8" id="XYO-V9-J94"/>
-                            <constraint firstItem="9UN-oU-ohf" firstAttribute="leading" secondItem="TWK-fv-Mtg" secondAttribute="leading" constant="16" id="d8Z-Rz-E4Z"/>
-                            <constraint firstItem="9UN-oU-ohf" firstAttribute="top" secondItem="TWK-fv-Mtg" secondAttribute="top" constant="8" id="pKS-AS-giD"/>
+                            <constraint firstAttribute="bottom" secondItem="gCr-wY-038" secondAttribute="bottom" constant="8" id="0Tx-GY-TUn"/>
+                            <constraint firstItem="hbt-3M-gfD" firstAttribute="top" secondItem="TWK-fv-Mtg" secondAttribute="top" constant="8" id="N5d-q7-oQw"/>
+                            <constraint firstItem="hbt-3M-gfD" firstAttribute="leading" secondItem="TWK-fv-Mtg" secondAttribute="leading" constant="8" id="hBt-Kp-zgK"/>
                             <constraint firstAttribute="trailing" secondItem="gCr-wY-038" secondAttribute="trailing" constant="8" id="r3U-5n-XdB"/>
+                            <constraint firstAttribute="trailing" secondItem="gCr-wY-038" secondAttribute="trailing" constant="8" id="tNl-hg-ZXY"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>

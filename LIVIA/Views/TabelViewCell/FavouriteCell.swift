@@ -41,25 +41,27 @@ class FavouriteCell: UITableViewCell {
         
         
     }
-    func config(name: String, details: String, imagePath: String , price : Double) {
-        if (!imagePath.contains("http")) {
-            guard let imageURL = URL(string: (BASE_URL + "/" + imagePath).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else { return }
-            print(imageURL)
-            self.productImage.kf.setImage(with: imageURL)
-        }  else if imagePath != "" {
-            guard let imageURL = URL(string: imagePath) else { return }
-            self.productImage.kf.setImage(with: imageURL)
-            
-        } else if imagePath != "" {
-            
-            self.productImage.image = #imageLiteral(resourceName: "shanab loading")
-            
-            
-        }
+    func config(name: String,price: Double, imagePath: UIImage, type: String) {
+
+          //if imagePath != "" {
+          //  guard let imageURL = URL(string: imagePath) else { return }
+        self.productImage.image = imagePath //.kf.setImage(with: imageURL)
+           // }
+
         self.name.text = name
-        self.details.text = details
-        self.price.text = "\(price)"
+        self.details.text = type
+
+        if "lang".localized == "ar" {
+            self.price.text = "\(price) جنية"
+            self.name.textAlignment = .right
+            self.details.textAlignment = .right
+        } else {
+            self.price.text = "\(price) EGP"
+            self.name.textAlignment = .left
+            self.details.textAlignment = .left
+        }
     }
+    
     
     @IBAction func AddToCart(_ sender: Any) {
         AddToCart?()

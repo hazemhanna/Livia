@@ -20,7 +20,7 @@ class ReservationRequestVc : UIViewController {
     @IBOutlet weak var noteTF: UITextField!
     @IBOutlet weak var dateTF: UITextField!
 
-    var numbers = ["1","2","3","4","5"]
+    var numbers = ["1","2","3","4","5","6","7","8","9"]
 
     override func viewDidLoad() {
         super.viewDidLoad()

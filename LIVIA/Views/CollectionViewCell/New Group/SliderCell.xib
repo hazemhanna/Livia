@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SliderCell" id="gTV-IL-0wX" customClass="SliderCell" customModule="Shnp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="273" height="117"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="273" height="117"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="gax-0K-Y7Y" customClass="CustomView" customModule="Shnp" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="273" height="117"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2022-02-11 at 4.19.53 AM" translatesAutoresizingMaskIntoConstraints="NO" id="2Z3-gp-CGM" customClass="CustomImageView" customModule="Shnp" customModuleProvider="target">
+                                <rect key="frame" x="8" y="8" width="257" height="101"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2Z3-gp-CGM" firstAttribute="leading" secondItem="gax-0K-Y7Y" secondAttribute="leading" constant="8" id="Np3-3G-SzP"/>
+                            <constraint firstAttribute="bottom" secondItem="2Z3-gp-CGM" secondAttribute="bottom" constant="8" id="lHM-GM-kdG"/>
+                            <constraint firstItem="2Z3-gp-CGM" firstAttribute="top" secondItem="gax-0K-Y7Y" secondAttribute="top" constant="8" id="lz5-bk-Lre"/>
+                            <constraint firstAttribute="trailing" secondItem="2Z3-gp-CGM" secondAttribute="trailing" constant="8" id="o20-Mz-MQC"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="gax-0K-Y7Y" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="LLa-fv-rSv"/>
+                <constraint firstAttribute="bottom" secondItem="gax-0K-Y7Y" secondAttribute="bottom" id="XYj-Fb-msL"/>
+                <constraint firstItem="gax-0K-Y7Y" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="dev-ot-AcO"/>
+                <constraint firstAttribute="trailing" secondItem="gax-0K-Y7Y" secondAttribute="trailing" id="qSY-pV-4Jy"/>
+            </constraints>
+            <size key="customSize" width="273" height="117"/>
+            <connections>
+                <outlet property="cellImage" destination="2Z3-gp-CGM" id="XSZ-jO-iH8"/>
+            </connections>
+            <point key="canvasLocation" x="299.27536231884062" y="88.058035714285708"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Screen Shot 2022-02-11 at 4.19.53 AM" width="294" height="266"/>
+    </resources>
+</document>

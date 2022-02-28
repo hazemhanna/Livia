@@ -1,0 +1,42 @@
+
+/* Class = "UILabel"; text = "first packge golden package "; ObjectID = "2dP-Sx-dBd"; */
+"2dP-Sx-dBd.text" = "الباقة الذهبية";
+
+/* Class = "UILabel"; text = "180.00"; ObjectID = "D5t-d1-WE1"; */
+"D5t-d1-WE1.text" = "180.00";
+
+/* Class = "UILabel"; text = "15.00"; ObjectID = "Kku-38-naC"; */
+"Kku-38-naC.text" = "15.00";
+
+/* Class = "UILabel"; text = "Delivery Subscribtions"; ObjectID = "NEG-RK-sMV"; */
+"NEG-RK-sMV.text" = "اشتراك التوصيل";
+
+/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "QFC-cP-fcW"; */
+"QFC-cP-fcW.normalTitle" = "تاكيد";
+
+/* Class = "UILabel"; text = "162.3"; ObjectID = "Xmo-n8-SLf"; */
+"Xmo-n8-SLf.text" = "162.3";
+
+/* Class = "UILabel"; text = "SAR"; ObjectID = "ch7-c3-8Gx"; */
+"ch7-c3-8Gx.text" = "جنية";
+
+/* Class = "UILabel"; text = "14 days "; ObjectID = "kn1-kI-ABp"; */
+"kn1-kI-ABp.text" = "١٤ يوم";
+
+/* Class = "UILabel"; text = "Package Cost"; ObjectID = "nP4-GT-hEp"; */
+"nP4-GT-hEp.text" = "تكلفة الباقة";
+
+/* Class = "UILabel"; text = "SAR"; ObjectID = "puE-AG-H8x"; */
+"puE-AG-H8x.text" = "جنية";
+
+/* Class = "UILabel"; text = "Total Cost"; ObjectID = "rWG-6Q-ZkE"; */
+"rWG-6Q-ZkE.text" = "اجمالي التكلفة";
+
+/* Class = "UILabel"; text = "SAR"; ObjectID = "se2-65-ZYs"; */
+"se2-65-ZYs.text" = "جنية";
+
+/* Class = "UILabel"; text = "chicken burger chicken burger chicken burger"; ObjectID = "sjt-1Q-QiA"; */
+"sjt-1Q-QiA.text" = "نصف فرخة محشية";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "tPl-mD-Gqv"; */
+"tPl-mD-Gqv.normalTitle" = "Button";

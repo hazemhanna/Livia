@@ -31,13 +31,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="245" height="217"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Set of cartoon pizzas with different stuffing" translatesAutoresizingMaskIntoConstraints="NO" id="HEr-D8-uKH">
-                                        <rect key="frame" x="77.5" y="69.5" width="90" height="78"/>
+                                        <rect key="frame" x="37" y="32.5" width="171.5" height="152"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="HEr-D8-uKH" firstAttribute="width" secondItem="owW-P0-nZK" secondAttribute="width" multiplier="0.7" id="9gP-t1-9OU"/>
                                     <constraint firstItem="HEr-D8-uKH" firstAttribute="centerY" secondItem="owW-P0-nZK" secondAttribute="centerY" id="Ue0-Qg-XuB"/>
                                     <constraint firstItem="HEr-D8-uKH" firstAttribute="centerX" secondItem="owW-P0-nZK" secondAttribute="centerX" id="prK-6F-9QH"/>
+                                    <constraint firstItem="HEr-D8-uKH" firstAttribute="height" secondItem="owW-P0-nZK" secondAttribute="height" multiplier="0.7" id="zoe-tR-JDz"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

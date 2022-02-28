@@ -19,8 +19,7 @@ class BestSellerCell: UITableViewCell {
     @IBOutlet weak var mealImage: UIImageView! {
         
         didSet {
-            
-            mealImage.layer.cornerRadius = (mealImage.frame.width / 2)
+          mealImage.layer.cornerRadius = (mealImage.frame.width / 2)
         }
     }
     var goToFavorites: (() ->Void)? = nil

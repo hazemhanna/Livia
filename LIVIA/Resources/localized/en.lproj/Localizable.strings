@@ -36,6 +36,7 @@
 "completed" = "completed";
 "arrived" = "Arrived";
 "login" = "login";
+"logOut" = "logOut";
 
 "S.R" = "SAR";
 "You should login first" = "You should login first";
@@ -155,8 +156,10 @@
 "Code sent to your phone" = "Code sent to your phone";
 
 "Minutes" = "Minutes";
-"subscriptions" = "subscriptions";
+"subscriptions" = "MY Subscriptions";
 "foodPackages" = "Food Packages";
+
+
 "Accept" = "Accept";
 "refuse" = "Refuse";
 "delivery" = "delivery";
