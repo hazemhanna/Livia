@@ -15,6 +15,7 @@ class MyReservationsVC : UIViewController {
     
     @IBOutlet weak var listTableView: UITableView!
     @IBOutlet weak var titleLBL : UILabel!
+    @IBOutlet weak var titleLbl  : UILabel!
 
     @IBOutlet weak var emptyView: UIView!
 
@@ -50,6 +51,17 @@ class MyReservationsVC : UIViewController {
     @IBAction func backBtn(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func scanhButtonPressed(_ sender: Any) {
+        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "ScanVc") as? ScanVc else { return }
+        self.navigationController?.pushViewController(details, animated: true)
+    }
+    @IBAction func notificationhButtonPressed(_ sender: Any) {
+        guard let details = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "NotificationsVC") as? NotificationsVC else { return }
+        self.navigationController?.pushViewController(details, animated: true)
+
+    }
+    
 }
 extension MyReservationsVC: UITableViewDelegate, UITableViewDataSource {
     

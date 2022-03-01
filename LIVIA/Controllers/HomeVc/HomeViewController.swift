@@ -17,14 +17,14 @@ import Alamofire
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var RestaurantTableView: UITableView!
-    @IBOutlet weak var TypeBN: UIButton!
     @IBOutlet weak var imageSlider: ImageSlideshow!
     @IBOutlet weak var oneImageView: UIImageView!
     @IBOutlet weak var homeSectionsCollectionView: UICollectionView!
     @IBOutlet weak var notificationBN: UIButton!
     @IBOutlet weak var pageView: UIPageControl!
     @IBOutlet weak var SlidercollectionView: UICollectionView!
-    
+    @IBOutlet weak var titleLbl  : UILabel!
+
     
     var meals = [RestaurantMeal]() {
         didSet{
@@ -60,7 +60,7 @@ class HomeViewController: UIViewController {
         SlidercollectionView.register(UINib(nibName: sliderCell, bundle: nil), forCellWithReuseIdentifier: sliderCell)
 
         
-        
+        titleLbl.text = "Home".localized
         
         RestaurantTableView.delegate = self
         RestaurantTableView.dataSource = self
@@ -86,6 +86,14 @@ class HomeViewController: UIViewController {
 
         meals.append(RestaurantMeal(nameAr: "بيتزا فراخ", image: #imageLiteral(resourceName: "Screen Shot 2022-02-11 at 4.19.53 AM"), descriptionAr: "بيتزا"))
 
+        
+        meals.append(RestaurantMeal(nameAr: "بيتزا خضروات", image: #imageLiteral(resourceName: "Screen Shot 2022-02-11 at 4.19.53 AM"), descriptionAr: "بيتزا"))
+        
+        meals.append(RestaurantMeal(nameAr: "سلطة خضراء", image: #imageLiteral(resourceName: "taylor-kiser-EvoIiaIVRzU-unsplash-1"), descriptionAr: "سلطة"))
+        
+        meals.append(RestaurantMeal(nameAr: "بيتزا سي فود", image: #imageLiteral(resourceName: "food-1"), descriptionAr: "بيتزا"))
+
+        meals.append(RestaurantMeal(nameAr: "بيتزا فراخ", image: #imageLiteral(resourceName: "Screen Shot 2022-02-11 at 4.19.53 AM"), descriptionAr: "بيتزا"))
         
         pageView.numberOfPages = imgArr.count
         pageView.currentPage = 0
@@ -218,26 +226,29 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         cell.goToFavorites = {
             if cell.isFavourite{
                 cell.FavoriteBN.setImage(UIImage(named: "heart"), for: .normal)
+                displayMessage(title: "", message: "تم المسح من المفضلة بنجاح".localized, status:.success, forController: self)
+
                 cell.isFavourite = false
             }else{
                 cell.FavoriteBN.setImage(UIImage(named: "222"), for: .normal)
                 cell.isFavourite = true
+                displayMessage(title: "", message: "تم الاضافة الي المفضلة بنجاح".localized, status:.success, forController: self)
+
             }
         }
-        
         cell.increase = {
-            self.productCounter += 1
-            cell.quantityTF.text = "\(self.productCounter)"
+            guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }
+            details.meals = self.meals[indexPath.row]
+            self.navigationController?.pushViewController(details, animated: true)
+            
         }
         
         cell.decrease = {
-            if self.productCounter > 1 {
-                self.productCounter -= 1
-                cell.quantityTF.text = "\(self.productCounter)"
-            }
+            guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }
+            details.meals = self.meals[indexPath.row]
+            self.navigationController?.pushViewController(details, animated: true)
+            
         }
-
-        
         return cell
     }
     

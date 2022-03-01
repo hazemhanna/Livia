@@ -47,6 +47,17 @@ class ProductDetails: UIViewController {
         setupSideMenu()
     }
     
+    
+    @IBAction func scanhButtonPressed(_ sender: Any) {
+        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "ScanVc") as? ScanVc else { return }
+        self.navigationController?.pushViewController(details, animated: true)
+    }
+    @IBAction func notificationhButtonPressed(_ sender: Any) {
+        guard let details = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "NotificationsVC") as? NotificationsVC else { return }
+        self.navigationController?.pushViewController(details, animated: true)
+
+    }
+    
     @IBAction func Increase(_ sender: UIButton) {
         self.productCounter += 1
         self.quantityTF.text = "\(self.productCounter)"

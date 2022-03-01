@@ -10,7 +10,7 @@ import UIKit
 import ImageSlideshow
 class ProductsVc : UIViewController {
     
-
+    @IBOutlet weak var titleLbl  : UILabel!
     @IBOutlet weak var bestSellerTableView: UITableView!
 
     fileprivate let cellIdentifier = "ValiableResturantCell"
@@ -51,6 +51,18 @@ class ProductsVc : UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    
+    @IBAction func scanhButtonPressed(_ sender: Any) {
+        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "ScanVc") as? ScanVc else { return }
+        self.navigationController?.pushViewController(details, animated: true)
+    }
+    @IBAction func notificationhButtonPressed(_ sender: Any) {
+        guard let details = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "NotificationsVC") as? NotificationsVC else { return }
+        self.navigationController?.pushViewController(details, animated: true)
+
+    }
+    
+    
 }
 extension ProductsVc: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -62,27 +74,32 @@ extension ProductsVc: UITableViewDelegate, UITableViewDataSource {
         
         cell.config(name: meals[indexPath.row].nameAr ?? "",price: 12.2, imagePath: meals[indexPath.row].image  , type: meals[indexPath.row].descriptionAr ?? "")
 
+        
         cell.goToFavorites = {
             if cell.isFavourite{
                 cell.FavoriteBN.setImage(UIImage(named: "heart"), for: .normal)
+                displayMessage(title: "", message: "تم المسح من المفضلة بنجاح".localized, status:.success, forController: self)
+
                 cell.isFavourite = false
             }else{
                 cell.FavoriteBN.setImage(UIImage(named: "222"), for: .normal)
                 cell.isFavourite = true
+                displayMessage(title: "", message: "تم الاضافة الي المفضلة بنجاح".localized, status:.success, forController: self)
+
             }
         }
-        
         cell.increase = {
-            self.productCounter += 1
-            cell.quantityTF.text = "\(self.productCounter)"
+            guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }
+            details.meals = self.meals[indexPath.row]
+            self.navigationController?.pushViewController(details, animated: true)
+            
         }
         
         cell.decrease = {
-            if self.productCounter > 1 {
-                self.productCounter -= 1
-                cell.quantityTF.text = "\(self.productCounter)"
-            }
-
+            guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }
+            details.meals = self.meals[indexPath.row]
+            self.navigationController?.pushViewController(details, animated: true)
+            
         }
         
         return cell

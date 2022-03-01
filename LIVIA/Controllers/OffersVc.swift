@@ -65,24 +65,29 @@ extension OffersVc: UITableViewDelegate, UITableViewDataSource {
         cell.goToFavorites = {
             if cell.isFavourite{
                 cell.FavoriteBN.setImage(UIImage(named: "heart"), for: .normal)
+                displayMessage(title: "", message: "تم المسح من المفضلة بنجاح".localized, status:.success, forController: self)
+
                 cell.isFavourite = false
             }else{
                 cell.FavoriteBN.setImage(UIImage(named: "222"), for: .normal)
                 cell.isFavourite = true
+                displayMessage(title: "", message: "تم الاضافة الي المفضلة بنجاح".localized, status:.success, forController: self)
+
             }
         }
         
         cell.increase = {
-            self.productCounter += 1
-            cell.quantityTF.text = "\(self.productCounter)"
+            guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }
+            details.meals = self.meals[indexPath.row]
+            self.navigationController?.pushViewController(details, animated: true)
+            
         }
         
         cell.decrease = {
-            if self.productCounter > 1 {
-                self.productCounter -= 1
-                cell.quantityTF.text = "\(self.productCounter)"
-            }
-
+            guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }
+            details.meals = self.meals[indexPath.row]
+            self.navigationController?.pushViewController(details, animated: true)
+            
         }
         
         return cell

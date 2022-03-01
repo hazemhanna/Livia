@@ -28,7 +28,7 @@ class WalletVc: UIViewController {
         super.viewDidLoad()
         orderbtn.setTitle("refund".localized, for: .normal)
         rewardsBtn.setTitle("rewards".localized, for: .normal)
-        titleLbl.text = "Profile".localized
+       // titleLbl.text = "Profile".localized
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -87,6 +87,23 @@ class WalletVc: UIViewController {
         }
     }
     
+    
+    @IBAction func scanhButtonPressed(_ sender: Any) {
+        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "ScanVc") as? ScanVc else { return }
+        self.navigationController?.pushViewController(details, animated: true)
+    }
+    
+
+    @IBAction func searchButtonPressed(_ sender: Any) {
+        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as? SearchVC else { return }
+        self.navigationController?.pushViewController(details, animated: true)
+    }
+
+    @IBAction func notificationhButtonPressed(_ sender: Any) {
+        guard let details = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "NotificationsVC") as? NotificationsVC else { return }
+        self.navigationController?.pushViewController(details, animated: true)
+
+    }
 }
 extension WalletVc: UITableViewDelegate, UITableViewDataSource {
     

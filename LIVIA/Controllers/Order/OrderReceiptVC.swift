@@ -46,7 +46,8 @@ class OrderReceiptVC: UIViewController {
     @IBOutlet weak var ProgressView: UIView!
     @IBOutlet weak var TopToView: NSLayoutConstraint?
     @IBOutlet weak var TopToProgress: NSLayoutConstraint?
-    
+    @IBOutlet weak var titleLbl  : UILabel!
+
     var totalOrderPrice: Double = 0.0
     var vat = ""
     var id = Int()

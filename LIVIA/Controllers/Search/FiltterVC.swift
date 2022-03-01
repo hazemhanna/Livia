@@ -16,7 +16,8 @@ class FiltterVC : UIViewController {
     @IBOutlet weak var AtoZButton : UIButton!
     @IBOutlet weak var offersButton : UIButton!
     @IBOutlet weak var mostButton : UIButton!
-    
+    @IBOutlet weak var fconfirmBtn: UIButton!
+
     @IBOutlet weak var titleLbl : UILabel!
     @IBOutlet weak var titleLbl2 : UILabel!
     
@@ -43,7 +44,7 @@ class FiltterVC : UIViewController {
         AtoZLBL.text = "AToZ".localized
         offersLBL.text = "offers".localized
         mostLBL.text = "mostOrders".localized
-        
+        fconfirmBtn.setTitle("Confirm".localized, for: .normal)
         
         if "lang".localized == "ar" {
             lowestLBL.textAlignment = .right
@@ -114,7 +115,7 @@ class FiltterVC : UIViewController {
     
     
     @IBAction func confirmBtn(_ sender: Any) {
-        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as? SearchVC else { return }
+        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "FiltterResaultVC") as? FiltterResaultVC else { return }
         self.navigationController?.pushViewController(details, animated: true)
     }
     

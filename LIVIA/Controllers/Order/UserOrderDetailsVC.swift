@@ -19,6 +19,7 @@ class UserOrderDetailsVC: UIViewController{
     @IBOutlet weak var detailsTableView: UITableView!
     @IBOutlet weak var TableHeight: NSLayoutConstraint!
     @IBOutlet weak var TaxLb2: UILabel!
+    @IBOutlet weak var titleLbl  : UILabel!
 
     fileprivate let cellIdentifier = "OrderReceiptCell"
     
@@ -59,11 +60,24 @@ class UserOrderDetailsVC: UIViewController{
         }
     }
     
+    @IBAction func menu(_ sender: Any) {
+        self.setupSideMenu()
+    }
+    
+    
     @IBAction func Dismiss(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
     
- 
+    @IBAction func scanhButtonPressed(_ sender: Any) {
+        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "ScanVc") as? ScanVc else { return }
+        self.navigationController?.pushViewController(details, animated: true)
+    }
+    @IBAction func notificationhButtonPressed(_ sender: Any) {
+        guard let details = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "NotificationsVC") as? NotificationsVC else { return }
+        self.navigationController?.pushViewController(details, animated: true)
+
+    }
 
 }
 

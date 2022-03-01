@@ -10,7 +10,8 @@ import UIKit
 
 class ConfirmationPopup: UIViewController {
     
-    
+    @IBOutlet weak var titleLbl  : UILabel!
+
     
 
     override func viewDidLoad() {

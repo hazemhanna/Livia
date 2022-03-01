@@ -9,6 +9,7 @@
 import UIKit
 
 class OrderConfirmationPopUp: UIViewController {
+    @IBOutlet weak var titleLbl  : UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()

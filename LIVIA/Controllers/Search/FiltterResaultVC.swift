@@ -1,8 +1,8 @@
 //
-//  SearchVC.swift
+//  FiltterResaultVC.swift
 //  Livia
 //
-//  Created by MAC on 22/02/2022.
+//  Created by MAC on 01/03/2022.
 //  Copyright © 2022 Dtag. All rights reserved.
 //
 
@@ -10,12 +10,10 @@
 
 import UIKit
 
-class SearchVC: UIViewController {
+class FiltterResaultVC: UIViewController {
 
-    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchTableView: UITableView!
     @IBOutlet weak var empyView : UIView!
-
     @IBOutlet weak var titleLbl  : UILabel!
 
     
@@ -35,9 +33,7 @@ class SearchVC: UIViewController {
         searchTableView.delegate = self
         searchTableView.dataSource = self
         searchTableView.tableFooterView = UIView()
-        searchBar.returnKeyType = UIReturnKeyType.done
         searchTableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
-        searchBar.delegate = self
         self.navigationController?.navigationBar.isHidden = true
         
         meals.append(RestaurantMeal(nameAr: "بيتزا خضروات", image: #imageLiteral(resourceName: "Screen Shot 2022-02-11 at 4.19.53 AM"), descriptionAr: "بيتزا"))
@@ -52,8 +48,6 @@ class SearchVC: UIViewController {
     @IBAction func backButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-    
-    
     
     @IBAction func menu(_ sender: Any) {
         self.setupSideMenu()
@@ -75,11 +69,8 @@ class SearchVC: UIViewController {
         self.navigationController?.pushViewController(details, animated: true)
 
     }
-
-    
-    
 }
-extension SearchVC: UITableViewDataSource, UITableViewDelegate {
+extension FiltterResaultVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return meals.count
     }
@@ -131,25 +122,5 @@ extension SearchVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
-    
-    
 }
-
-extension SearchVC: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchText == "" {
-            self.searchTableView.isHidden = true
-         }else {
-                self.searchTableView.isHidden = false
-                self.searchTableView.reloadData()
-                if meals.count > 0 {
-                    empyView.isHidden = true
-                }else{
-                    empyView.isHidden = false
-                }
-                
-            }
-        }
-   }
-
 

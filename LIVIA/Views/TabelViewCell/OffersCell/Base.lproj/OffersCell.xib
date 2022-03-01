@@ -12,6 +12,9 @@
         <array key="Cairo-Bold.ttf">
             <string>Cairo-Bold</string>
         </array>
+        <array key="Cairo-Light.ttf">
+            <string>Cairo-Light</string>
+        </array>
         <array key="Cairo-Regular.ttf">
             <string>Cairo-Regular</string>
         </array>
@@ -35,6 +38,23 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2022-02-11 at 4.19.53 AM" translatesAutoresizingMaskIntoConstraints="NO" id="GNp-at-JEB">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="128"/>
                                     </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SMe-6F-2oD">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="20"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="خصم ٢٠٪" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2e-Ny-VAh">
+                                                <rect key="frame" x="9" y="-1" width="42.5" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="Cairo-Light" family="Cairo" pointSize="12"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="button"/>
+                                        <constraints>
+                                            <constraint firstItem="N2e-Ny-VAh" firstAttribute="centerX" secondItem="SMe-6F-2oD" secondAttribute="centerX" id="0yo-Lv-aeg"/>
+                                            <constraint firstItem="N2e-Ny-VAh" firstAttribute="centerY" secondItem="SMe-6F-2oD" secondAttribute="centerY" id="LRi-8P-wk6"/>
+                                            <constraint firstAttribute="height" constant="20" id="Nby-IT-3xU"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -42,7 +62,10 @@
                                     <constraint firstAttribute="bottom" secondItem="GNp-at-JEB" secondAttribute="bottom" id="7w8-hh-Ezc"/>
                                     <constraint firstAttribute="width" constant="120" id="Sc1-3a-NMT"/>
                                     <constraint firstItem="GNp-at-JEB" firstAttribute="top" secondItem="U5c-23-ukH" secondAttribute="top" id="hXI-en-clP"/>
+                                    <constraint firstItem="SMe-6F-2oD" firstAttribute="top" secondItem="U5c-23-ukH" secondAttribute="top" id="kxw-7L-gyL"/>
+                                    <constraint firstItem="SMe-6F-2oD" firstAttribute="leading" secondItem="U5c-23-ukH" secondAttribute="leading" id="n3W-gV-Eux"/>
                                     <constraint firstItem="GNp-at-JEB" firstAttribute="leading" secondItem="U5c-23-ukH" secondAttribute="leading" id="sr6-FN-6jY"/>
+                                    <constraint firstItem="SMe-6F-2oD" firstAttribute="width" secondItem="U5c-23-ukH" secondAttribute="width" multiplier="0.5" id="vZF-ef-ddX"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -99,7 +122,7 @@
                                                 <rect key="frame" x="28.5" y="0.0" width="33" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnG-YQ-f61" customClass="CustomLabel" customModule="Shnp" customModuleProvider="target">
-                                                        <rect key="frame" x="13" y="5" width="7.5" height="20.5"/>
+                                                        <rect key="frame" x="6" y="0.0" width="21.5" height="30.5"/>
                                                         <color key="backgroundColor" red="0.90980392160000001" green="0.69019607839999997" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" name="navigation"/>
@@ -204,7 +227,7 @@
             <size key="intrinsicContentSize" width="30.5" height="31"/>
         </designable>
         <designable name="qnG-YQ-f61">
-            <size key="intrinsicContentSize" width="7.5" height="20.5"/>
+            <size key="intrinsicContentSize" width="21.5" height="30.5"/>
         </designable>
     </designables>
     <resources>

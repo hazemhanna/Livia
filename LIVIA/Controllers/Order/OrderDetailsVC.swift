@@ -17,7 +17,8 @@ class OrderDetailsVC : UIViewController {
     @IBOutlet weak var noProduct: UILabel!
     @IBOutlet weak var TableHeight: NSLayoutConstraint!
     @IBOutlet weak var discreption: UITextField!
-    
+    @IBOutlet weak var titleLbl  : UILabel!
+
     fileprivate let cellIdentifier = "FoodPackgeCell"
     
 //    var CartIems = [onlineCart]() {
@@ -63,6 +64,16 @@ class OrderDetailsVC : UIViewController {
     @IBAction func showBillButton(_ sender: Any) {
         guard let Details = UIStoryboard(name: "Details", bundle: nil).instantiateViewController(withIdentifier: "UserOrderDetailsVC") as? UserOrderDetailsVC else { return }
         self.navigationController?.pushViewController(Details, animated: true)
+    }
+    
+    @IBAction func scanhButtonPressed(_ sender: Any) {
+        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "ScanVc") as? ScanVc else { return }
+        self.navigationController?.pushViewController(details, animated: true)
+    }
+    @IBAction func notificationhButtonPressed(_ sender: Any) {
+        guard let details = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "NotificationsVC") as? NotificationsVC else { return }
+        self.navigationController?.pushViewController(details, animated: true)
+
     }
     
 }

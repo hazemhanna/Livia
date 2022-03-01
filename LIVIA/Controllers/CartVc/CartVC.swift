@@ -16,7 +16,8 @@ class CartVC: UIViewController {
     @IBOutlet weak var noProduct: UILabel!
     @IBOutlet weak var TableHeight: NSLayoutConstraint!
     @IBOutlet weak var discreption: UITextField!
-    
+    @IBOutlet weak var titleLbl  : UILabel!
+
     fileprivate let cellIdentifier = "ValiableResturantCell"
     var productCounter = Int()
 
@@ -70,12 +71,13 @@ class CartVC: UIViewController {
     
     
     @IBAction func confirmBtn(_ sender: Any) {
-        self.meals.removeAll()
-        self.emptyView.isHidden = false
-        cartTableView.reloadData()
-        guard let details = UIStoryboard(name: "PopUps", bundle: nil).instantiateViewController(withIdentifier: "OrderConfirmationPopUp") as? OrderConfirmationPopUp else { return }
-        details.modalPresentationStyle =  .fullScreen
-        self.navigationController?.present(details, animated: true, completion: nil)
+        guard let Details = UIStoryboard(name: "Details", bundle: nil).instantiateViewController(withIdentifier: "MyAddressesVC") as? MyAddressesVC else { return }
+         self.navigationController?.pushViewController(Details, animated: true)
+        
+
+//        guard let details = UIStoryboard(name: "PopUps", bundle: nil).instantiateViewController(withIdentifier: "OrderConfirmationPopUp") as? OrderConfirmationPopUp else { return }
+//        details.modalPresentationStyle =  .fullScreen
+//        self.navigationController?.present(details, animated: true, completion: nil)
     }
     
     @IBAction func scanhButtonPressed(_ sender: Any) {

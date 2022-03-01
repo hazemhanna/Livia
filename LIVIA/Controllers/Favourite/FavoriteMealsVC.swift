@@ -9,7 +9,8 @@
 import UIKit
 
 class FavoriteMealsVC: UIViewController {
-   
+    @IBOutlet weak var titleLbl  : UILabel!
+
     @IBOutlet weak var favoriteMealsTableView: UITableView!
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var noProduct: UILabel!
@@ -48,6 +49,17 @@ class FavoriteMealsVC: UIViewController {
     @IBAction func backBtn(_ sender: Any) {
       self.navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func scanhButtonPressed(_ sender: Any) {
+        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "ScanVc") as? ScanVc else { return }
+        self.navigationController?.pushViewController(details, animated: true)
+    }
+    @IBAction func notificationhButtonPressed(_ sender: Any) {
+        guard let details = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "NotificationsVC") as? NotificationsVC else { return }
+        self.navigationController?.pushViewController(details, animated: true)
+
+    }
+    
     
     func show () {
         if meals.count > 0 {

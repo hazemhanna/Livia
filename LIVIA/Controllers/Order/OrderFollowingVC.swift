@@ -23,7 +23,8 @@ class OrderFollowingVC: UIViewController {
     @IBOutlet weak var BottomToStack: NSLayoutConstraint!
     @IBOutlet weak var BtnHeight: NSLayoutConstraint!
     @IBOutlet weak var UpdateBtn: UIButton!
-    
+    @IBOutlet weak var titleLbl  : UILabel!
+
     
     var id = Int()
     var status = String()

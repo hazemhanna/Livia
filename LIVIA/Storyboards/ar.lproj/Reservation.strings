@@ -2,29 +2,74 @@
 /* Class = "UITextField"; placeholder = "  13/12/202    13:30 pm"; ObjectID = "0Ti-iZ-QgH"; */
 "0Ti-iZ-QgH.placeholder" = "  13/12/202    13:30 pm";
 
+/* Class = "UINavigationItem"; title = "حجز طاولة"; ObjectID = "0wa-lP-WTM"; */
+"0wa-lP-WTM.title" = "حجز طاولة";
+
 /* Class = "UITextField"; placeholder = "Write Notes"; ObjectID = "1B2-EZ-6Ev"; */
-"1B2-EZ-6Ev.placeholder" = "اكتب ملاحظاتك";
+"1B2-EZ-6Ev.placeholder" = "اكتب ملاحظات";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "1vW-jV-3q2"; */
 "1vW-jV-3q2.normalTitle" = "Button";
 
-/* Class = "UIButton"; normalTitle = "in Door"; ObjectID = "4xb-hE-lbM"; */
+/* Class = "UIButton"; normalTitle = " Confirm"; ObjectID = "4xb-hE-lbM"; */
 "4xb-hE-lbM.normalTitle" = "تاكيد";
 
 /* Class = "UITextField"; text = "People Number"; ObjectID = "5hA-dM-DdR"; */
 "5hA-dM-DdR.text" = "عدد الافراد";
 
+/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "A2S-Cn-UgD"; */
+"A2S-Cn-UgD.normalTitle" = "تاكيد";
+
 /* Class = "UIButton"; normalTitle = "Out Door"; ObjectID = "DCS-sA-obx"; */
 "DCS-sA-obx.normalTitle" = "خارجي";
 
-/* Class = "UILabel"; text = "Reservations"; ObjectID = "Xyg-Li-O3e"; */
-"Xyg-Li-O3e.text" = "Reservations";
+/* Class = "UILabel"; text = "Table Reservation"; ObjectID = "EM5-6L-yod"; */
+"EM5-6L-yod.text" = "حجز طاولة";
+
+/* Class = "UILabel"; text = "Filter"; ObjectID = "F6U-Xt-5Th"; */
+"F6U-Xt-5Th.text" = "Filter";
+
+/* Class = "UILabel"; text = "order Number : 123D"; ObjectID = "HqW-ww-V6U"; */
+"HqW-ww-V6U.text" = "رقم الحجز : 1203";
+
+/* Class = "UILabel"; text = "Tow Person"; ObjectID = "JrW-0Y-QpE"; */
+"JrW-0Y-QpE.text" = "شخصين";
+
+/* Class = "UIBarButtonItem"; title = "  "; ObjectID = "OjP-t2-rwe"; */
+"OjP-t2-rwe.title" = "  ";
+
+/* Class = "UILabel"; text = "12/2/2020    12:23 pm"; ObjectID = "RIf-Bq-1hC"; */
+"RIf-Bq-1hC.text" = "12/2/2020    12:23 pm";
+
+/* Class = "UILabel"; text = "No Reservation Yet"; ObjectID = "T2O-Vn-hvD"; */
+"T2O-Vn-hvD.text" = "لا يوجد حجوزات";
+
+/* Class = "UINavigationItem"; title = " Order List"; ObjectID = "U50-OP-tWS"; */
+"U50-OP-tWS.title" = " Order List";
+
+/* Class = "UILabel"; text = "محتاج طاولة عيد ميلاد"; ObjectID = "ZsS-li-XK9"; */
+"ZsS-li-XK9.text" = "محتاج طاولة عيد ميلاد";
 
 /* Class = "UINavigationItem"; title = "Table Reservation"; ObjectID = "bSD-wZ-QA6"; */
-"bSD-wZ-QA6.title" = "Table Reservation";
+"bSD-wZ-QA6.title" = "حجز طاولة";
+
+/* Class = "UILabel"; text = "InDoor"; ObjectID = "dje-Da-Rqk"; */
+"dje-Da-Rqk.text" = "مركب";
+
+/* Class = "UIButton"; normalTitle = "Vip"; ObjectID = "dvB-J9-s6r"; */
+"dvB-J9-s6r.normalTitle" = "كبار الزوار";
 
 /* Class = "UINavigationItem"; title = "حجز طاولة"; ObjectID = "gj8-Ex-HgO"; */
 "gj8-Ex-HgO.title" = "حجز طاولة";
 
+/* Class = "UILabel"; text = "Filter"; ObjectID = "j3q-AW-q9O"; */
+"j3q-AW-q9O.text" = "Filter";
+
+/* Class = "UINavigationItem"; title = "Order Date"; ObjectID = "kDO-LG-DGk"; */
+"kDO-LG-DGk.title" = "Order Date";
+
 /* Class = "UIButton"; normalTitle = "in Door"; ObjectID = "kid-jL-VGQ"; */
 "kid-jL-VGQ.normalTitle" = "مركب";
+
+/* Class = "UINavigationItem"; title = "Table Reservation"; ObjectID = "zKm-K0-kPE"; */
+"zKm-K0-kPE.title" = "حجز طاولة";

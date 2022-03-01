@@ -12,7 +12,8 @@ class notificationProfileVC: UIViewController {
 
     @IBOutlet weak var notificationTableView : UITableView!
     fileprivate let cellIdentifier = "NotificationsCell"
-    
+    @IBOutlet weak var titleLbl  : UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         notificationTableView.delegate = self
@@ -45,6 +46,23 @@ class notificationProfileVC: UIViewController {
             guard let sb = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "ChangeProfileVC") as? ChangeProfileVC else {return}
             self.navigationController?.pushViewController(sb, animated: true)
         }
+    }
+    
+    @IBAction func scanhButtonPressed(_ sender: Any) {
+        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "ScanVc") as? ScanVc else { return }
+        self.navigationController?.pushViewController(details, animated: true)
+    }
+    
+
+    @IBAction func searchButtonPressed(_ sender: Any) {
+        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as? SearchVC else { return }
+        self.navigationController?.pushViewController(details, animated: true)
+    }
+
+    @IBAction func notificationhButtonPressed(_ sender: Any) {
+        guard let details = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "NotificationsVC") as? NotificationsVC else { return }
+        self.navigationController?.pushViewController(details, animated: true)
+
     }
 }
 

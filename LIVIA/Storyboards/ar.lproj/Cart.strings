@@ -1,26 +1,57 @@
 
-/* Class = "UILabel"; text = "SAR"; ObjectID = "B5a-pQ-p7W"; */
-"B5a-pQ-p7W.text" = "ريال";
+/* Class = "UILabel"; text = "Label"; ObjectID = "0E3-Y7-cWY"; */
+"0E3-Y7-cWY.text" = "Label";
 
-/* Class = "UILabel"; text = "Add Notes"; ObjectID = "CPz-2T-Zq6"; */
-"CPz-2T-Zq6.text" = "ملاحظات اخرى";
+/* Class = "UILabel"; text = "Label"; ObjectID = "52a-Vi-dBI"; */
+"52a-Vi-dBI.text" = "Label";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "Ege-xZ-txP"; */
-"Ege-xZ-txP.text" = "Label";
+/* Class = "UILabel"; text = "Calories"; ObjectID = "6dJ-GI-myY"; */
+"6dJ-GI-myY.text" = "Calories";
 
-/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "F7G-OB-BoC"; */
-"F7G-OB-BoC.normalTitle" = "تأكيد";
+/* Class = "UILabel"; text = "1"; ObjectID = "8Li-TD-fgN"; */
+"8Li-TD-fgN.text" = "1";
 
-/* Class = "UILabel"; text = "Total"; ObjectID = "O8C-3i-Csx"; */
-"O8C-3i-Csx.text" = "الاجمالي";
+/* Class = "UINavigationItem"; title = "Cart Details"; ObjectID = "8md-Sv-vWK"; */
+"8md-Sv-vWK.title" = "Cart Details";
+
+/* Class = "UILabel"; text = "Other notes"; ObjectID = "CPz-2T-Zq6"; */
+"CPz-2T-Zq6.text" = "ملاحظات اخري";
+
+/* Class = "UIBarButtonItem"; title = "   "; ObjectID = "Cgj-yM-eGR"; */
+"Cgj-yM-eGR.title" = "   ";
+
+/* Class = "UIButton"; normalTitle = "Create Order"; ObjectID = "F7G-OB-BoC"; */
+"F7G-OB-BoC.normalTitle" = "تاكيد";
+
+/* Class = "UILabel"; text = "رسوم التوصيل : ٤٠ جنية"; ObjectID = "ImP-09-684"; */
+"ImP-09-684.text" = "رسوم التوصيل : ٤٠ جنية";
+
+/* Class = "UILabel"; text = "Cart details"; ObjectID = "Ny3-V9-9i7"; */
+"Ny3-V9-9i7.text" = "Cart details";
+
+/* Class = "UILabel"; text = "SAR"; ObjectID = "Ud9-YB-Kca"; */
+"Ud9-YB-Kca.text" = "SAR";
 
 /* Class = "UINavigationItem"; title = "Cart"; ObjectID = "WXP-qb-pFE"; */
-"WXP-qb-pFE.title" = "سلة المشتريات";
+"WXP-qb-pFE.title" = "السلة";
 
-"K8T-lI-5wi.text" = "سلة المشتريات";
+/* Class = "UILabel"; text = "you have no products"; ObjectID = "bsU-rI-XQP"; */
+"bsU-rI-XQP.text" = "لا يوجد منتجات";
 
-"6dJ-GI-myY.text" = "سعرات حرارية:";
+/* Class = "UILabel"; text = "السلة"; ObjectID = "c9N-8E-tJm"; */
+"c9N-8E-tJm.text" = "السلة";
 
-"Ny3-V9-9i7.text" = "تفاصيل السلة";
+/* Class = "UILabel"; text = "Other Notes"; ObjectID = "fsj-gS-9hj"; */
+"fsj-gS-9hj.text" = "الملاحظات";
 
-"fsj-gS-9hj.text" = "ملاحظات أخرى";
+/* Class = "UILabel"; text = "Label"; ObjectID = "g6K-iv-4Ev"; */
+"g6K-iv-4Ev.text" = "Label";
+
+/* Class = "UILabel"; text = "لا يوجد  نتائج"; ObjectID = "kFG-2A-B49"; */
+"kFG-2A-B49.text" = "لا يوجد  نتائج";
+
+/* Class = "UILabel"; text = "اجمالي التكلفة : ١٤٠ جنية"; ObjectID = "vSw-4B-qYi"; */
+"vSw-4B-qYi.text" = "اجمالي التكلفة : ١٤٠ جنية";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "x88-8F-106"; */
+"x88-8F-106.text" = "Label";

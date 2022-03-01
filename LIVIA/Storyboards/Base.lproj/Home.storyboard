@@ -252,6 +252,7 @@
                         <outlet property="homeSectionsCollectionView" destination="51K-E5-mQP" id="lLn-st-kTw"/>
                         <outlet property="imageSlider" destination="WSe-rV-bgc" id="1rJ-Xb-bxz"/>
                         <outlet property="pageView" destination="859-ck-mN3" id="VsH-rQ-sS1"/>
+                        <outlet property="titleLbl" destination="I8v-WS-uW2" id="8xv-4H-FaY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iWf-i1-5zR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -648,6 +649,7 @@
                     <connections>
                         <outlet property="AtoZButton" destination="8b3-GL-op6" id="JY0-Ce-ycB"/>
                         <outlet property="AtoZLBL" destination="8qg-kr-ZeC" id="L9e-lM-0cu"/>
+                        <outlet property="fconfirmBtn" destination="y1n-SD-pd1" id="MMo-qp-h7n"/>
                         <outlet property="heightsButton" destination="duu-ZR-LOm" id="oh9-uP-Fnb"/>
                         <outlet property="heightsLBL" destination="gdR-WT-5SS" id="gO4-fB-THj"/>
                         <outlet property="lowestButton" destination="lyh-4L-eFL" id="fpL-Cc-MSd"/>
