@@ -28,7 +28,9 @@ class WalletVc: UIViewController {
         super.viewDidLoad()
         orderbtn.setTitle("refund".localized, for: .normal)
         rewardsBtn.setTitle("rewards".localized, for: .normal)
-       // titleLbl.text = "Profile".localized
+       // titleLbl.text = "".localized
+        titleLbl.text = "wallet".localized
+
     }
     
     override func viewWillAppear(_ animated: Bool) {

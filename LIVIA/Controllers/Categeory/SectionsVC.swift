@@ -29,6 +29,7 @@ class SectionsVC: UIViewController {
         sectionCollectionView.dataSource = self
         sectionCollectionView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
         
+        titleLbl.text = "Sections".localized
         meals.append(RestaurantMeal(nameAr: "بيتزا ", image: #imageLiteral(resourceName: "Screen Shot 2022-02-27 at 10.59.12 PM"), descriptionAr: "بيتزا"))
 
         meals.append(RestaurantMeal(nameAr: "برجر", image: #imageLiteral(resourceName: "Set of cartoon pizzas with different stuffing"), descriptionAr: "برجر"))

@@ -19,6 +19,8 @@ class notificationProfileVC: UIViewController {
         notificationTableView.delegate = self
         notificationTableView.dataSource = self
         notificationTableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
+        titleLbl.text = "Notifications".localized
+
     }
     
     @IBAction func menu(_ sender: Any) {

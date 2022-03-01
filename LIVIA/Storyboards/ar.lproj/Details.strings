@@ -1,180 +1,171 @@
 
-/* Class = "UILabel"; text = "Fees"; ObjectID = "0Lk-LE-D5g"; */
-"0Lk-LE-D5g.text" = "القيمة المضافة";
+/* Class = "UILabel"; text = "Add new address"; ObjectID = "0pP-eK-tR9"; */
+"0pP-eK-tR9.text" = "اضف عنوان جديد";
 
-/* Class = "UIButton"; normalTitle = "رحوع"; ObjectID = "0Xn-Sz-urn"; */
-"0Xn-Sz-urn.normalTitle" = "رحوع";
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "3S5-l1-QCX"; */
+"3S5-l1-QCX.normalTitle" = "رجوع";
 
-/* Class = "UILabel"; text = "Eva "; ObjectID = "1fY-nf-qcx"; */
-"1fY-nf-qcx.text" = "Eva ";
+/* Class = "UIButton"; normalTitle = "Close"; ObjectID = "4HG-8I-NVH"; */
+"4HG-8I-NVH.normalTitle" = "اغلاق";
 
-/* Class = "UILabel"; text = "Order Status:"; ObjectID = "2BH-Fb-lHx"; */
-"2BH-Fb-lHx.text" = "حالة الطلب";
+/* Class = "UILabel"; text = "Payment Way"; ObjectID = "5Xn-Yv-PsD"; */
+"5Xn-Yv-PsD.text" = "طريقة الدفع";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "31A-q9-eRJ"; */
-"31A-q9-eRJ.text" = "Label";
+/* Class = "UILabel"; text = "Fees"; ObjectID = "5lM-iW-ofQ"; */
+"5lM-iW-ofQ.text" = "Fees";
 
-/* Class = "UILabel"; text = "Order Num:"; ObjectID = "4Sw-78-D8g"; */
-"4Sw-78-D8g.text" = "رقم الطلب";
+/* Class = "UILabel"; text = "Total"; ObjectID = "6A0-Mq-ZEK"; */
+"6A0-Mq-ZEK.text" = "الاجمالي";
 
-/* Class = "UILabel"; text = "123A"; ObjectID = "4a4-RG-rY6"; */
-"4a4-RG-rY6.text" = "123A";
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "6Ga-Jr-i9h"; */
+"6Ga-Jr-i9h.title" = " ";
 
-/* Class = "UILabel"; text = "On Way"; ObjectID = "7cP-x3-Lg7"; */
-"7cP-x3-Lg7.text" = "في الطريق";
+/* Class = "UILabel"; text = "Are you sure yuo want to Cancel"; ObjectID = "6Yw-T2-tf5"; */
+"6Yw-T2-tf5.text" = "هل انت متاكد من الالغاء";
 
-/* Class = "UILabel"; text = "Order Cost"; ObjectID = "9Xa-fI-zSn"; */
-"9Xa-fI-zSn.text" = "تكلفة الطلب";
+/* Class = "UILabel"; text = "On Way"; ObjectID = "7VS-fz-SbC"; */
+"7VS-fz-SbC.text" = "في الطريق";
 
-/* Class = "UILabel"; text = "Order Status:"; ObjectID = "9qj-s5-yw6"; */
-"9qj-s5-yw6.text" = "حالة الطلب";
+/* Class = "UITextField"; placeholder = "Flat"; ObjectID = "9In-AU-ZXd"; */
+"9In-AU-ZXd.placeholder" = "Flat";
 
-/* Class = "UIButton"; normalTitle = "Ok"; ObjectID = "AJI-ou-7gC"; */
-"AJI-ou-7gC.normalTitle" = "Ok";
+/* Class = "UITextField"; placeholder = "city"; ObjectID = "A2h-7F-waf"; */
+"A2h-7F-waf.placeholder" = "city";
 
-/* Class = "UILabel"; text = "18 ali mahmoud helioplis cairo "; ObjectID = "EYI-3x-sM3"; */
-"EYI-3x-sM3.text" = "18 ali mahmoud helioplis cairo ";
+/* Class = "UIButton"; normalTitle = "Cash"; ObjectID = "AKc-F1-iEU"; */
+"AKc-F1-iEU.normalTitle" = "كاش";
 
-/* Class = "UILabel"; text = "Order Receipt"; ObjectID = "KIt-If-i3d"; */
-"KIt-If-i3d.text" = "الفاتورة";
+/* Class = "UILabel"; text = "Order Following"; ObjectID = "CKU-lX-blT"; */
+"CKU-lX-blT.text" = "متابعة الطلب";
 
-/* Class = "UILabel"; text = "aaa"; ObjectID = "KXI-Oh-vbT"; */
-"KXI-Oh-vbT.text" = "13";
+/* Class = "UIBarButtonItem"; title = "  "; ObjectID = "Gip-tM-GhL"; */
+"Gip-tM-GhL.title" = "  ";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "Kt3-qi-rnO"; */
-"Kt3-qi-rnO.text" = "Label";
+/* Class = "UILabel"; text = "Order Status:"; ObjectID = "KaM-qa-IBB"; */
+"KaM-qa-IBB.text" = "حالة الطلب";
 
-/* Class = "UINavigationItem"; title = "Order Following"; ObjectID = "Kwd-DZ-0jg"; */
-"Kwd-DZ-0jg.title" = "متابعة الطلب";
+/* Class = "UILabel"; text = "Payment"; ObjectID = "Kbf-yt-Flz"; */
+"Kbf-yt-Flz.text" = "الدفع";
 
-/* Class = "UILabel"; text = "هل انت متاكد من الغاء الطلب رقم 1234"; ObjectID = "LFz-V6-WIq"; */
-"LFz-V6-WIq.text" = "هل انت متاكد من الغاء الطلب رقم 1234";
+/* Class = "UINavigationItem"; title = "My Addresses"; ObjectID = "O1j-Tg-JEF"; */
+"O1j-Tg-JEF.title" = "عناويني";
 
-/* Class = "UILabel"; text = "SAR"; ObjectID = "Nrb-tA-wap"; */
-"Nrb-tA-wap.text" = "SAR";
+/* Class = "UILabel"; text = "Cancel Order"; ObjectID = "OwE-eB-SaU"; */
+"OwE-eB-SaU.text" = "الغاءالطلب";
 
-/* Class = "UILabel"; text = "aaaa"; ObjectID = "Oyk-e2-SMH"; */
-"Oyk-e2-SMH.text" = "13";
+/* Class = "UILabel"; text = "١٢٣ "; ObjectID = "PYc-hb-exy"; */
+"PYc-hb-exy.text" = "١٢٣ ";
 
-/* Class = "UILabel"; text = "Fees"; ObjectID = "PIG-4m-3ub"; */
-"PIG-4m-3ub.text" = "Fees";
+/* Class = "UILabel"; text = "Cancel Order"; ObjectID = "R5n-vg-9Zp"; */
+"R5n-vg-9Zp.text" = "الغاءالطلب";
 
-/* Class = "UILabel"; text = "الرقم الضريبي "; ObjectID = "Pxe-NQ-j5W"; */
-"Pxe-NQ-j5W.text" = "الرقم الضريبي ";
+/* Class = "UILabel"; text = "الرقم الضريبي: 000000000000"; ObjectID = "RrU-7P-qk1"; */
+"RrU-7P-qk1.text" = "الرقم الضريبي: 000000000000";
 
-/* Class = "UILabel"; text = "Total"; ObjectID = "QWS-Xw-wzr"; */
-"QWS-Xw-wzr.text" = "الاجمالي";
+/* Class = "UIButton"; normalTitle = "receive delivery"; ObjectID = "Sg0-sJ-41l"; */
+"Sg0-sJ-41l.normalTitle" = "مندوب توصيل";
 
-/* Class = "UILabel"; text = "Order Receipt"; ObjectID = "QaH-Ro-XYO"; */
-"QaH-Ro-XYO.text" = "Order Receipt";
+/* Class = "UILabel"; text = "22/8/2020"; ObjectID = "SwF-O1-ueU"; */
+"SwF-O1-ueU.text" = "22/8/2020";
 
-/* Class = "UILabel"; text = "New"; ObjectID = "Qmk-aP-RfG"; */
-"Qmk-aP-RfG.text" = "جديد";
+/* Class = "UILabel"; text = "الرقم الضريبي: 000000000000"; ObjectID = "Tk9-Kw-0a2"; */
+"Tk9-Kw-0a2.text" = "الرقم الضريبي: 000000000000";
 
-/* Class = "UILabel"; text = "الذهاب لعنوان التوصيل "; ObjectID = "RNa-pm-iuS"; */
-"RNa-pm-iuS.text" = "الذهاب لعنوان التوصيل ";
+/* Class = "UILabel"; text = "Completed"; ObjectID = "Uj6-w0-64O"; */
+"Uj6-w0-64O.text" = "مكتمل";
 
-/* Class = "UINavigationItem"; title = "Order Receipt"; ObjectID = "RgB-RO-SKN"; */
-"RgB-RO-SKN.title" = "Order Receipt";
+/* Class = "UILabel"; text = "Receive Way"; ObjectID = "Ulf-HD-IBq"; */
+"Ulf-HD-IBq.text" = "طريقة الاستلام";
 
-/* Class = "UILabel"; text = "Arrived"; ObjectID = "S5B-RE-wTT"; */
-"S5B-RE-wTT.text" = "وصل";
+/* Class = "UITextField"; placeholder = "cancel Reason"; ObjectID = "WQq-Tz-w87"; */
+"WQq-Tz-w87.placeholder" = "سبب الالغاء";
 
-/* Class = "UILabel"; text = "SAR"; ObjectID = "UkO-Lq-s7B"; */
-"UkO-Lq-s7B.text" = "SAR";
+/* Class = "UIButton"; normalTitle = "Add New Address"; ObjectID = "Wop-ev-9gS"; */
+"Wop-ev-9gS.normalTitle" = "اضف عنوان جديد";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "W8e-Rx-GTG"; */
-"W8e-Rx-GTG.text" = "Label";
+/* Class = "UITextField"; placeholder = "Bulding"; ObjectID = "Wz7-nN-TRJ"; */
+"Wz7-nN-TRJ.placeholder" = "Bulding";
 
-/* Class = "UILabel"; text = "ايصال الطلب"; ObjectID = "X37-Da-BdV"; */
-"X37-Da-BdV.text" = "ايصال الطلب";
+/* Class = "UITextField"; placeholder = "Area"; ObjectID = "XPh-mp-UVn"; */
+"XPh-mp-UVn.placeholder" = "Area";
 
-/* Class = "UIButton"; normalTitle = "الغاء"; ObjectID = "Xnx-qP-kH5"; */
-"Xnx-qP-kH5.normalTitle" = "الغاء";
+/* Class = "UILabel"; text = "Order Num:"; ObjectID = "XRT-dX-qZ5"; */
+"XRT-dX-qZ5.text" = "رقم الطلب";
 
-/* Class = "UILabel"; text = "الغاء الطلب"; ObjectID = "Xyp-C8-fAD"; */
-"Xyp-C8-fAD.text" = "الغاء الطلب";
+/* Class = "UILabel"; text = "Arrived"; ObjectID = "Ym1-4D-yVj"; */
+"Ym1-4D-yVj.text" = "Arrived";
 
-/* Class = "UILabel"; text = "22/8/2020"; ObjectID = "aKE-34-cC9"; */
-"aKE-34-cC9.text" = "22/8/2020";
+/* Class = "UILabel"; text = "New"; ObjectID = "bpz-3F-UY0"; */
+"bpz-3F-UY0.text" = "New";
 
-/* Class = "UILabel"; text = "Completed"; ObjectID = "c2D-c2-LKH"; */
-"c2D-c2-LKH.text" = "مكتمل";
+/* Class = "UITextField"; placeholder = "longitude"; ObjectID = "cZv-ON-bgq"; */
+"cZv-ON-bgq.placeholder" = "longitude";
 
-/* Class = "UILabel"; text = "aaaa"; ObjectID = "c9R-Tj-joR"; */
-"c9R-Tj-joR.text" = "146";
+/* Class = "UITextField"; placeholder = "latitude"; ObjectID = "coH-C3-5up"; */
+"coH-C3-5up.placeholder" = "latitude";
 
-/* Class = "UILabel"; text = "Perparing"; ObjectID = "cWX-xc-jTd"; */
-"cWX-xc-jTd.text" = "جاري التحضير";
+/* Class = "UIButton"; normalTitle = "From Branch             "; ObjectID = "d5d-Pu-YIc"; */
+"d5d-Pu-YIc.normalTitle" = "من الفرع              ";
 
-/* Class = "UILabel"; text = "الذهاب الي المطعم "; ObjectID = "dAU-aE-ZxP"; */
-"dAU-aE-ZxP.text" = "الذهاب الي المطعم ";
+/* Class = "UIButton"; normalTitle = "Wallet"; ObjectID = "dXQ-S4-9uv"; */
+"dXQ-S4-9uv.normalTitle" = "المحفظة الالكترونية";
 
-/* Class = "UIButton"; normalTitle = "اغلاق"; ObjectID = "dtq-PQ-E9l"; */
-"dtq-PQ-E9l.normalTitle" = "اغلاق";
+/* Class = "UILabel"; text = "Order Date:"; ObjectID = "eZG-Wi-oip"; */
+"eZG-Wi-oip.text" = "تاريخ الطلب :";
 
-/* Class = "UILabel"; text = "On Way"; ObjectID = "eFq-jO-xx6"; */
-"eFq-jO-xx6.text" = "في الطريق";
+/* Class = "UITextField"; placeholder = "Address"; ObjectID = "eag-Dz-Ql0"; */
+"eag-Dz-Ql0.placeholder" = "عناويني";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "eOp-2H-bWU"; */
-"eOp-2H-bWU.text" = "Label";
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "ekv-oh-LC3"; */
+"ekv-oh-LC3.normalTitle" = "الغاء";
 
-/* Class = "UILabel"; text = "Order Following"; ObjectID = "fqE-q3-7aE"; */
-"fqE-q3-7aE.text" = "متابعة الطلب";
+/* Class = "UILabel"; text = "٢٣"; ObjectID = "fdf-lX-cwu"; */
+"fdf-lX-cwu.text" = "٢٣";
 
-/* Class = "UILabel"; text = "New request near by you"; ObjectID = "gqD-0x-rTY"; */
-"gqD-0x-rTY.text" = "New request near by you";
+/* Class = "UIButton"; normalTitle = "Online Payment"; ObjectID = "hCt-pc-tWR"; */
+"hCt-pc-tWR.normalTitle" = "الدفع الالكتروني";
 
-/* Class = "UILabel"; text = "Perparing"; ObjectID = "hUB-vR-ByP"; */
-"hUB-vR-ByP.text" = "جاري التجهيز";
+/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "hRu-k7-h5P"; */
+"hRu-k7-h5P.normalTitle" = "تاكيد";
 
-/* Class = "UILabel"; text = "012345678"; ObjectID = "hhl-eI-CEN"; */
-"hhl-eI-CEN.text" = "012345678";
+/* Class = "UILabel"; text = "١٤٦"; ObjectID = "i06-8m-gaz"; */
+"i06-8m-gaz.text" = "١٤٦";
 
-/* Class = "UILabel"; text = "Eva "; ObjectID = "izn-RX-NBH"; */
-"izn-RX-NBH.text" = "Eva ";
+/* Class = "UILabel"; text = "Order Receipt"; ObjectID = "iR8-3f-ifS"; */
+"iR8-3f-ifS.text" = "الفاتورة";
 
-/* Class = "UILabel"; text = "Completed"; ObjectID = "lgI-LV-Ugz"; */
-"lgI-LV-Ugz.text" = "Completed";
+/* Class = "UITextField"; placeholder = "Floor"; ObjectID = "jCu-1L-znw"; */
+"jCu-1L-znw.placeholder" = "Floor";
 
-/* Class = "UIButton"; normalTitle = "Accept"; ObjectID = "msB-21-dXh"; */
-"msB-21-dXh.normalTitle" = "مقبول";
+/* Class = "UILabel"; text = "Order Status:"; ObjectID = "jji-dy-wCZ"; */
+"jji-dy-wCZ.text" = "حالة الطلب";
 
-/* Class = "UILabel"; text = "الذهاب لعنوان التوصيل "; ObjectID = "msC-ab-qaM"; */
-"msC-ab-qaM.text" = "الذهاب لعنوان التوصيل ";
+/* Class = "UILabel"; text = "Order Cost"; ObjectID = "kJq-5m-Gzo"; */
+"kJq-5m-Gzo.text" = "تكلفة الطلب";
 
-/* Class = "UILabel"; text = "Total"; ObjectID = "n8R-4G-QT8"; */
-"n8R-4G-QT8.text" = "الاجمالي";
+/* Class = "UILabel"; text = "My Address "; ObjectID = "m31-4S-KHH"; */
+"m31-4S-KHH.text" = "عناويني ";
 
-/* Class = "UILabel"; text = "للاطلاع علي الفاتورة "; ObjectID = "nVu-V7-ECp"; */
-"nVu-V7-ECp.text" = "للاطلاع علي الفاتورة ";
+/* Class = "UILabel"; text = "Perparing"; ObjectID = "ndJ-S0-3eb"; */
+"ndJ-S0-3eb.text" = "جاري التحضير";
 
-/* Class = "UILabel"; text = "الغاء الطلب"; ObjectID = "nXH-cJ-ND9"; */
-"nXH-cJ-ND9.text" = "الغاء الطلب";
+/* Class = "UILabel"; text = "Order Details"; ObjectID = "ome-0Q-fDc"; */
+"ome-0Q-fDc.text" = "تفاصيل الطلب";
 
-/* Class = "UILabel"; text = "Arrived"; ObjectID = "qlN-ap-Qpk"; */
-"qlN-ap-Qpk.text" = "وصل";
+/* Class = "UINavigationItem"; title = "Order Following"; ObjectID = "qhW-Ov-jVp"; */
+"qhW-Ov-jVp.title" = "متابعة الطلب";
 
-/* Class = "UIBarButtonItem"; title = "  "; ObjectID = "rL7-jP-4cj"; */
-"rL7-jP-4cj.title" = "  ";
+/* Class = "UINavigationItem"; title = "My Addresses"; ObjectID = "rg5-8J-yMz"; */
+"rg5-8J-yMz.title" = "عناويني";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "tXb-lg-tWd"; */
-"tXb-lg-tWd.text" = "Label";
+/* Class = "UILabel"; text = "123A"; ObjectID = "sij-t8-T44"; */
+"sij-t8-T44.text" = "123A";
 
-/* Class = "UILabel"; text = "الرقم الضريبي : 310633825800003"; ObjectID = "uF1-af-xG4"; */
-"uF1-af-xG4.text" = "الرقم الضريبي: 000000000000000";
+/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "t9w-4n-aYy"; */
+"t9w-4n-aYy.normalTitle" = "تاكيد";
 
-/* Class = "UILabel"; text = "SAR"; ObjectID = "uXs-gR-KiL"; */
-"uXs-gR-KiL.text" = "SAR";
+/* Class = "UILabel"; text = "123A"; ObjectID = "uYt-ZA-MgQ"; */
+"uYt-ZA-MgQ.text" = "123A";
 
-/* Class = "UILabel"; text = "Order Date:"; ObjectID = "vUS-8N-X1v"; */
-"vUS-8N-X1v.text" = "تاريخ الطلب";
-
-/* Class = "UILabel"; text = "Order Cost"; ObjectID = "xGi-eV-Lq0"; */
-"xGi-eV-Lq0.text" = "تكلفة الطلب";
-
-/* Class = "UILabel"; text = "Order details"; ObjectID = "xml-uw-USK"; */
-"xml-uw-USK.text" = "تفاصيل الطلب";
-
-/* Class = "UIButton"; normalTitle = "Refuse"; ObjectID = "yKP-kP-xL5"; */
-"yKP-kP-xL5.normalTitle" = "الغاء";
+/* Class = "UILabel"; text = "Order Number : "; ObjectID = "uvp-Sf-do1"; */
+"uvp-Sf-do1.text" = "رقم الطلب ";

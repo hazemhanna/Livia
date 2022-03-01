@@ -12,6 +12,8 @@ class MyAddressesVC: UIViewController {
     @IBOutlet weak var AddressesTableView: UITableView!
       
     private let cellIdentifier = "AddressCell"
+    @IBOutlet weak var titleLbl  : UILabel!
+    @IBOutlet weak var addBtn  : UIButton!
 
     
     override func viewDidLoad() {
@@ -19,7 +21,9 @@ class MyAddressesVC: UIViewController {
         AddressesTableView.delegate = self
         AddressesTableView.dataSource = self
         AddressesTableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
-    
+        //titleLbl.text = "address".localized
+       // addBtn.setTitle("addaddress".localized, for: .normal)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {

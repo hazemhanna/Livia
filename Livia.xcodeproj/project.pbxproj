@@ -51,6 +51,7 @@
 		048A086327CC0AC100C49D1A /* subscriptionsVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A086227CC0AC000C49D1A /* subscriptionsVc.swift */; };
 		048A086627CC0D0400C49D1A /* subscriptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A086427CC0D0400C49D1A /* subscriptionsCell.swift */; };
 		048A086727CC0D0400C49D1A /* subscriptionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048A086527CC0D0400C49D1A /* subscriptionsCell.xib */; };
+		04A6A56F27CE5B85009C6F9D /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A6A57127CE5B85009C6F9D /* Details.storyboard */; };
 		04ABAB8127110D2700BC0F71 /* FoodPackagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ABAB8027110D2700BC0F71 /* FoodPackagesVC.swift */; };
 		04CBBA3E27BC867D00CBD10D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CBBA3C27BC867D00CBD10D /* Main.storyboard */; };
 		04D81336270FE1C0004BEC39 /* FoodPackgeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D81334270FE1C0004BEC39 /* FoodPackgeCell.swift */; };
@@ -122,7 +123,6 @@
 		FA749A3624D204E200491BD9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA749A3824D204E200491BD9 /* Localizable.strings */; };
 		FA76FD9424471A5200B0792B /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA76FD9224471A5200B0792B /* RestaurantCell.swift */; };
 		FA76FD9524471A5200B0792B /* RestaurantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA76FD9324471A5200B0792B /* RestaurantCell.xib */; };
-		FA9DD7C524B4611E009FFB79 /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9DD7C724B4611E009FFB79 /* Details.storyboard */; };
 		FAB4B92524D34EFE00FBD257 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4B92324D34EFE00FBD257 /* SettingCell.swift */; };
 		FAB4B92624D34EFE00FBD257 /* SettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB4B92424D34EFE00FBD257 /* SettingCell.xib */; };
 		FAB7616B24E5615400E2813F /* NotificationsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB7616D24E5615400E2813F /* NotificationsCell.xib */; };
@@ -238,9 +238,10 @@
 		048A086427CC0D0400C49D1A /* subscriptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subscriptionsCell.swift; sourceTree = "<group>"; };
 		048A086527CC0D0400C49D1A /* subscriptionsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = subscriptionsCell.xib; sourceTree = "<group>"; };
 		04A427F9250A73C4000E8757 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/AboutApp.strings; sourceTree = "<group>"; };
+		04A6A57027CE5B85009C6F9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Details.storyboard; sourceTree = "<group>"; };
+		04A6A57327CE5B8B009C6F9D /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Details.strings; sourceTree = "<group>"; };
 		04ABAB8027110D2700BC0F71 /* FoodPackagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPackagesVC.swift; sourceTree = "<group>"; };
 		04B4A1D225096F3B00DA0BFE /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Authentications.strings; sourceTree = "<group>"; };
-		04BE76E627CA7AB200405692 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Details.strings; sourceTree = "<group>"; };
 		04CBBA3D27BC867D00CBD10D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ../../../ShnpNew/Shanab/Storyboards/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04D81334270FE1C0004BEC39 /* FoodPackgeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPackgeCell.swift; sourceTree = "<group>"; };
 		04D81335270FE1C0004BEC39 /* FoodPackgeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodPackgeCell.xib; sourceTree = "<group>"; };
@@ -320,7 +321,6 @@
 		FA749A3924D204E700491BD9 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FA76FD9224471A5200B0792B /* RestaurantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
 		FA76FD9324471A5200B0792B /* RestaurantCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantCell.xib; sourceTree = "<group>"; };
-		FA9DD7C624B4611E009FFB79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Details.storyboard; sourceTree = "<group>"; };
 		FA9DD7EE24B4722E009FFB79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Authentications.storyboard; sourceTree = "<group>"; };
 		FAB4B92324D34EFE00FBD257 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		FAB4B92424D34EFE00FBD257 /* SettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingCell.xib; sourceTree = "<group>"; };
@@ -795,7 +795,7 @@
 				FA6B4DC324B3A7E000C25F3E /* Cart.storyboard */,
 				FA6B4DCA24B3A9DE00C25F3E /* Profile.storyboard */,
 				FA6B4DD124B3BBE800C25F3E /* Reservation.storyboard */,
-				FA9DD7C724B4611E009FFB79 /* Details.storyboard */,
+				04A6A57127CE5B85009C6F9D /* Details.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -1034,7 +1034,6 @@
 				FAEE6E7424B5EC9A00DAB58F /* Authentications.storyboard in Resources */,
 				FADCF91D24DCA024008C3987 /* ValiableResturantCell.xib in Resources */,
 				7F7FA588253B60CA001576D4 /* CustomerProfileCell.xib in Resources */,
-				FA9DD7C524B4611E009FFB79 /* Details.storyboard in Resources */,
 				FA6B4DC124B3A7E000C25F3E /* Cart.storyboard in Resources */,
 				FA564CEC242A3A6B00A4A627 /* SideMenuCell.xib in Resources */,
 				FADCF91824DC9F6D008C3987 /* ListCell.xib in Resources */,
@@ -1057,6 +1056,7 @@
 				FAB4B92624D34EFE00FBD257 /* SettingCell.xib in Resources */,
 				7F37C38B2559AEE20069CCB3 /* PreviousOrders.xib in Resources */,
 				FA6B4DA524B3A18300C25F3E /* Orders.storyboard in Resources */,
+				04A6A56F27CE5B85009C6F9D /* Details.storyboard in Resources */,
 				FADCF92224DCA1A2008C3987 /* HeaderCell.xib in Resources */,
 				FADCF91324DC8EA6008C3987 /* ReservationListCell.xib in Resources */,
 				FA6B4D5E24B3549A00C25F3E /* Cairo-Bold.ttf in Resources */,
@@ -1299,6 +1299,15 @@
 			name = RewardCell.xib;
 			sourceTree = "<group>";
 		};
+		04A6A57127CE5B85009C6F9D /* Details.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04A6A57027CE5B85009C6F9D /* Base */,
+				04A6A57327CE5B8B009C6F9D /* ar */,
+			);
+			name = Details.storyboard;
+			sourceTree = "<group>";
+		};
 		04CBBA3C27BC867D00CBD10D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1431,15 +1440,6 @@
 				FA749A3924D204E700491BD9 /* ar */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		FA9DD7C724B4611E009FFB79 /* Details.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FA9DD7C624B4611E009FFB79 /* Base */,
-				04BE76E627CA7AB200405692 /* ar */,
-			);
-			name = Details.storyboard;
 			sourceTree = "<group>";
 		};
 		FA9DD7E824B471AF009FFB79 /* Authentications.storyboard */ = {

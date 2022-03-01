@@ -16,7 +16,8 @@ class ChangeProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        titleLbl.text = "changeProfile".localized
+
     }
     
     @IBAction func popUpAction(_ sender: UIButton) {

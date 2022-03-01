@@ -98,7 +98,7 @@
 
 "Add to cart" = "Add to cart";
 
-"Password changed" = "Password changed";
+"Password changed" = "changed Password";
 
 "The code has been send" = "The code has been send";
 
@@ -208,6 +208,8 @@
 "city" = "city";
 "area" = "area";
 "address" = "address";
+"addaddress" = "add new address";
+
 "falt" = "falt";
 "floor" = "floor";
 "building" = "building";

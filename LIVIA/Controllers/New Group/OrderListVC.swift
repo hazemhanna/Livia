@@ -30,6 +30,8 @@ class OrderListVC : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleLbl.text =  "Order List".localized
+
     }
     
     override func viewWillAppear(_ animated: Bool) {

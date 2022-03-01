@@ -11,11 +11,13 @@
 import UIKit
 
 class ProfileChangePasswordVC: UIViewController {
+    
     @IBOutlet weak var titleLbl  : UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        titleLbl.text = "Password changed".localized
+
     }
     
     @IBAction func popUpAction(_ sender: UIButton) {

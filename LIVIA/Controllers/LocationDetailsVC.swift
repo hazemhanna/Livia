@@ -23,7 +23,8 @@ class LocationDetailsVC: UIViewController {
     @IBOutlet weak var floor: UITextField!
     @IBOutlet weak var areaBn: UITextField!
     @IBOutlet weak var city: UITextField!
-    
+    @IBOutlet weak var titleLbl  : UILabel!
+
     
     let locationManager = CLLocationManager()
     let regionInMeters: Double = 300
@@ -40,7 +41,7 @@ class LocationDetailsVC: UIViewController {
         self.building.placeholder = "building".localized
         self.floor.placeholder =  "floor".localized
         self.apartmentTF.placeholder = "falt".localized
-    
+        //titleLbl.text = "address".localized
     }
     
    

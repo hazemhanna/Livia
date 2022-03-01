@@ -23,6 +23,8 @@ class NotificationsVC: UIViewController {
         notificationsTableView.delegate = self
         notificationsTableView.dataSource = self
         notificationsTableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
+        titleLbl.text = "Notifications".localized
+        
     }
     
     

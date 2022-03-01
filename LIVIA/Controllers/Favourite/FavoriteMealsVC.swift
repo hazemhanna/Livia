@@ -30,7 +30,7 @@ class FavoriteMealsVC: UIViewController {
         favoriteMealsTableView.delegate = self
         favoriteMealsTableView.dataSource = self
         favoriteMealsTableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
-    
+        titleLbl.text =  "Favorite Meals".localized
         meals.append(RestaurantMeal(nameAr: "بيتزا خضروات", image: #imageLiteral(resourceName: "Screen Shot 2022-02-11 at 4.19.53 AM"), descriptionAr: "بيتزا"))
         
         meals.append(RestaurantMeal(nameAr: "سلطة خضراء", image: #imageLiteral(resourceName: "taylor-kiser-EvoIiaIVRzU-unsplash-1"), descriptionAr: "سلطة"))

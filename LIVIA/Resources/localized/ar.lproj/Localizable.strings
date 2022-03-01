@@ -6,7 +6,7 @@
   Copyright © 2020 Dtag. All rights reserved.
 */
 "lang" = "ar";
-"Home" = "الصفحة الرئيسية";
+"Home" = "الرئيسية";
 "Sections" = "الاقسام";
 "Cart" = "سلة المشتريات";
 "Reservations" = "الحجوزات";
@@ -219,3 +219,4 @@
 "building" = "المبني";
 "lat" = "خظوظ الطول";
 "long" = "دواير العرض";
+"addaddress" = "اضف عنوان جديد";

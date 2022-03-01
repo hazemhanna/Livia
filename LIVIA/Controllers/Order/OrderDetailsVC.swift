@@ -30,6 +30,7 @@ class OrderDetailsVC : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         TableHeight.constant = (120 * 3)
+        titleLbl.text =  "Order List".localized
     }
     
     override func viewWillAppear(_ animated: Bool) {

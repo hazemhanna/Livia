@@ -86,8 +86,8 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="218" height="25"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chs-MV-WEU">
-                                                                <rect key="frame" x="16" y="-6" width="46" height="37.5"/>
-                                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="20"/>
+                                                                <rect key="frame" x="16" y="-1.5" width="34.5" height="28.5"/>
+                                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="15"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -179,6 +179,7 @@
                     <connections>
                         <outlet property="emptyView" destination="Rod-2g-gi9" id="o2J-Jf-gLl"/>
                         <outlet property="listTableView" destination="RUG-4H-kaz" id="h2A-2Q-SEt"/>
+                        <outlet property="titleLbl" destination="chs-MV-WEU" id="bNA-nd-HHW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bke-1e-P1h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -247,8 +248,8 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="218" height="25"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Znh-DQ-XRp">
-                                                                <rect key="frame" x="16" y="-6" width="46" height="37.5"/>
-                                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="20"/>
+                                                                <rect key="frame" x="16" y="-1.5" width="34.5" height="28.5"/>
+                                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="15"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -345,6 +346,7 @@
                         <outlet property="emptyView" destination="xm4-L9-JTJ" id="IS4-M5-OK7"/>
                         <outlet property="favoriteMealsTableView" destination="AyN-xE-T94" id="Roc-FY-Ru1"/>
                         <outlet property="noProduct" destination="Suw-vm-I8r" id="Qgv-5L-rrU"/>
+                        <outlet property="titleLbl" destination="Znh-DQ-XRp" id="2eX-GC-IYP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZs-7Z-3pl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -398,8 +400,8 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="218" height="25"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qU8-fj-jPx">
-                                                                <rect key="frame" x="16" y="-6" width="46" height="37.5"/>
-                                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="20"/>
+                                                                <rect key="frame" x="16" y="-1.5" width="34.5" height="28.5"/>
+                                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="15"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -490,6 +492,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="sectionCollectionView" destination="gfI-A3-fWW" id="tEb-tP-zla"/>
+                        <outlet property="titleLbl" destination="qU8-fj-jPx" id="Xbs-f4-vH9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TW6-Mq-eUl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -746,8 +749,8 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="218" height="25"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEI-Ss-vXa">
-                                                                <rect key="frame" x="16" y="-6" width="46" height="37.5"/>
-                                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="20"/>
+                                                                <rect key="frame" x="16" y="-1.5" width="34.5" height="28.5"/>
+                                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="15"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -835,6 +838,7 @@
                     <connections>
                         <outlet property="TableHeight" destination="hIg-ZH-fj2" id="x48-vO-mPo"/>
                         <outlet property="cartTableView" destination="gtx-8Z-592" id="IW7-IF-sd5"/>
+                        <outlet property="titleLbl" destination="JEI-Ss-vXa" id="wNV-Lm-oYJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="etw-OI-djA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
