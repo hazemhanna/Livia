@@ -22,7 +22,7 @@ class ReservationRequestVc : UIViewController {
     @IBOutlet weak var noteTF: UITextField!
     @IBOutlet weak var dateTF: UITextField!
 
-    var numbers = ["1","2","3","4","5","6","7","8","9"]
+    var numbers = ["1","2","3","4","5","6","7","8","9","10+"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,7 +86,12 @@ class ReservationRequestVc : UIViewController {
     func setupCatDropDown(){
         selectCateDropDown.optionArray = self.numbers
         selectCateDropDown.didSelect { (selectedText, index, id) in
-            self.selectCateDropDown.text = selectedText
+            if index == 9 {
+                displayMessage(title: "", message: "اكتب عدد الاشخاص".localized, status:.info, forController: self)
+                self.selectCateDropDown.becomeFirstResponder()
+            }else{
+                self.selectCateDropDown.text = selectedText
+            }
         }
     }
 

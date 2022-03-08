@@ -57,9 +57,30 @@ class ContactUsVC: UIViewController {
     }
 
 
-    @IBAction func menu(_ sender: Any) {
-        self.setupSideMenu()
+    
+    @IBAction func Menu(_ sender: Any) {
+        setupSideMenu()
     }
+
+
+    @IBAction func scanhButtonPressed(_ sender: Any) {
+        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "ScanVc") as? ScanVc else { return }
+        self.navigationController?.pushViewController(details, animated: true)
+    }
+    
+
+
+
+    @IBAction func notificationhButtonPressed(_ sender: Any) {
+        guard let details = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "NotificationsVC") as? NotificationsVC else { return }
+        self.navigationController?.pushViewController(details, animated: true)
+
+    }
+    
+    @IBAction func backButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     
     @IBAction func cart(_ sender: Any) {
         guard let window = UIApplication.shared.keyWindow else { return }
@@ -67,7 +88,9 @@ class ContactUsVC: UIViewController {
         guard let details = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeTabBar") as? UITabBarController else { return }
         
         details.selectedIndex = 2
-        window.rootViewController = details    }
+        window.rootViewController = details
+        
+    }
     
     @IBAction func send(_ sender: Any) {
         

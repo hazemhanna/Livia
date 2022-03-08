@@ -50,8 +50,8 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="218" height="25"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Table Reservation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EM5-6L-yod">
-                                                                <rect key="frame" x="16" y="-6" width="154" height="37.5"/>
-                                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="20"/>
+                                                                <rect key="frame" x="16" y="-1.5" width="115.5" height="28.5"/>
+                                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="15"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -233,7 +233,7 @@
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="selectedRowColor">
-                                                        <color key="value" name="navigation"/>
+                                                        <color key="value" name="button"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="rowBackgroundColor">
                                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -607,7 +607,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="218" height="25"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MY Reservation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3q-AW-q9O">
-                                                                <rect key="frame" x="16" y="-1.5" width="102.5" height="28.5"/>
+                                                                <rect key="frame" x="16" y="4" width="106.5" height="17.5"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="15"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -1040,7 +1040,7 @@
         <image name="back-arrow" width="16" height="16"/>
         <image name="calendar (7)" width="33" height="33"/>
         <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
-        <image name="livia logo" width="479" height="479"/>
+        <image name="livia logo" width="1024" height="1024"/>
         <image name="loupe-1" width="35" height="35"/>
         <image name="loupe-5" width="38" height="38"/>
         <image name="open-menu" width="38" height="38"/>

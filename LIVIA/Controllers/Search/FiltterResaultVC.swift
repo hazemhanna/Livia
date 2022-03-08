@@ -29,7 +29,8 @@ class FiltterResaultVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        titleLbl.text = "fillter".localized
+
         searchTableView.delegate = self
         searchTableView.dataSource = self
         searchTableView.tableFooterView = UIView()

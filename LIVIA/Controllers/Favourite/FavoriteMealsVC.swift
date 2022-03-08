@@ -15,7 +15,7 @@ class FavoriteMealsVC: UIViewController {
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var noProduct: UILabel!
     
-    fileprivate let cellIdentifier = "FavouriteCell"
+    fileprivate let cellIdentifier = "ValiableResturantCell"
 
     var meals = [RestaurantMeal]() {
         didSet{
@@ -72,31 +72,40 @@ class FavoriteMealsVC: UIViewController {
     }
     
 }
+
 extension FavoriteMealsVC: UITableViewDataSource, UITableViewDelegate {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return meals.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? FavouriteCell else {return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ValiableResturantCell else {return UITableViewCell()}
         
-      
         cell.config(name: meals[indexPath.row].nameAr ?? "",price: 12.2, imagePath: meals[indexPath.row].image  , type: meals[indexPath.row].descriptionAr ?? "")
+
+         cell.FavoriteBN.setImage(UIImage(named: "222"), for: .normal)
         
-    
-        cell.RemoveFromeFavorite = {
+        cell.goToFavorites = {
             self.meals.remove(at: indexPath.row)
-             self.show()
+            self.show()
+         }
+        
+        cell.increase = {
+            guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }
+            details.meals = self.meals[indexPath.row]
+            self.navigationController?.pushViewController(details, animated: true)
         }
         
-        
-        cell.AddToCart = {
-            displayMessage(title: "", message: "تم الاضافة الي السلة بنجاح".localized, status:.success, forController: self)
+        cell.decrease = {
+            guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }
+            details.meals = self.meals[indexPath.row]
+            self.navigationController?.pushViewController(details, animated: true)
+            
         }
         
         return cell
     }
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }
@@ -104,9 +113,10 @@ extension FavoriteMealsVC: UITableViewDataSource, UITableViewDelegate {
         self.navigationController?.pushViewController(details, animated: true)
         
     }
-
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        120
+        return 150
     }
+    
     
 }

@@ -36,6 +36,7 @@ class FiltterVC : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.isHidden = true
         titleLbl.text = "fillter".localized
         titleLbl2.text = "fillterBY".localized
         

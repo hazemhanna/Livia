@@ -29,7 +29,7 @@ class OrderDetailsVC : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        TableHeight.constant = (120 * 3)
+        TableHeight.constant = (120 * 2)
         titleLbl.text =  "Order List".localized
     }
     
@@ -82,7 +82,7 @@ class OrderDetailsVC : UIViewController {
 extension OrderDetailsVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 2
     }
  
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

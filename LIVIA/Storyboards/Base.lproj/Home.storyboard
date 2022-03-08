@@ -488,7 +488,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y1n-SD-pd1" customClass="CustomButtons" customModule="Shnp" customModuleProvider="target">
-                                        <rect key="frame" x="132" y="383.5" width="150" height="50"/>
+                                        <rect key="frame" x="132" y="343.5" width="150" height="50"/>
                                         <color key="backgroundColor" name="navigation"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="JLQ-zL-c2p"/>
@@ -508,10 +508,10 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="livia logo" translatesAutoresizingMaskIntoConstraints="NO" id="ubY-xT-udi">
-                                        <rect key="frame" x="107" y="465.5" width="200" height="200"/>
+                                        <rect key="frame" x="132" y="425.5" width="150" height="150"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="200" id="bgk-RX-gFP"/>
-                                            <constraint firstAttribute="width" constant="200" id="tJz-zv-CLW"/>
+                                            <constraint firstAttribute="height" constant="150" id="bgk-RX-gFP"/>
+                                            <constraint firstAttribute="width" constant="150" id="tJz-zv-CLW"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
@@ -521,7 +521,7 @@
                                     <constraint firstAttribute="trailing" secondItem="Xmo-0X-Vnb" secondAttribute="trailing" constant="16" id="AwI-bO-0EV"/>
                                     <constraint firstItem="UVh-fa-Wnc" firstAttribute="leading" secondItem="7i1-4B-376" secondAttribute="leading" constant="16" id="EB6-Uk-24b"/>
                                     <constraint firstItem="ubY-xT-udi" firstAttribute="centerX" secondItem="7i1-4B-376" secondAttribute="centerX" id="Lpl-rr-81Y"/>
-                                    <constraint firstItem="y1n-SD-pd1" firstAttribute="top" secondItem="Xmo-0X-Vnb" secondAttribute="bottom" constant="100" id="SsR-m2-f7l"/>
+                                    <constraint firstItem="y1n-SD-pd1" firstAttribute="top" secondItem="Xmo-0X-Vnb" secondAttribute="bottom" constant="60" id="SsR-m2-f7l"/>
                                     <constraint firstItem="Xmo-0X-Vnb" firstAttribute="leading" secondItem="7i1-4B-376" secondAttribute="leading" constant="16" id="af0-7L-kHZ"/>
                                     <constraint firstItem="y1n-SD-pd1" firstAttribute="centerX" secondItem="7i1-4B-376" secondAttribute="centerX" id="eyW-2h-ufF"/>
                                     <constraint firstItem="Xmo-0X-Vnb" firstAttribute="top" secondItem="UVh-fa-Wnc" secondAttribute="bottom" constant="32" id="zKH-KY-ju7"/>
@@ -542,8 +542,7 @@
                                                 </constraints>
                                                 <state key="normal" image="open-menu"/>
                                                 <connections>
-                                                    <action selector="sideMenu:" destination="ywb-Fh-U7A" eventType="touchUpInside" id="dSs-eE-p1b"/>
-                                                    <action selector="sideMenu:" destination="WJf-q9-hGh" eventType="touchUpInside" id="rd1-9e-RNV"/>
+                                                    <action selector="sideMenu:" destination="WJf-q9-hGh" eventType="touchUpInside" id="kwb-t7-LDH"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YLQ-sw-GKP">
@@ -574,8 +573,7 @@
                                                         </constraints>
                                                         <state key="normal" image="loupe-5"/>
                                                         <connections>
-                                                            <action selector="scanhButtonPressed:" destination="ywb-Fh-U7A" eventType="touchUpInside" id="CbZ-CL-yap"/>
-                                                            <action selector="scanhButtonPressed:" destination="WJf-q9-hGh" eventType="touchUpInside" id="WE8-yL-L9g"/>
+                                                            <action selector="scanhButtonPressed:" destination="WJf-q9-hGh" eventType="touchUpInside" id="pm1-Fd-L2A"/>
                                                         </connections>
                                                     </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Line 41" translatesAutoresizingMaskIntoConstraints="NO" id="dal-8g-doO">
@@ -593,8 +591,7 @@
                                                             <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="notificationhButtonPressed:" destination="WJf-q9-hGh" eventType="touchUpInside" id="DH4-PU-HEy"/>
-                                                            <action selector="notificationhButtonPressed:" destination="ywb-Fh-U7A" eventType="touchUpInside" id="c7j-3X-BEO"/>
+                                                            <action selector="notificationhButtonPressed:" destination="WJf-q9-hGh" eventType="touchUpInside" id="lyt-pB-qRo"/>
                                                         </connections>
                                                     </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Line 41" translatesAutoresizingMaskIntoConstraints="NO" id="42D-cs-PLc">
@@ -609,8 +606,7 @@
                                                         </constraints>
                                                         <state key="normal" image="loupe-2"/>
                                                         <connections>
-                                                            <action selector="searchButtonPressed:" destination="WJf-q9-hGh" eventType="touchUpInside" id="8NR-dr-dO9"/>
-                                                            <action selector="searchButtonPressed:" destination="ywb-Fh-U7A" eventType="touchUpInside" id="9yb-uQ-5tu"/>
+                                                            <action selector="searchButtonPressed:" destination="WJf-q9-hGh" eventType="touchUpInside" id="crd-Ry-jpl"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -770,7 +766,7 @@
         <image name="checkoff" width="24" height="24.5"/>
         <image name="heart (1)" width="30" height="30"/>
         <image name="home" width="28" height="28"/>
-        <image name="livia logo" width="479" height="479"/>
+        <image name="livia logo" width="1024" height="1024"/>
         <image name="loupe-1" width="35" height="35"/>
         <image name="loupe-2" width="30" height="30"/>
         <image name="loupe-5" width="38" height="38"/>
