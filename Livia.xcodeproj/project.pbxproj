@@ -52,6 +52,8 @@
 		048A086627CC0D0400C49D1A /* subscriptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A086427CC0D0400C49D1A /* subscriptionsCell.swift */; };
 		048A086727CC0D0400C49D1A /* subscriptionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048A086527CC0D0400C49D1A /* subscriptionsCell.xib */; };
 		04A6A56F27CE5B85009C6F9D /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A6A57127CE5B85009C6F9D /* Details.storyboard */; };
+		04AB732227EA32B000ADFAF2 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AB732127EA32B000ADFAF2 /* Authentication.swift */; };
+		04AB732427EA33B500ADFAF2 /* AddServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AB732327EA33B500ADFAF2 /* AddServices.swift */; };
 		04ABAB8127110D2700BC0F71 /* FoodPackagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ABAB8027110D2700BC0F71 /* FoodPackagesVC.swift */; };
 		04CBBA3E27BC867D00CBD10D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CBBA3C27BC867D00CBD10D /* Main.storyboard */; };
 		04D81336270FE1C0004BEC39 /* FoodPackgeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D81334270FE1C0004BEC39 /* FoodPackgeCell.swift */; };
@@ -86,7 +88,7 @@
 		FA564CEC242A3A6B00A4A627 /* SideMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA564CEA242A3A6B00A4A627 /* SideMenuCell.xib */; };
 		FA564CEE242A48E800A4A627 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA564CED242A48E800A4A627 /* Helper.swift */; };
 		FA564CF0242A490E00A4A627 /* ConfigURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA564CEF242A490E00A4A627 /* ConfigURLs.swift */; };
-		FA564CF2242A494700A4A627 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA564CF1242A494700A4A627 /* Services.swift */; };
+		FA564CF2242A494700A4A627 /* GetServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA564CF1242A494700A4A627 /* GetServices.swift */; };
 		FA5B25B524346FE1004F52DE /* OrderDateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5B25B424346FE1004F52DE /* OrderDateVC.swift */; };
 		FA5B25B724348B79004F52DE /* ConfirmationPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5B25B624348B79004F52DE /* ConfirmationPopup.swift */; };
 		FA5B25C62434B4A7004F52DE /* PreviosListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5B25C42434B4A7004F52DE /* PreviosListCell.swift */; };
@@ -240,6 +242,8 @@
 		04A427F9250A73C4000E8757 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/AboutApp.strings; sourceTree = "<group>"; };
 		04A6A57027CE5B85009C6F9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Details.storyboard; sourceTree = "<group>"; };
 		04A6A57327CE5B8B009C6F9D /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Details.strings; sourceTree = "<group>"; };
+		04AB732127EA32B000ADFAF2 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		04AB732327EA33B500ADFAF2 /* AddServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddServices.swift; sourceTree = "<group>"; };
 		04ABAB8027110D2700BC0F71 /* FoodPackagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPackagesVC.swift; sourceTree = "<group>"; };
 		04B4A1D225096F3B00DA0BFE /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Authentications.strings; sourceTree = "<group>"; };
 		04CBBA3D27BC867D00CBD10D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ../../../ShnpNew/Shanab/Storyboards/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -279,7 +283,7 @@
 		FA564CEA242A3A6B00A4A627 /* SideMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuCell.xib; sourceTree = "<group>"; };
 		FA564CED242A48E800A4A627 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		FA564CEF242A490E00A4A627 /* ConfigURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigURLs.swift; sourceTree = "<group>"; };
-		FA564CF1242A494700A4A627 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		FA564CF1242A494700A4A627 /* GetServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetServices.swift; sourceTree = "<group>"; };
 		FA5916B824AB7A50006CB226 /* Cart+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Cart+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FA5916B924AB7A50006CB226 /* Cart+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Cart+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FA5B25B424346FE1004F52DE /* OrderDateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDateVC.swift; sourceTree = "<group>"; };
@@ -771,7 +775,9 @@
 			isa = PBXGroup;
 			children = (
 				FA564CEF242A490E00A4A627 /* ConfigURLs.swift */,
-				FA564CF1242A494700A4A627 /* Services.swift */,
+				04AB732127EA32B000ADFAF2 /* Authentication.swift */,
+				FA564CF1242A494700A4A627 /* GetServices.swift */,
+				04AB732327EA33B500ADFAF2 /* AddServices.swift */,
 				FA564CED242A48E800A4A627 /* Helper.swift */,
 				FAEED3A424EA845C00F8E3B8 /* Constants.swift */,
 				04FCE4E227C0224C00805FD9 /* Models */,
@@ -1200,7 +1206,9 @@
 				040F84A327B5D7E00005241D /* HomeViewController.swift in Sources */,
 				04751230271252F400D884D4 /* RefundOrderCell.swift in Sources */,
 				048A086627CC0D0400C49D1A /* subscriptionsCell.swift in Sources */,
+				04AB732227EA32B000ADFAF2 /* Authentication.swift in Sources */,
 				FA62F6002433572300A7EEB9 /* OrderConfirmationPopUp.swift in Sources */,
+				04AB732427EA33B500ADFAF2 /* AddServices.swift in Sources */,
 				FADBB1532427A01C0044936E /* MainVC.swift in Sources */,
 				0401A96027C18873009082B8 /* ReservationRequestVc.swift in Sources */,
 				FADBB15024279F200044936E /* BasicBarEntry.swift in Sources */,
@@ -1223,7 +1231,7 @@
 				042A538B27CB4C7300009C21 /* MyFoodCartCell.swift in Sources */,
 				FA5B25D32434DC1D004F52DE /* DateFSCalnder.swift in Sources */,
 				FAE9B09E2443274400044CB7 /* RatingVC.swift in Sources */,
-				FA564CF2242A494700A4A627 /* Services.swift in Sources */,
+				FA564CF2242A494700A4A627 /* GetServices.swift in Sources */,
 				FA2CC3D2246048B70026BC24 /* AddressCell.swift in Sources */,
 				FADBB14224279F200044936E /* AlertService.swift in Sources */,
 				FADBB14524279F200044936E /* Extensions.swift in Sources */,

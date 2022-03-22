@@ -7,7 +7,17 @@
 //
 
 import Foundation
-var BASE_URL = "https://shnp.app"
+var BASE_URL = "https://livia.dtagdev.com/"
+
 struct ConfigURLs {
+    
+    static var postRegister = BASE_URL  + "register"
+    static var validateRegister = BASE_URL  + "validate-register"
+    static var postRegisterInstructor = BASE_URL  + "register_instructor"
+    static var postLogin = BASE_URL + "login"
+
+    
+    
+    
     
 }

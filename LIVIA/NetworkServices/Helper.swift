@@ -51,7 +51,7 @@ class Helper {
     
     class func saveApiToken(token: String, email: String, user_id: Int) {
         let def = UserDefaults.standard
-        def.setValue(token, forKey: "api_token")
+        def.setValue(token, forKey: "token")
         def.set(user_id, forKey: "user_id")
         def.set(email, forKey: "email")
         def.synchronize()
@@ -63,21 +63,17 @@ class Helper {
         
         def.synchronize()
     }
-//    extension Data {
-//        var deviceToken: String {
-//            let deviceToken = map { String(format: "%02.2hhx", $0) }.joined()
-//            return deviceToken
-//        }
-//    }
-
+    
     class func getDeviceToken() -> String? {
         let def = UserDefaults.standard
         return def.object(forKey: "device_token") as? String
     }
+    
     class func getApiToken() -> String? {
         let def = UserDefaults.standard
-        return  def.object(forKey: "api_token") as? String
+        return  def.object(forKey: "token") as? String
     }
+    
     class func saveUserRole(role: String) {
         let def = UserDefaults.standard
         def.setValue(role, forKey: "role")
