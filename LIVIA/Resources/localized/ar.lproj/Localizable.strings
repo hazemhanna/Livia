@@ -27,6 +27,7 @@
 "new order" = "الطلبات الجديدة";
 "login" = "نسجيل دخول";
 "logOut" = "نسجيل خروج";
+"skip" = "تخطي";
 
 "new" = "جديد";
 "preparing" = "جاري التحضير";
@@ -74,6 +75,7 @@
 "Enter message" = "ادخل رسالتك";
 
 "Choose the message address" = "اختر عنوان الرسالة";
+"Enter your address" = "ادخل العنوان";
 
 "Enter Your name" = "ادخل اسمك";
 
@@ -116,6 +118,7 @@
 "Enter new password" = "ادخل كلمة المرور الجديدة";
 
 "Enter confirm password" = "ادخل تأكيد كلمة المرور";
+"your password not match" =  "كلمة المرور غير متابطقة";
 "The total price includes " = "إجمالي السعر يشتمل على ";
 "VAT tax" = "ضريبة القيمة المضافة";
 
@@ -220,3 +223,4 @@
 "lat" = "خظوظ الطول";
 "long" = "دواير العرض";
 "addaddress" = "اضف عنوان جديد";
+"phone" =  "الهاتف";

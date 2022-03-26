@@ -17,5 +17,13 @@ class SliderCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
+    
+    func config(imagePath: String) {
+        
+        
+        guard let imageURL = URL(string: (imagePath).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else { return }
+        self.cellImage.kf.setImage(with: imageURL)
+    
+    }
 }

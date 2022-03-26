@@ -37,7 +37,7 @@
 "arrived" = "Arrived";
 "login" = "login";
 "logOut" = "logOut";
-
+"skip" = "skip";
 "S.R" = "SAR";
 "You should login first" = "You should login first";
 "Add favourite" = "Add favourite";
@@ -69,6 +69,8 @@
 
 "Choose the message address" = "Choose the message address";
 
+
+"Enter your address" = "Enter your address";
 "Enter Your name" = "Enter Your name";
 
 "Your message was sent" = "Your message was sent";
@@ -134,6 +136,8 @@
 "logged in successfully" = "logged in successfully";
 
 "Enter your password" = "Enter your password";
+
+"your password not match" = "your password not match";
 
 "Enter your phone number" = "Enter your phone number";
 
@@ -215,3 +219,4 @@
 "building" = "building";
 "lat" = "lat";
 "long" = "long";
+"phone" =  "phone";

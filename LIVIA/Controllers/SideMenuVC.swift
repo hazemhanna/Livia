@@ -13,9 +13,9 @@ class SideMenuVC: UIViewController {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var wallet : UILabel!
     @IBOutlet weak var walletValue : UILabel!
-    @IBOutlet weak var StackCenter: NSLayoutConstraint!
     @IBOutlet weak var SideMenuTableView: UITableView!
     @IBOutlet weak var walletView : UIView!
+
     fileprivate let cellIdentifier = "SideMenuCell"
    
     var sideMenuArr = [SideMenuModel]() {
@@ -27,8 +27,6 @@ class SideMenuVC: UIViewController {
     }
     
     let token = Helper.getApiToken() ?? ""
-    let user = Helper.getUserRole() ?? ""
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,51 +40,38 @@ class SideMenuVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-       // if token != "" {
-                self.sideMenuArr = [
-                    SideMenuModel(name: "Home".localized,id: "home", selected: false,sideImage: #imageLiteral(resourceName: "home")),
-                    SideMenuModel(name: "Profile".localized, id: "Profile", selected: false,sideImage: #imageLiteral(resourceName: "ic_assignment_ind_24px-1")),
-                    SideMenuModel(name: "Sections".localized, id: "Sections", selected: false, sideImage: #imageLiteral(resourceName: "burger")),
-                    SideMenuModel(name: "Cart".localized, id: "Cart", selected: false,sideImage: #imageLiteral(resourceName: "cart (1)-1")),
-                    SideMenuModel(name: "Reserve Table".localized, id: "ReserveTable", selected: false, sideImage: #imageLiteral(resourceName: "reservation2")),
-                    SideMenuModel(name: "Notifications".localized, id: "Notifications", selected: false, sideImage: #imageLiteral(resourceName: "icons8-notification")),
-                    SideMenuModel(name: "Reservations".localized, id: "Reservations", selected: false, sideImage: #imageLiteral(resourceName: "reservation2")),
-                    SideMenuModel(name: "Order List".localized, id: "OrderList", selected: false, sideImage: #imageLiteral(resourceName: "order-food-1")),
-                    SideMenuModel(name: "subscriptions".localized, id: "subscriptions", selected: false, sideImage: #imageLiteral(resourceName: "NoPath - Copy (10)")),
-                    SideMenuModel(name: "foodPackages".localized, id: "foodPackages", selected: false, sideImage: #imageLiteral(resourceName: "NoPath - Copy (10)")),
-                    SideMenuModel(name: "FoodCart".localized, id: "FoodCart", selected: false,sideImage: #imageLiteral(resourceName: "cart (1)-1")),
-                    SideMenuModel(name: "Favorite Meals".localized, id: "FavoriteMeals", selected: false, sideImage: #imageLiteral(resourceName: "favorite (1)")),
-                    SideMenuModel(name: "Contact Us".localized, id: "Contact Us", selected: false,sideImage: #imageLiteral(resourceName: "contactUs")),
-                    SideMenuModel(name: "Terms And Conditions".localized, id: "TermsAndConditions", selected: false, sideImage: #imageLiteral(resourceName: "terms")),
-                    SideMenuModel(name: "Settings".localized, id: "Setting", selected: false, sideImage: #imageLiteral(resourceName: "Screen Shot 2021-12-31 at 6.42.33 PM")),
-                    SideMenuModel(name: "logOut".localized, id: "Login", selected: false, sideImage: #imageLiteral(resourceName: "Screen Shot 2021-12-31 at 6.42.33 PM"))
-                ]
-     
-            
-//        } else {
-//            self.sideMenuArr = [
-//                SideMenuModel(name: "Home".localized, id: "home", selected: false, sideImage: #imageLiteral(resourceName: "home")),
-//                SideMenuModel(name: "Contact Us".localized, id: "Contact Us", selected: false,sideImage: #imageLiteral(resourceName: "cridateCard")),
-//                SideMenuModel(name: "Terms And Conditions".localized, id: "TermsAndConditions" , selected: false, sideImage: #imageLiteral(resourceName: "terms")),
-//             SideMenuModel(name: "Settings".localized, id: "Setting", selected: false, sideImage: #imageLiteral(resourceName: "Screen Shot 2021-12-31 at 6.42.33 PM"))]
-//        }
+        if token != "" {
+            walletView.isHidden = false
+             self.sideMenuArr = [
+            SideMenuModel(name: "Home".localized,id: "home", selected: false,sideImage: #imageLiteral(resourceName: "home")),
+            SideMenuModel(name: "Profile".localized, id: "Profile", selected: false,sideImage: #imageLiteral(resourceName: "ic_assignment_ind_24px-1")),
+            SideMenuModel(name: "Sections".localized, id: "Sections", selected: false, sideImage: #imageLiteral(resourceName: "burger")),
+            SideMenuModel(name: "Cart".localized, id: "Cart", selected: false,sideImage: #imageLiteral(resourceName: "cart (1)-1")),
+            SideMenuModel(name: "Reserve Table".localized, id: "ReserveTable", selected: false, sideImage: #imageLiteral(resourceName: "reservation2")),
+            SideMenuModel(name: "Notifications".localized, id: "Notifications", selected: false, sideImage: #imageLiteral(resourceName: "icons8-notification")),
+            SideMenuModel(name: "Reservations".localized, id: "Reservations", selected: false, sideImage: #imageLiteral(resourceName: "reservation2")),
+            SideMenuModel(name: "Order List".localized, id: "OrderList", selected: false, sideImage: #imageLiteral(resourceName: "order-food-1")),
+            SideMenuModel(name: "subscriptions".localized, id: "subscriptions", selected: false, sideImage: #imageLiteral(resourceName: "NoPath - Copy (10)")),
+            SideMenuModel(name: "foodPackages".localized, id: "foodPackages", selected: false, sideImage: #imageLiteral(resourceName: "NoPath - Copy (10)")),
+            SideMenuModel(name: "FoodCart".localized, id: "FoodCart", selected: false,sideImage: #imageLiteral(resourceName: "cart (1)-1")),
+            SideMenuModel(name: "Favorite Meals".localized, id: "FavoriteMeals", selected: false, sideImage: #imageLiteral(resourceName: "favorite (1)")),
+            SideMenuModel(name: "Contact Us".localized, id: "Contact Us", selected: false,sideImage: #imageLiteral(resourceName: "contactUs")),
+            SideMenuModel(name: "Terms And Conditions".localized, id: "TermsAndConditions", selected: false, sideImage: #imageLiteral(resourceName: "terms")),
+            SideMenuModel(name: "Settings".localized, id: "Setting", selected: false, sideImage: #imageLiteral(resourceName: "Screen Shot 2021-12-31 at 6.42.33 PM")),
+            SideMenuModel(name: "logOut".localized, id: "logOut", selected: false, sideImage: #imageLiteral(resourceName: "Screen Shot 2021-12-31 at 6.42.33 PM"))]
+            } else {
+                walletView.isHidden = true
+
+            self.sideMenuArr = [
+             SideMenuModel(name: "Home".localized, id: "home", selected: false, sideImage: #imageLiteral(resourceName: "home")),
+            // SideMenuModel(name: "Contact Us".localized, id: "Contact Us", selected: false,sideImage: #imageLiteral(resourceName: "cridateCard")),
+             
+             SideMenuModel(name: "Terms And Conditions".localized, id: "TermsAndConditions" , selected: false, sideImage: #imageLiteral(resourceName: "terms")),
+             SideMenuModel(name: "Settings".localized, id: "Setting", selected: false, sideImage: #imageLiteral(resourceName: "Screen Shot 2021-12-31 at 6.42.33 PM")),
+             SideMenuModel(name: "login".localized, id: "login", selected: false, sideImage: #imageLiteral(resourceName: "Screen Shot 2021-12-31 at 6.42.33 PM"))]
+                
+        }
         
-    }
-    
-    
-    @IBAction func editProfileBn(_ sender: UIButton) {
- 
-        
-    }
-    
-    @IBAction func LogOut(_ sender: UIButton) {
-        
-        
-    }
-    
-    @IBAction func login(_ sender: UIButton) {
-        let main = UIStoryboard(name: "Authentications", bundle: nil).instantiateViewController(withIdentifier: "LoginVC")
-        self.navigationController?.pushViewController(main, animated: true)
     }
     
     func selectedCell(indexPath: IndexPath) {
@@ -97,7 +82,6 @@ class SideMenuVC: UIViewController {
             sb.selectedIndex = 0
             window.rootViewController = sb
             UIView.transition(with: window, duration: 0.5, options: .curveEaseInOut, animations: nil, completion: nil)
-        
         case "Sections":
             pushSideMenu(StoryboardName: "Orders", ForController: "SectionsPageVC")
         case "Cart":
@@ -109,7 +93,7 @@ class SideMenuVC: UIViewController {
         case "foodPackages":
             pushSideMenu(StoryboardName: "Products", ForController: "FoodPackagesVC")
         case "FoodCart":
-            pushSideMenu(StoryboardName: "Products", ForController: "MYFoodPackagesCartVC")
+            pushSideMenu(StoryboardName: "Products",ForController: "MYFoodPackagesCartVC")
         case "subscriptions":
             pushSideMenu(StoryboardName: "Products", ForController: "SubscriptionsVc")
         case "Reservations":
@@ -124,11 +108,12 @@ class SideMenuVC: UIViewController {
             pushSideMenu(StoryboardName: "AboutApp", ForController: "SettingVC")
         case "Notifications":
             pushSideMenu(StoryboardName: "Profile", ForController: "NotificationsVC")
-            
         case "ReserveTable":
             pushSideMenu(StoryboardName: "Reservation", ForController: "ReservationRequestVc")
-            
-        case "Login":
+        case "logOut":
+            pushSideMenu(StoryboardName: "Authentications", ForController: "LoginVC")
+            Helper.LogOutUser()
+        case "login":
             pushSideMenu(StoryboardName: "Authentications", ForController: "LoginVC")
             
         default:

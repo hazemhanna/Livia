@@ -13,20 +13,38 @@ import ImageSlideshow
 import DropDown
 import SwiftMessages
 import Alamofire
+import RxSwift
+import RxCocoa
+
 
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var RestaurantTableView: UITableView!
     @IBOutlet weak var imageSlider: ImageSlideshow!
-    @IBOutlet weak var oneImageView: UIImageView!
     @IBOutlet weak var homeSectionsCollectionView: UICollectionView!
     @IBOutlet weak var notificationBN: UIButton!
     @IBOutlet weak var pageView: UIPageControl!
     @IBOutlet weak var SlidercollectionView: UICollectionView!
     @IBOutlet weak var titleLbl  : UILabel!
-
     
-    var meals = [RestaurantMeal]() {
+    
+    var sliders = [Slider](){
+        didSet{
+            DispatchQueue.main.async {
+                self.SlidercollectionView.reloadData()
+            }
+        }
+    }
+
+    var category = [Category](){
+        didSet{
+            DispatchQueue.main.async {
+                self.homeSectionsCollectionView.reloadData()
+            }
+        }
+    }
+    
+    var products = [Product]() {
         didSet{
             DispatchQueue.main.async {
                 self.RestaurantTableView.reloadData()
@@ -36,17 +54,15 @@ class HomeViewController: UIViewController {
     
     var timer = Timer()
     var counter = 0
-    
-    
     fileprivate let CellIdentifierCollectionView = "HomeCell"
     fileprivate let CellIdentifierTableView = "ValiableResturantCell"
-   
     fileprivate let sliderCell = "SliderCell"
-
-    
-    
     var productCounter = Int()
-     var imgArr = [UIImage]()
+    let token = Helper.getApiToken() ?? ""
+    
+    private let homeViewModel = HomeViewModel()
+    var disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -68,45 +84,22 @@ class HomeViewController: UIViewController {
         RestaurantTableView.register(UINib(nibName: CellIdentifierTableView, bundle: nil), forCellReuseIdentifier: CellIdentifierTableView)
         
     
-//        if (Helper.getApiToken() ?? "") != "" {
-//          notificationBN.isHidden = false
-//        }else{
-//            notificationBN.isHidden = true
-//        }
+        if token != "" {
+          notificationBN.isHidden = false
+        }else{
+         notificationBN.isHidden = true
+        }
         
-        imgArr.append(#imageLiteral(resourceName: "brooke-lark-HlNcigvUi4Q-unsplash"))
-        imgArr.append(#imageLiteral(resourceName: "Screen Shot 2022-02-11 at 4.19.53 AM"))
-        imgArr.append(#imageLiteral(resourceName: "food-1"))
-
-        meals.append(RestaurantMeal(nameAr: "بيتزا خضروات", image: #imageLiteral(resourceName: "Screen Shot 2022-02-11 at 4.19.53 AM"), descriptionAr: "بيتزا"))
-        
-        meals.append(RestaurantMeal(nameAr: "سلطة خضراء", image: #imageLiteral(resourceName: "taylor-kiser-EvoIiaIVRzU-unsplash-1"), descriptionAr: "سلطة"))
-        
-        meals.append(RestaurantMeal(nameAr: "بيتزا سي فود", image: #imageLiteral(resourceName: "food-1"), descriptionAr: "بيتزا"))
-
-        meals.append(RestaurantMeal(nameAr: "بيتزا فراخ", image: #imageLiteral(resourceName: "Screen Shot 2022-02-11 at 4.19.53 AM"), descriptionAr: "بيتزا"))
-
-        
-        meals.append(RestaurantMeal(nameAr: "بيتزا خضروات", image: #imageLiteral(resourceName: "Screen Shot 2022-02-11 at 4.19.53 AM"), descriptionAr: "بيتزا"))
-        
-        meals.append(RestaurantMeal(nameAr: "سلطة خضراء", image: #imageLiteral(resourceName: "taylor-kiser-EvoIiaIVRzU-unsplash-1"), descriptionAr: "سلطة"))
-        
-        meals.append(RestaurantMeal(nameAr: "بيتزا سي فود", image: #imageLiteral(resourceName: "food-1"), descriptionAr: "بيتزا"))
-
-        meals.append(RestaurantMeal(nameAr: "بيتزا فراخ", image: #imageLiteral(resourceName: "Screen Shot 2022-02-11 at 4.19.53 AM"), descriptionAr: "بيتزا"))
-        
-        pageView.numberOfPages = imgArr.count
-        pageView.currentPage = 0
-        DispatchQueue.main.async {
-              self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
-           }
-        
+        homeViewModel.showIndicator()
+        self.getSlider()
+        self.getProduct()
+        self.getCat()
         
     }
     
     @objc func changeImage() {
              
-         if counter < imgArr.count {
+         if counter < sliders.count {
               let index = IndexPath.init(item: counter, section: 0)
               self.SlidercollectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
               pageView.currentPage = counter
@@ -162,10 +155,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if collectionView == SlidercollectionView {
-            return imgArr.count
+            return sliders.count
 
         }else{
-            return 6
+            return category.count
 
         }
     }
@@ -174,12 +167,20 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
        
         if collectionView == SlidercollectionView {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: sliderCell, for: indexPath) as? SliderCell else { return UICollectionViewCell()}
-            cell.cellImage.image = self.imgArr[indexPath.row]
+            
+            cell.config(imagePath:  self.sliders[indexPath.row].image ?? "")
+            
             return cell
             
         }else {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifierCollectionView, for: indexPath) as? HomeCell else { return UICollectionViewCell()}
-        
+            
+            if "lang".localized == "ar" {
+                cell.config(imagePath: self.category[indexPath.row].image ?? "", name: self.category[indexPath.row].title?.ar ?? "")
+            }else{
+                cell.config(imagePath: self.category[indexPath.row].image ?? "", name: self.category[indexPath.row].title?.en ?? "")
+
+            }
         return cell
         }
         
@@ -204,48 +205,46 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
             let size: CGFloat = (collectionView.frame.size.width - space) / 4.1
             return CGSize(width: size, height: collectionView.frame.size.height)
         }
-       
-        
     }
-    
-    
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return meals.count
+        return products.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifierTableView, for: indexPath) as? ValiableResturantCell else {return UITableViewCell()}
         cell.FavoriteBN.setImage(UIImage(named: "heart"), for: .normal)
         
-        
-        cell.config(name: meals[indexPath.row].nameAr ?? "",price: 12.2, imagePath: meals[indexPath.row].image  , type: meals[indexPath.row].descriptionAr ?? "")
-        
+        if "lang".localized == "ar" {
+        cell.config(name: products[indexPath.row].title?.ar ?? ""
+                    , price: products[indexPath.row].variants?[0].price ?? ""
+                    , imagePath: products[indexPath.row].images?[0].image ?? ""
+                    , type: products[indexPath.row].desc?.ar ?? ""
+                    , isWishlist: products[indexPath.row].isWishlist ?? false )
+        }else{
+            cell.config(name: products[indexPath.row].title?.en ?? ""
+                        , price: products[indexPath.row].variants?[0].price ?? ""
+                        , imagePath: products[indexPath.row].images?[0].image ?? "",
+                        type: products[indexPath.row].desc?.en ?? ""
+                        ,isWishlist: products[indexPath.row].isWishlist ?? false)
+
+        }
         cell.goToFavorites = {
-            if cell.isFavourite{
-                cell.FavoriteBN.setImage(UIImage(named: "heart"), for: .normal)
-                displayMessage(title: "", message: "تم المسح من المفضلة بنجاح".localized, status:.success, forController: self)
-
-                cell.isFavourite = false
-            }else{
-                cell.FavoriteBN.setImage(UIImage(named: "222"), for: .normal)
-                cell.isFavourite = true
-                displayMessage(title: "", message: "تم الاضافة الي المفضلة بنجاح".localized, status:.success, forController: self)
-
-            }
+            self.homeViewModel.showIndicator()
+            self.addWishList(id: self.products[indexPath.row].id ?? 0 , isWishList: self.products[indexPath.row].isWishlist ?? false)
         }
         cell.increase = {
             guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }
-            details.meals = self.meals[indexPath.row]
+           // details.meals = self.meals[indexPath.row]
             self.navigationController?.pushViewController(details, animated: true)
             
         }
         
         cell.decrease = {
             guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }
-            details.meals = self.meals[indexPath.row]
+            //details.meals = self.meals[indexPath.row]
             self.navigationController?.pushViewController(details, animated: true)
             
         }
@@ -258,11 +257,61 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }
-        details.meals = self.meals[indexPath.row]
+        //details.meals = self.meals[indexPath.row]
         self.navigationController?.pushViewController(details, animated: true)
         
     }
 
+}
+
+
+
+extension HomeViewController{
+    func getSlider() {
+            self.homeViewModel.getSlider().subscribe(onNext: { (data) in
+              
+                self.homeViewModel.dismissIndicator()
+                self.sliders = data.data?.sliders ?? []
+                self.pageView.numberOfPages = self.sliders.count
+                self.pageView.currentPage = 0
+                DispatchQueue.main.async {
+                    self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
+                    }
+                
+            }, onError: { (error) in
+                self.homeViewModel.dismissIndicator()
+            }).disposed(by: disposeBag)
+        }
+    
+    func getCat() {
+            self.homeViewModel.getCategories().subscribe(onNext: { (data) in
+                 self.homeViewModel.dismissIndicator()
+                    self.category = data.data?.categories ?? []
+                
+            }, onError: { (error) in
+                self.homeViewModel.dismissIndicator()
+            }).disposed(by: disposeBag)
+        }
+    
+    
+    func getProduct() {
+            self.homeViewModel.getProduct().subscribe(onNext: { (data) in
+                 self.homeViewModel.dismissIndicator()
+                    self.products = data.data?.products ?? []
+                
+            }, onError: { (error) in
+                self.homeViewModel.dismissIndicator()
+            }).disposed(by: disposeBag)
+        }
+    
+    
+    func addWishList(id : Int,isWishList : Bool) {
+        self.homeViewModel.addWishList(id: id,isWishList :isWishList).subscribe(onNext: { (data) in
+                self.getProduct()
+            }, onError: { (error) in
+                self.homeViewModel.dismissIndicator()
+            }).disposed(by: disposeBag)
+        }
 }
 
 

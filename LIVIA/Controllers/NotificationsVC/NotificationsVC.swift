@@ -12,12 +12,9 @@ class NotificationsVC: UIViewController {
     
     @IBOutlet weak var notificationsTableView: UITableView!
     @IBOutlet weak var titleLbl  : UILabel!
-
     fileprivate let cellIdentifier = "NotificationsCell"
-    let user = Helper.getUserRole() ?? ""
-
-
     var paid = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         notificationsTableView.delegate = self

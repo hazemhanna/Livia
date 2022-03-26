@@ -12,18 +12,21 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    var token =  Helper.getApiToken() ?? ""
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.window = self.window
         
-       // let sb = UIStoryboard(name: "Authentications", bundle: nil).instantiateViewController(withIdentifier: "LoginNav")
-        let sb = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeTabBar")
-        UIApplication.shared.windows.first?.rootViewController = sb
-        UIApplication.shared.windows.first?.makeKeyAndVisible()
-
+        if token  != "" {
+          let sb = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeTabBar")
+          UIApplication.shared.windows.first?.rootViewController = sb
+          UIApplication.shared.windows.first?.makeKeyAndVisible()
+        }else{
+            let sb = UIStoryboard(name: "Authentications", bundle: nil).instantiateViewController(withIdentifier: "LoginNav")
+            UIApplication.shared.windows.first?.rootViewController = sb
+            UIApplication.shared.windows.first?.makeKeyAndVisible()
+        }
 
         guard let _ = (scene as? UIWindowScene) else { return }
     }

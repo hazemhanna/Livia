@@ -114,7 +114,7 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource {
         cell.FavoriteBN.setImage(UIImage(named: "remove"), for: .normal)
         
         
-        cell.config(name: meals[indexPath.row].nameAr ?? "",price: 12.2, imagePath: meals[indexPath.row].image  , type: meals[indexPath.row].descriptionAr ?? "")
+       // cell.config(name: meals[indexPath.row].nameAr ?? "",price: 12.2, imagePath: meals[indexPath.row].image  , type: meals[indexPath.row].descriptionAr ?? "")
 
         
          cell.goToFavorites = {

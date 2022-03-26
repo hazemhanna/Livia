@@ -20,7 +20,7 @@
                     <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="gax-0K-Y7Y" customClass="CustomView" customModule="Shnp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="273" height="117"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2022-02-11 at 4.19.53 AM" translatesAutoresizingMaskIntoConstraints="NO" id="2Z3-gp-CGM" customClass="CustomImageView" customModule="Shnp" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Z3-gp-CGM" customClass="CustomImageView" customModule="Shnp" customModuleProvider="target">
                                 <rect key="frame" x="8" y="8" width="257" height="101"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -58,7 +58,4 @@
             <point key="canvasLocation" x="299.27536231884062" y="88.058035714285708"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="Screen Shot 2022-02-11 at 4.19.53 AM" width="294" height="266"/>
-    </resources>
 </document>

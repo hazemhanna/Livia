@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+
 
 class FavoriteMealsVC: UIViewController {
     @IBOutlet weak var titleLbl  : UILabel!
@@ -14,10 +17,13 @@ class FavoriteMealsVC: UIViewController {
     @IBOutlet weak var favoriteMealsTableView: UITableView!
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var noProduct: UILabel!
+
     
     fileprivate let cellIdentifier = "ValiableResturantCell"
-
-    var meals = [RestaurantMeal]() {
+    private let homeViewModel = HomeViewModel()
+    var disposeBag = DisposeBag()
+    
+    var products = [Product]() {
         didSet{
             DispatchQueue.main.async {
                 self.favoriteMealsTableView.reloadData()
@@ -31,15 +37,9 @@ class FavoriteMealsVC: UIViewController {
         favoriteMealsTableView.dataSource = self
         favoriteMealsTableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
         titleLbl.text =  "Favorite Meals".localized
-        meals.append(RestaurantMeal(nameAr: "بيتزا خضروات", image: #imageLiteral(resourceName: "Screen Shot 2022-02-11 at 4.19.53 AM"), descriptionAr: "بيتزا"))
         
-        meals.append(RestaurantMeal(nameAr: "سلطة خضراء", image: #imageLiteral(resourceName: "taylor-kiser-EvoIiaIVRzU-unsplash-1"), descriptionAr: "سلطة"))
-        
-        meals.append(RestaurantMeal(nameAr: "بيتزا سي فود", image: #imageLiteral(resourceName: "food-1"), descriptionAr: "بيتزا"))
-
-        meals.append(RestaurantMeal(nameAr: "بيتزا فراخ", image: #imageLiteral(resourceName: "Screen Shot 2022-02-11 at 4.19.53 AM"), descriptionAr: "بيتزا"))
-
-        
+        homeViewModel.showIndicator()
+        getWishList()
     }
     
     @IBAction func menu(_ sender: Any) {
@@ -57,12 +57,10 @@ class FavoriteMealsVC: UIViewController {
     @IBAction func notificationhButtonPressed(_ sender: Any) {
         guard let details = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "NotificationsVC") as? NotificationsVC else { return }
         self.navigationController?.pushViewController(details, animated: true)
-
     }
     
-    
     func show () {
-        if meals.count > 0 {
+        if products.count > 0 {
             favoriteMealsTableView.isHidden = false
             self.emptyView.isHidden = true
         }else{
@@ -75,30 +73,42 @@ class FavoriteMealsVC: UIViewController {
 
 extension FavoriteMealsVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return meals.count
+        return products.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ValiableResturantCell else {return UITableViewCell()}
-        
-        cell.config(name: meals[indexPath.row].nameAr ?? "",price: 12.2, imagePath: meals[indexPath.row].image  , type: meals[indexPath.row].descriptionAr ?? "")
-
          cell.FavoriteBN.setImage(UIImage(named: "222"), for: .normal)
         
+        
+        if "lang".localized == "ar" {
+        cell.config(name: products[indexPath.row].title?.ar ?? ""
+                    , price: products[indexPath.row].variants?[0].price ?? ""
+                    , imagePath: products[indexPath.row].images?[0].image ?? ""
+                    , type: products[indexPath.row].desc?.ar ?? ""
+                    , isWishlist: products[indexPath.row].isWishlist ?? false )
+        }else{
+            cell.config(name: products[indexPath.row].title?.en ?? ""
+                        , price: products[indexPath.row].variants?[0].price ?? ""
+                        , imagePath: products[indexPath.row].images?[0].image ?? "",
+                        type: products[indexPath.row].desc?.en ?? ""
+                        ,isWishlist: products[indexPath.row].isWishlist ?? false)
+
+        }
+        
         cell.goToFavorites = {
-            self.meals.remove(at: indexPath.row)
-            self.show()
-         }
+            self.homeViewModel.showIndicator()
+            self.reomveWishlist(id: self.products[indexPath.row].id ?? 0)
+        }
         
         cell.increase = {
             guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }
-            details.meals = self.meals[indexPath.row]
+
             self.navigationController?.pushViewController(details, animated: true)
         }
         
         cell.decrease = {
             guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }
-            details.meals = self.meals[indexPath.row]
             self.navigationController?.pushViewController(details, animated: true)
             
         }
@@ -109,14 +119,39 @@ extension FavoriteMealsVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }
-        details.meals = self.meals[indexPath.row]
         self.navigationController?.pushViewController(details, animated: true)
-        
     }
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
+   
+    
+    
+  
+
+
+}
+extension FavoriteMealsVC {
+    func getWishList() {
+            self.homeViewModel.getWishList().subscribe(onNext: { (data) in
+                 self.homeViewModel.dismissIndicator()
+                self.products = data.data?.products ?? []
+                self.show()
+            }, onError: { (error) in
+                self.homeViewModel.dismissIndicator()
+            }).disposed(by: disposeBag)
+        }
+    
+
+    func reomveWishlist(id : Int) {
+            self.homeViewModel.addWishList(id: id, isWishList: true).subscribe(onNext: { (data) in
+                self.getWishList()
+            }, onError: { (error) in
+                self.homeViewModel.dismissIndicator()
+            }).disposed(by: disposeBag)
+        }
     
     
 }

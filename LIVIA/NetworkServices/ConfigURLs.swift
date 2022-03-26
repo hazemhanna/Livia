@@ -7,17 +7,35 @@
 //
 
 import Foundation
-var BASE_URL = "https://livia.dtagdev.com/"
+
+var BASE_URL = "https://livia.dtagdev.com/api/"
 
 struct ConfigURLs {
-    
-    static var postRegister = BASE_URL  + "register"
-    static var validateRegister = BASE_URL  + "validate-register"
-    static var postRegisterInstructor = BASE_URL  + "register_instructor"
+    // Auth
     static var postLogin = BASE_URL + "login"
-
-    
-    
-    
+    static var postRegister = BASE_URL  + "register"
+    static var getProfile = BASE_URL  + "me"
+    static var activeAccount = BASE_URL  + "active"
+    static var resendCode = BASE_URL  + "resend-code"
+    static var logout = BASE_URL  + "logout"
+    static var updateProfile = BASE_URL  + "update-profile"
+    static var updatePassword = BASE_URL  + "update-password"
+    //general
+    static var getSliders = BASE_URL  + "sliders"
+    static var getProducts = BASE_URL  + "products"
+    static var getCategories = BASE_URL  + "categories"
+    //wishlist
+    static var getWishlist = BASE_URL  + "wishlist"
+    static var addWishlist = BASE_URL  + "wishlist/create"
+    static var removeWishlist = BASE_URL  + "wishlist/remove"
+    //cart
+    static var getCart = BASE_URL  + "cart"
+    static var addToCart = BASE_URL  + "cart/add-to-cart"
+    static var removeCart = BASE_URL  + "cart/delete-cart/"
+    static var updateCart = BASE_URL  + "cart/update-cart"
+    //order
+    static var getOrders = BASE_URL  + "orders"
+    static var createOrder = BASE_URL  + "orders/create"
+    static var canceledOrder = BASE_URL  + "orders/canceled"
     
 }

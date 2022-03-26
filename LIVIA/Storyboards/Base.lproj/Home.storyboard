@@ -251,6 +251,7 @@
                         <outlet property="SlidercollectionView" destination="SUs-1R-VKO" id="vVn-Rf-kwA"/>
                         <outlet property="homeSectionsCollectionView" destination="51K-E5-mQP" id="lLn-st-kTw"/>
                         <outlet property="imageSlider" destination="WSe-rV-bgc" id="1rJ-Xb-bxz"/>
+                        <outlet property="notificationBN" destination="iHP-Z3-PiB" id="mYY-KR-QXn"/>
                         <outlet property="pageView" destination="859-ck-mN3" id="VsH-rQ-sS1"/>
                         <outlet property="titleLbl" destination="I8v-WS-uW2" id="8xv-4H-FaY"/>
                     </connections>

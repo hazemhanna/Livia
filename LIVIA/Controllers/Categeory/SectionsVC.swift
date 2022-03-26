@@ -74,7 +74,7 @@ extension SectionsVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? SectionCell else { return UICollectionViewCell()}
-        cell.config(imagePath: meals[indexPath.row].image, name: meals[indexPath.row].nameAr ?? "")
+       // cell.config(imagePath: meals[indexPath.row].image, name: meals[indexPath.row].nameAr ?? "")
         return cell
 
         
