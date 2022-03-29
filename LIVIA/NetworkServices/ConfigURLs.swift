@@ -22,7 +22,6 @@ struct ConfigURLs {
     static var updatePassword = BASE_URL  + "update-password"
     //general
     static var getSliders = BASE_URL  + "sliders"
-    static var getProducts = BASE_URL  + "products"
     static var getCategories = BASE_URL  + "categories"
     //wishlist
     static var getWishlist = BASE_URL  + "wishlist"
@@ -31,11 +30,16 @@ struct ConfigURLs {
     //cart
     static var getCart = BASE_URL  + "cart"
     static var addToCart = BASE_URL  + "cart/add-to-cart"
-    static var removeCart = BASE_URL  + "cart/delete-cart/"
+    static var deleteCart = BASE_URL  + "cart/delete-cart/"
     static var updateCart = BASE_URL  + "cart/update-cart"
     //order
     static var getOrders = BASE_URL  + "orders"
     static var createOrder = BASE_URL  + "orders/create"
     static var canceledOrder = BASE_URL  + "orders/canceled"
-    
+    // product
+    static var getProducts = BASE_URL  + "products"
+    static var getOffers = BASE_URL  + "products?discounts=1"
+    static var getCategeoryProducts = BASE_URL  + "products?category_id="
+
+
 }

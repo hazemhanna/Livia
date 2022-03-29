@@ -48,4 +48,14 @@ struct HomeViewModel {
         return observer
     }
     
+    func getOffers() -> Observable<ProductModelJson> {
+    let observer = GetServices.shared.getOffers()
+     return observer
+    }
+    
+    func getCategoryProduct(id : Int) -> Observable<ProductModelJson> {
+    let observer = GetServices.shared.getCategeoruProducts(id : id)
+     return observer
+    }
+    
 }

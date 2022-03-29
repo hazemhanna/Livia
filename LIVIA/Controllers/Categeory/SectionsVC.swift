@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class SectionsVC: UIViewController {
     @IBOutlet weak var titleLbl  : UILabel!
@@ -14,34 +16,24 @@ class SectionsVC: UIViewController {
     @IBOutlet weak var sectionCollectionView: UICollectionView!
     fileprivate let cellIdentifier = "SectionCell"
 
-    var meals = [RestaurantMeal]() {
+    var category = [Category](){
         didSet{
             DispatchQueue.main.async {
                 self.sectionCollectionView.reloadData()
             }
         }
     }
-    
+    private let homeViewModel = HomeViewModel()
+    var disposeBag = DisposeBag()
  
     override func viewDidLoad() {
         super.viewDidLoad()
         sectionCollectionView.delegate = self
         sectionCollectionView.dataSource = self
         sectionCollectionView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
-        
         titleLbl.text = "Sections".localized
-        meals.append(RestaurantMeal(nameAr: "بيتزا ", image: #imageLiteral(resourceName: "Screen Shot 2022-02-27 at 10.59.12 PM"), descriptionAr: "بيتزا"))
-
-        meals.append(RestaurantMeal(nameAr: "برجر", image: #imageLiteral(resourceName: "Set of cartoon pizzas with different stuffing"), descriptionAr: "برجر"))
-        
-        meals.append(RestaurantMeal(nameAr: "مشروبات", image:#imageLiteral(resourceName: "Set of cartoon pizzas with different stuffing-2"), descriptionAr: "سلطة"))
-        
-        meals.append(RestaurantMeal(nameAr: "فطار", image: #imageLiteral(resourceName: "Screen Shot 2022-02-27 at 10.59.04 PM"), descriptionAr: "بيتزا"))
-
-        meals.append(RestaurantMeal(nameAr: "سلطة ", image: #imageLiteral(resourceName: "Screen Shot 2022-02-27 at 10.58.56 PM"), descriptionAr: "بيتزا"))
-        
-        meals.append(RestaurantMeal(nameAr: "مقبلات ", image:#imageLiteral(resourceName: "Screen Shot 2022-02-27 at 10.59.20 PM"), descriptionAr: "بيتزا"))
-
+        self.homeViewModel.showIndicator()
+        getCat()
     }
     
 
@@ -69,18 +61,29 @@ class SectionsVC: UIViewController {
 
 extension SectionsVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return meals.count
+        return category.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? SectionCell else { return UICollectionViewCell()}
-       // cell.config(imagePath: meals[indexPath.row].image, name: meals[indexPath.row].nameAr ?? "")
+        if "lang".localized == "ar" {
+            cell.config(imagePath: self.category[indexPath.row].image ?? "", name: self.category[indexPath.row].title?.ar ?? "")
+        }else{
+            cell.config(imagePath: self.category[indexPath.row].image ?? "", name: self.category[indexPath.row].title?.en ?? "")
+        }
         return cell
 
         
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductsVc") as? ProductsVc else { return }
+        details.catId = self.category[indexPath.row].id ?? 0
+        if "lang".localized == "ar" {
+            details.catTitle = self.category[indexPath.row].title?.ar ?? ""
+        }else{
+            details.catTitle = self.category[indexPath.row].title?.en ?? ""
+        }
+        
         self.navigationController?.pushViewController(details, animated: true)
     }
     
@@ -93,4 +96,16 @@ extension SectionsVC: UICollectionViewDelegateFlowLayout {
         return CGSize(width: size  , height: size )
     }
     
+}
+extension SectionsVC{
+
+func getCat() {
+        self.homeViewModel.getCategories().subscribe(onNext: { (data) in
+             self.homeViewModel.dismissIndicator()
+                self.category = data.data?.categories ?? []
+            
+        }, onError: { (error) in
+            self.homeViewModel.dismissIndicator()
+        }).disposed(by: disposeBag)
+    }
 }

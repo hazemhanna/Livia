@@ -107,4 +107,74 @@ class GetServices {
         }
     }
     
+    func getCart() -> Observable<CartModelJson> {
+        return Observable.create { (observer) -> Disposable in
+            let url = ConfigURLs.getCart
+            let headers = [
+                "Authorization": "Bearer \(self.token)"
+            ]
+            
+            Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
+                .validate(statusCode: 200..<300)
+                .responseJSON { (response: DataResponse<Any>) in
+                    do {
+                        let jobsData = try JSONDecoder().decode(CartModelJson.self, from: response.data!)
+                        observer.onNext(jobsData)
+                    } catch {
+                        print(error.localizedDescription)
+                        observer.onError(error)
+                    }
+            }
+          return Disposables.create()
+        }
+    }
+    
+    
+    func getOffers() -> Observable<ProductModelJson> {
+        return Observable.create { (observer) -> Disposable in
+            let url = ConfigURLs.getOffers
+            let headers = [
+                "Authorization": "Bearer \(self.token)"
+            ]
+            
+            Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
+                .validate(statusCode: 200..<300)
+                .responseJSON { (response: DataResponse<Any>) in
+                    do {
+                        let jobsData = try JSONDecoder().decode(ProductModelJson.self, from: response.data!)
+                        observer.onNext(jobsData)
+                    } catch {
+                        print(error.localizedDescription)
+                        observer.onError(error)
+                    }
+            }
+            
+            return Disposables.create()
+        }
+    }
+
+    
+    func getCategeoruProducts(id : Int) -> Observable<ProductModelJson> {
+        return Observable.create { (observer) -> Disposable in
+            let url = ConfigURLs.getCategeoryProducts + "\(id)"
+            let headers = [
+                "Authorization": "Bearer \(self.token)"
+            ]
+            
+            Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
+                .validate(statusCode: 200..<300)
+                .responseJSON { (response: DataResponse<Any>) in
+                    do {
+                        let jobsData = try JSONDecoder().decode(ProductModelJson.self, from: response.data!)
+                        observer.onNext(jobsData)
+                    } catch {
+                        print(error.localizedDescription)
+                        observer.onError(error)
+                    }
+            }
+            
+            return Disposables.create()
+        }
+    }
+
 }

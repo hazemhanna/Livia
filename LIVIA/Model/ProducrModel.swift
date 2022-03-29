@@ -37,20 +37,19 @@ struct Paginate: Codable {
 }
 
 struct Product: Codable {
-    
     let id: Int?
     let type: String?
     let title, desc: Title?
     let discount: String?
     let category: Category?
     let images: [Category]?
-    let variants: [Variant]?
+    var variants: [Variant]?
     let productCollections: [ProductCollection]?
-    let isWishlist: Bool?
+    var isWishlist: Bool?
     
     enum CodingKeys: String, CodingKey {
         case id, type, title, desc, discount, category
-        case images = "images   "
+        case images = "images"
         case variants
         case productCollections = "product_collections"
         case isWishlist = "is_wishlist"
@@ -68,7 +67,8 @@ struct Option: Codable {
     let id, collectionID: Int?
     let name: String?
     let price, createdAt, updatedAt: String?
-
+    var selected = false
+    
     enum CodingKeys: String, CodingKey {
         case id
         case collectionID = "collection_id"
@@ -83,6 +83,7 @@ struct Variant: Codable {
     let productSize, price: String?
     let quantity, quantityOrdered: Int?
     let createdAt, updatedAt: String?
+    var selected = false
 
     enum CodingKeys: String, CodingKey {
         case id

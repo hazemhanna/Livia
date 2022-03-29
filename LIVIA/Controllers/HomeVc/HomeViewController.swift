@@ -8,11 +8,9 @@
 
 
 
+import Foundation
 import UIKit
 import ImageSlideshow
-import DropDown
-import SwiftMessages
-import Alamofire
 import RxSwift
 import RxCocoa
 
@@ -74,32 +72,25 @@ class HomeViewController: UIViewController {
         SlidercollectionView.delegate = self
         SlidercollectionView.dataSource = self
         SlidercollectionView.register(UINib(nibName: sliderCell, bundle: nil), forCellWithReuseIdentifier: sliderCell)
-
         
         titleLbl.text = "Home".localized
-        
         RestaurantTableView.delegate = self
         RestaurantTableView.dataSource = self
         RestaurantTableView.tableFooterView = UIView()
         RestaurantTableView.register(UINib(nibName: CellIdentifierTableView, bundle: nil), forCellReuseIdentifier: CellIdentifierTableView)
-        
-    
         if token != "" {
           notificationBN.isHidden = false
         }else{
          notificationBN.isHidden = true
         }
-        
         homeViewModel.showIndicator()
         self.getSlider()
         self.getProduct()
         self.getCat()
-        
     }
-    
-    @objc func changeImage() {
-             
-         if counter < sliders.count {
+
+  @objc func changeImage() {
+        if counter < sliders.count {
               let index = IndexPath.init(item: counter, section: 0)
               self.SlidercollectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
               pageView.currentPage = counter
@@ -113,8 +104,6 @@ class HomeViewController: UIViewController {
            }
       }
     
-    
-
     override func viewWillLayoutSubviews() {
         super.updateViewConstraints()
     }
@@ -187,9 +176,14 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductsVc") as? ProductsVc else { return }
+         details.catId = self.category[indexPath.row].id ?? 0
+        if "lang".localized == "ar" {
+            details.catTitle = self.category[indexPath.row].title?.ar ?? ""
+        }else{
+            details.catTitle = self.category[indexPath.row].title?.en ?? ""
+        }
         self.navigationController?.pushViewController(details, animated: true)
     }
-    
 }
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     
@@ -237,14 +231,14 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
         cell.increase = {
             guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }
-           // details.meals = self.meals[indexPath.row]
+           details.product = self.products[indexPath.row]
             self.navigationController?.pushViewController(details, animated: true)
             
         }
         
         cell.decrease = {
             guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }
-            //details.meals = self.meals[indexPath.row]
+            details.product = self.products[indexPath.row]
             self.navigationController?.pushViewController(details, animated: true)
             
         }
@@ -257,19 +251,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }
-        //details.meals = self.meals[indexPath.row]
+        details.product = self.products[indexPath.row]
         self.navigationController?.pushViewController(details, animated: true)
         
     }
 
 }
-
-
-
 extension HomeViewController{
     func getSlider() {
             self.homeViewModel.getSlider().subscribe(onNext: { (data) in
-              
                 self.homeViewModel.dismissIndicator()
                 self.sliders = data.data?.sliders ?? []
                 self.pageView.numberOfPages = self.sliders.count

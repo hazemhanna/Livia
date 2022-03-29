@@ -43,18 +43,14 @@ class OffersCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    func config(name: String,price: Double, imagePath: UIImage, type: String) {
-
-          //if imagePath != "" {
-          //  guard let imageURL = URL(string: imagePath) else { return }
-        self.resturantImage.image = imagePath //.kf.setImage(with: imageURL)
-           // }
-
+    
+    func config(name: String,price: String, imagePath: String, type: String,isWishlist : Bool) {
         self.name.text = name
-        self.type.text = type
-
+        self.type.text = type.parseHtml
+       // self.isFavourite = isWishlist
+        
         if "lang".localized == "ar" {
-            self.price.text = "السعر :٤٠ جنية بدلا من ٥٠"
+            self.price.text = "\(price) جنية"
             self.name.textAlignment = .right
             self.type.textAlignment = .right
         } else {
@@ -62,8 +58,18 @@ class OffersCell: UITableViewCell {
             self.name.textAlignment = .left
             self.type.textAlignment = .left
         }
+        
+        if isWishlist{
+            self.FavoriteBN.setImage(UIImage(named: "222"), for: .normal)
+        }else{
+            self.FavoriteBN.setImage(UIImage(named: "heart"), for: .normal)
+        }
+        
+      guard let imageURL = URL(string: (imagePath).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else { return }
+        self.resturantImage.kf.setImage(with: imageURL)
+        
     }
-    
+
     
     @IBAction func AddToFavorite(_ sender: Any) {
         goToFavorites?()

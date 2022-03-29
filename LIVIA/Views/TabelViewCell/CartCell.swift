@@ -59,13 +59,12 @@ class CartCell: UITableViewCell {
     
     @IBAction func Increase(_ sender: Any) {
         Increase?()
-        self.quantityLB.text = "\(productCounter)"
     }
     
     @IBAction func Dicrease(_ sender: UIButton) {
         Dicrease?()
-        self.quantityLB.text = "\(productCounter)"
     }
+    
     @IBAction func Size(_ radioButton: DLRadioButton) {
         Size?()
         

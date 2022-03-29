@@ -97,14 +97,12 @@ extension FiltterResaultVC: UITableViewDataSource, UITableViewDelegate {
         }
         cell.increase = {
             guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }
-            details.meals = self.meals[indexPath.row]
             self.navigationController?.pushViewController(details, animated: true)
             
         }
         
         cell.decrease = {
             guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }
-            details.meals = self.meals[indexPath.row]
             self.navigationController?.pushViewController(details, animated: true)
             
         }
@@ -115,7 +113,6 @@ extension FiltterResaultVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }
-        details.meals = self.meals[indexPath.row]
         self.navigationController?.pushViewController(details, animated: true)
         
     }

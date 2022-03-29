@@ -6,7 +6,6 @@
 //  Copyright © 2022 Dtag. All rights reserved.
 //
 
-import Foundation
 
 import Alamofire
 import RxSwift
@@ -44,5 +43,75 @@ struct AddServices {
             return Disposables.create()
         }
     }//END of POST Login
-        
+     
+    func addToCart(params: [String: Any]) -> Observable<BaseModel> {
+        return Observable.create { (observer) -> Disposable in
+            let url = ConfigURLs.addToCart
+           
+            
+            let headers = [
+                "Authorization": "Bearer \(self.token)"
+            ]
+            
+            Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
+                .validate(statusCode: 200..<300)
+                .responseJSON { (response: DataResponse<Any>) in
+                    do {
+                        let loginData = try JSONDecoder().decode(BaseModel.self, from: response.data!)
+                        observer.onNext(loginData)
+                    } catch {
+                        print(error)
+                        observer.onError(error)
+                    }
+            }
+            return Disposables.create()
+        }
+    }//END of POST Login
+    
+    
+    
+    func updateCart(params: [String: Any]) -> Observable<BaseModel> {
+        return Observable.create { (observer) -> Disposable in
+            let url = ConfigURLs.updateCart
+            let headers = [
+                "Authorization": "Bearer \(token)"
+            ]
+            
+            Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
+                .validate(statusCode: 200..<300)
+                .responseJSON { (response: DataResponse<Any>) in
+                    do {
+                        let loginData = try JSONDecoder().decode(BaseModel.self, from: response.data!)
+                        observer.onNext(loginData)
+                    } catch {
+                        print(error)
+                        observer.onError(error)
+                    }
+            }
+            return Disposables.create()
+        }
+    }//END of POST Login
+    
+    func deleteCart(id: Int) -> Observable<BaseModel> {
+        return Observable.create { (observer) -> Disposable in
+            let url = ConfigURLs.deleteCart + "\(id)"
+            
+            let headers = [
+                "Authorization": "Bearer \(self.token)"
+            ]
+            
+            Alamofire.request(url, method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: headers)
+                .validate(statusCode: 200..<300)
+                .responseJSON { (response: DataResponse<Any>) in
+                    do {
+                        let loginData = try JSONDecoder().decode(BaseModel.self, from: response.data!)
+                        observer.onNext(loginData)
+                    } catch {
+                        print(error)
+                        observer.onError(error)
+                    }
+            }
+            return Disposables.create()
+        }
+    }//END of POST Login
 }

@@ -15,22 +15,14 @@ class SectionCell: UICollectionViewCell {
         super.awakeFromNib()
         self.sectionName.adjustsFontSizeToFitWidth = true
         self.sectionName.minimumScaleFactor = 0.5
-        sectionImage.setRounded()
-        // Initialization code
+       // sectionImage.setRounded()
     }
+
     func config( imagePath: String , name: String){
-          if (!imagePath.contains("http")) {
-               guard let imageURL = URL(string: (imagePath).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else { return }
-               print(imageURL)
-               self.sectionImage.kf.setImage(with: imageURL)
-           }  else if imagePath != "" {
-               guard let imageURL = URL(string: imagePath) else { return }
-               self.sectionImage.kf.setImage(with: imageURL)
-           } else {
-           }
-        
-       // self.sectionImage.image = imagePath
         self.sectionName.text = name
+        guard let imageURL = URL(string: (imagePath).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else { return }
+        self.sectionImage.kf.setImage(with: imageURL)
+        
        }
 
 }

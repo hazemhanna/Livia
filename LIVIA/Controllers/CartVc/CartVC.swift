@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import RxSwift
+import RxCocoa
 
 class CartVC: UIViewController {
     
@@ -20,39 +22,39 @@ class CartVC: UIViewController {
 
     fileprivate let cellIdentifier = "ValiableResturantCell"
     var productCounter = Int()
-
-
-    var meals = [RestaurantMeal]() {
+    
+    private let cartViewModel = CartViewModel()
+    var disposeBag = DisposeBag()
+    
+    var cart = [Cart]() {
         didSet{
-            DispatchQueue.main.async { [self] in
+            DispatchQueue.main.async {
                 self.cartTableView.reloadData()
-                self.TableHeight.constant = CGFloat((150 * self.meals.count))
-
+                self.TableHeight.constant = CGFloat((150 * self.cart.count))
             }
         }
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        meals.append(RestaurantMeal(nameAr: "سلطة خضراء", image: #imageLiteral(resourceName: "taylor-kiser-EvoIiaIVRzU-unsplash-1"), descriptionAr: "سلطة"))
-        meals.append(RestaurantMeal(nameAr: "بيتزا سي فود", image: #imageLiteral(resourceName: "food-1"), descriptionAr: "بيتزا"))
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        if  Helper.getApiToken() == "" || Helper.getApiToken() == nil {
-//            displayMessage(title: "", message: "You should login first".localized, status:.warning, forController: self)
-//            noProduct.text = "You should login first".localized
-//        } else {
+        if  Helper.getApiToken() ?? ""  == ""  {
+            displayMessage(title: "", message: "You should login first".localized, status:.warning, forController: self)
+            noProduct.text = "You should login first".localized
+        } else {
             cartTableView.delegate = self
             cartTableView.dataSource = self
             cartTableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
             noProduct.text = "emptyCart".localized
-      //  }
+            cartViewModel.showIndicator()
+            getCart()
+        }
     }
     
     func show () {
-        if meals.count > 0 {
+        if cart.count > 0 {
             cartTableView.isHidden = false
             self.emptyView.isHidden = true
         }else{
@@ -69,15 +71,10 @@ class CartVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    
     @IBAction func confirmBtn(_ sender: Any) {
         guard let Details = UIStoryboard(name: "Details", bundle: nil).instantiateViewController(withIdentifier: "MyAddressesVC") as? MyAddressesVC else { return }
          self.navigationController?.pushViewController(Details, animated: true)
         
-
-//        guard let details = UIStoryboard(name: "PopUps", bundle: nil).instantiateViewController(withIdentifier: "OrderConfirmationPopUp") as? OrderConfirmationPopUp else { return }
-//        details.modalPresentationStyle =  .fullScreen
-//        self.navigationController?.present(details, animated: true, completion: nil)
     }
     
     @IBAction func scanhButtonPressed(_ sender: Any) {
@@ -102,40 +99,88 @@ class CartVC: UIViewController {
 extension CartVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return meals.count
+        return cart.count
     }
  
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ValiableResturantCell else {return UITableViewCell()}
-        cell.FavoriteBN.setImage(UIImage(named: "remove"), for: .normal)
         
+        let product = cart[indexPath.row].product
         
-       // cell.config(name: meals[indexPath.row].nameAr ?? "",price: 12.2, imagePath: meals[indexPath.row].image  , type: meals[indexPath.row].descriptionAr ?? "")
-
-        
-         cell.goToFavorites = {
-            self.meals.remove(at: indexPath.row)
-             self.show()
+        if "lang".localized == "ar" {
+        cell.configCart(name: product?.title?.ar ?? ""
+                    , price: product?.variants?[0].price ?? ""
+                    , imagePath: product?.images?[0].image ?? ""
+                    , type: product?.desc?.ar ?? ""
+                    , quantity: cart[indexPath.row].quantity ?? 0 )
+        }else{
+            cell.configCart(name: product?.title?.en ?? ""
+                         ,price: product?.variants?[0].price ?? ""
+                         ,imagePath: product?.images?[0].image ?? ""
+                         ,type: product?.desc?.en ?? ""
+                        ,quantity: cart[indexPath.row].quantity ?? 0)
         }
+        
+        self.productCounter = cart[indexPath.row].quantity ?? 0
+        
+        cell.goToFavorites = {
+            self.cartViewModel.showIndicator()
+            self.removeCart(cart_id: self.cart[indexPath.row].id ?? 0)
+         }
+        
         cell.increase = {
             self.productCounter += 1
             cell.quantityTF.text = "\(self.productCounter)"
+            self.cartViewModel.showIndicator()
+            self.updateCart(cart_id: self.cart[indexPath.row].id ?? 0, quantity:  self.productCounter)
         }
         
         cell.decrease = {
             if self.productCounter > 1 {
                 self.productCounter -= 1
                 cell.quantityTF.text = "\(self.productCounter)"
+                self.cartViewModel.showIndicator()
+                self.updateCart(cart_id: self.cart[indexPath.row].id ?? 0, quantity:  self.productCounter)
             }
         }
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
+}
+
+extension CartVC {
+    
+    func getCart() {
+        self.cartViewModel.getCart().subscribe(onNext: { (data) in
+          self.cartViewModel.dismissIndicator()
+          self.cart = data.data?.cart ?? []
+            self.show ()
+          }, onError: { (error) in
+          self.cartViewModel.dismissIndicator()
+         }).disposed(by: disposeBag)
+    }
+    
+    func updateCart(cart_id : Int ,quantity:Int ) {
+            self.cartViewModel.updateCart(product_id: cart_id, quantity: quantity).subscribe(onNext: { (data) in
+                self.getCart()
+            }, onError: { (error) in
+                self.cartViewModel.dismissIndicator()
+            }).disposed(by: disposeBag)
+        }
+
+    func removeCart(cart_id : Int) {
+            self.cartViewModel.removeCart(id: cart_id).subscribe(onNext: { (data) in
+              self.getCart()
+            }, onError: { (error) in
+                self.cartViewModel.dismissIndicator()
+            }).disposed(by: disposeBag)
+        }
 }

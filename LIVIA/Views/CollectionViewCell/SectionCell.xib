@@ -28,18 +28,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="293" height="335"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="owW-P0-nZK" customClass="CustomView" customModule="Shnp" customModuleProvider="target">
-                                <rect key="frame" x="8" y="8" width="277" height="277"/>
+                                <rect key="frame" x="0.0" y="0.0" width="293" height="273.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="livia logo" translatesAutoresizingMaskIntoConstraints="NO" id="HEr-D8-uKH">
-                                        <rect key="frame" x="41.5" y="41.5" width="194" height="194"/>
+                                        <rect key="frame" x="73.5" y="68.5" width="146.5" height="136.5"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="HEr-D8-uKH" firstAttribute="centerY" secondItem="owW-P0-nZK" secondAttribute="centerY" id="Ue0-Qg-XuB"/>
-                                    <constraint firstItem="HEr-D8-uKH" firstAttribute="width" secondItem="owW-P0-nZK" secondAttribute="width" multiplier="0.7" id="ban-nl-Q0H"/>
-                                    <constraint firstItem="HEr-D8-uKH" firstAttribute="height" secondItem="owW-P0-nZK" secondAttribute="height" multiplier="0.7" id="oak-O4-gUa"/>
-                                    <constraint firstItem="HEr-D8-uKH" firstAttribute="centerX" secondItem="owW-P0-nZK" secondAttribute="centerX" id="prK-6F-9QH"/>
+                                    <constraint firstItem="HEr-D8-uKH" firstAttribute="width" secondItem="owW-P0-nZK" secondAttribute="width" multiplier="0.5" id="OjS-75-9Lw"/>
+                                    <constraint firstItem="HEr-D8-uKH" firstAttribute="centerX" secondItem="owW-P0-nZK" secondAttribute="centerX" id="o0t-AY-Bph"/>
+                                    <constraint firstItem="HEr-D8-uKH" firstAttribute="centerY" secondItem="owW-P0-nZK" secondAttribute="centerY" id="okO-Py-Kf6"/>
+                                    <constraint firstItem="HEr-D8-uKH" firstAttribute="height" secondItem="owW-P0-nZK" secondAttribute="height" multiplier="0.5" id="t6f-qA-PXr"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -60,32 +60,30 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pizza " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYw-9A-mUn">
-                                <rect key="frame" x="125" y="301" width="43.5" height="34"/>
-                                <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="18"/>
+                                <rect key="frame" x="122.5" y="289.5" width="48" height="37.5"/>
+                                <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="20"/>
                                 <color key="textColor" name="navigation"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="OYw-9A-mUn" firstAttribute="top" secondItem="owW-P0-nZK" secondAttribute="bottom" constant="16" id="8SI-iK-Oug"/>
-                            <constraint firstAttribute="bottom" secondItem="OYw-9A-mUn" secondAttribute="bottom" id="VTL-k0-2PQ"/>
-                            <constraint firstItem="OYw-9A-mUn" firstAttribute="centerX" secondItem="vgj-Tn-Woq" secondAttribute="centerX" id="Z9M-gl-uTu"/>
-                            <constraint firstItem="owW-P0-nZK" firstAttribute="leading" secondItem="vgj-Tn-Woq" secondAttribute="leading" constant="8" id="g66-59-oe9"/>
-                            <constraint firstAttribute="trailing" secondItem="owW-P0-nZK" secondAttribute="trailing" constant="8" id="ofw-MJ-fNd"/>
-                            <constraint firstItem="owW-P0-nZK" firstAttribute="height" secondItem="vgj-Tn-Woq" secondAttribute="height" multiplier="0.826866" id="pHQ-o2-WTc"/>
-                            <constraint firstItem="owW-P0-nZK" firstAttribute="top" secondItem="vgj-Tn-Woq" secondAttribute="top" constant="8" id="tyQ-ke-eVz"/>
-                            <constraint firstItem="owW-P0-nZK" firstAttribute="width" secondItem="vgj-Tn-Woq" secondAttribute="width" multiplier="0.945392" id="xwU-fJ-zaY"/>
+                            <constraint firstItem="owW-P0-nZK" firstAttribute="leading" secondItem="vgj-Tn-Woq" secondAttribute="leading" id="9N0-bN-ktB"/>
+                            <constraint firstItem="OYw-9A-mUn" firstAttribute="centerX" secondItem="vgj-Tn-Woq" secondAttribute="centerX" id="cAc-ze-KSJ"/>
+                            <constraint firstAttribute="trailing" secondItem="owW-P0-nZK" secondAttribute="trailing" id="iEb-8A-0vf"/>
+                            <constraint firstItem="OYw-9A-mUn" firstAttribute="top" secondItem="owW-P0-nZK" secondAttribute="bottom" constant="16" id="ia0-hA-ZZR"/>
+                            <constraint firstAttribute="bottom" secondItem="OYw-9A-mUn" secondAttribute="bottom" constant="8" id="oa7-l7-lGJ"/>
+                            <constraint firstItem="owW-P0-nZK" firstAttribute="top" secondItem="vgj-Tn-Woq" secondAttribute="top" id="tow-2b-erB"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="vgj-Tn-Woq" secondAttribute="trailing" id="74r-NO-0wA"/>
-                <constraint firstAttribute="bottom" secondItem="vgj-Tn-Woq" secondAttribute="bottom" id="FCy-pM-1e4"/>
-                <constraint firstItem="vgj-Tn-Woq" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="baA-Ig-hGq"/>
-                <constraint firstItem="vgj-Tn-Woq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="mfR-XL-Eg7"/>
+                <constraint firstItem="vgj-Tn-Woq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="aQH-Hd-23M"/>
+                <constraint firstAttribute="bottom" secondItem="vgj-Tn-Woq" secondAttribute="bottom" id="cg7-Te-mcE"/>
+                <constraint firstAttribute="trailing" secondItem="vgj-Tn-Woq" secondAttribute="trailing" id="nAV-55-EP6"/>
+                <constraint firstItem="vgj-Tn-Woq" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="seg-Jl-naE"/>
             </constraints>
             <size key="customSize" width="92" height="311"/>
             <connections>
