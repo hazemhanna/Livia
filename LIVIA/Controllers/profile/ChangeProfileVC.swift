@@ -8,16 +8,25 @@
 
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ChangeProfileVC: UIViewController {
+    
+    @IBOutlet weak var name: CustomTextField!
+    @IBOutlet weak var phone: CustomTextField!
+    @IBOutlet weak var email: CustomTextField!
+    @IBOutlet weak var address: CustomTextField!
     @IBOutlet weak var titleLbl  : UILabel!
 
+    private let AuthViewModel = AuthenticationViewModel()
+    var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         titleLbl.text = "changeProfile".localized
-
+        AuthViewModel.showIndicator()
+        getProfile()
     }
     
     @IBAction func popUpAction(_ sender: UIButton) {
@@ -47,6 +56,13 @@ class ChangeProfileVC: UIViewController {
         self.setupSideMenu()
     }
     
+    func DataBinding() {
+        _ = name.rx.text.map({$0 ?? ""}).bind(to: AuthViewModel.name).disposed(by: disposeBag)
+        _ = email.rx.text.map({$0 ?? ""}).bind(to: AuthViewModel.email).disposed(by: disposeBag)
+        _ = address.rx.text.map({$0 ?? ""}).bind(to: AuthViewModel.address).disposed(by: disposeBag)
+        _ = phone.rx.text.map({$0 ?? ""}).bind(to: AuthViewModel.phone).disposed(by: disposeBag)
+    }
+    
     @IBAction func scanhButtonPressed(_ sender: Any) {
         guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "ScanVc") as? ScanVc else { return }
         self.navigationController?.pushViewController(details, animated: true)
@@ -64,8 +80,36 @@ class ChangeProfileVC: UIViewController {
 
     }
     
+    @IBAction func savePressed(_ sender: Any) {
+        self.AuthViewModel.showIndicator()
+        updateProfile()
+    }
 }
 
+extension ChangeProfileVC {
+    
+    func getProfile() {
+        self.AuthViewModel.getProfile().subscribe(onNext: { (data) in
+            self.AuthViewModel.dismissIndicator()
+            self.name.text = data.data?.name ?? ""
+            self.phone.text = data.data?.phone ?? ""
+            self.email.text = data.data?.email ?? ""
+            self.address.text = data.data?.address ?? ""
+            self.DataBinding()
+            }, onError: { (error) in
+                self.AuthViewModel.dismissIndicator()
+            }).disposed(by: disposeBag)
+     }
+    
+    func updateProfile() {
+        self.AuthViewModel.updateProfile().subscribe(onNext: { (data) in
+          self.getProfile()
+        }, onError: { (error) in
+            self.AuthViewModel.dismissIndicator()
+        }).disposed(by: disposeBag)
+     }
+    
+}
 
 
 

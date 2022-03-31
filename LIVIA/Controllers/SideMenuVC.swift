@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+
 class SideMenuVC: UIViewController {
     
     @IBOutlet weak var editBN: UIButton!
@@ -15,9 +18,11 @@ class SideMenuVC: UIViewController {
     @IBOutlet weak var walletValue : UILabel!
     @IBOutlet weak var SideMenuTableView: UITableView!
     @IBOutlet weak var walletView : UIView!
-
+    
     fileprivate let cellIdentifier = "SideMenuCell"
-   
+    private let AuthViewModel = AuthenticationViewModel()
+    var disposeBag = DisposeBag()
+    
     var sideMenuArr = [SideMenuModel]() {
         didSet {
             DispatchQueue.main.async {
@@ -35,6 +40,10 @@ class SideMenuVC: UIViewController {
         SideMenuTableView.rowHeight = UITableView.automaticDimension
         SideMenuTableView.estimatedRowHeight = UITableView.automaticDimension
         SideMenuTableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
+        
+        AuthViewModel.showIndicator()
+        getProfile()
+
     }
     
     
@@ -156,5 +165,15 @@ extension SideMenuVC: UITableViewDelegate,UITableViewDataSource {
     }
 }
 
-
+extension SideMenuVC {
+    
+    func getProfile() {
+        self.AuthViewModel.getProfile().subscribe(onNext: { (data) in
+            self.AuthViewModel.dismissIndicator()
+            self.name.text = data.data?.name ?? ""
+            }, onError: { (error) in
+                self.AuthViewModel.dismissIndicator()
+            }).disposed(by: disposeBag)
+        }
+}
 

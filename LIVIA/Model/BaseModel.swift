@@ -8,6 +8,18 @@
 
 import Foundation
 
+struct RegisterModel:  Codable {
+    let value: Bool?
+    let user: UserModel?
+    let msg: Errors?
+    let token : String?
+    
+    enum CodingKeys: String, CodingKey {
+        case value, user, msg
+        case token = "access_token"
+    }
+}
+
 struct LoginModel:  Codable {
     let value: Bool?
     let user: UserModel?
@@ -18,20 +30,19 @@ struct LoginModel:  Codable {
         case value, user, msg
         case token = "access_token"
     }
-    
 }
 
 // MARK: - DataClass
 struct UserModel: Codable {
     let id: Int?
     let name, email, address, phone: String?
-    let verificationCode: Int?
+  //  let verificationCode: Int?
     let isVerified: Int?
     let role, status, createdAt, updatedAt: String?
 
     enum CodingKeys: String, CodingKey {
         case id, name, email, address, phone
-        case verificationCode = "verification_code"
+       // case verificationCode = "verification_code"
         case isVerified = "is_verified"
         case role, status
         case createdAt = "created_at"

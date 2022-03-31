@@ -9,14 +9,23 @@
 
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ProfileChangePasswordVC: UIViewController {
     
     @IBOutlet weak var titleLbl  : UILabel!
+    @IBOutlet weak var newPassword: CustomTextField!
+    @IBOutlet weak var password_confirmation: CustomTextField!
+    @IBOutlet weak var oldPassword: CustomTextField!
 
+    private let AuthViewModel = AuthenticationViewModel()
+    var disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLbl.text = "Password changed".localized
+        DataBinding()
 
     }
     
@@ -63,6 +72,59 @@ class ProfileChangePasswordVC: UIViewController {
         self.navigationController?.pushViewController(details, animated: true)
 
     }
+    
+    @IBAction func updatePass(_ sender: UIButton) {
+        guard self.validate() else {return}
+        AuthViewModel.showIndicator()
+        updatePassword()
+    }
+    
+    private func validate() ->Bool {
+        if self.oldPassword.text!.isEmpty {
+            displayMessage(title: "", message: "Old password is empty".localized, status: .error, forController: self)
+            return false
+        }else if self.newPassword.text!.isEmpty{
+            displayMessage(title: "", message: "Enter new password".localized, status: .error, forController: self)
+            return false
+        }else if self.password_confirmation.text!.isEmpty{
+            displayMessage(title: "", message: "Enter confirm password".localized, status: .error, forController: self)
+            return false
+        }else if self.newPassword.text!.count < 8{
+            displayMessage(title: "", message: "bill".localized, status: .error, forController: self)
+            return false
+        } else if self.password_confirmation.text! != self.newPassword.text!{
+            displayMessage(title: "", message: "your password not match".localized, status: .error, forController: self)
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    @IBAction func login(_ sender: UIButton) {
+        guard let sb = UIStoryboard(name: "Authentications", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as? LoginVC else {return}
+        self.navigationController?.pushViewController(sb, animated: true)
+    }
+    
+    
+    func DataBinding() {
+        _ = oldPassword.rx.text.map({$0 ?? ""}).bind(to: AuthViewModel.oldPassword).disposed(by: disposeBag)
+        _ = newPassword.rx.text.map({$0 ?? ""}).bind(to: AuthViewModel.password).disposed(by: disposeBag)
+        _ = password_confirmation.rx.text.map({$0 ?? ""}).bind(to: AuthViewModel.confirm_password).disposed(by: disposeBag)
+    }
+    
+    
+    
+    func updatePassword() {
+        self.AuthViewModel.POSTChangePassowrd().subscribe(onNext: { (data) in
+            self.AuthViewModel.dismissIndicator()
+            Helper.LogOutUser()
+            guard let sb = UIStoryboard(name: "Authentications", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as? LoginVC else {return}
+            self.navigationController?.pushViewController(sb, animated: true)
+        }, onError: { (error) in
+            self.AuthViewModel.dismissIndicator()
+        }).disposed(by: disposeBag)
+     }
+    
     
 }
 

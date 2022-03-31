@@ -20,6 +20,7 @@ struct ConfigURLs {
     static var logout = BASE_URL  + "logout"
     static var updateProfile = BASE_URL  + "update-profile"
     static var updatePassword = BASE_URL  + "update-password"
+
     //general
     static var getSliders = BASE_URL  + "sliders"
     static var getCategories = BASE_URL  + "categories"

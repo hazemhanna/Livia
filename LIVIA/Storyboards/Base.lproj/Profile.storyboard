@@ -217,7 +217,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aUd-Q9-lax" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="109" y="-496"/>
+            <point key="canvasLocation" x="-167" y="-496"/>
         </scene>
         <!--Change ProfileVC-->
         <scene sceneID="OmI-fZ-eeJ">
@@ -271,7 +271,7 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="6ZE-iz-XPa">
-                                                <rect key="frame" x="32" y="270" width="350" height="378"/>
+                                                <rect key="frame" x="32" y="270" width="350" height="296"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cg1-bu-4lc" customClass="CustomTextField" customModule="Shnp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="350" height="50"/>
@@ -297,8 +297,8 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GSd-Jb-49U" customClass="CustomTextField" customModule="Shnp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="82" width="350" height="50"/>
+                                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GSd-Jb-49U" customClass="CustomTextField" customModule="Shnp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="66" width="350" height="0.0"/>
                                                         <color key="textColor" name="navigation"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -319,7 +319,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P7d-mN-rOB" customClass="CustomTextField" customModule="Shnp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="164" width="350" height="50"/>
+                                                        <rect key="frame" x="0.0" y="82" width="350" height="50"/>
                                                         <color key="textColor" name="navigation"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -340,7 +340,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pBC-8P-BCX" customClass="CustomTextField" customModule="Shnp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="246" width="350" height="50"/>
+                                                        <rect key="frame" x="0.0" y="164" width="350" height="50"/>
                                                         <color key="textColor" name="navigation"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -361,7 +361,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3YW-rN-d1s" customClass="CustomButtons" customModule="Shnp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="328" width="350" height="50"/>
+                                                        <rect key="frame" x="0.0" y="246" width="350" height="50"/>
                                                         <color key="backgroundColor" name="navigation"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                         <state key="normal" title="Save">
@@ -373,6 +373,9 @@
                                                                 <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="savePressed:" destination="1x6-dO-Qif" eventType="touchUpInside" id="7Dv-bC-JX0"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -509,12 +512,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="SMl-qr-Ag1"/>
                     <connections>
+                        <outlet property="address" destination="P7d-mN-rOB" id="Xid-tx-Y8F"/>
+                        <outlet property="email" destination="GSd-Jb-49U" id="U2f-Gm-huu"/>
+                        <outlet property="name" destination="cg1-bu-4lc" id="Bf5-Yu-j6F"/>
+                        <outlet property="phone" destination="pBC-8P-BCX" id="lIA-lM-4BL"/>
                         <outlet property="titleLbl" destination="9pn-db-wKN" id="Yew-aj-fzB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sqI-vW-IwF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1661" y="-496"/>
+            <point key="canvasLocation" x="1128" y="-496"/>
         </scene>
         <!--Notifications-->
         <scene sceneID="swK-Xg-xPy">
@@ -644,7 +651,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bzn-tc-eTH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3396" y="-512"/>
+            <point key="canvasLocation" x="2504" y="-496"/>
         </scene>
         <!--Change Password-->
         <scene sceneID="150-1l-Ebh">
@@ -863,6 +870,9 @@
                                                                 <real key="value" value="15"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="updatePass:" destination="zU7-Lw-LQ1" eventType="touchUpInside" id="pnt-H3-vxn"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -903,74 +913,15 @@
                     </view>
                     <navigationItem key="navigationItem" title="Change Password" id="74L-16-fuN"/>
                     <connections>
+                        <outlet property="newPassword" destination="rL8-Z5-BtF" id="68a-n8-qus"/>
+                        <outlet property="oldPassword" destination="u8w-LQ-fyA" id="big-RO-1s5"/>
+                        <outlet property="password_confirmation" destination="XHj-sU-k2a" id="Ixn-sw-2eZ"/>
                         <outlet property="titleLbl" destination="YiI-at-2bm" id="SxZ-Pi-ku0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8SL-WC-7vm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2484" y="-512"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Ts0-Vw-mDC">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" navigationBarHidden="YES" id="EY7-Z4-wFf" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="etR-yk-guu"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3i2-7P-eey">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.91954845190000001" green="0.26827093959999998" blue="0.21753334999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="N8p-dt-SCp" kind="relationship" relationship="rootViewController" id="zoe-Wh-mJq"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DMU-Z7-2Ni" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3397" y="-1286"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="AG1-Ai-uKX">
-            <objects>
-                <navigationController storyboardIdentifier="CustomerProfileNav" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="SZ4-iv-veG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Zr9-xk-34S"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9dl-0J-SLU">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.91954845190000001" green="0.26827093959999998" blue="0.21753334999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="UAb-1m-LbF" kind="relationship" relationship="rootViewController" id="EBQ-LU-zgH"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ajE-qY-dWW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="109" y="-1315"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="fVC-cd-aeI">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Xhr-7R-TYb" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="A9J-aq-K9Y"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="F8r-2o-Gzb">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="1x6-dO-Qif" kind="relationship" relationship="rootViewController" id="oJH-pB-CYI"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bod-Om-d5F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1661" y="-1315"/>
+            <point key="canvasLocation" x="1797" y="-496"/>
         </scene>
         <!--Profile-->
         <scene sceneID="KP7-9X-Pho">
@@ -1241,29 +1192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lc2-CB-EI8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="847.82608695652175" y="-496.20535714285711"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="tjO-dH-poj">
-            <objects>
-                <navigationController storyboardIdentifier="WalletNav" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="E03-ce-XK4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="N8z-EM-Eaw"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zpW-KE-QNh">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.91954845190000001" green="0.26827093959999998" blue="0.21753334999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="JHz-Fx-cDL" kind="relationship" relationship="rootViewController" id="n8C-mb-eiA"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9g5-YB-0Xk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="849" y="-1315"/>
+            <point key="canvasLocation" x="471" y="-496"/>
         </scene>
         <!--Profile Pop Up-->
         <scene sceneID="40f-Hj-Ef1">
@@ -1428,7 +1357,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sTG-Mm-LKP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2483" y="-1286"/>
+            <point key="canvasLocation" x="3199" y="-496"/>
         </scene>
         <!--Main ProfileVC-->
         <scene sceneID="dU1-Uu-dyx">
@@ -1679,30 +1608,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="wpE-1l-mw3"/>
                     <connections>
+                        <outlet property="addLbl" destination="hBq-au-XKU" id="Y4n-lb-e3r"/>
+                        <outlet property="emailLbl" destination="00h-WH-p4m" id="Zil-5f-waj"/>
+                        <outlet property="nameLbl" destination="I6u-df-Bca" id="tYD-TW-kmx"/>
+                        <outlet property="phoneLbl" destination="sq3-gs-QAI" id="8ZU-kY-g21"/>
                         <outlet property="titleLbl" destination="lg3-Iu-Ztc" id="b5k-P1-Abw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g2F-aC-LHU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-838" y="-496"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="l5q-l9-dK1">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="7dR-KM-Xna" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="8tl-Q8-GOd"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hof-8B-Koe">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="jm3-es-i43" kind="relationship" relationship="rootViewController" id="ciN-fv-RbS"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="a3p-TS-Dap" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-838" y="-1315"/>
         </scene>
     </scenes>
     <designables>
