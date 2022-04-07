@@ -240,7 +240,7 @@ class GetServices {
         }
     }
     
-    func getReservation() -> Observable<OrderModelJSON> {
+    func getReservation() -> Observable<ReservationModelJSON> {
         return Observable.create { (observer) -> Disposable in
             let url = ConfigURLs.getReservation
             let headers = [
@@ -251,7 +251,7 @@ class GetServices {
                 .validate(statusCode: 200..<300)
                 .responseJSON { (response: DataResponse<Any>) in
                     do {
-                        let jobsData = try JSONDecoder().decode(OrderModelJSON.self, from: response.data!)
+                        let jobsData = try JSONDecoder().decode(ReservationModelJSON.self, from: response.data!)
                         observer.onNext(jobsData)
                     } catch {
                         print(error)

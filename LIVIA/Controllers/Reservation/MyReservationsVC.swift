@@ -9,41 +9,42 @@
 
 
 import UIKit
-import DropDown
-import Cosmos
+import RxSwift
+import RxCocoa
+
 class MyReservationsVC : UIViewController {
     
     @IBOutlet weak var listTableView: UITableView!
     @IBOutlet weak var titleLBL : UILabel!
-    @IBOutlet weak var titleLbl  : UILabel!
-
     @IBOutlet weak var emptyView: UIView!
-
+    
     fileprivate let cellIdentifier = "ReservationCell"
     
+    private let reservationVM  = ReservatiomViewModel()
+    var disposeBag = DisposeBag()
     
-//    var list = [orderList](){
-//        didSet {
-//            DispatchQueue.main.async {
-//                self.listTableView.reloadData()
-//            }
-//        }
-//    }
+    
+    var reservations = [Reservations](){
+        didSet {
+            DispatchQueue.main.async {
+                self.listTableView.reloadData()
+            }
+        }
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         titleLBL.text = "MyReservations".localized
+        listTableView.delegate = self
+        listTableView.dataSource = self
+        listTableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
         
+        reservationVM.showIndicator()
+        self.getReservatiom()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-            listTableView.delegate = self
-            listTableView.dataSource = self
-            listTableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
-    }
-    
+
     @IBAction func sideMenu(_ sender: Any) {
         self.setupSideMenu()
     }
@@ -66,7 +67,7 @@ class MyReservationsVC : UIViewController {
 extension MyReservationsVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return  8
+        return  reservations.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -87,5 +88,17 @@ extension MyReservationsVC: UITableViewDelegate, UITableViewDataSource {
         guard let Details = UIStoryboard(name: "Reservation", bundle: nil).instantiateViewController(withIdentifier: "MyReservationsDetailsVC") as? MyReservationsDetailsVC else { return }
         self.navigationController?.pushViewController(Details, animated: true)
     }
+    
+}
+extension MyReservationsVC{
+    
+    func getReservatiom() {
+            self.reservationVM.getReservatiom().subscribe(onNext: { (data) in
+                 self.reservationVM.dismissIndicator()
+                self.reservations = data.data?.tableReservations?.tableReservations ?? []
+            }, onError: { (error) in
+                self.reservationVM.dismissIndicator()
+            }).disposed(by: disposeBag)
+        }
     
 }

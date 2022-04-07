@@ -22,17 +22,16 @@ struct ReservatiomViewModel {
         SVProgressHUD.dismiss()
     }
     
-    func getReservatiom() -> Observable<OrderModelJSON> {
-        let observer = GetServices.shared.getOrders()
+    func getReservatiom() -> Observable<ReservationModelJSON> {
+        let observer = GetServices.shared.getReservation()
         return observer
     }
     
-    func cancelReservatiom(order_id : Int) -> Observable<BaseModel> {
-        let params: [String: Any] = [
-            "order_id": order_id]
-        let observer = AddServices.shared.cancelOrder(params: params)
+    func cancelReservatiom(id : Int) -> Observable<BaseModel> {
+        let observer = AddServices.shared.cancelReservation(id: id)
         return observer
     }
+    
     func createReservatiom(table_number : String,reservation_date : String,notes : String,type:String,time_from : String) -> Observable<BaseModel> {
         let params: [String: Any] = [
             "table_number": table_number,
@@ -40,7 +39,8 @@ struct ReservatiomViewModel {
             "notes" : notes,
             "type" :type,
             "time_from" :time_from]
-       let observer = AddServices.shared.createOrder(params: params)
+       let observer = AddServices.shared.createReservation(params: params)
        return observer
     }
+    
 }

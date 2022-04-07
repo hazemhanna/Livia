@@ -24,11 +24,16 @@ struct ReservationModel: Codable {
 }
 
 struct TableReservations: Codable {
-    let tableReservations: [Cart]?
+    let tableReservations: [Reservations]?
     let paginate: Paginate?
 
     enum CodingKeys: String, CodingKey {
         case tableReservations = "table_reservations"
         case paginate
     }
+}
+
+struct Reservations: Codable {
+    let id: Int?
+    
 }
