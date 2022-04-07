@@ -23,11 +23,9 @@ class ListCell: UITableViewCell {
         detailstn.setTitle("details".localized, for: .normal)
     }
     
-    func config( date: String, status: String, orderNumber: Int) {
-        
-        self.date.text = date
+    func config(date: String,orderNumber: Int) {
+        self.date.text = formatDate(date :date)
         self.orderNum.text = "\(orderNumber)"
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -38,6 +36,14 @@ class ListCell: UITableViewCell {
          goToDetails?()
     }
     
-   
-    
+    func formatDate(date: String) -> String {
+       let dateFormatterGet = DateFormatter()
+       dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+       let dateFormatter = DateFormatter()
+       dateFormatter.dateStyle = .medium
+       dateFormatter.timeStyle = .none
+       let dateObj: Date? = dateFormatterGet.date(from: date)
+       return dateFormatter.string(from: dateObj!)
+    }
+
 }

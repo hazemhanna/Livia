@@ -16,40 +16,43 @@ class UserOrderDetailsVC: UIViewController{
     @IBOutlet weak var orderTyper : UILabel!
     @IBOutlet weak var paymentView : UIView!
     @IBOutlet weak var TaxLb: UILabel!
+    
     @IBOutlet weak var detailsTableView: UITableView!
     @IBOutlet weak var TableHeight: NSLayoutConstraint!
+    
     @IBOutlet weak var TaxLb2: UILabel!
-    @IBOutlet weak var titleLbl  : UILabel!
+    @IBOutlet weak var oredrId  : UILabel!
+    
 
     fileprivate let cellIdentifier = "OrderReceiptCell"
-    
-    var details = [Int]() {
-        didSet {
-            DispatchQueue.main.async {
-            
-                self.detailsTableView.reloadData()
-                self.TableHeight.constant = 3*40
-            
-            }
-        }
-    }
+    var order: Order?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         detailsTableView.delegate = self
         detailsTableView.dataSource = self
         detailsTableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
-        detailsTableView.rowHeight = UITableView.automaticDimension
-        detailsTableView.estimatedRowHeight = 120
+      
         TaxLb2.text = "taxs".localized
         self.TaxLb.text = ("The total price includes ".localized + "VAT tax".localized)
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        details.append(1)
-        details.append(1)
-        details.append(1)
+        TableHeight.constant = CGFloat(40 * (order?.orderItems?.count ?? 0))
+        detailsTableView.reloadData()
+        
+        
+        var total = 0
+        for t in  self.order?.orderItems ?? [] {
+            let price = Double(t.price ?? "") ?? 0.0
+            total +=  Int(price) * (t.quantity ?? 0)
+        }
+        
+        self.orderPrice.text = String(total) + " " + "EGP".localized
+        self.totalPriceLB.text = String(total + 40) + " " + "EGP".localized
+        oredrId.text = "\(order?.id ?? 0 )"
     }
     
    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -83,12 +86,19 @@ class UserOrderDetailsVC: UIViewController{
 
 extension UserOrderDetailsVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return details.count
+        return  order?.orderItems?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? OrderReceiptCell else {return UITableViewCell()}
-     
+        let item = order?.orderItems?[indexPath.row]
+
+        if "lang".localized == "ar" {
+            cell.config(name: item?.product?.title?.ar ?? "", number: item?.quantity ?? 0,price: item?.price ?? "")
+        }else{
+            cell.config(name: item?.product?.title?.en ?? "", number: item?.quantity ?? 0, price: item?.price ?? "")
+        }
+        
         return cell
     }
     

@@ -20,10 +20,11 @@ struct ConfigURLs {
     static var logout = BASE_URL  + "logout"
     static var updateProfile = BASE_URL  + "update-profile"
     static var updatePassword = BASE_URL  + "update-password"
-
     //general
     static var getSliders = BASE_URL  + "sliders"
     static var getCategories = BASE_URL  + "categories"
+    static var settings = BASE_URL  + "settings"
+    static var  contactUs = BASE_URL  + "contact-us"
     //wishlist
     static var getWishlist = BASE_URL  + "wishlist"
     static var addWishlist = BASE_URL  + "wishlist/create"
@@ -41,6 +42,11 @@ struct ConfigURLs {
     static var getProducts = BASE_URL  + "products"
     static var getOffers = BASE_URL  + "products?discounts=1"
     static var getCategeoryProducts = BASE_URL  + "products?category_id="
-
+    //reservation
+    static var getReservation = BASE_URL  + "user-tables"
+    static var createReservation = BASE_URL  + "user-tables/create"
+    static var cancelReservation = BASE_URL  + "user-tables/"
+    
+    
 
 }

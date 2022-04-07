@@ -66,8 +66,9 @@
 
 "Item deleted from cart" = "تم حذف الطلب من سلة التسوق";
 
-"Complain" = "شكوى";
-"Proposal" = "أقتراح";
+"problem" = "شكوى";
+"suggestion" = "أقتراح";
+
 "Enter Your Email" = "ادخل بريدك الألكتروني";
 
 "Enter Your phone number" = "ادخل رقم الجوال";
@@ -103,7 +104,7 @@
 
 "phone or password wrong" = "كلمة المرور أو رقم الهاتف غير صحيحين";
 
-"Add to cart" = "أضافة إلى السلة";
+"Add to cart" = "تم الأضافة إلى السلة";
 
 "Password changed" = "تغيير كلمة المرور";
 
@@ -229,4 +230,10 @@
 "medium" = "وسط";
 "othetnotes" = "تفاصيل اخري";
 "size" = "الحجم";
+"EGP" = "جنية";
 
+"please select size" =  "من فضلك اختر الحجم";
+"total cost" = "اجمالي التكلفة";
+"Contact Send Done" = "تم الارسال بنجاح";
+"please select time" =  "من فضلك اختر الوقت";
+"please select date" =  "من فضلك اختر التاريخ";

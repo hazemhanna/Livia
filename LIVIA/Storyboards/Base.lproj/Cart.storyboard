@@ -281,8 +281,11 @@
                     <connections>
                         <outlet property="TableHeight" destination="jKQ-bA-EvN" id="DIp-GU-Bvt"/>
                         <outlet property="cartTableView" destination="jkC-62-95J" id="AW0-zD-PaU"/>
+                        <outlet property="deliveryLbl" destination="ImP-09-684" id="CXr-Rf-33n"/>
+                        <outlet property="discreption" destination="e0b-6Y-aU4" id="u7C-GA-bee"/>
                         <outlet property="emptyView" destination="sfC-Qu-2rf" id="Djf-c2-zet"/>
                         <outlet property="noProduct" destination="bsU-rI-XQP" id="v1c-eT-9IT"/>
+                        <outlet property="totalLbl" destination="vSw-4B-qYi" id="bL8-LY-eFf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SOm-rK-GYB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -607,7 +610,7 @@
         <image name="back-arrow" width="16" height="16"/>
         <image name="brooke-lark-HlNcigvUi4Q-unsplash" width="5760" height="3840"/>
         <image name="cart.fill" catalog="system" width="128" height="102"/>
-        <image name="livia logo" width="479" height="479"/>
+        <image name="livia logo" width="1024" height="1024"/>
         <image name="loupe-1" width="35" height="35"/>
         <image name="loupe-2" width="30" height="30"/>
         <image name="loupe-5" width="38" height="38"/>

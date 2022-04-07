@@ -69,6 +69,28 @@ class Helper {
         return def.object(forKey: "email") as? String
     }
     
+    
+    
+    class func savedate(token: String) {
+        let def = UserDefaults.standard
+        def.set(token, forKey: "date")
+        def.synchronize()
+    }
+    class func getdate() -> String? {
+        let def = UserDefaults.standard
+        return def.object(forKey: "date") as? String
+    }
+    
+    class func savetime(token: String) {
+        let def = UserDefaults.standard
+        def.set(token, forKey: "time")
+        def.synchronize()
+    }
+
+    class func getTime() -> String? {
+        let def = UserDefaults.standard
+        return def.object(forKey: "time") as? String
+    }
 }
 
 

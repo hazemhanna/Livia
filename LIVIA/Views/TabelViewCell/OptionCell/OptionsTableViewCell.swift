@@ -13,7 +13,6 @@ class OptionsTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var selectedImageView : UIImageView!
     @IBOutlet weak var quantityLbl : UILabel!
-    var productCounter = 1
     
     var Increase: (() ->Void)? = nil
     var Dicrease:(() ->Void)? = nil
@@ -41,12 +40,10 @@ class OptionsTableViewCell: UITableViewCell {
     
     @IBAction func Increase(_ sender: Any) {
         Increase?()
-        self.quantityLbl.text = "\(productCounter)"
     }
     
     @IBAction func Dicrease(_ sender: UIButton) {
         Dicrease?()
-        self.quantityLbl.text = "\(productCounter)"
     }
     
 }

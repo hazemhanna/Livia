@@ -47,13 +47,12 @@ class ValiableResturantCell: UITableViewCell {
         self.name.text = name
         self.type.text = type.parseHtml
        // self.isFavourite = isWishlist
-        
+        self.price.text = price + " " + "EGP".localized
+
         if "lang".localized == "ar" {
-            self.price.text = "\(price) جنية"
             self.name.textAlignment = .right
             self.type.textAlignment = .right
         } else {
-            self.price.text = "\(price) EGP"
             self.name.textAlignment = .left
             self.type.textAlignment = .left
         }
@@ -69,32 +68,29 @@ class ValiableResturantCell: UITableViewCell {
         
     }
     
-    
-    
     func configCart(name: String,price: String, imagePath: String, type: String,quantity : Int) {
         
         self.name.text = name
         self.type.text = type.parseHtml
         self.quantityTF.text = "\(quantity)"
         
+        let p1 = Double(price) ?? 0
+        let total =  Int(p1) * quantity
+        self.price.text = String(total) + " " + "EGP".localized
+        
         if "lang".localized == "ar" {
-            self.price.text = "\(price) جنية"
             self.name.textAlignment = .right
             self.type.textAlignment = .right
         } else {
-            self.price.text = "\(price) EGP"
             self.name.textAlignment = .left
             self.type.textAlignment = .left
         }
-        self.FavoriteBN.setImage(UIImage(named: "remove"), for: .normal)
-
+        
+      self.FavoriteBN.setImage(UIImage(named: "remove"), for: .normal)
       guard let imageURL = URL(string: (imagePath).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else { return }
         self.resturantImage.kf.setImage(with: imageURL)
         
     }
-
-    
-    
     
     @IBAction func AddToFavorite(_ sender: Any) {
         goToFavorites?()

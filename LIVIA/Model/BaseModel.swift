@@ -56,3 +56,35 @@ struct ProfileModel:  Codable {
     let data: UserModel?
     var msg: String?
 }
+
+
+struct SettingModelJson : Codable {
+    let value: Bool?
+    let data: SettingModel
+    let msg: String?
+}
+
+struct SettingModel: Codable {
+    let settings: Settings
+}
+
+// MARK: - Settings
+struct Settings: Codable {
+    let applicationName, aboutUs, terms: Title?
+    let applicationEmail: String?
+    let facebook, snapshat, whatsapp, twitter: String?
+    let freeDeliveryProduct: Int?
+    let deliveryTax: String?
+    let maxMinCancelOrder: Int?
+
+    enum CodingKeys: String, CodingKey {
+        case applicationName = "application_name"
+        case aboutUs = "about_us"
+        case terms
+        case applicationEmail = "application_email"
+        case facebook, snapshat, whatsapp, twitter
+        case freeDeliveryProduct = "free_delivery_product"
+        case deliveryTax = "delivery_tax"
+        case maxMinCancelOrder = "max_min_cancel_order"
+    }
+}

@@ -18,7 +18,8 @@ class CartVC: UIViewController {
     @IBOutlet weak var noProduct: UILabel!
     @IBOutlet weak var TableHeight: NSLayoutConstraint!
     @IBOutlet weak var discreption: UITextField!
-    @IBOutlet weak var titleLbl  : UILabel!
+    @IBOutlet weak var totalLbl   : UILabel!
+    @IBOutlet weak var deliveryLbl   : UILabel!
 
     fileprivate let cellIdentifier = "ValiableResturantCell"
     var productCounter = Int()
@@ -110,13 +111,13 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource {
         
         if "lang".localized == "ar" {
         cell.configCart(name: product?.title?.ar ?? ""
-                    , price: product?.variants?[0].price ?? ""
+                     ,price: cart[indexPath.row].price ?? ""
                     , imagePath: product?.images?[0].image ?? ""
                     , type: product?.desc?.ar ?? ""
                     , quantity: cart[indexPath.row].quantity ?? 0 )
         }else{
             cell.configCart(name: product?.title?.en ?? ""
-                         ,price: product?.variants?[0].price ?? ""
+                         ,price: (cart[indexPath.row].price ?? "")
                          ,imagePath: product?.images?[0].image ?? ""
                          ,type: product?.desc?.en ?? ""
                         ,quantity: cart[indexPath.row].quantity ?? 0)
@@ -162,6 +163,14 @@ extension CartVC {
         self.cartViewModel.getCart().subscribe(onNext: { (data) in
           self.cartViewModel.dismissIndicator()
           self.cart = data.data?.cart ?? []
+            
+            var total = 40
+            for t in  self.cart {
+                let price = Double(t.price ?? "") ?? 0.0
+                total +=  Int(price) * (t.quantity ?? 0)
+            }
+            
+            self.totalLbl.text = "total cost".localized + " " + String(total) + " " + "EGP".localized
             self.show ()
           }, onError: { (error) in
           self.cartViewModel.dismissIndicator()

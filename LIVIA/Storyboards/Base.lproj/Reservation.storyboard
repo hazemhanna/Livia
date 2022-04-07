@@ -491,7 +491,7 @@
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A2S-Cn-UgD" customClass="CustomButtons" customModule="Shnp" customModuleProvider="target">
-                                <rect key="frame" x="124" y="572" width="166" height="45"/>
+                                <rect key="frame" x="124" y="762" width="166" height="45"/>
                                 <color key="backgroundColor" name="navigation"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="zMs-bs-Fg1"/>
@@ -514,26 +514,32 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="71.5"/>
                                 <color key="backgroundColor" name="navigation"/>
                             </view>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="85a-wk-del">
+                                <rect key="frame" x="47" y="530" width="320" height="216"/>
+                            </datePicker>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dAw-A4-c9S"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="kFG-iU-TEX" firstAttribute="centerX" secondItem="dAw-A4-c9S" secondAttribute="centerX" id="4Kn-FB-mNG"/>
                             <constraint firstItem="bsq-V6-EYy" firstAttribute="top" secondItem="dAw-A4-c9S" secondAttribute="top" constant="30" id="4La-OG-1Nm"/>
+                            <constraint firstItem="A2S-Cn-UgD" firstAttribute="top" secondItem="85a-wk-del" secondAttribute="bottom" constant="16" id="95G-tk-h17"/>
                             <constraint firstItem="bsq-V6-EYy" firstAttribute="centerX" secondItem="dAw-A4-c9S" secondAttribute="centerX" id="I93-a1-Em0"/>
+                            <constraint firstItem="85a-wk-del" firstAttribute="top" secondItem="bsq-V6-EYy" secondAttribute="bottom" constant="8" id="ILT-tk-in9"/>
                             <constraint firstItem="A2S-Cn-UgD" firstAttribute="width" secondItem="OuR-ZJ-g0R" secondAttribute="width" multiplier="0.4" id="J4m-75-0TS"/>
                             <constraint firstItem="bsq-V6-EYy" firstAttribute="height" secondItem="OuR-ZJ-g0R" secondAttribute="height" multiplier="0.5" id="TCl-3y-L4W"/>
                             <constraint firstItem="kFG-iU-TEX" firstAttribute="width" secondItem="OuR-ZJ-g0R" secondAttribute="width" id="aZY-WD-Da3"/>
                             <constraint firstItem="kFG-iU-TEX" firstAttribute="top" secondItem="OuR-ZJ-g0R" secondAttribute="top" id="hK0-w0-Z8W"/>
+                            <constraint firstItem="85a-wk-del" firstAttribute="centerX" secondItem="OuR-ZJ-g0R" secondAttribute="centerX" id="kdH-ci-8k6"/>
                             <constraint firstItem="A2S-Cn-UgD" firstAttribute="centerX" secondItem="dAw-A4-c9S" secondAttribute="centerX" id="myr-zU-YbV"/>
                             <constraint firstItem="kFG-iU-TEX" firstAttribute="height" secondItem="OuR-ZJ-g0R" secondAttribute="height" multiplier="0.08" id="n76-uS-aCN"/>
-                            <constraint firstItem="A2S-Cn-UgD" firstAttribute="top" secondItem="bsq-V6-EYy" secondAttribute="bottom" constant="50" id="pnf-Q0-tMA"/>
                             <constraint firstItem="bsq-V6-EYy" firstAttribute="width" secondItem="OuR-ZJ-g0R" secondAttribute="width" multiplier="0.9" id="zGr-Lc-Bn9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Order Date" id="kDO-LG-DGk"/>
                     <connections>
                         <outlet property="orderCalender" destination="bsq-V6-EYy" id="zHA-de-BU0"/>
+                        <outlet property="timePicker" destination="85a-wk-del" id="xtQ-95-nes"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="78Q-ds-QgR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -607,7 +613,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="218" height="25"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MY Reservation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3q-AW-q9O">
-                                                                <rect key="frame" x="16" y="4" width="106.5" height="17.5"/>
+                                                                <rect key="frame" x="16" y="-1.5" width="102.5" height="28.5"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="15"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>

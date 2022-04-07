@@ -62,7 +62,7 @@ extension FoodPackagesVC  : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TableCellIdentifier, for: indexPath) as? FoodPackgeCell else {return UITableViewCell()}
         
-        cell.config(imagePath: "", date: "13/3/2022", price: 40.0 , time: "١١ يوم", pakageName: "الباقة الذهيية")
+        cell.config(imagePath: "", date: "13/3/2022", price: "40.0" , time: "١١ يوم", pakageName: "الباقة الذهيية")
         return cell
     }
     

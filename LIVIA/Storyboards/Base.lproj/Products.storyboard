@@ -547,19 +547,19 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azY-XD-MqN">
-                                        <rect key="frame" x="16" y="250" width="50" height="23.5"/>
+                                        <rect key="frame" x="16" y="250" width="48.5" height="37.5"/>
                                         <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="20"/>
                                         <color key="textColor" name="navigation"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="describtion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lj-ib-dEa">
-                                        <rect key="frame" x="16" y="281.5" width="75" height="17.5"/>
+                                        <rect key="frame" x="16" y="295.5" width="70" height="28.5"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
                                         <color key="textColor" name="navigation"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jTQ-bG-WzM">
-                                        <rect key="frame" x="16" y="307" width="334" height="40"/>
+                                        <rect key="frame" x="16" y="332" width="334" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sizes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bdq-OX-i5f">
                                                 <rect key="frame" x="0.0" y="0.0" width="43.5" height="40"/>
@@ -587,20 +587,20 @@
                                         </constraints>
                                     </stackView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9DG-GM-pFX">
-                                        <rect key="frame" x="16" y="355" width="382" height="1"/>
+                                        <rect key="frame" x="16" y="380" width="382" height="1"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="zNJ-IH-3zh"/>
                                         </constraints>
                                     </tableView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Other Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFM-lS-Khh">
-                                        <rect key="frame" x="16" y="372" width="109" height="23.5"/>
+                                        <rect key="frame" x="16" y="397" width="105" height="37.5"/>
                                         <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="20"/>
                                         <color key="textColor" name="navigation"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A9b-5u-NAY" customClass="CustomTextField" customModule="Shnp" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="411.5" width="382" height="50"/>
+                                        <rect key="frame" x="16" y="450.5" width="382" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Pdr-BP-QMi"/>
                                         </constraints>
@@ -619,7 +619,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="twL-K3-cOH" customClass="CustomView" customModule="Shnp" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="493.5" width="250" height="50"/>
+                                        <rect key="frame" x="16" y="532.5" width="250" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rvx-2m-AsB" customClass="CustomButtons" customModule="Shnp" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="5" width="40" height="40"/>
@@ -643,14 +643,14 @@
                                                     <action selector="confirm:" destination="6gj-Le-uUI" eventType="touchUpInside" id="Ce2-Xd-or1"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="describtion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7RL-ym-h1p">
-                                                <rect key="frame" x="56" y="16.5" width="75" height="17.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7RL-ym-h1p">
+                                                <rect key="frame" x="56" y="11" width="8.5" height="28.5"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
                                                 <color key="textColor" name="navigation"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-5" translatesAutoresizingMaskIntoConstraints="NO" id="WGg-ef-abv">
-                                                <rect key="frame" x="139" y="10" width="90" height="30"/>
+                                                <rect key="frame" x="72.5" y="10" width="90" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXz-vT-vth" customClass="CustomButtons" customModule="Shnp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="33.5" height="30"/>
@@ -854,7 +854,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="M6J-jH-I7v">
-                                                <rect key="frame" x="5" y="255" width="404" height="317.5"/>
+                                                <rect key="frame" x="5" y="255" width="404" height="350.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aXJ-ex-E0p">
                                                         <rect key="frame" x="0.0" y="0.0" width="404" height="40"/>
@@ -889,19 +889,19 @@
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لمدة ١٤ يوم " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xy-UU-9h9">
-                                                        <rect key="frame" x="0.0" y="56" width="404" height="19"/>
+                                                        <rect key="frame" x="0.0" y="56" width="404" height="30"/>
                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                         <color key="textColor" name="navigation"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" وسلطة حضراء وزيتون المكونات طماطم وسلطة  " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfb-9Z-M5W">
-                                                        <rect key="frame" x="0.0" y="91" width="404" height="19"/>
+                                                        <rect key="frame" x="0.0" y="102" width="404" height="30"/>
                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                         <color key="textColor" name="navigation"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="k71-EJ-2RX">
-                                                        <rect key="frame" x="0.0" y="126" width="404" height="90.5"/>
+                                                        <rect key="frame" x="0.0" y="148" width="404" height="90.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اشتراك التوصيل" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCy-mS-UqW">
                                                                 <rect key="frame" x="0.0" y="0.0" width="404" height="37.5"/>
@@ -982,13 +982,13 @@
                                                         <color key="tintColor" red="0.91954845190000001" green="0.26827093959999998" blue="0.21753334999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="في حالة اختيارك لاشتراك التوصيل سوف يتم اضافتة للباقة " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lxy-1s-Hvh">
-                                                        <rect key="frame" x="0.0" y="232.5" width="404" height="19"/>
+                                                        <rect key="frame" x="0.0" y="254.5" width="404" height="30"/>
                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                         <color key="textColor" name="navigation"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G4k-RD-Vc8">
-                                                        <rect key="frame" x="0.0" y="267.5" width="404" height="50"/>
+                                                        <rect key="frame" x="0.0" y="300.5" width="404" height="50"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="السعر : ١٤٠ جنية" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Lj-9K-5Db">
                                                                 <rect key="frame" x="16" y="8" width="98.5" height="19.5"/>
@@ -1181,7 +1181,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="218" height="25"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offers " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JGV-49-b71">
-                                                                <rect key="frame" x="16" y="4" width="45" height="17.5"/>
+                                                                <rect key="frame" x="16" y="-1.5" width="43.5" height="28.5"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="15"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -1692,7 +1692,7 @@
             <size key="intrinsicContentSize" width="4" height="18.5"/>
         </designable>
         <designable name="DXP-6J-xaX">
-            <size key="intrinsicContentSize" width="30" height="30"/>
+            <size key="intrinsicContentSize" width="25" height="23"/>
         </designable>
         <designable name="E0m-Vo-JvY">
             <size key="intrinsicContentSize" width="498" height="318"/>
@@ -1723,7 +1723,7 @@
         <image name="back-arrow" width="16" height="16"/>
         <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="checked" width="22" height="22"/>
-        <image name="heart" width="30" height="30"/>
+        <image name="heart" width="25" height="23"/>
         <image name="livia logo" width="1024" height="1024"/>
         <image name="loupe-1" width="35" height="35"/>
         <image name="loupe-2" width="30" height="30"/>

@@ -9,6 +9,9 @@
 import UIKit
 import DropDown
 import MessageUI
+import RxSwift
+import RxCocoa
+
 class ContactUsVC: UIViewController {
     
     @IBOutlet weak var socialMediaCollectionView: UICollectionView!
@@ -18,14 +21,18 @@ class ContactUsVC: UIViewController {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var name: UITextField!
     
+    private let AuthViewModel = AuthenticationViewModel()
+    var disposeBag = DisposeBag()
     
     fileprivate let  cellIdentifeir = "SettingCell"
-    let TypeArr = ["Complain".localized, "Proposal".localized]
+    let TypeArr = ["problem".localized, "suggestion".localized]
     var MailType = ""
-    var UserType = ""
-    var id = Int()
-    var selections = [String]()
-
+    
+    var facebook  = ""
+    var whatsapp  = ""
+    var twitter  = ""
+    var snapchat  = ""
+    
     let MessageTypeDropDown = DropDown()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,29 +40,24 @@ class ContactUsVC: UIViewController {
         socialMediaCollectionView.delegate = self
         socialMediaCollectionView.dataSource = self
         socialMediaCollectionView.register(UINib(nibName: cellIdentifeir, bundle: nil), forCellWithReuseIdentifier: cellIdentifeir)
-      
+        getProfile()
     }
+    
     func SetupMessageTypeDropDown() {
         MessageTypeDropDown.anchorView = messageAddress
         MessageTypeDropDown.bottomOffset = CGPoint(x: 0, y: MessageTypeDropDown.anchorView?.plainView.bounds.height ?? 0 + 50)
         MessageTypeDropDown.dataSource = TypeArr
-        MessageTypeDropDown.selectionAction = {
-            [weak self] (index, item) in
-            self?.messageAddress.setTitleColor(#colorLiteral(red: 0.9195484519, green: 0.2682709396, blue: 0.21753335, alpha: 1), for: .normal)
+        MessageTypeDropDown.selectionAction = {[weak self] (index, item) in
             self?.messageAddress.setTitle(item, for: .normal)
             if index == 0 {
-                self?.MailType = "complain"
-            } else if index == 1 {
-                
-                self?.MailType = "proposal"
-
+                self?.MailType = "problem"
+            }else{
+                self?.MailType = "suggestion"
             }
-            
         }
         MessageTypeDropDown.direction = .any
-        MessageTypeDropDown.width = self.view.frame.width * 1
+        MessageTypeDropDown.width = 200
     }
-
 
     
     @IBAction func Menu(_ sender: Any) {
@@ -68,9 +70,6 @@ class ContactUsVC: UIViewController {
         self.navigationController?.pushViewController(details, animated: true)
     }
     
-
-
-
     @IBAction func notificationhButtonPressed(_ sender: Any) {
         guard let details = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "NotificationsVC") as? NotificationsVC else { return }
         self.navigationController?.pushViewController(details, animated: true)
@@ -81,50 +80,24 @@ class ContactUsVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    
-    @IBAction func cart(_ sender: Any) {
-        guard let window = UIApplication.shared.keyWindow else { return }
-
-        guard let details = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeTabBar") as? UITabBarController else { return }
-        
-        details.selectedIndex = 2
-        window.rootViewController = details
-        
-    }
-    
     @IBAction func send(_ sender: Any) {
-        
-        
-         print(email.text?.isValidEmail())
-        
         if email.text == "" {
-            
             displayMessage(title: "", message: "Enter Your Email".localized, status: .error, forController: self)
         } else if email.text?.isValidEmail() == false {
-            
             displayMessage(title: "", message: "Email is invalid".localized, status: .error, forController: self)
-
-            
         } else if phone.text == "" {
-            
             displayMessage(title: "", message: "Enter Your phone number".localized, status: .error, forController: self)
         } else if name.text == "" {
-            
             displayMessage(title: "", message: "Enter Your name".localized, status: .error, forController: self)
         } else if MailType == "" {
-            
             displayMessage(title: "", message: "Choose the message address".localized, status: .error, forController: self)
         } else if messageDetails.text == ""{
-            
             displayMessage(title: "", message: "Enter message".localized, status: .error, forController: self)
-            
-            
         } else if (Helper.getApiToken() ?? "") == "" {
             displayMessage(title: "", message: "You should login first".localized, status: .error, forController: self)
-            
-            
         }else{
-            
+            self.AuthViewModel.showIndicator()
+            self.contactUs(subject: MailType)
         }
         
     }
@@ -134,7 +107,6 @@ class ContactUsVC: UIViewController {
     }
     
     func sendEmail(email: String) {
-        
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
@@ -148,6 +120,14 @@ class ContactUsVC: UIViewController {
             print("Please check the email.")
         }
     }
+    
+    func DataBinding() {
+        _ = name.rx.text.map({$0 ?? ""}).bind(to: AuthViewModel.name).disposed(by: disposeBag)
+        _ = email.rx.text.map({$0 ?? ""}).bind(to: AuthViewModel.email).disposed(by: disposeBag)
+        _ = messageDetails.rx.text.map({$0 ?? ""}).bind(to: AuthViewModel.message).disposed(by: disposeBag)
+        _ = phone.rx.text.map({$0 ?? ""}).bind(to: AuthViewModel.phone).disposed(by: disposeBag)
+    }
+    
 }
 
 extension ContactUsVC: MFMailComposeViewControllerDelegate {
@@ -189,6 +169,12 @@ extension ContactUsVC: MFMailComposeViewControllerDelegate {
         controller.dismiss(animated: true)
         
     }
+    
+    func openlink (link : String){
+        guard let url = URL(string: link) else {return}
+        UIApplication.shared.open(url)
+    }
+    
 }
 extension ContactUsVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -197,21 +183,29 @@ extension ContactUsVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifeir, for: indexPath) as? SettingCell else {return UICollectionViewCell()}
-        
         if indexPath.row == 0{
             cell.config(imagePath: #imageLiteral(resourceName: "facebook"))
         }else if indexPath.row == 1{
-            cell.config(imagePath: #imageLiteral(resourceName: "facebook (-1"))
+            cell.config(imagePath: #imageLiteral(resourceName: "whatsapp"))
         }else if indexPath.row == 2{
-            cell.config(imagePath: #imageLiteral(resourceName: "Insta"))
+            cell.config(imagePath: #imageLiteral(resourceName: "twitter (2)"))
         }else if indexPath.row == 3{
             cell.config(imagePath: #imageLiteral(resourceName: "snapchat (2)"))
         }
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        if indexPath.row == 0{
+            self.openlink(link: self.facebook)
+        }else if indexPath.row == 1{
+            self.openlink(link: self.whatsapp)
+        }else if indexPath.row == 2{
+            self.openlink(link: self.twitter)
+        }else if indexPath.row == 3{
+            self.openlink(link: self.snapchat)
+        }
     }
 }
 
@@ -222,8 +216,47 @@ extension ContactUsVC: UICollectionViewDelegateFlowLayout {
         let size: CGFloat = (collectionView.frame.size.width - space) / 4.2
         return CGSize(width: size, height: 70)
     }
-    
 }
 
+extension ContactUsVC {
+    func getProfile() {
+        self.AuthViewModel.getProfile().subscribe(onNext: { (data) in
+            self.AuthViewModel.dismissIndicator()
+            self.getSetting()
+            self.name.text = data.data?.name ?? ""
+            self.email.text = data.data?.email ?? ""
+            self.phone.text = data.data?.phone ?? ""
+            self.DataBinding()
 
-
+            }, onError: { (error) in
+                self.AuthViewModel.dismissIndicator()
+            }).disposed(by: disposeBag)
+     }
+    
+    func contactUs(subject : String) {
+        self.AuthViewModel.contactUs(subject:subject).subscribe(onNext: { (data) in
+            self.AuthViewModel.dismissIndicator()
+            if data.value ?? false {
+            displayMessage(title: "", message: "Contact Send Done".localized , status: .success, forController: self)
+            self.navigationController?.popViewController(animated: true)
+            }
+            },onError: { (error) in
+          self.AuthViewModel.dismissIndicator()
+        }).disposed(by: disposeBag)
+     }
+    
+    func getSetting() {
+        self.AuthViewModel.getSetting().subscribe(onNext: { (data) in
+            
+            self.AuthViewModel.dismissIndicator()
+            self.whatsapp = data.data.settings.whatsapp ?? ""
+            self.facebook = data.data.settings.facebook ?? ""
+            self.twitter = data.data.settings.twitter ?? ""
+            self.snapchat = data.data.settings.snapshat ?? ""
+            
+        }, onError: { (error) in
+                self.AuthViewModel.dismissIndicator()
+            }).disposed(by: disposeBag)
+     }
+    
+}

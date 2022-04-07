@@ -50,7 +50,7 @@ struct Product: Codable {
     enum CodingKeys: String, CodingKey {
         case id, type, title, desc, discount, category
         case images = "images"
-        case variants
+         case variants
         case productCollections = "product_collections"
         case isWishlist = "is_wishlist"
 
@@ -59,26 +59,28 @@ struct Product: Codable {
 
 struct ProductCollection: Codable {
     let id: Int?
-    let name: String?
+    let name: Title?
     let options: [Option]?
 }
 
-struct Option: Codable {
-    let id, collectionID: Int?
-    let name: String?
-    let price, createdAt, updatedAt: String?
+class Option: Codable {
+    let id: Int?
+    let type: String?
+    let title: Title?
+    let discount: String?
+    let category: Category?
+    let images: [Category]?
+    var variants: [Variant]?
     var selected = false
     
     enum CodingKeys: String, CodingKey {
-        case id
-        case collectionID = "collection_id"
-        case name, price
-        case createdAt = "created_at"
-        case updatedAt = "updated_at"
+        case id, type, title, discount, category
+        case images = "images"
+         case variants
     }
 }
 
-struct Variant: Codable {
+class Variant: Codable {
     let id: Int?
     let productSize, price: String?
     let quantity, quantityOrdered: Int?

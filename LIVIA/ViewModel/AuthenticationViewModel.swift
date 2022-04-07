@@ -16,11 +16,10 @@ struct AuthenticationViewModel {
     var password = BehaviorSubject<String>(value: "")
     var confirm_password = BehaviorSubject<String>(value: "")
     var oldPassword = BehaviorSubject<String>(value: "")
-
     var name = BehaviorSubject<String>(value: "")
     var address = BehaviorSubject<String>(value: "")
     var phone = BehaviorSubject<String>(value: "")
-   
+    var message = BehaviorSubject<String>(value: "")
 
     func showIndicator() {
         SVProgressHUD.show()
@@ -99,4 +98,27 @@ struct AuthenticationViewModel {
     }
 
 
+    func contactUs(subject : String) -> Observable<BaseModel> {
+        let bindedName = (try? self.name.value()) ?? ""
+        let message = (try? self.message.value()) ?? ""
+        let bindedEmail = (try? self.email.value()) ?? ""
+        let bindedPhone = (try? self.phone.value()) ?? ""
+
+        let params: [String: Any] = [
+            "name": bindedName ,
+            "email": bindedEmail,
+            "message": message,
+            "subject": subject ,
+            "phone": bindedPhone]
+        let observer = AddServices.shared.contacUS(params: params)
+        return observer
+    }
+    
+    func getSetting() -> Observable<SettingModelJson> {
+          let observer = GetServices.shared.getSetting()
+         return observer
+     }
+    
+    
+    
 }

@@ -58,7 +58,8 @@
 
 "Item deleted from cart" = "Item deleted from cart";
 
-"Complain" = "Complain";
+"problem" = "problem";
+"suggestion" = "suggestion";
 "Proposal" = "Proposal";
 
 "Enter Your Email" = "Enter Your Email";
@@ -98,7 +99,7 @@
 
 "phone or password wrong" =  "phone or password wrong";
 
-"Add to cart" = "Add to cart";
+"Add to cart" = "done Add to cart";
 
 "Password changed" = "changed Password";
 
@@ -225,3 +226,9 @@
 "medium" = "medium";
 "othetnotes" = "othet notes";
 "size" = "size";
+"EGP" = "EGP";
+"please select size" =  "please select size";
+"total cost" = "total cost";
+"Contact Send Done" = "Contact Send Done";
+"please select time" =  "please select time";
+"please select date" =  "please select date";

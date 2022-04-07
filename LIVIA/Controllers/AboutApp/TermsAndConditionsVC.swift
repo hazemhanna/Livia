@@ -8,15 +8,23 @@
 
 import UIKit
 
+import RxSwift
+import RxCocoa
+
+
 class TermsAndConditionsVC: UIViewController {
     
-    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var TermsAndCond: UITextView!
     
+    private let AuthViewModel = AuthenticationViewModel()
+    var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+        
+        AuthViewModel.showIndicator()
+        getSetting()
+        
         if "lang".localized == "ar" {
             TermsAndCond.textAlignment = .right
         }else{
@@ -43,9 +51,6 @@ class TermsAndConditionsVC: UIViewController {
         self.navigationController?.pushViewController(details, animated: true)
     }
     
-
-
-
     @IBAction func notificationhButtonPressed(_ sender: Any) {
         guard let details = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "NotificationsVC") as? NotificationsVC else { return }
         self.navigationController?.pushViewController(details, animated: true)
@@ -54,3 +59,21 @@ class TermsAndConditionsVC: UIViewController {
     
 }
 
+
+extension TermsAndConditionsVC {
+    func getSetting() {
+        self.AuthViewModel.getSetting().subscribe(onNext: { (data) in
+            self.AuthViewModel.dismissIndicator()
+            
+            if "lang".localized == "ar" {
+              self.TermsAndCond.text = data.data.settings.terms?.ar
+            }else{
+              self.TermsAndCond.text = data.data.settings.terms?.en
+            }
+            
+         }, onError: { (error) in
+                self.AuthViewModel.dismissIndicator()
+            }).disposed(by: disposeBag)
+     }
+    
+}

@@ -11,6 +11,7 @@ import UIKit
 class OrderReceiptCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var quantity: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,10 +23,16 @@ class OrderReceiptCell: UITableViewCell {
         
     }
     
-    func config(name: String, number: Int, price: String , restaurant : String) {
+    func config(name: String, number: Int, price: String) {
         self.name.text = name
-        print(price)
-        self.price.text = price
+        self.price.text = price + "" + "EGP".localized
+        quantity.text = "\(number)"
+        
+        if "lang".localized == "ar" {
+            self.name.textAlignment = .right
+        }else{
+            self.name.textAlignment = .left
+        }
     }
     
     

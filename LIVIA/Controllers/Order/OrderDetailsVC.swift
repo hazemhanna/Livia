@@ -13,34 +13,41 @@ import UIKit
 class OrderDetailsVC : UIViewController {
     
     @IBOutlet weak var cartTableView: UITableView!
-    @IBOutlet weak var emptyView: UIView!
-    @IBOutlet weak var noProduct: UILabel!
     @IBOutlet weak var TableHeight: NSLayoutConstraint!
     @IBOutlet weak var discreption: UITextField!
     @IBOutlet weak var titleLbl  : UILabel!
 
+    @IBOutlet weak var totalLbl  : UILabel!
+
     fileprivate let cellIdentifier = "FoodPackgeCell"
     
-//    var CartIems = [onlineCart]() {
-//        didSet {
-//            self.cartTableView.reloadData()
-//        }
-//    }
+    var order: Order?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        TableHeight.constant = (120 * 2)
-        titleLbl.text =  "Order List".localized
+    
+        titleLbl.text = "Order List".localized
+        cartTableView.delegate = self
+        cartTableView.dataSource = self
+       cartTableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
+                               
     }
     
     override func viewWillAppear(_ animated: Bool) {
-
-            cartTableView.delegate = self
-            cartTableView.dataSource = self
-            cartTableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
-    
+        TableHeight.constant = CGFloat(120 * (order?.orderItems?.count ?? 0))
+        cartTableView.reloadData()
+        discreption.text = order?.notes
+        
+        var total = 40
+        for t in  self.order?.orderItems ?? [] {
+            let price = Double(t.price ?? "") ?? 0.0
+            total +=  Int(price) * (t.quantity ?? 0)
+        }
+        
+        self.totalLbl.text = "total cost".localized + " " + String(total) + " " + "EGP".localized
+        
     }
-    
+                                       
     @IBAction func menu(_ sender: Any) {
         self.setupSideMenu()
     }
@@ -64,6 +71,7 @@ class OrderDetailsVC : UIViewController {
     
     @IBAction func showBillButton(_ sender: Any) {
         guard let Details = UIStoryboard(name: "Details", bundle: nil).instantiateViewController(withIdentifier: "UserOrderDetailsVC") as? UserOrderDetailsVC else { return }
+        Details.order = order
         self.navigationController?.pushViewController(Details, animated: true)
     }
     
@@ -82,17 +90,24 @@ class OrderDetailsVC : UIViewController {
 extension OrderDetailsVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
-    }
- 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        return order?.orderItems?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? FoodPackgeCell else {return UITableViewCell()}
-        cell.config(imagePath: "", date: "اضافة جبنة وزيتون", price: 40.0 , time: "ييتزا", pakageName: "بيتزا سي فود")
+        let item = order?.orderItems?[indexPath.row]
+        
+        if "lang".localized == "ar" {
+            cell.config(imagePath: item?.product?.images?[0].image ?? "" , date: "", price: item?.price ?? "" , time: item?.product?.title?.ar ?? "", pakageName: item?.product?.desc?.ar ?? "")
+        }else{
+            cell.config(imagePath: item?.product?.images?[0].image ?? "" , date: "", price: item?.price ?? "" , time: item?.product?.title?.en ?? "", pakageName: item?.product?.desc?.en ?? "")
+        }
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

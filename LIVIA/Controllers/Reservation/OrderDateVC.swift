@@ -11,31 +11,45 @@ import FSCalendar
 class OrderDateVC: UIViewController {
     
     @IBOutlet weak var orderCalender: FSCalendar!
-    
-    var selectedDate: ((String) -> Void)?
-    var dateString = String()
+    @IBOutlet weak var timePicker : UIDatePicker!
+
+    var time =  String()
+    var date = String()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         orderCalender.delegate = self
         orderCalender.dataSource = self
         orderCalender.register(FSCalendarCell.self, forCellReuseIdentifier: "Cell")
-     
+        timePicker.datePickerMode = .time
+        timePicker.addTarget(self, action: #selector(datePickerChanged(picker:)), for: .valueChanged)
+        
     }
+    
+    
+    @objc func datePickerChanged(picker: UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = NSLocale(localeIdentifier: "en-US") as Locale
+        dateFormatter.dateFormat =  "hh:mm"
+        self.time = (dateFormatter.string(from: picker.date))
+        Helper.savetime(token: (dateFormatter.string(from: picker.date)))
+    }
+
     @IBAction func Confirm(_ sender: UIButton) {
-        selectedDate?(dateString)
-        self.navigationController?.popViewController(animated: true)
+       if date == ""{
+            displayMessage(title: "", message: "please select date".localized, status: .error, forController: self)
+        } else if time == "" {
+            displayMessage(title: "", message: "please select time".localized, status: .error, forController: self)
+        }else{
+            self.navigationController?.popViewController(animated: true)
+        }
     }
-    
-    
-    
 }
+
 extension OrderDateVC: FSCalendarDelegate, FSCalendarDataSource {
     
     func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
-
          let cell = calendar.dequeueReusableCell(withIdentifier: "Cell", for: date, at: position)
-                
         return cell
     }
    
@@ -51,7 +65,9 @@ extension OrderDateVC: FSCalendarDelegate, FSCalendarDataSource {
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy/MM/dd"
-        dateString = dateFormatter.string(from: date)
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.locale = NSLocale(localeIdentifier: "en-US") as Locale
+        self.date = dateFormatter.string(from: date)
+        Helper.savedate(token: dateFormatter.string(from: date))
     }
 }

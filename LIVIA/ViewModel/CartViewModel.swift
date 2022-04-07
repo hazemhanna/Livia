@@ -45,7 +45,8 @@ struct CartViewModel {
             "product_variant_id": variant_id,
             "message": message,
             "quantity": quantity,
-            "collection_option_id": options]
+        //    "collection_option_id": options
+        ]
         
         let observer = AddServices.shared.addToCart(params: params)
         return observer
