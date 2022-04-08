@@ -27,26 +27,26 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="179"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="alla youssef " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENG-Ay-PbN">
-                                        <rect key="frame" x="148" y="50" width="118.5" height="24"/>
+                                        <rect key="frame" x="148" y="77.5" width="118.5" height="24"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tzh-db-c1O" customClass="CustomView" customModule="Shnp" customModuleProvider="target">
-                                        <rect key="frame" x="107" y="90" width="200" height="73"/>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tzh-db-c1O" customClass="CustomView" customModule="Shnp" customModuleProvider="target">
+                                        <rect key="frame" x="107" y="92" width="200" height="71"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="D7h-1k-hv8">
-                                                <rect key="frame" x="74.5" y="8" width="51.5" height="57"/>
+                                                <rect key="frame" x="74.5" y="8" width="51.5" height="55"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wallet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ki-N4-eZT">
-                                                        <rect key="frame" x="0.0" y="0.0" width="51.5" height="24.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="51.5" height="23.5"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="120 EGP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHH-XG-n9v">
-                                                        <rect key="frame" x="0.5" y="32.5" width="50.5" height="24.5"/>
+                                                        <rect key="frame" x="0.5" y="31.5" width="50.5" height="23.5"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="12"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -54,7 +54,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEi-hI-URT">
-                                                <rect key="frame" x="0.0" y="0.0" width="200" height="73"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="71"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
                                                 <state key="normal">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -85,10 +85,9 @@
                                 <color key="backgroundColor" name="navigation"/>
                                 <constraints>
                                     <constraint firstItem="Tzh-db-c1O" firstAttribute="centerX" secondItem="Bge-Rn-XIG" secondAttribute="centerX" id="AwD-wW-V7z"/>
+                                    <constraint firstItem="ENG-Ay-PbN" firstAttribute="centerY" secondItem="Bge-Rn-XIG" secondAttribute="centerY" id="Cgx-QT-ACT"/>
                                     <constraint firstAttribute="bottom" secondItem="Tzh-db-c1O" secondAttribute="bottom" constant="16" id="EOr-uo-Dpi"/>
-                                    <constraint firstItem="ENG-Ay-PbN" firstAttribute="top" secondItem="Bge-Rn-XIG" secondAttribute="top" constant="50" id="NHe-0I-bbD"/>
                                     <constraint firstItem="ENG-Ay-PbN" firstAttribute="centerX" secondItem="Bge-Rn-XIG" secondAttribute="centerX" id="WK1-lQ-KLq"/>
-                                    <constraint firstItem="Tzh-db-c1O" firstAttribute="top" secondItem="ENG-Ay-PbN" secondAttribute="bottom" constant="16" id="g2r-OC-hRl"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dtQ-5k-ydh">

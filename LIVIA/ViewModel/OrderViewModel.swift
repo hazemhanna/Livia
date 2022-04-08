@@ -32,12 +32,4 @@ struct OrderViewModel {
         let observer = AddServices.shared.cancelOrder(params: params)
         return observer
     }
-    func createOrder(phoneNumber : String,address : String,notes : String) -> Observable<BaseModel> {
-        let params: [String: Any] = [
-            "mobile": phoneNumber,
-            "address": address,
-            "notes" : notes]
-       let observer = AddServices.shared.createOrder(params: params)
-       return observer
-    }
 }

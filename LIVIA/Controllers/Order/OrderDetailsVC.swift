@@ -16,11 +16,10 @@ class OrderDetailsVC : UIViewController {
     @IBOutlet weak var TableHeight: NSLayoutConstraint!
     @IBOutlet weak var discreption: UITextField!
     @IBOutlet weak var titleLbl  : UILabel!
-
+    @IBOutlet weak var deliveryLbl   : UILabel!
     @IBOutlet weak var totalLbl  : UILabel!
 
     fileprivate let cellIdentifier = "FoodPackgeCell"
-    
     var order: Order?
     
     override func viewDidLoad() {
@@ -38,14 +37,15 @@ class OrderDetailsVC : UIViewController {
         cartTableView.reloadData()
         discreption.text = order?.notes
         
-        var total = 40
+        var total = 10
         for t in  self.order?.orderItems ?? [] {
             let price = Double(t.price ?? "") ?? 0.0
             total +=  Int(price) * (t.quantity ?? 0)
         }
         
         self.totalLbl.text = "total cost".localized + " " + String(total) + " " + "EGP".localized
-        
+        self.deliveryLbl.text = "delivery fees".localized + " " + String(10) + " " + "EGP".localized
+
     }
                                        
     @IBAction func menu(_ sender: Any) {

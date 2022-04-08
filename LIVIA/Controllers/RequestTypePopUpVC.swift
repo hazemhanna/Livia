@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+
 
 enum PayType {
     case visa,cash,wallet
@@ -24,11 +27,18 @@ class RequestTypePopUpVC: UIViewController {
     @IBOutlet weak var cach: UIButton!
     @IBOutlet weak var wallet: UIButton!
     
+    var notes: String?
+    var phone: String?
+    var address: String?
+
+    var delivery_tax = 0
+
+    private let cartViewModel = CartViewModel()
+    var disposeBag = DisposeBag()
     
     var pay : PayType?
     var OrderType : orderType = .sefry
 
-   
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,11 +50,12 @@ class RequestTypePopUpVC: UIViewController {
             OrderType = .sefry
             safarytBN.setImage(#imageLiteral(resourceName: "checked-green"), for: .normal)
             deliveryButton.setImage(#imageLiteral(resourceName: "checked"), for: .normal)
+            self.delivery_tax = 0
         case 1:
             OrderType = .delivery
             deliveryButton.setImage(#imageLiteral(resourceName: "checked-green"), for: .normal)
             safarytBN.setImage(#imageLiteral(resourceName: "checked"), for: .normal)
-
+            self.delivery_tax = 10
         default:
             break
         }
@@ -59,33 +70,25 @@ class RequestTypePopUpVC: UIViewController {
             wallet.setImage(#imageLiteral(resourceName: "checked"), for: .normal)
         case 1:
             pay = .visa
-            visa.setImage(#imageLiteral(resourceName: "checked-green"), for: .normal)
-            cach.setImage(#imageLiteral(resourceName: "checked"), for: .normal)
-            wallet.setImage(#imageLiteral(resourceName: "checked"), for: .normal)
+            displayMessage(title: "", message: "not valid now".localized, status: .error, forController: self)
+            //visa.setImage(#imageLiteral(resourceName: "checked-green"), for: .normal)
+           // cach.setImage(#imageLiteral(resourceName: "checked"), for: .normal)
+            //wallet.setImage(#imageLiteral(resourceName: "checked"), for: .normal)
         case 2:
             pay = .wallet
-            wallet.setImage(#imageLiteral(resourceName: "checked-green"), for: .normal)
-            cach.setImage(#imageLiteral(resourceName: "checked"), for: .normal)
-            visa.setImage(#imageLiteral(resourceName: "checked"), for: .normal)
+            displayMessage(title: "", message: "not valid now".localized, status: .error, forController: self)
+            //wallet.setImage(#imageLiteral(resourceName: "checked-green"), for: .normal)
+            //cach.setImage(#imageLiteral(resourceName: "checked"), for: .normal)
+            //visa.setImage(#imageLiteral(resourceName: "checked"), for: .normal)
         default:
             break
         }
     }
     
     @IBAction func confirm(_ sender: Any) {
-        if pay == nil  {
-            displayMessage(title: "", message: "Choose payment method".localized, status: .error, forController: self)
-        } else {
-            CreateOrder()
-           }
-       }
-    
-  
-
-    func CreateOrder() {
-       navigateTOReceptPage()
+        self.cartViewModel.showIndicator()
+        createOrder(phoneNumber: self.phone ?? "" , address: self.address ?? "" , notes: notes ?? "" , delivery_tax: delivery_tax)
     }
-    
     
     func navigateTOReceptPage() {
     guard let window = UIApplication.shared.keyWindow else { return }
@@ -103,7 +106,16 @@ class RequestTypePopUpVC: UIViewController {
         self.setupSideMenu()
     }
     
-    
+    func createOrder(phoneNumber : String,address : String,notes : String,delivery_tax : Int) {
+        self.cartViewModel.createOrder(phoneNumber: phoneNumber, address: address, notes: notes, delivery_tax: delivery_tax).subscribe(onNext: { (data) in
+            self.cartViewModel.dismissIndicator()
+                if data.value ?? false {
+                    self.navigateTOReceptPage()
+                }
+            }, onError: { (error) in
+                self.cartViewModel.dismissIndicator()
+            }).disposed(by: disposeBag)
+        }
 }
 
 

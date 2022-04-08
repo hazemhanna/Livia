@@ -270,7 +270,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I3i-0s-KiE" customClass="CustomView" customModule="Shnp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="208" width="350" height="40"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  13/12/202    13:30 pm" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Ti-iZ-QgH" customClass="CustomTextField" customModule="Shnp" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="13/12/202 13:30 pm" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Ti-iZ-QgH" customClass="CustomTextField" customModule="Shnp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="286" height="40"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" name="navigation"/>
@@ -1020,7 +1020,7 @@
     </scenes>
     <designables>
         <designable name="0Ti-iZ-QgH">
-            <size key="intrinsicContentSize" width="146.5" height="18.5"/>
+            <size key="intrinsicContentSize" width="127.5" height="18.5"/>
         </designable>
         <designable name="1B2-EZ-6Ev">
             <size key="intrinsicContentSize" width="76.5" height="18.5"/>

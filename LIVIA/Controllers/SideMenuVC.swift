@@ -50,26 +50,26 @@ class SideMenuVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         if token != "" {
-            walletView.isHidden = false
+           // walletView.isHidden = false
              self.sideMenuArr = [
             SideMenuModel(name: "Home".localized,id: "home", selected: false,sideImage: #imageLiteral(resourceName: "home")),
             SideMenuModel(name: "Profile".localized, id: "Profile", selected: false,sideImage: #imageLiteral(resourceName: "ic_assignment_ind_24px-1")),
             SideMenuModel(name: "Sections".localized, id: "Sections", selected: false, sideImage: #imageLiteral(resourceName: "burger")),
             SideMenuModel(name: "Cart".localized, id: "Cart", selected: false,sideImage: #imageLiteral(resourceName: "cart (1)-1")),
             SideMenuModel(name: "Reserve Table".localized, id: "ReserveTable", selected: false, sideImage: #imageLiteral(resourceName: "reservation2")),
-            SideMenuModel(name: "Notifications".localized, id: "Notifications", selected: false, sideImage: #imageLiteral(resourceName: "icons8-notification")),
+           // SideMenuModel(name: "Notifications".localized, id: "Notifications", selected: false, sideImage: #imageLiteral(resourceName: "icons8-notification")),
             SideMenuModel(name: "Reservations".localized, id: "Reservations", selected: false, sideImage: #imageLiteral(resourceName: "reservation2")),
             SideMenuModel(name: "Order List".localized, id: "OrderList", selected: false, sideImage: #imageLiteral(resourceName: "order-food-1")),
-            SideMenuModel(name: "subscriptions".localized, id: "subscriptions", selected: false, sideImage: #imageLiteral(resourceName: "NoPath - Copy (10)")),
-            SideMenuModel(name: "foodPackages".localized, id: "foodPackages", selected: false, sideImage: #imageLiteral(resourceName: "NoPath - Copy (10)")),
-            SideMenuModel(name: "FoodCart".localized, id: "FoodCart", selected: false,sideImage: #imageLiteral(resourceName: "cart (1)-1")),
+            //SideMenuModel(name: "subscriptions".localized, id: "subscriptions", selected: false, sideImage: #imageLiteral(resourceName: "NoPath - Copy (10)")),
+            //SideMenuModel(name: "foodPackages".localized, id: "foodPackages", selected: false, sideImage: #imageLiteral(resourceName: "NoPath - Copy (10)")),
+           // SideMenuModel(name: "FoodCart".localized, id: "FoodCart", selected: false,sideImage: #imageLiteral(resourceName: "cart (1)-1")),
             SideMenuModel(name: "Favorite Meals".localized, id: "FavoriteMeals", selected: false, sideImage: #imageLiteral(resourceName: "favorite (1)")),
             SideMenuModel(name: "Contact Us".localized, id: "Contact Us", selected: false,sideImage: #imageLiteral(resourceName: "contactUs")),
             SideMenuModel(name: "Terms And Conditions".localized, id: "TermsAndConditions", selected: false, sideImage: #imageLiteral(resourceName: "terms")),
             SideMenuModel(name: "Settings".localized, id: "Setting", selected: false, sideImage: #imageLiteral(resourceName: "Screen Shot 2021-12-31 at 6.42.33 PM")),
             SideMenuModel(name: "logOut".localized, id: "logOut", selected: false, sideImage: #imageLiteral(resourceName: "Screen Shot 2021-12-31 at 6.42.33 PM"))]
             } else {
-                walletView.isHidden = true
+                //walletView.isHidden = true
 
             self.sideMenuArr = [
              SideMenuModel(name: "Home".localized, id: "home", selected: false, sideImage: #imageLiteral(resourceName: "home")),

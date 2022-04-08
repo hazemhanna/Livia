@@ -9,6 +9,8 @@
 
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class FiltterResaultVC: UIViewController {
 
@@ -16,16 +18,18 @@ class FiltterResaultVC: UIViewController {
     @IBOutlet weak var empyView : UIView!
     @IBOutlet weak var titleLbl  : UILabel!
 
-    
     private let cellIdentifier = "ValiableResturantCell"
-
-    var meals = [RestaurantMeal]() {
+    var products = [Product]() {
         didSet{
             DispatchQueue.main.async {
                 self.searchTableView.reloadData()
             }
         }
     }
+    
+    let token = Helper.getApiToken() ?? ""
+    private let homeViewModel = HomeViewModel()
+    var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,14 +40,6 @@ class FiltterResaultVC: UIViewController {
         searchTableView.tableFooterView = UIView()
         searchTableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
         self.navigationController?.navigationBar.isHidden = true
-        
-        meals.append(RestaurantMeal(nameAr: "بيتزا خضروات", image: #imageLiteral(resourceName: "Screen Shot 2022-02-11 at 4.19.53 AM"), descriptionAr: "بيتزا"))
-        
-        meals.append(RestaurantMeal(nameAr: "سلطة خضراء", image: #imageLiteral(resourceName: "taylor-kiser-EvoIiaIVRzU-unsplash-1"), descriptionAr: "سلطة"))
-        
-        meals.append(RestaurantMeal(nameAr: "بيتزا سي فود", image: #imageLiteral(resourceName: "food-1"), descriptionAr: "بيتزا"))
-
-        meals.append(RestaurantMeal(nameAr: "بيتزا فراخ", image: #imageLiteral(resourceName: "Screen Shot 2022-02-11 at 4.19.53 AM"), descriptionAr: "بيتزا"))
     }
     
     @IBAction func backButton(_ sender: Any) {
@@ -72,53 +68,83 @@ class FiltterResaultVC: UIViewController {
     }
 }
 extension FiltterResaultVC: UITableViewDataSource, UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return meals.count
+        return products.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ValiableResturantCell else {return UITableViewCell()}
+        cell.FavoriteBN.setImage(UIImage(named: "heart"), for: .normal)
         
-       // cell.config(name: meals[indexPath.row].nameAr ?? "",price: 12.2, imagePath: meals[indexPath.row].image  , type: meals[indexPath.row].descriptionAr ?? "")
+        if "lang".localized == "ar" {
+        cell.config(name: products[indexPath.row].title?.ar ?? ""
+                    , price: products[indexPath.row].variants?[0].price ?? ""
+                    , imagePath: products[indexPath.row].images?[0].image ?? ""
+                    , type: products[indexPath.row].desc?.ar ?? ""
+                    , isWishlist: products[indexPath.row].isWishlist ?? false )
+        }else{
+            cell.config(name: products[indexPath.row].title?.en ?? ""
+                        , price: products[indexPath.row].variants?[0].price ?? ""
+                        , imagePath: products[indexPath.row].images?[0].image ?? "",
+                        type: products[indexPath.row].desc?.en ?? ""
+                        ,isWishlist: products[indexPath.row].isWishlist ?? false)
 
-        
+        }
         cell.goToFavorites = {
-            if cell.isFavourite{
-                cell.FavoriteBN.setImage(UIImage(named: "heart"), for: .normal)
-                displayMessage(title: "", message: "تم المسح من المفضلة بنجاح".localized, status:.success, forController: self)
-
-                cell.isFavourite = false
-            }else{
-                cell.FavoriteBN.setImage(UIImage(named: "222"), for: .normal)
-                cell.isFavourite = true
-                displayMessage(title: "", message: "تم الاضافة الي المفضلة بنجاح".localized, status:.success, forController: self)
-
-            }
+            if Helper.getApiToken() ?? ""  == ""  {
+                displayMessage(title: "", message: "You should login first".localized, status:.warning, forController: self)
+           }else{
+            self.homeViewModel.showIndicator()
+            self.addWishList(id: self.products[indexPath.row].id ?? 0 , isWishList: self.products[indexPath.row].isWishlist ?? false)
+           }
         }
         cell.increase = {
             guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }
+           details.product = self.products[indexPath.row]
             self.navigationController?.pushViewController(details, animated: true)
             
         }
         
         cell.decrease = {
             guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }
+            details.product = self.products[indexPath.row]
             self.navigationController?.pushViewController(details, animated: true)
             
         }
-        
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+       return 150
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }
+        details.product = self.products[indexPath.row]
         self.navigationController?.pushViewController(details, animated: true)
-        
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
     }
 }
 
+
+
+extension FiltterResaultVC{
+    func getProduct() {
+            self.homeViewModel.getProduct().subscribe(onNext: { (data) in
+                 self.homeViewModel.dismissIndicator()
+                    self.products = data.data?.products ?? []
+                
+            }, onError: { (error) in
+                self.homeViewModel.dismissIndicator()
+            }).disposed(by: disposeBag)
+        }
+    
+    
+    func addWishList(id : Int,isWishList : Bool) {
+        self.homeViewModel.addWishList(id: id,isWishList :isWishList).subscribe(onNext: { (data) in
+                self.getProduct()
+            }, onError: { (error) in
+                self.homeViewModel.dismissIndicator()
+            }).disposed(by: disposeBag)
+        }
+}

@@ -71,7 +71,6 @@ class ProductDetails: UIViewController {
         self.optionbleView.register(UINib(nibName: headerCellIdentifier, bundle: nil), forCellReuseIdentifier: headerCellIdentifier)
           size.text = "size".localized
           othrtNote.text = "othetnotes".localized
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -79,9 +78,11 @@ class ProductDetails: UIViewController {
         optionbleView.reloadData()
         var size = 0
         for i in self.product?.productCollections ?? [] {
-            size += 50 * (i.options?.count ?? 0)
+            size += 60 * (i.options?.count ?? 0)
         }
-        OptionTableHeight.constant = CGFloat((30) * Int(CGFloat((self.product?.productCollections?.count ?? 0))) + (size))
+        
+        let header  = 40 * Int(self.product?.productCollections?.count ?? 0)
+        OptionTableHeight.constant = CGFloat(header + size + 20)
         if "lang".localized == "ar" {
        self.RestaurantName.text = self.product?.title?.ar ?? ""
             self.desc.text = self.product?.desc?.ar?.parseHtml ?? ""
@@ -315,10 +316,9 @@ extension ProductDetails: UITableViewDelegate, UITableViewDataSource {
           }
         }
     }
-
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-           guard let cell = tableView.dequeueReusableCell(withIdentifier: headerCellIdentifier) as? HeaderViewCell else { return UITableViewCell()}
+func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: headerCellIdentifier) as? HeaderViewCell else { return UITableViewCell()}
         cell.titleLbl.text = self.product?.productCollections?[section].name?.ar ?? ""
            return cell
        }
@@ -344,7 +344,6 @@ func addWishList(id : Int,isWishList : Bool) {
         }).disposed(by: disposeBag)
     }
     
-    
     func addToCart(product_id : Int,variant_id : Int,message : String,quantity : Int,options : [[String : Int]]) {
         self.cartViewModel.addToCart(product_id: product_id, variant_id: variant_id, message: message, quantity: quantity, options: options).subscribe(onNext: { (data) in
             self.cartViewModel.dismissIndicator()
@@ -352,8 +351,6 @@ func addWishList(id : Int,isWishList : Bool) {
             displayMessage(title: "", message: "Add to cart".localized , status: .success, forController: self)
             }else {
                 displayMessage(title: "", message: data.msg ?? "" , status: .error, forController: self)
-
-                
             }
         }, onError: { (error) in
                 self.cartViewModel.dismissIndicator()

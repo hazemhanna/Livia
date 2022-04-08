@@ -73,8 +73,9 @@ class CartVC: UIViewController {
     }
     
     @IBAction func confirmBtn(_ sender: Any) {
-        guard let Details = UIStoryboard(name: "Details", bundle: nil).instantiateViewController(withIdentifier: "MyAddressesVC") as? MyAddressesVC else { return }
-         self.navigationController?.pushViewController(Details, animated: true)
+        guard let Details = UIStoryboard(name: "Details", bundle: nil).instantiateViewController(withIdentifier: "LocationDetailsVC") as? LocationDetailsVC else { return }
+        Details.notes = self.discreption.text ?? ""
+        self.navigationController?.pushViewController(Details, animated: true)
         
     }
     
@@ -164,13 +165,15 @@ extension CartVC {
           self.cartViewModel.dismissIndicator()
           self.cart = data.data?.cart ?? []
             
-            var total = 40
+            var total = 10
             for t in  self.cart {
                 let price = Double(t.price ?? "") ?? 0.0
                 total +=  Int(price) * (t.quantity ?? 0)
             }
             
             self.totalLbl.text = "total cost".localized + " " + String(total) + " " + "EGP".localized
+            self.deliveryLbl.text = "delivery fees".localized + " " + String(10) + " " + "EGP".localized
+            
             self.show ()
           }, onError: { (error) in
           self.cartViewModel.dismissIndicator()
@@ -192,4 +195,5 @@ extension CartVC {
                 self.cartViewModel.dismissIndicator()
             }).disposed(by: disposeBag)
         }
+    
 }

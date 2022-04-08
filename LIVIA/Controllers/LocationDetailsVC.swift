@@ -11,48 +11,41 @@
 import UIKit
 import MapKit
 import CoreLocation
+import RxSwift
+import RxCocoa
 
 class LocationDetailsVC: UIViewController {
     
-    @IBOutlet weak var Lat: CustomTextField!
-    @IBOutlet weak var Long: CustomTextField!
-    @IBOutlet weak var apartmentTF: UITextField!
-    @IBOutlet weak var building: UITextField!
     @IBOutlet weak var MapView: MKMapView!
+    @IBOutlet weak var phoneTF: UITextField!
     @IBOutlet weak var addressTF: UITextField!
+    @IBOutlet weak var building: UITextField!
+    @IBOutlet weak var flatTF: UITextField!
     @IBOutlet weak var floor: UITextField!
-    @IBOutlet weak var areaBn: UITextField!
-    @IBOutlet weak var city: UITextField!
     @IBOutlet weak var titleLbl  : UILabel!
+    
+    var notes: String?
 
-    
-    let locationManager = CLLocationManager()
-    let regionInMeters: Double = 300
-    var perviousLocation: CLLocation?
-    let geoCoder = CLGeocoder()
-    var lat = Double()
-    var long = Double()
-    
+    private let AuthViewModel = AuthenticationViewModel()
+    var disposeBag = DisposeBag()
     override func viewDidLoad() {
-        super.viewDidLoad()        
-        self.areaBn.placeholder = "area".localized
-        self.city.placeholder = "city".localized
+        super.viewDidLoad()
+        
+        self.phoneTF.placeholder = "phone".localized
         self.addressTF.placeholder = "address".localized
         self.building.placeholder = "building".localized
         self.floor.placeholder =  "floor".localized
-        self.apartmentTF.placeholder = "falt".localized
-        //titleLbl.text = "address".localized
+        self.flatTF.placeholder = "falt".localized
+        
+        AuthViewModel.showIndicator()
+        getProfile()
+        
     }
     
-   
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
-        self.addressTF.text = Constants.address
-        Lat.text = String(Constants.lat)
-        Long.text = String(Constants.long)
+        
     }
-    
-
     
     @IBAction func cart(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
@@ -73,24 +66,25 @@ class LocationDetailsVC: UIViewController {
     
     
     @IBAction func Confirm(_ sender: UIButton) {
-       // guard self.validate() else {return}
-        guard let floor = self.floor.text else {return}
-        guard self.apartmentTF.text != nil else {return}
-        guard let building = self.building.text else {return}
-
-        self.navigationController?.popViewController(animated: true)
-
+        guard let sb = UIStoryboard(name: "Details", bundle: nil).instantiateViewController(withIdentifier: "RequestTypePopUpVC") as? RequestTypePopUpVC else { return }
+        sb.notes = notes
+        sb.address = (self.addressTF.text ?? "") + (self.building.text ?? "") + (self.floor.text ?? "") + (self.flatTF.text ?? "")
+        sb.phone = self.phoneTF.text ?? ""
+        self.navigationController?.pushViewController(sb, animated: true)
     }
-    private func validate() -> Bool {
-        if self.Lat.text!.isEmpty {
-            displayMessage(title: "", message: "Latitude needed".localized, status: .error, forController: self)
-            return false
-        }else if self.Long.text!.isEmpty {
-            displayMessage(title: "", message: "Longitude needed".localized, status: .error, forController: self)
-            return false
+
+}
+
+extension LocationDetailsVC {
+    
+    func getProfile() {
+        self.AuthViewModel.getProfile().subscribe(onNext: { (data) in
+            self.AuthViewModel.dismissIndicator()
+            self.phoneTF.text = data.data?.phone ?? ""
+            self.addressTF.text = data.data?.address ?? ""
             
-        } else {
-            return true
+            }, onError: { (error) in
+                self.AuthViewModel.dismissIndicator()
+            }).disposed(by: disposeBag)
         }
-    }
 }

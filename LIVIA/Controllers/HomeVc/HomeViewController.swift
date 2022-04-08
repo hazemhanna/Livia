@@ -142,13 +142,10 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
         if collectionView == SlidercollectionView {
             return sliders.count
-
         }else{
             return category.count
-
         }
     }
 
@@ -226,8 +223,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
         }
         cell.goToFavorites = {
+        if Helper.getApiToken() ?? ""  == ""  {
+                displayMessage(title: "", message: "You should login first".localized, status:.warning, forController: self)
+        }else{
             self.homeViewModel.showIndicator()
             self.addWishList(id: self.products[indexPath.row].id ?? 0 , isWishList: self.products[indexPath.row].isWishlist ?? false)
+           }
         }
         cell.increase = {
             guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }
@@ -304,9 +305,3 @@ extension HomeViewController{
         }
 }
 
-
-struct RestaurantMeal {
-    var nameAr : String!
-    var image : UIImage!
-    var descriptionAr : String!
-}
