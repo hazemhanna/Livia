@@ -59,13 +59,13 @@ struct CartViewModel {
         return observer
     }
     
-    func createOrder(phoneNumber : String,address : String,notes : String,delivery_tax : Int) -> Observable<BaseModel> {
+    func createOrder(phoneNumber : String,address : String,notes : String,order_place : Int) -> Observable<BaseModel> {
         let params: [String: Any] = [
             "mobile": phoneNumber,
             "address": address,
-            "delivery_tax": delivery_tax,
+            "delivery_tax": 10,
             "notes" : notes,
-            "order_place" : "order_place"]
+            "order_place" : order_place]
        let observer = AddServices.shared.createOrder(params: params)
        return observer
     }

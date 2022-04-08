@@ -30,8 +30,7 @@ class RequestTypePopUpVC: UIViewController {
     var notes: String?
     var phone: String?
     var address: String?
-
-    var delivery_tax = 0
+    var order_place = 0
 
     private let cartViewModel = CartViewModel()
     var disposeBag = DisposeBag()
@@ -50,12 +49,12 @@ class RequestTypePopUpVC: UIViewController {
             OrderType = .sefry
             safarytBN.setImage(#imageLiteral(resourceName: "checked-green"), for: .normal)
             deliveryButton.setImage(#imageLiteral(resourceName: "checked"), for: .normal)
-            self.delivery_tax = 0
+            self.order_place = 0
         case 1:
             OrderType = .delivery
             deliveryButton.setImage(#imageLiteral(resourceName: "checked-green"), for: .normal)
             safarytBN.setImage(#imageLiteral(resourceName: "checked"), for: .normal)
-            self.delivery_tax = 10
+            self.order_place = 1
         default:
             break
         }
@@ -87,7 +86,7 @@ class RequestTypePopUpVC: UIViewController {
     
     @IBAction func confirm(_ sender: Any) {
         self.cartViewModel.showIndicator()
-        createOrder(phoneNumber: self.phone ?? "" , address: self.address ?? "" , notes: notes ?? "" , delivery_tax: delivery_tax)
+        createOrder(phoneNumber: self.phone ?? "" , address: self.address ?? "" , notes: notes ?? "" , order_place: order_place)
     }
     
     func navigateTOReceptPage() {
@@ -106,8 +105,8 @@ class RequestTypePopUpVC: UIViewController {
         self.setupSideMenu()
     }
     
-    func createOrder(phoneNumber : String,address : String,notes : String,delivery_tax : Int) {
-        self.cartViewModel.createOrder(phoneNumber: phoneNumber, address: address, notes: notes, delivery_tax: delivery_tax).subscribe(onNext: { (data) in
+    func createOrder(phoneNumber : String,address : String,notes : String,order_place : Int) {
+        self.cartViewModel.createOrder(phoneNumber: phoneNumber, address: address, notes: notes, order_place: order_place).subscribe(onNext: { (data) in
             self.cartViewModel.dismissIndicator()
                 if data.value ?? false {
                     self.navigateTOReceptPage()
@@ -115,7 +114,7 @@ class RequestTypePopUpVC: UIViewController {
             }, onError: { (error) in
                 self.cartViewModel.dismissIndicator()
             }).disposed(by: disposeBag)
-        }
+     }
 }
 
 
