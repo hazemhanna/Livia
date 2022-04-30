@@ -47,7 +47,7 @@ class SideMenuVC: UIViewController {
       }else{
           logoImage.isHidden = false
           uploadedImage.isHidden = true
-
+          name.text = "LIVIA"
       }
     }
     
