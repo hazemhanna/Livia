@@ -12,8 +12,6 @@ class SizeCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var selectedImage : UIImageView!
-
-    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

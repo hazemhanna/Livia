@@ -96,7 +96,7 @@
 "Ym1-4D-yVj.text" = "Arrived";
 
 /* Class = "UILabel"; text = "New"; ObjectID = "bpz-3F-UY0"; */
-"bpz-3F-UY0.text" = "New";
+"bpz-3F-UY0.text" = "جديد";
 
 /* Class = "UITextField"; placeholder = "longitude"; ObjectID = "cZv-ON-bgq"; */
 "cZv-ON-bgq.placeholder" = "longitude";

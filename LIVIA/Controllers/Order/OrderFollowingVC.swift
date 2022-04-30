@@ -16,72 +16,46 @@ class OrderFollowingVC: UIViewController {
     @IBOutlet weak var New: UIImageView!
     @IBOutlet weak var Preparing: UIImageView!
     @IBOutlet weak var OnWay: UIImageView!
-    @IBOutlet weak var Arrived: UIImageView!
     @IBOutlet weak var Completed: UIImageView!
-    
-    @IBOutlet weak var TopToView: NSLayoutConstraint!
-    @IBOutlet weak var BottomToStack: NSLayoutConstraint!
-    @IBOutlet weak var BtnHeight: NSLayoutConstraint!
-    @IBOutlet weak var UpdateBtn: UIButton!
-    @IBOutlet weak var titleLbl  : UILabel!
+    @IBOutlet weak var NewView: UIView!
+    @IBOutlet weak var PreparingView: UIView!
+    @IBOutlet weak var OnWayView: UIView!
+    @IBOutlet weak var CompletedView: UIView!
+    var order: Order?
 
-    
-    var id = Int()
-    var status = String()
-    var date = String()
     override func viewDidLoad() {
         super.viewDidLoad()
-   
-        switch "delivering" {
-        case "new":
+        switch order?.logs?.last?.status ?? "" {
+        case "NEW":
             New.image = #imageLiteral(resourceName: "icons8-sync")
-//            UpdateBtn.isHidden = true
-//            BtnHeight.isActive = false
-//            BottomToStack.isActive = false
-//            TopToView.isActive = true
-            
-        case "preparing":
+        case "PREPARED":
             New.image = #imageLiteral(resourceName: "checked-green-1")
-//            Preparing.image = #imageLiteral(resourceName: "CurrentStatus")
-//            UpdateBtn.isHidden = true
-//            BtnHeight.isActive = false
-//            BottomToStack.isActive = false
-            
-        case "delivering":
+            Preparing.image = #imageLiteral(resourceName: "icons8-sync")
+        case "ON_THE_WAY":
             New.image = #imageLiteral(resourceName: "checked-green-1")
             Preparing.image = #imageLiteral(resourceName: "checked-green-1")
             OnWay.image = #imageLiteral(resourceName: "CurrentStatus")
-//            UpdateBtn.isHidden = true
-//            BtnHeight.isActive = false
-//            BottomToStack.isActive = false
-//            TopToView.isActive = true
-        case "delvivered":
+        case "COMPLETED":
             New.image = #imageLiteral(resourceName: "checked-green-1")
             Preparing.image = #imageLiteral(resourceName: "checked-green-1")
             OnWay.image = #imageLiteral(resourceName: "checked-green-1")
-            Arrived.image = #imageLiteral(resourceName: "CurrentStatus")
-//            UpdateBtn.isHidden = true
-//            BtnHeight.isActive = false
-//            BottomToStack.isActive = false
-//            TopToView.isActive = true
-
-
-        case "competed":
-            
-            New.image = #imageLiteral(resourceName: "checked-green-1")
-            Preparing.image = #imageLiteral(resourceName: "checked-green-1")
-            OnWay.image = #imageLiteral(resourceName: "checked-green-1")
-            Arrived.image = #imageLiteral(resourceName: "checked-green-1")
             Completed.image = #imageLiteral(resourceName: "checked-green-1")
-           // UpdateBtn.isHidden = false
-          //  BtnHeight.isActive = true
-          //  BottomToStack.isActive = true
-           // TopToView.isActive = false
         default:
             break
         }
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        orderNum.text = "\(order?.id ?? 0 )"
+        orderDate.text = convertDateFormatter(date: order?.orderDate ?? "")
+        statusLB.text = order?.logs?.last?.status?.localized ?? ""
+        if order?.order_place == 1{
+            OnWayView.isHidden = false
+        }else{
+            OnWayView.isHidden = true
+        }
+    }
+    
     
     @IBAction func menu(_ sender: Any) {
         self.setupSideMenu()
@@ -90,5 +64,22 @@ class OrderFollowingVC: UIViewController {
     @IBAction func backBtn(_ sender: Any) {
       self.navigationController?.popViewController(animated: true)
     }
+    
+    public func convertDateFormatter(date: String) -> String {
+     let dateFormatter = DateFormatter()
+     dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"//this your string date format
+        dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone?
+     dateFormatter.locale = Locale(identifier: "your_loc_id")
+     let convertedDate = dateFormatter.date(from: date)
+     guard dateFormatter.date(from: date) != nil else {
+     assert(false, "no date from string")
+     return ""
+     }
+     dateFormatter.dateFormat = "YYYY-MM-dd"
+        dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone?
+     let timeStamp = dateFormatter.string(from: convertedDate!)
+     print(timeStamp)
+     return timeStamp
+     }
     
 }

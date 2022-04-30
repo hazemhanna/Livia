@@ -26,21 +26,21 @@ class RequestTypePopUpVC: UIViewController {
     @IBOutlet weak var visa: UIButton!
     @IBOutlet weak var cach: UIButton!
     @IBOutlet weak var wallet: UIButton!
-    
+    @IBOutlet weak var titleLbl  : UILabel!
+
     var notes: String?
     var phone: String?
     var address: String?
-    var order_place = 0
+    var order_place = 2
 
     private let cartViewModel = CartViewModel()
     var disposeBag = DisposeBag()
-    
     var pay : PayType?
     var OrderType : orderType = .sefry
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        titleLbl.text = "Payment".localized
     }
     
     @IBAction func RadioButtonAction(_ sender:UIButton) {
@@ -49,7 +49,7 @@ class RequestTypePopUpVC: UIViewController {
             OrderType = .sefry
             safarytBN.setImage(#imageLiteral(resourceName: "checked-green"), for: .normal)
             deliveryButton.setImage(#imageLiteral(resourceName: "checked"), for: .normal)
-            self.order_place = 0
+            self.order_place = 2
         case 1:
             OrderType = .delivery
             deliveryButton.setImage(#imageLiteral(resourceName: "checked-green"), for: .normal)

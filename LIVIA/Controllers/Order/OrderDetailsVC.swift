@@ -18,7 +18,8 @@ class OrderDetailsVC : UIViewController {
     @IBOutlet weak var titleLbl  : UILabel!
     @IBOutlet weak var deliveryLbl   : UILabel!
     @IBOutlet weak var totalLbl  : UILabel!
-
+    @IBOutlet weak var canceBtn  : UIButton!
+    
     fileprivate let cellIdentifier = "FoodPackgeCell"
     var order: Order?
     
@@ -37,17 +38,28 @@ class OrderDetailsVC : UIViewController {
         cartTableView.reloadData()
         discreption.text = order?.notes
         
-        var total = 10
+        var total = 0
         for t in  self.order?.orderItems ?? [] {
             let price = Double(t.price ?? "") ?? 0.0
             total +=  Int(price) * (t.quantity ?? 0)
         }
         
-        self.totalLbl.text = "total cost".localized + " " + String(total) + " " + "EGP".localized
-        self.deliveryLbl.text = "delivery fees".localized + " " + String(10) + " " + "EGP".localized
-
+        if order?.order_place == 1{
+            self.totalLbl.text = "total cost".localized + " " + String(total + 10) + " " + "EGP".localized
+            self.deliveryLbl.text = "delivery fees".localized + " " + String(10) + " " + "EGP".localized
+            deliveryLbl.isHidden = false
+        }else{
+            self.totalLbl.text = "total cost".localized + " " + String(total) + " " + "EGP".localized
+            deliveryLbl.isHidden = true
+        }
+    
+        if(getDateTimeDiff(dateStr: order?.created_at ?? "" )){
+            canceBtn.isHidden = false
+        }else{
+            canceBtn.isHidden = true
+        }
     }
-                                       
+    
     @IBAction func menu(_ sender: Any) {
         self.setupSideMenu()
     }
@@ -65,6 +77,7 @@ class OrderDetailsVC : UIViewController {
     
     @IBAction func followButton(_ sender: Any) {
         guard let Details = UIStoryboard(name: "Details", bundle: nil).instantiateViewController(withIdentifier: "OrderFollowingVC") as? OrderFollowingVC else { return }
+        Details.order = order
         self.navigationController?.pushViewController(Details, animated: true)
     }
     
@@ -76,7 +89,7 @@ class OrderDetailsVC : UIViewController {
     }
     
     @IBAction func scanhButtonPressed(_ sender: Any) {
-        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "ScanVc") as? ScanVc else { return }
+        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as? SearchVC else { return }
         self.navigationController?.pushViewController(details, animated: true)
     }
     @IBAction func notificationhButtonPressed(_ sender: Any) {
@@ -85,6 +98,94 @@ class OrderDetailsVC : UIViewController {
 
     }
     
+
+    func getDateTimeDiff(dateStr:String) -> Bool {
+        
+        let formatter : DateFormatter = DateFormatter()
+        formatter.timeZone = NSTimeZone.local
+        formatter.dateFormat = "HH:mm"
+        
+        let now = formatter.string(from: NSDate() as Date)
+        let startDate = formatter.date(from: dateStr)
+        let endDate = formatter.date(from: now)
+        
+        // *** create calendar object ***
+        var calendar = NSCalendar.current
+        
+        // *** Get components using current Local & Timezone ***
+        print(calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: startDate!))
+        
+        // *** define calendar components to use as well Timezone to UTC ***
+        let unitFlags = Set<Calendar.Component>([.year, .month, .day, .hour, .minute, .second])
+        calendar.timeZone = TimeZone(identifier: "UTC")!
+        let dateComponents = calendar.dateComponents(unitFlags, from: startDate!, to: endDate!)
+        
+        // *** Get Individual components from date ***
+        let years = dateComponents.year!
+        let months = dateComponents.month!
+        let days = dateComponents.day!
+        let hours = dateComponents.hour!
+        let minutes = dateComponents.minute!
+        let seconds = dateComponents.second!
+        
+        var timeAgo = false
+        
+        if (seconds > 0){
+            if seconds < 2 {
+                timeAgo = true
+            }
+            else{
+                timeAgo = true
+            }
+        }
+        
+        if (minutes > 0){
+            if minutes < 15 {
+                timeAgo = true
+            }
+            else{
+                timeAgo = false
+            }
+        }
+        
+        if(hours > 0){
+            if hours < 2 {
+                timeAgo = false
+            }
+            else{
+                timeAgo = false
+            }
+        }
+        
+        if (days > 0) {
+            if days < 2 {
+                timeAgo = false
+            }
+            else{
+                timeAgo = false
+            }
+        }
+        
+        if(months > 0){
+            if months < 2 {
+                timeAgo = false
+            }
+            else{
+                timeAgo = false
+            }
+        }
+        
+        if(years > 0){
+            if years < 2 {
+                timeAgo = false
+            }
+            else{
+                timeAgo = false
+            }
+        }
+      
+        return timeAgo
+    }
 }
 
 extension OrderDetailsVC : UITableViewDelegate, UITableViewDataSource {
@@ -114,3 +215,4 @@ extension OrderDetailsVC : UITableViewDelegate, UITableViewDataSource {
         return 120
     }
 }
+

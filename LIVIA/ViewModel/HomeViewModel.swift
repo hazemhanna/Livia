@@ -58,4 +58,9 @@ struct HomeViewModel {
      return observer
     }
     
+    
+    func getNotification() -> Observable<NotificationModelJSON> {
+    let observer = GetServices.shared.getNotification()
+     return observer
+    }
 }

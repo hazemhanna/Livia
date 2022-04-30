@@ -231,7 +231,6 @@
 "othetnotes" = "تفاصيل اخري";
 "size" = "الحجم";
 "EGP" = "جنية";
-
 "please select size" =  "من فضلك اختر الحجم";
 "total cost" = "اجمالي التكلفة";
 "Contact Send Done" = "تم الارسال بنجاح";
@@ -241,3 +240,18 @@
 "We not have a free table now " = "لا يوجد طربيزات الان";
 "not valid now" = "غير متاح الان";
 "delivery fees" = "رسوم التوصيل";
+"price" = "السعر :";
+"Add to favourite" = "تم الاضافة الي المفضلة بنجاح";
+"remove to favourite" = "تم الحذف من المفضلة بنجاح";
+"optionPrice" = "سعر الاضافات :";
+"totalPrice" = "اجمالي المبلغ :";
+"totalDiscount" = "اجمالي الخصم :";
+"discount" = "خصم";
+"save" = "حفظ";
+"inside" = "افراد";
+"outside" = "عاِئلات";
+"ordercancel" = "تم الغاء الطلب بنجاح";
+"setLocation" = "حدد موقعك من الخريطة";
+"Enter your address" = " ادخل العنوان الخاص بك";
+"product in cart already"= "المنتج موجود في السلة";
+"product in cart already"= "المنتج موجود في السلة";

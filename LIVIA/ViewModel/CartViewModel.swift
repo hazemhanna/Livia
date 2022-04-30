@@ -38,14 +38,14 @@ struct CartViewModel {
        return observer
     }
     
-    func addToCart(product_id : Int,variant_id : Int,message : String,quantity : Int,options : [[String : Int]]) -> Observable<BaseModel> {
+    func addToCart(product_id : Int,variant_id : Int,message : String,quantity : Int,options : [[String : Any]]) -> Observable<BaseModel> {
 
         let params: [String: Any] = [
             "product_id": product_id,
             "product_variant_id": variant_id,
             "message": message,
             "quantity": quantity,
-        //    "collection_option_id": options
+           "collection_option_id": options
         ]
         
         let observer = AddServices.shared.addToCart(params: params)

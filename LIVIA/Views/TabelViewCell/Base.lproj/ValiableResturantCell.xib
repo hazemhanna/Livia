@@ -12,6 +12,9 @@
         <array key="Cairo-Bold.ttf">
             <string>Cairo-Bold</string>
         </array>
+        <array key="Cairo-Light.ttf">
+            <string>Cairo-Light</string>
+        </array>
         <array key="Cairo-Regular.ttf">
             <string>Cairo-Regular</string>
         </array>
@@ -35,14 +38,34 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2022-02-11 at 4.19.53 AM" translatesAutoresizingMaskIntoConstraints="NO" id="cMy-Jy-oZD">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="116"/>
                                     </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0fP-os-UII">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="20"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="خصم ٢٠٪" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6V-w1-Uib">
+                                                <rect key="frame" x="9" y="-1" width="42.5" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="Cairo-Light" family="Cairo" pointSize="12"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="button"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="KWy-lK-Inu"/>
+                                            <constraint firstItem="B6V-w1-Uib" firstAttribute="centerX" secondItem="0fP-os-UII" secondAttribute="centerX" id="UG7-hf-qV7"/>
+                                            <constraint firstItem="B6V-w1-Uib" firstAttribute="centerY" secondItem="0fP-os-UII" secondAttribute="centerY" id="Xos-XO-b6T"/>
+                                            <constraint firstAttribute="width" constant="60" id="pnA-ug-P0F"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="cMy-Jy-oZD" secondAttribute="trailing" id="0gt-z0-1HH"/>
                                     <constraint firstAttribute="width" constant="120" id="4xR-PL-htI"/>
                                     <constraint firstAttribute="bottom" secondItem="cMy-Jy-oZD" secondAttribute="bottom" id="NvI-n5-auS"/>
+                                    <constraint firstItem="0fP-os-UII" firstAttribute="top" secondItem="Y1e-Nd-2eb" secondAttribute="top" id="Q7s-Js-OPL"/>
                                     <constraint firstItem="cMy-Jy-oZD" firstAttribute="leading" secondItem="Y1e-Nd-2eb" secondAttribute="leading" id="bjY-FY-q0o"/>
                                     <constraint firstItem="cMy-Jy-oZD" firstAttribute="top" secondItem="Y1e-Nd-2eb" secondAttribute="top" id="jxR-Q7-Iq3"/>
+                                    <constraint firstItem="0fP-os-UII" firstAttribute="leading" secondItem="Y1e-Nd-2eb" secondAttribute="leading" id="sDk-fm-7lB"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -195,6 +218,8 @@
             <connections>
                 <outlet property="FavoriteBN" destination="HTI-g0-Cwx" id="kIY-KE-bPN"/>
                 <outlet property="contentStackView" destination="8OF-g7-dCC" id="jWk-qS-aQF"/>
+                <outlet property="discountLbl" destination="B6V-w1-Uib" id="HYm-jZ-9J1"/>
+                <outlet property="discountView" destination="0fP-os-UII" id="drn-sa-kHS"/>
                 <outlet property="name" destination="sWK-Ab-TGl" id="FDB-h9-s0v"/>
                 <outlet property="price" destination="PBD-VD-rsK" id="mJG-cd-R54"/>
                 <outlet property="quantityTF" destination="iFZ-zI-HXr" id="VEw-1T-uCs"/>
@@ -217,7 +242,7 @@
     </designables>
     <resources>
         <image name="Screen Shot 2022-02-11 at 4.19.53 AM" width="294" height="266"/>
-        <image name="heart" width="25" height="23"/>
+        <image name="heart" width="30" height="30"/>
         <namedColor name="button">
             <color red="1" green="0.40799999237060547" blue="0.52899998426437378" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

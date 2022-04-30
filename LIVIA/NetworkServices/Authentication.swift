@@ -1,3 +1,4 @@
+
 //
 //  Authentication.swift
 //  Livia
@@ -14,7 +15,6 @@ import SwiftyJSON
 class Authentication {
     
     static let shared = Authentication()
-    let token = Helper.getApiToken() ?? ""
 
     func postLogin(params: [String: Any]) -> Observable<LoginModel> {
         return Observable.create { (observer) -> Disposable in
@@ -25,12 +25,12 @@ class Authentication {
                 .responseJSON { (response: DataResponse<Any>) in
                     do {
                         let loginData = try JSONDecoder().decode(LoginModel.self, from: response.data!)
-                        if let data = loginData.user {
-                            
-                        Helper.saveApiToken(token: loginData.token ?? "", email: data.email ?? "",user_id: data.id ?? 0)
                         
-                        }
+                       
+                        Helper.saveApiToken(token: loginData.token ?? "", email: loginData.user?.email ?? "", user_id: loginData.user?.id ?? 0)
+                        
                         observer.onNext(loginData)
+                        
                     } catch {
                         print(error)
                         observer.onError(error)
@@ -49,9 +49,11 @@ class Authentication {
                 .responseJSON { (response: DataResponse<Any>) in
                     do {
                         let loginData = try JSONDecoder().decode(RegisterModel.self, from: response.data!)
-                        if let data = loginData.user {
-                        Helper.saveApiToken(token: loginData.token ?? "", email: data.email ?? "",user_id: data.id ?? 0)
-                        }
+                        let def = UserDefaults.standard
+                        def.set(loginData.token ?? "", forKey: "token")
+                        def.synchronize()
+                        
+                        
                         observer.onNext(loginData)
                     } catch {
                         print(error)
@@ -65,8 +67,9 @@ class Authentication {
     func updateProfile(params: [String: Any]) -> Observable<ProfileModel> {
         return Observable.create { (observer) -> Disposable in
             let url = ConfigURLs.updateProfile
+            let token = Helper.getApiToken() ?? ""
             let headers = [
-                "Authorization": "Bearer \(self.token)"
+                "Authorization": "Bearer \(token)"
             ]
             Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
                 .validate(statusCode: 200..<300)
@@ -87,8 +90,9 @@ class Authentication {
     func postChangePassword(params: [String: Any]) -> Observable<BaseModel> {
         return Observable.create { (observer) -> Disposable in
             let url = ConfigURLs.updatePassword
+            let token = Helper.getApiToken() ?? ""
             let headers = [
-                "Authorization": "Bearer \(self.token)"
+                "Authorization": "Bearer \(token)"
             ]
             Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
                 .validate(statusCode: 200..<300)
@@ -107,6 +111,39 @@ class Authentication {
     }
 
     
+    func updateAvatar(image: UIImage) -> Observable<BaseModel> {
+        return Observable.create { (observer) -> Disposable in
+            let url = ConfigURLs.updateAvatar
+            let token = Helper.getApiToken() ?? ""
+            let headers = [
+                "Authorization": "Bearer \(token)"
+            ]
+            Alamofire.upload(multipartFormData: { (form: MultipartFormData) in
+                if let data = image.jpegData(compressionQuality: 0.8) {
+                    form.append(data, withName: "avatar", fileName: "image.jpeg", mimeType: "image/jpeg")
+                }
+                }, usingThreshold: SessionManager.multipartFormDataEncodingMemoryThreshold, to: url, method: .post, headers: headers) { (result: SessionManager.MultipartFormDataEncodingResult) in
+                    switch result {
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    observer.onError(error)
+                case .success(request: let upload, streamingFromDisk: _, streamFileURL: _):
+                    upload.uploadProgress { (progress) in
+                      print("Image Uploading Progress: \(progress.fractionCompleted)")
+                  }.responseJSON { (response: DataResponse<Any>) in
+             do {
+                    let registerData = try JSONDecoder().decode(BaseModel.self, from: response.data!)
+                        observer.onNext(registerData)
+                     } catch {
+                         print(error)
+                        observer.onError(error)
+                    }
+                  }
+                }
+             }
+            return Disposables.create()
+        }
+    }//END of POST Register
     
     
 }

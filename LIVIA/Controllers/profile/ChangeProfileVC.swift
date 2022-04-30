@@ -18,7 +18,6 @@ class ChangeProfileVC: UIViewController {
     @IBOutlet weak var email: CustomTextField!
     @IBOutlet weak var address: CustomTextField!
     @IBOutlet weak var titleLbl  : UILabel!
-
     private let AuthViewModel = AuthenticationViewModel()
     var disposeBag = DisposeBag()
     

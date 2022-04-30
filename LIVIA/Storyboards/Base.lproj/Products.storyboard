@@ -618,8 +618,31 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="MbO-hx-hb6">
+                                        <rect key="frame" x="16" y="532.5" width="50" height="132.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="price " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9V-qN-dYG">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="26.5"/>
+                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="14"/>
+                                                <color key="textColor" name="navigation"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzD-mn-FfK">
+                                                <rect key="frame" x="0.0" y="29.5" width="50" height="50"/>
+                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="14"/>
+                                                <color key="textColor" name="navigation"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnd-If-nGS">
+                                                <rect key="frame" x="0.0" y="82.5" width="50" height="50"/>
+                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="14"/>
+                                                <color key="textColor" name="navigation"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="twL-K3-cOH" customClass="CustomView" customModule="Shnp" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="532.5" width="250" height="50"/>
+                                        <rect key="frame" x="16" y="681" width="250" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rvx-2m-AsB" customClass="CustomButtons" customModule="Shnp" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="5" width="40" height="40"/>
@@ -643,14 +666,8 @@
                                                     <action selector="confirm:" destination="6gj-Le-uUI" eventType="touchUpInside" id="Ce2-Xd-or1"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7RL-ym-h1p">
-                                                <rect key="frame" x="56" y="11" width="8.5" height="28.5"/>
-                                                <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
-                                                <color key="textColor" name="navigation"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-5" translatesAutoresizingMaskIntoConstraints="NO" id="WGg-ef-abv">
-                                                <rect key="frame" x="72.5" y="10" width="90" height="30"/>
+                                                <rect key="frame" x="80" y="10" width="90" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXz-vT-vth" customClass="CustomButtons" customModule="Shnp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="33.5" height="30"/>
@@ -717,12 +734,10 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Ebj-gB-mGU"/>
                                             <constraint firstItem="Rvx-2m-AsB" firstAttribute="leading" secondItem="twL-K3-cOH" secondAttribute="leading" constant="8" id="FHH-El-uac"/>
-                                            <constraint firstItem="7RL-ym-h1p" firstAttribute="centerY" secondItem="twL-K3-cOH" secondAttribute="centerY" id="IEw-St-mSy"/>
                                             <constraint firstItem="WGg-ef-abv" firstAttribute="centerY" secondItem="twL-K3-cOH" secondAttribute="centerY" id="MI3-gy-Lzb"/>
                                             <constraint firstAttribute="width" constant="250" id="TIy-fG-5QS"/>
                                             <constraint firstItem="Rvx-2m-AsB" firstAttribute="centerY" secondItem="twL-K3-cOH" secondAttribute="centerY" id="VXN-Bc-NNy"/>
-                                            <constraint firstItem="WGg-ef-abv" firstAttribute="leading" secondItem="7RL-ym-h1p" secondAttribute="trailing" constant="8" id="XJz-cp-i0p"/>
-                                            <constraint firstItem="7RL-ym-h1p" firstAttribute="leading" secondItem="Rvx-2m-AsB" secondAttribute="trailing" constant="8" id="pBs-Ak-tEF"/>
+                                            <constraint firstItem="WGg-ef-abv" firstAttribute="leading" secondItem="Rvx-2m-AsB" secondAttribute="trailing" constant="32" id="x8C-gS-zWo"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -746,15 +761,17 @@
                                     <constraint firstItem="azY-XD-MqN" firstAttribute="leading" secondItem="mZi-cp-XI3" secondAttribute="leading" constant="16" id="OB9-2g-Bk4"/>
                                     <constraint firstAttribute="trailing" secondItem="9DG-GM-pFX" secondAttribute="trailing" constant="16" id="PFm-ak-oCT"/>
                                     <constraint firstItem="FFM-lS-Khh" firstAttribute="top" secondItem="9DG-GM-pFX" secondAttribute="bottom" constant="16" id="Pvz-gz-fNU"/>
+                                    <constraint firstItem="MbO-hx-hb6" firstAttribute="top" secondItem="A9b-5u-NAY" secondAttribute="bottom" constant="32" id="Sig-6D-Czi"/>
                                     <constraint firstItem="azY-XD-MqN" firstAttribute="top" secondItem="vGb-9l-9tn" secondAttribute="bottom" constant="50" id="Swk-1G-xsK"/>
+                                    <constraint firstItem="twL-K3-cOH" firstAttribute="top" secondItem="MbO-hx-hb6" secondAttribute="bottom" constant="16" id="WzH-y4-TWZ"/>
                                     <constraint firstItem="ZBS-Al-7Q3" firstAttribute="top" secondItem="mZi-cp-XI3" secondAttribute="top" id="YLg-Hk-gsP"/>
                                     <constraint firstAttribute="trailing" secondItem="jTQ-bG-WzM" secondAttribute="trailing" constant="64" id="YMt-hA-M6J"/>
                                     <constraint firstItem="gsv-0C-lG6" firstAttribute="centerX" secondItem="mZi-cp-XI3" secondAttribute="centerX" id="Z7B-Ug-ZmX"/>
-                                    <constraint firstItem="twL-K3-cOH" firstAttribute="top" secondItem="A9b-5u-NAY" secondAttribute="bottom" constant="32" id="ew2-Rj-jkb"/>
                                     <constraint firstItem="gsv-0C-lG6" firstAttribute="top" secondItem="vGb-9l-9tn" secondAttribute="bottom" constant="8" id="hSe-7b-oqt"/>
                                     <constraint firstItem="ZBS-Al-7Q3" firstAttribute="leading" secondItem="mZi-cp-XI3" secondAttribute="leading" id="ppV-CL-I61"/>
                                     <constraint firstAttribute="trailing" secondItem="vGb-9l-9tn" secondAttribute="trailing" id="r8d-RA-lmN"/>
                                     <constraint firstAttribute="trailing" secondItem="A9b-5u-NAY" secondAttribute="trailing" constant="16" id="uba-zL-HIQ"/>
+                                    <constraint firstItem="MbO-hx-hb6" firstAttribute="leading" secondItem="mZi-cp-XI3" secondAttribute="leading" constant="16" id="vFQ-LU-bXY"/>
                                     <constraint firstAttribute="bottom" secondItem="twL-K3-cOH" secondAttribute="bottom" constant="16" id="vMA-ao-aYi"/>
                                     <constraint firstItem="7lj-ib-dEa" firstAttribute="top" secondItem="azY-XD-MqN" secondAttribute="bottom" constant="8" id="wB2-MA-0fM"/>
                                     <constraint firstItem="FFM-lS-Khh" firstAttribute="leading" secondItem="mZi-cp-XI3" secondAttribute="leading" constant="16" id="wMK-3z-V2V"/>
@@ -793,21 +810,22 @@
                         <outlet property="RestaurantName" destination="azY-XD-MqN" id="838-zA-hCw"/>
                         <outlet property="desc" destination="7lj-ib-dEa" id="suf-u0-d4f"/>
                         <outlet property="noteTF" destination="A9b-5u-NAY" id="LXO-3r-neb"/>
-                        <outlet property="notesTF" destination="A9b-5u-NAY" id="KU6-Gh-qvT"/>
                         <outlet property="optionbleView" destination="9DG-GM-pFX" id="XnX-O4-53k"/>
+                        <outlet property="optionsPrice" destination="qzD-mn-FfK" id="A3I-Qi-F6w"/>
                         <outlet property="othrtNote" destination="FFM-lS-Khh" id="Khk-cK-cpz"/>
                         <outlet property="pageView" destination="gsv-0C-lG6" id="HKe-Q5-Z6i"/>
-                        <outlet property="price" destination="7RL-ym-h1p" id="0oK-nB-GyE"/>
+                        <outlet property="price" destination="y9V-qN-dYG" id="o9a-Jk-mLQ"/>
                         <outlet property="quantityLbl" destination="oYp-ZS-X4J" id="UBF-TX-7He"/>
                         <outlet property="size" destination="Bdq-OX-i5f" id="RrH-Th-h51"/>
                         <outlet property="sizeStackHeight" destination="hTW-0C-cOF" id="Ho8-nN-SaY"/>
                         <outlet property="sizecollectionView" destination="GLR-tv-nUz" id="Fu0-Uz-KDK"/>
                         <outlet property="slidercollectionView" destination="nDi-Ca-DsC" id="Xqr-iL-ID5"/>
+                        <outlet property="totalPrice" destination="nnd-If-nGS" id="ic5-4T-FHZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jAC-ug-NrQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1948" y="159"/>
+            <point key="canvasLocation" x="1947.826086956522" y="158.70535714285714"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yoF-8r-J8e">
@@ -1686,13 +1704,13 @@
     </scenes>
     <designables>
         <designable name="9Tm-yB-FgE">
-            <size key="intrinsicContentSize" width="22" height="22"/>
+            <size key="intrinsicContentSize" width="33" height="33"/>
         </designable>
         <designable name="A9b-5u-NAY">
             <size key="intrinsicContentSize" width="4" height="18.5"/>
         </designable>
         <designable name="DXP-6J-xaX">
-            <size key="intrinsicContentSize" width="25" height="23"/>
+            <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="E0m-Vo-JvY">
             <size key="intrinsicContentSize" width="498" height="318"/>
@@ -1722,8 +1740,8 @@
         <image name="Screen Shot 2022-02-22 at 12.36.21 PM" width="498" height="318"/>
         <image name="back-arrow" width="16" height="16"/>
         <image name="cart.fill" catalog="system" width="128" height="102"/>
-        <image name="checked" width="22" height="22"/>
-        <image name="heart" width="25" height="23"/>
+        <image name="checked" width="33" height="33"/>
+        <image name="heart" width="30" height="30"/>
         <image name="livia logo" width="1024" height="1024"/>
         <image name="loupe-1" width="35" height="35"/>
         <image name="loupe-2" width="30" height="30"/>

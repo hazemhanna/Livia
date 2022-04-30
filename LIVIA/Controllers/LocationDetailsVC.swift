@@ -23,6 +23,10 @@ class LocationDetailsVC: UIViewController {
     @IBOutlet weak var flatTF: UITextField!
     @IBOutlet weak var floor: UITextField!
     @IBOutlet weak var titleLbl  : UILabel!
+    @IBOutlet weak var addressBtn : UIButton!
+
+    @IBOutlet weak var phoneLbl : UILabel!
+    @IBOutlet weak var addressLbl : UILabel!
     
     var notes: String?
 
@@ -33,10 +37,12 @@ class LocationDetailsVC: UIViewController {
         
         self.phoneTF.placeholder = "phone".localized
         self.addressTF.placeholder = "address".localized
+        phoneLbl.text = "phone".localized
+        addressLbl.text = "address".localized
         self.building.placeholder = "building".localized
         self.floor.placeholder =  "floor".localized
         self.flatTF.placeholder = "falt".localized
-        
+        self.addressBtn.setTitle("setLocation".localized, for: .normal)
         AuthViewModel.showIndicator()
         getProfile()
         
@@ -44,18 +50,24 @@ class LocationDetailsVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
-        
+        self.addressTF.text =  Constants.address
     }
     
     @IBAction func cart(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func locationBtn(_ sender: Any) {
+        guard let sb = UIStoryboard(name: "Details", bundle: nil).instantiateViewController(withIdentifier: "LocationVC") as? LocationVC else {return}
+        self.navigationController?.pushViewController(sb, animated: true)
+    }
+    
     @IBAction func menu(_ sender: Any) {
         self.setupSideMenu()
     }
     
     @IBAction func scanhButtonPressed(_ sender: Any) {
-        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "ScanVc") as? ScanVc else { return }
+        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as? SearchVC else { return }
         self.navigationController?.pushViewController(details, animated: true)
     }
     @IBAction func notificationhButtonPressed(_ sender: Any) {
@@ -64,8 +76,23 @@ class LocationDetailsVC: UIViewController {
 
     }
     
+ 
+    
+    private func validate() ->Bool {
+       if self.addressTF.text!.isEmpty {
+            displayMessage(title: "", message: "Enter your address".localized, status: .error, forController: self)
+            return false
+        }else if self.phoneTF.text!.isEmpty {
+            displayMessage(title: "", message: "Enter your phone number".localized, status: .error, forController: self)
+            return false
+        } else {
+            return true
+        }
+    }
+    
     
     @IBAction func Confirm(_ sender: UIButton) {
+        guard self.validate() else {return}
         guard let sb = UIStoryboard(name: "Details", bundle: nil).instantiateViewController(withIdentifier: "RequestTypePopUpVC") as? RequestTypePopUpVC else { return }
         sb.notes = notes
         sb.address = (self.addressTF.text ?? "") + (self.building.text ?? "") + (self.floor.text ?? "") + (self.flatTF.text ?? "")
@@ -82,7 +109,6 @@ extension LocationDetailsVC {
             self.AuthViewModel.dismissIndicator()
             self.phoneTF.text = data.data?.phone ?? ""
             self.addressTF.text = data.data?.address ?? ""
-            
             }, onError: { (error) in
                 self.AuthViewModel.dismissIndicator()
             }).disposed(by: disposeBag)

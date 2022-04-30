@@ -68,10 +68,6 @@ class CartVC: UIViewController {
         self.setupSideMenu()
     }
     
-    @IBAction func backButton(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
     @IBAction func confirmBtn(_ sender: Any) {
         guard let Details = UIStoryboard(name: "Details", bundle: nil).instantiateViewController(withIdentifier: "LocationDetailsVC") as? LocationDetailsVC else { return }
         Details.notes = self.discreption.text ?? ""
@@ -80,7 +76,7 @@ class CartVC: UIViewController {
     }
     
     @IBAction func scanhButtonPressed(_ sender: Any) {
-        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "ScanVc") as? ScanVc else { return }
+        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as? SearchVC else { return }
         self.navigationController?.pushViewController(details, animated: true)
     }
     
@@ -115,13 +111,15 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource {
                      ,price: cart[indexPath.row].price ?? ""
                     , imagePath: product?.images?[0].image ?? ""
                     , type: product?.desc?.ar ?? ""
-                    , quantity: cart[indexPath.row].quantity ?? 0 )
+                    , quantity: cart[indexPath.row].quantity ?? 0
+                    , discount: Double(cart[indexPath.row].product?.discount ?? "") ?? 0)
         }else{
             cell.configCart(name: product?.title?.en ?? ""
                          ,price: (cart[indexPath.row].price ?? "")
                          ,imagePath: product?.images?[0].image ?? ""
                          ,type: product?.desc?.en ?? ""
-                        ,quantity: cart[indexPath.row].quantity ?? 0)
+                         ,quantity: cart[indexPath.row].quantity ?? 0
+                         , discount: Double(cart[indexPath.row].product?.discount ?? "") ?? 0)
         }
         
         self.productCounter = cart[indexPath.row].quantity ?? 0
@@ -150,7 +148,9 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }
+        details.product = self.cart[indexPath.row].product
+        self.navigationController?.pushViewController(details, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -165,15 +165,18 @@ extension CartVC {
           self.cartViewModel.dismissIndicator()
           self.cart = data.data?.cart ?? []
             
-            var total = 10
+            var totalPrice = 0
+            var discPrice = 0
             for t in  self.cart {
                 let price = Double(t.price ?? "") ?? 0.0
-                total +=  Int(price) * (t.quantity ?? 0)
+                totalPrice +=  Int(price) * (t.quantity ?? 0)
+                let priceBeforDis = Double(t.productVariant?.price ?? "") ?? 0.0
+                discPrice +=  Int(priceBeforDis) * (t.quantity ?? 0)
             }
-            
-            self.totalLbl.text = "total cost".localized + " " + String(total) + " " + "EGP".localized
-            self.deliveryLbl.text = "delivery fees".localized + " " + String(10) + " " + "EGP".localized
-            
+            self.totalLbl.text = "totalPrice".localized + " " + String(totalPrice) + " " + "EGP".localized
+            let discount = discPrice - totalPrice
+           
+            self.deliveryLbl.text = "totalDiscount".localized + " " + String(discount) + " " + "EGP".localized
             self.show ()
           }, onError: { (error) in
           self.cartViewModel.dismissIndicator()
@@ -197,3 +200,4 @@ extension CartVC {
         }
     
 }
+

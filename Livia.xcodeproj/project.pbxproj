@@ -16,6 +16,8 @@
 		040CA69527F1EAA500A73DA8 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040CA69427F1EAA500A73DA8 /* CartViewModel.swift */; };
 		040CA69727F1EB6600A73DA8 /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040CA69627F1EB6600A73DA8 /* CartModel.swift */; };
 		040F84A327B5D7E00005241D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040F84A227B5D7E00005241D /* HomeViewController.swift */; };
+		041221AF281CF19B00485C94 /* LocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041221AE281CF19B00485C94 /* LocationVC.swift */; };
+		041221B1281CF5C500485C94 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041221B0281CF5C400485C94 /* Notifications.swift */; };
 		0415E12D27C7F48100994416 /* OffersVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415E12C27C7F48100994416 /* OffersVc.swift */; };
 		0415E13127C7F7DC00994416 /* OffersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415E12F27C7F7DC00994416 /* OffersCell.swift */; };
 		0415E13327C7F88400994416 /* OffersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0415E13527C7F88400994416 /* OffersCell.xib */; };
@@ -211,6 +213,8 @@
 		040CA69627F1EB6600A73DA8 /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
 		040F84A027B5D5620005241D /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Home.strings; sourceTree = "<group>"; };
 		040F84A227B5D7E00005241D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		041221AE281CF19B00485C94 /* LocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationVC.swift; sourceTree = "<group>"; };
+		041221B0281CF5C400485C94 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		0415E12C27C7F48100994416 /* OffersVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersVc.swift; sourceTree = "<group>"; };
 		0415E12F27C7F7DC00994416 /* OffersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersCell.swift; sourceTree = "<group>"; };
 		0415E13427C7F88400994416 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/OffersCell.xib; sourceTree = "<group>"; };
@@ -605,6 +609,7 @@
 				040CA69627F1EB6600A73DA8 /* CartModel.swift */,
 				0455256F27FE8F1C0065132C /* OrderModel.swift */,
 				0455257527FEC67D0065132C /* ReservationModel.swift */,
+				041221B0281CF5C400485C94 /* Notifications.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -857,6 +862,7 @@
 				04659A6027CD84BF00CC9FF1 /* MyAddressesVC.swift */,
 				04659A6227CD89E700CC9FF1 /* LocationDetailsVC.swift */,
 				04659A6427CD92D300CC9FF1 /* RequestTypePopUpVC.swift */,
+				041221AE281CF19B00485C94 /* LocationVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1272,6 +1278,7 @@
 				04FCE4E627C0280900805FD9 /* CartVC.swift in Sources */,
 				04FCE4E827C0283E00805FD9 /* NotificationsVC.swift in Sources */,
 				04467BC227C4E5CB00DA47E6 /* MyReservationsVC.swift in Sources */,
+				041221B1281CF5C500485C94 /* Notifications.swift in Sources */,
 				0401A95E27C185D7009082B8 /* TextFieldDropDown.swift in Sources */,
 				04AF32B327F23BB300270897 /* OptionsTableViewCell.swift in Sources */,
 				FA564CD9242A1EBA00A4A627 /* ResetPasswordVC.swift in Sources */,
@@ -1280,6 +1287,7 @@
 				FA564CE8242A395600A4A627 /* SideMenuVC.swift in Sources */,
 				FADBB14024279F200044936E /* CustomTextField.swift in Sources */,
 				0401A96927C20943009082B8 /* FavouriteCell.swift in Sources */,
+				041221AF281CF19B00485C94 /* LocationVC.swift in Sources */,
 				04AB732A27EA351900ADFAF2 /* Errors.swift in Sources */,
 				FAB4B92524D34EFE00FBD257 /* SettingCell.swift in Sources */,
 				0426E29927EE8D6C001C8EAA /* HomeViewModel.swift in Sources */,
@@ -1771,9 +1779,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = 5R2Z9F2376;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/Livia/AppFiles/Info.plist";
@@ -1785,6 +1794,7 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Dtag.LIVIA;
 				PRODUCT_NAME = Shnp;
+				PROVISIONING_PROFILE_SPECIFIER = livia;
 				SEPARATE_SYMBOL_EDIT = NO;
 				STRIP_INSTALLED_PRODUCT = NO;
 				STRIP_SWIFT_SYMBOLS = YES;
@@ -1799,10 +1809,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = 5R2Z9F2376;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/Livia/AppFiles/Info.plist";
@@ -1814,7 +1824,7 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Dtag.LIVIA;
 				PRODUCT_NAME = Shnp;
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = livia;
 				SEPARATE_SYMBOL_EDIT = NO;
 				STRIP_INSTALLED_PRODUCT = NO;
 				STRIP_SWIFT_SYMBOLS = YES;

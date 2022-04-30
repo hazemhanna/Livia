@@ -13,22 +13,28 @@ class OptionsTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var selectedImageView : UIImageView!
     @IBOutlet weak var quantityLbl : UILabel!
-    
+    @IBOutlet weak var priceLbl : UILabel!
+
     var Increase: (() ->Void)? = nil
     var Dicrease:(() ->Void)? = nil
-    
+    var optionCounter = 1
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
-    func confic(title : String , selected : Bool){
+    func confic(title : String ,price : String, selected : Bool,quantity : Int){
+        
         self.titleLbl.text = title
+        self.priceLbl.text = price +  "" + "EGP".localized
+
         if selected{
-            selectedImageView.image = UIImage(named: "Selected")
+            selectedImageView.image = UIImage(named: "Ellipse 333")
         }else{
-            selectedImageView.image = UIImage(named: "UnSelected")
+            selectedImageView.image = UIImage(named: "Ellipse 348-1")
         }
+        quantityLbl.text = String(quantity)
     }
 
 

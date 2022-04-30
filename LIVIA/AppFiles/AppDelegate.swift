@@ -104,7 +104,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MOLHResetable {
             print("Error Fetching Remote Instance ID: \(error)")
         } else if let result = result {
             print("Remote Instance ID Token: \(result.token)")
-            Helper.saveDeviceToken(token: result.token)
+           // Helper.saveDeviceToken(token: result.token)
             if Helper.getApiToken() ?? "" != "" {
 //                   Services.postUserSetToken(type: "ios", device_token: Helper.getDeviceToken() ?? "") { (error: Error?, result: SuccessError_Model?) in
 //

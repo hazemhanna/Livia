@@ -72,7 +72,8 @@ class Option: Codable {
     let images: [Category]?
     var variants: [Variant]?
     var selected = false
-    
+    var quantity = 1
+
     enum CodingKeys: String, CodingKey {
         case id, type, title, discount, category
         case images = "images"

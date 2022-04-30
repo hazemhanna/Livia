@@ -96,8 +96,7 @@ struct AuthenticationViewModel {
         let observer = Authentication.shared.postChangePassword(params: params)
         return observer
     }
-
-
+    
     func contactUs(subject : String) -> Observable<BaseModel> {
         let bindedName = (try? self.name.value()) ?? ""
         let message = (try? self.message.value()) ?? ""

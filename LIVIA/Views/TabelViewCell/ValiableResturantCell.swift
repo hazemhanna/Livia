@@ -17,38 +17,35 @@ class ValiableResturantCell: UITableViewCell {
     @IBOutlet weak var FavoriteBN: UIButton!
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var quantityTF: UILabel!
-
+    @IBOutlet weak var cartBtn: UIButton!
     @IBOutlet weak var contentStackView: UIStackView!
+    @IBOutlet weak var discountLbl: UILabel!
+    @IBOutlet weak var discountView  : UIView!
 
+    
     var isFavourite = Bool()
     var goToFavorites: (() ->Void)? = nil
-    
+    var addToCart: (() ->Void)? = nil
     var increase: (() ->Void)? = nil
     var decrease: (() ->Void)? = nil
 
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
-        if "lang".localized == "ar" {
-            name.textAlignment = .left
-            type.textAlignment = .left
-        }else{
-            name.textAlignment = .right
-            type.textAlignment = .right
-        }
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-    
-    func config(name: String,price: String, imagePath: String, type: String,isWishlist : Bool) {
-        
+    func config(name: String,price: String, imagePath: String, type: String,isWishlist : Bool,discount : Double) {
         self.name.text = name
         self.type.text = type.parseHtml
-       // self.isFavourite = isWishlist
         self.price.text = price + " " + "EGP".localized
-
+        
+        if discount == 0.00 {
+            discountView.isHidden = true
+        }else{
+            discountView.isHidden = false
+            self.discountLbl.text =  "discount".localized  +  " "  + String(Int(discount)) + "%"
+        }
+        
         if "lang".localized == "ar" {
             self.name.textAlignment = .right
             self.type.textAlignment = .right
@@ -68,11 +65,18 @@ class ValiableResturantCell: UITableViewCell {
         
     }
     
-    func configCart(name: String,price: String, imagePath: String, type: String,quantity : Int) {
+    func configCart(name: String,price: String, imagePath: String, type: String,quantity : Int,discount : Double) {
         
         self.name.text = name
         self.type.text = type.parseHtml
         self.quantityTF.text = "\(quantity)"
+        
+        if discount == 0.00 {
+            discountView.isHidden = true
+        }else{
+            discountView.isHidden = false
+            self.discountLbl.text =  "discount".localized  +  " "  + String(Int(discount)) + "%"
+        }
         
         let p1 = Double(price) ?? 0
         let total =  Int(p1) * quantity
@@ -86,7 +90,7 @@ class ValiableResturantCell: UITableViewCell {
             self.type.textAlignment = .left
         }
         
-      self.FavoriteBN.setImage(UIImage(named: "remove"), for: .normal)
+      self.FavoriteBN.setImage(UIImage(named: "remove"), for: .normal )
       guard let imageURL = URL(string: (imagePath).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else { return }
         self.resturantImage.kf.setImage(with: imageURL)
         
@@ -96,12 +100,18 @@ class ValiableResturantCell: UITableViewCell {
         goToFavorites?()
     }
     
+    
     @IBAction func Increase(_ sender: UIButton) {
         increase?()
     }
-    
+
     @IBAction func decreaseBN(_ sender: UIButton) {
         decrease?()
     }
+    
+    @IBAction func addToCart(_ sender: UIButton) {
+        addToCart?()
+    }
+    
     
 }
