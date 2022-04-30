@@ -297,14 +297,18 @@
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="COMPLETEDLBl" destination="arA-yS-3Fu" id="4cV-cf-PPg"/>
                         <outlet property="Completed" destination="7Hp-ND-Jod" id="6br-je-TdK"/>
                         <outlet property="CompletedView" destination="w7b-4s-2O6" id="iSu-Xz-biZ"/>
+                        <outlet property="NEWLBl" destination="gGe-TH-YQD" id="0v9-I9-aa6"/>
                         <outlet property="New" destination="YfY-tA-4Il" id="aN5-9x-cWp"/>
                         <outlet property="NewView" destination="sng-u5-w0A" id="oPH-kH-TbA"/>
                         <outlet property="OnWay" destination="Z6W-8z-q4g" id="iDK-kj-tOH"/>
                         <outlet property="OnWayView" destination="dht-OI-UXh" id="uGv-5G-EoA"/>
+                        <outlet property="PREPAREDLBl" destination="eRS-3H-GEN" id="a1f-Qy-TBr"/>
                         <outlet property="Preparing" destination="d7W-os-g0Y" id="2pF-HF-J8v"/>
                         <outlet property="PreparingView" destination="wwR-yn-QHy" id="bbb-Rf-hye"/>
+                        <outlet property="WAYLBl" destination="3C2-2B-kOP" id="dda-pd-yIo"/>
                         <outlet property="orderDate" destination="SwF-O1-ueU" id="YB8-Ps-S2C"/>
                         <outlet property="orderNum" destination="uYt-ZA-MgQ" id="e7Y-U4-Ptg"/>
                         <outlet property="statusLB" destination="KaM-qa-IBB" id="Auf-rr-jOC"/>

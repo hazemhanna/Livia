@@ -44,6 +44,7 @@ class CartVC: UIViewController {
         if  Helper.getApiToken() ?? ""  == ""  {
             displayMessage(title: "", message: "You should login first".localized, status:.warning, forController: self)
             noProduct.text = "You should login first".localized
+            emptyView.isHidden = false
         } else {
             cartTableView.delegate = self
             cartTableView.dataSource = self

@@ -29,7 +29,7 @@
 
 "NEW" = "NEW";
 "PREPARED" = "PREPARED";
-"ON_THE_WAY" = "ON THE WAY";
+"ON_THE_WAY" = "ON WAY";
 "COMPLETED" = "COMPLETED";
 
 "login" = "login";
@@ -246,3 +246,4 @@
 "Enter your address" = "Enter your address";
 "product in cart already"= "product in cart already";
 "there is no product" = "there is no product";
+"skip" = "skip";

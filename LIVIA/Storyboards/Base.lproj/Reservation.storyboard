@@ -50,7 +50,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="218" height="25"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Table Reservation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EM5-6L-yod">
-                                                                <rect key="frame" x="16" y="4" width="119" height="17.5"/>
+                                                                <rect key="frame" x="16" y="-1.5" width="115.5" height="28.5"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="15"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -574,8 +574,8 @@
                                             <constraint firstAttribute="height" constant="200" id="wHy-mj-fC3"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Reservation Yet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2O-Vn-hvD">
-                                        <rect key="frame" x="135" y="300" width="144.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لا يوجد حجوزات" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2O-Vn-hvD">
+                                        <rect key="frame" x="153.5" y="300" width="107" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.2117912471" green="0.2075385451" blue="0.2240747511" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -613,7 +613,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="218" height="25"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MY Reservation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3q-AW-q9O">
-                                                                <rect key="frame" x="16" y="4" width="106.5" height="17.5"/>
+                                                                <rect key="frame" x="16" y="-1.5" width="102.5" height="28.5"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="15"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -749,7 +749,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="218" height="25"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reservation Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6U-Xt-5Th">
-                                                                <rect key="frame" x="16" y="4" width="129.5" height="17.5"/>
+                                                                <rect key="frame" x="16" y="-1.5" width="126.5" height="28.5"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="15"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>

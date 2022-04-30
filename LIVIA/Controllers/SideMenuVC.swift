@@ -12,13 +12,11 @@ import RxCocoa
 
 class SideMenuVC: UIViewController {
     
-    @IBOutlet weak var editBN: UIButton!
     @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var wallet : UILabel!
-    @IBOutlet weak var walletValue : UILabel!
     @IBOutlet weak var SideMenuTableView: UITableView!
-    @IBOutlet weak var walletView : UIView!
-    
+    @IBOutlet weak var logoImage : UIImageView!
+    @IBOutlet weak var uploadedImage: UIImageView!
+
     fileprivate let cellIdentifier = "SideMenuCell"
     private let AuthViewModel = AuthenticationViewModel()
     var disposeBag = DisposeBag()
@@ -41,9 +39,16 @@ class SideMenuVC: UIViewController {
         SideMenuTableView.estimatedRowHeight = UITableView.automaticDimension
         SideMenuTableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
         
+      if token != "" {
         AuthViewModel.showIndicator()
         getProfile()
+          logoImage.isHidden = true
+          uploadedImage.isHidden = false
+      }else{
+          logoImage.isHidden = false
+          uploadedImage.isHidden = true
 
+      }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,10 +56,10 @@ class SideMenuVC: UIViewController {
         if token != "" {
            // walletView.isHidden = false
              self.sideMenuArr = [
-            SideMenuModel(name: "Home".localized,id: "home", selected: false,sideImage: #imageLiteral(resourceName: "home")),
+            SideMenuModel(name: "Home".localized,id: "home", selected: false,sideImage: #imageLiteral(resourceName: "Group 493")),
             SideMenuModel(name: "Profile".localized, id: "Profile", selected: false,sideImage: #imageLiteral(resourceName: "ic_assignment_ind_24px-1")),
             SideMenuModel(name: "Sections".localized, id: "Sections", selected: false, sideImage: #imageLiteral(resourceName: "burger")),
-            SideMenuModel(name: "Cart".localized, id: "Cart", selected: false,sideImage: #imageLiteral(resourceName: "cart (1)-1")),
+            SideMenuModel(name: "Cart".localized, id: "Cart", selected: false,sideImage: #imageLiteral(resourceName: "Ellipse 333")),
             SideMenuModel(name: "Reserve Table".localized, id: "ReserveTable", selected: false, sideImage: #imageLiteral(resourceName: "reservation2")),
            // SideMenuModel(name: "Notifications".localized, id: "Notifications", selected: false, sideImage: #imageLiteral(resourceName: "icons8-notification")),
             SideMenuModel(name: "Reservations".localized, id: "Reservations", selected: false, sideImage: #imageLiteral(resourceName: "reservation2")),
@@ -71,7 +76,7 @@ class SideMenuVC: UIViewController {
                 //walletView.isHidden = true
 
             self.sideMenuArr = [
-             SideMenuModel(name: "Home".localized, id: "home", selected: false, sideImage: #imageLiteral(resourceName: "home")),
+             SideMenuModel(name: "Home".localized, id: "home", selected: false, sideImage: #imageLiteral(resourceName: "Group 6")),
             // SideMenuModel(name: "Contact Us".localized, id: "Contact Us", selected: false,sideImage: #imageLiteral(resourceName: "cridateCard")),
              
              SideMenuModel(name: "Terms And Conditions".localized, id: "TermsAndConditions" , selected: false, sideImage: #imageLiteral(resourceName: "terms")),
@@ -123,7 +128,6 @@ class SideMenuVC: UIViewController {
             Helper.LogOutUser()
         case "login":
             pushSideMenu(StoryboardName: "Authentications", ForController: "LoginVC")
-            
         default:
             break
         }
@@ -165,11 +169,12 @@ extension SideMenuVC: UITableViewDelegate,UITableViewDataSource {
 }
 
 extension SideMenuVC {
-    
     func getProfile() {
         self.AuthViewModel.getProfile().subscribe(onNext: { (data) in
             self.AuthViewModel.dismissIndicator()
             self.name.text = data.data?.name ?? ""
+            guard let imageURL = URL(string: (data.data?.avatar ?? "" ).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else { return }
+              self.uploadedImage.kf.setImage(with: imageURL)
             }, onError: { (error) in
                 self.AuthViewModel.dismissIndicator()
             }).disposed(by: disposeBag)

@@ -96,6 +96,13 @@ extension MyReservationsVC{
             self.reservationVM.getReservatiom().subscribe(onNext: { (data) in
                  self.reservationVM.dismissIndicator()
                 self.reservations = data.data?.tableReservations?.tableReservations ?? []
+                
+                if self.reservations.count > 0 {
+                    self.emptyView.isHidden = true
+                }else{
+                   self.emptyView.isHidden = false
+                }
+                
             }, onError: { (error) in
                 self.reservationVM.dismissIndicator()
             }).disposed(by: disposeBag)

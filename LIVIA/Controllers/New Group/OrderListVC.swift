@@ -103,8 +103,14 @@ extension OrderListVC {
         self.orderViewModel.getOrders().subscribe(onNext: { (data) in
           self.orderViewModel.dismissIndicator()
            self.list = data.data?.orders ?? []
-            //self.show()
-          }, onError: { (error) in
+
+            if self.list.count > 0 {
+                self.emptyView.isHidden = true
+            }else{
+               self.emptyView.isHidden = false
+            }
+            
+        }, onError: { (error) in
           self.orderViewModel.dismissIndicator()
          }).disposed(by: disposeBag)
     }

@@ -21,10 +21,21 @@ class OrderFollowingVC: UIViewController {
     @IBOutlet weak var PreparingView: UIView!
     @IBOutlet weak var OnWayView: UIView!
     @IBOutlet weak var CompletedView: UIView!
+    @IBOutlet weak var NEWLBl : UILabel!
+    @IBOutlet weak var PREPAREDLBl : UILabel!
+    @IBOutlet weak var WAYLBl : UILabel!
+    @IBOutlet weak var COMPLETEDLBl : UILabel!
     var order: Order?
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NEWLBl.text = "NEW".localized
+        PREPAREDLBl.text = "PREPARED".localized
+        WAYLBl.text = "ON_THE_WAY".localized
+        COMPLETEDLBl.text = "COMPLETED".localized
+        
         switch order?.logs?.last?.status ?? "" {
         case "NEW":
             New.image = #imageLiteral(resourceName: "icons8-sync")
@@ -81,5 +92,4 @@ class OrderFollowingVC: UIViewController {
      print(timeStamp)
      return timeStamp
      }
-    
 }

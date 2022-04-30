@@ -25,12 +25,8 @@ class Authentication {
                 .responseJSON { (response: DataResponse<Any>) in
                     do {
                         let loginData = try JSONDecoder().decode(LoginModel.self, from: response.data!)
-                        
-                       
                         Helper.saveApiToken(token: loginData.token ?? "", email: loginData.user?.email ?? "", user_id: loginData.user?.id ?? 0)
-                        
                         observer.onNext(loginData)
-                        
                     } catch {
                         print(error)
                         observer.onError(error)
