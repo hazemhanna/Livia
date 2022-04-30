@@ -113,7 +113,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4c-xj-DjB">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="89.5"/>
                                         <state key="normal" title="Message Address" image="arrow-down-filled-triangle">
-                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" name="navigation"/>
                                         </state>
                                         <connections>
                                             <action selector="messageType:" destination="LvY-1L-I3b" eventType="touchUpInside" id="lRT-VX-yPK"/>
@@ -816,7 +816,7 @@
         <image name="Line 41" width="2" height="66"/>
         <image name="arrow-down-filled-triangle" width="12" height="12"/>
         <image name="back-arrow" width="16" height="16"/>
-        <image name="livia logo" width="479" height="479"/>
+        <image name="livia logo" width="1024" height="1024"/>
         <image name="loupe-1" width="35" height="35"/>
         <image name="loupe-5" width="38" height="38"/>
         <image name="open-menu" width="38" height="38"/>

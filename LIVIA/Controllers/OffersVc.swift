@@ -14,7 +14,6 @@ class OffersVc : UIViewController {
     
     @IBOutlet weak var bestSellerTableView: UITableView!
     fileprivate let cellIdentifier = "OffersCell"
-    
     private let homeViewModel = HomeViewModel()
     var disposeBag = DisposeBag()
     
@@ -60,13 +59,15 @@ extension OffersVc: UITableViewDelegate, UITableViewDataSource {
                     , price: products[indexPath.row].variants?[0].price ?? ""
                     , imagePath: products[indexPath.row].images?[0].image ?? ""
                     , type: products[indexPath.row].desc?.ar ?? ""
-                    , isWishlist: products[indexPath.row].isWishlist ?? false )
+                    , isWishlist: products[indexPath.row].isWishlist ?? false
+                    , discount: Double(products[indexPath.row].discount ?? "") ?? 0)
         }else{
             cell.config(name: products[indexPath.row].title?.en ?? ""
                         , price: products[indexPath.row].variants?[0].price ?? ""
                         , imagePath: products[indexPath.row].images?[0].image ?? "",
                         type: products[indexPath.row].desc?.en ?? ""
-                        ,isWishlist: products[indexPath.row].isWishlist ?? false)
+                        ,isWishlist: products[indexPath.row].isWishlist ?? false
+                        , discount: Double(products[indexPath.row].discount ?? "") ?? 0)
 
         }
         cell.goToFavorites = {
@@ -132,6 +133,13 @@ extension OffersVc{
     
     func addWishList(id : Int,isWishList : Bool) {
         self.homeViewModel.addWishList(id: id,isWishList :isWishList).subscribe(onNext: { (data) in
+            if data.value ?? false {
+                if isWishList{
+                displayMessage(title: "", message: "remove to favourite".localized, status:.success, forController: self)
+                }else{
+                displayMessage(title: "", message: "Add to favourite".localized, status:.success, forController: self)
+                }
+            }
                 self.getOffers()
             }, onError: { (error) in
                 self.homeViewModel.dismissIndicator()

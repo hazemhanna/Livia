@@ -39,6 +39,7 @@ struct UserModel: Codable {
   //  let verificationCode: Int?
     let isVerified: Int?
     let role, status, createdAt, updatedAt: String?
+    let avatar: String?
 
     enum CodingKeys: String, CodingKey {
         case id, name, email, address, phone
@@ -47,6 +48,7 @@ struct UserModel: Codable {
         case role, status
         case createdAt = "created_at"
         case updatedAt = "updated_at"
+        case avatar = "avatar"
     }
 }
 

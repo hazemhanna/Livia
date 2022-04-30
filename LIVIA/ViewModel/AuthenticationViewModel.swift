@@ -119,5 +119,8 @@ struct AuthenticationViewModel {
      }
     
     
-    
+    func updateAvatar(image : UIImage) -> Observable<BaseModel> {
+       let observer = Authentication.shared.updateAvatar(image: image)
+        return observer
+    }
 }

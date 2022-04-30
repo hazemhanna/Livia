@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   Shanab
 
@@ -13,7 +13,7 @@
 "Order List" = "طلباتي";
 "Profile" = "الملف الشخصي";
 "changeProfile" = "تغيير الملف الشخصي";
-
+"changeProfilePic" = "تغيير الصورة الشخصية";
 "Favorit Restaurants" = "المطاعم المفضلة";
 "Favorite Meals" = "الواجبات المفضلة";
 "Contact Us" = "تواصل معنا";
@@ -27,17 +27,16 @@
 "new order" = "الطلبات الجديدة";
 "login" = "نسجيل دخول";
 "logOut" = "نسجيل خروج";
-"skip" = "تخطي";
 
-"new" = "جديد";
-"preparing" = "جاري التحضير";
+"NEW" = "جديد";
+"PREPARED" = "جاري التحضير";
 "delivering" = "في الطريق";
 "delivered" = "تم التوصيل";
-"competed" = "منتهي";
+"COMPLETED" = "منتهي";
 
 "preparing order" = "طلبات قيد التحضير";
 
-"on_way" = "طلبات قيد التوصيل";
+"ON_THE_WAY" = "طلبات قيد التوصيل";
 "completed" = "طلبات منتهية";
 "arrived" = "طلبات تم التوصيل";
 
@@ -59,6 +58,7 @@
 "No address for this user" = "لا يوجد عنوان للمستخدم";
 
 "Choose payment method" = "اختر طريقة الدفع";
+"Payment" = "الدفع";
 
 "Enter your email" = "آدخل بريدك الألكتروني";
 
@@ -66,9 +66,8 @@
 
 "Item deleted from cart" = "تم حذف الطلب من سلة التسوق";
 
-"problem" = "شكوى";
-"suggestion" = "أقتراح";
-
+"Complain" = "شكوى";
+"Proposal" = "أقتراح";
 "Enter Your Email" = "ادخل بريدك الألكتروني";
 
 "Enter Your phone number" = "ادخل رقم الجوال";
@@ -76,7 +75,6 @@
 "Enter message" = "ادخل رسالتك";
 
 "Choose the message address" = "اختر عنوان الرسالة";
-"Enter your address" = "ادخل العنوان";
 
 "Enter Your name" = "ادخل اسمك";
 
@@ -104,7 +102,7 @@
 
 "phone or password wrong" = "كلمة المرور أو رقم الهاتف غير صحيحين";
 
-"Add to cart" = "تم الأضافة إلى السلة";
+"Add to cart" = "تم الاضافة الى السلة";
 
 "Password changed" = "تغيير كلمة المرور";
 
@@ -119,7 +117,9 @@
 "Enter new password" = "ادخل كلمة المرور الجديدة";
 
 "Enter confirm password" = "ادخل تأكيد كلمة المرور";
-"your password not match" =  "كلمة المرور غير متابطقة";
+"new password" = "كلمة المرور الجديدة";
+"confirm password" = "تأكيد كلمة المرور";
+
 "The total price includes " = "إجمالي السعر يشتمل على ";
 "VAT tax" = "ضريبة القيمة المضافة";
 
@@ -201,7 +201,7 @@
 "emptyCart" = " سلة المشتريات فارغة";
 "You should login first" = "يجب تسجيل الدخول اولا";
 "minumam" = "الحد الادني لهذا المطعم هو";
-"bill" = "كلمة المرور يجب ان تكون اكبر من ٨ حروف";
+"bill" = "للاطلاع علي الفاتورة يرجي الضغط علي  هذا اللينك";
 "Shanab" = "شنب";
 "privouse Order" = "الطلبات السابقة";
 "order Number" = "رقم الطلب";
@@ -224,6 +224,11 @@
 "lat" = "خظوظ الطول";
 "long" = "دواير العرض";
 "addaddress" = "اضف عنوان جديد";
+"phone number" = "رقم الهاتف";
+"email" = "بريدك الألكتروني";
+"userName" = "اسم المستخدم";
+"search" = "البحث";
+
 "phone" =  "الهاتف";
 "small" = "صغير";
 "large" = "كبير";
@@ -231,13 +236,14 @@
 "othetnotes" = "تفاصيل اخري";
 "size" = "الحجم";
 "EGP" = "جنية";
+
 "please select size" =  "من فضلك اختر الحجم";
 "total cost" = "اجمالي التكلفة";
 "Contact Send Done" = "تم الارسال بنجاح";
 "please select time" =  "من فضلك اختر الوقت";
 "please select date" =  "من فضلك اختر التاريخ";
 "resdone" = "تم تاكيدالحجز بنجاح";
-"We not have a free table now " = "لا يوجد طربيزات الان";
+"We not have a free table now " = "عذرا لا يوجد طاولات متاحة الان يرجى المحاولة لاحقا";
 "not valid now" = "غير متاح الان";
 "delivery fees" = "رسوم التوصيل";
 "price" = "السعر :";
@@ -254,4 +260,4 @@
 "setLocation" = "حدد موقعك من الخريطة";
 "Enter your address" = " ادخل العنوان الخاص بك";
 "product in cart already"= "المنتج موجود في السلة";
-"product in cart already"= "المنتج موجود في السلة";
+"there is no product" = "لا يوجد منتجات";

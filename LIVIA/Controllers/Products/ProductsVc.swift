@@ -16,6 +16,7 @@ class ProductsVc : UIViewController {
     @IBOutlet weak var titleLbl  : UILabel!
     @IBOutlet weak var bestSellerTableView: UITableView!
     @IBOutlet weak var empyView : UIView!
+    @IBOutlet weak var emptyLbl  : UILabel!
 
     
     fileprivate let cellIdentifier = "ValiableResturantCell"
@@ -40,6 +41,7 @@ class ProductsVc : UIViewController {
         homeViewModel.showIndicator()
         self.getProduct(id : self.catId)
         self.titleLbl.text = catTitle
+        emptyLbl.text = "there is no product".localized
     }
       
     @IBAction func sideMenu(_ sender: Any) {
@@ -88,9 +90,13 @@ extension ProductsVc: UITableViewDelegate, UITableViewDataSource {
 
         }
         cell.goToFavorites = {
-            self.homeViewModel.showIndicator()
-            self.addWishList(id: self.products[indexPath.row].id ?? 0 , isWishList: self.products[indexPath.row].isWishlist ?? false)
-        }
+            if Helper.getApiToken() ?? ""  == ""  {
+                    displayMessage(title: "", message: "You should login first".localized, status:.warning, forController: self)
+            }else{
+                self.homeViewModel.showIndicator()
+                self.addWishList(id: self.products[indexPath.row].id ?? 0 , isWishList: self.products[indexPath.row].isWishlist ?? false)
+               }
+            }
         cell.increase = {
             guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }
             details.product = self.products[indexPath.row]
@@ -134,6 +140,13 @@ extension ProductsVc{
 
  func addWishList(id : Int,isWishList : Bool) {
         self.homeViewModel.addWishList(id: id,isWishList :isWishList).subscribe(onNext: { (data) in
+            if data.value ?? false {
+                if isWishList{
+                displayMessage(title: "", message: "remove to favourite".localized, status:.success, forController: self)
+                }else{
+                displayMessage(title: "", message: "Add to favourite".localized, status:.success, forController: self)
+                }
+            }
             self.getProduct(id: self.catId)
             }, onError: { (error) in
                 self.homeViewModel.dismissIndicator()

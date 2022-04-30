@@ -225,13 +225,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
         }
         cell.goToFavorites = {
-        if Helper.getApiToken() ?? ""  == ""  {
-                displayMessage(title: "", message: "You should login first".localized, status:.warning, forController: self)
-        }else{
-            self.homeViewModel.showIndicator()
-            self.addWishList(id: self.products[indexPath.row].id ?? 0 , isWishList: self.products[indexPath.row].isWishlist ?? false)
-           }
-        }
+            if Helper.getApiToken() ?? ""  == ""  {
+                    displayMessage(title: "", message: "You should login first".localized, status:.warning, forController: self)
+            }else{
+                self.homeViewModel.showIndicator()
+                self.addWishList(id: self.products[indexPath.row].id ?? 0 , isWishList: self.products[indexPath.row].isWishlist ?? false)
+               }
+            }
         cell.increase = {
             guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }
            details.product = self.products[indexPath.row]
@@ -300,6 +300,13 @@ extension HomeViewController{
     
     func addWishList(id : Int,isWishList : Bool) {
         self.homeViewModel.addWishList(id: id,isWishList :isWishList).subscribe(onNext: { (data) in
+            if data.value ?? false {
+                if isWishList{
+                displayMessage(title: "", message: "remove to favourite".localized, status:.success, forController: self)
+                }else{
+                displayMessage(title: "", message: "Add to favourite".localized, status:.success, forController: self)
+                }
+            }
                 self.getProduct()
             }, onError: { (error) in
                 self.homeViewModel.dismissIndicator()

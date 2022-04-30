@@ -18,12 +18,17 @@ class ChangeProfileVC: UIViewController {
     @IBOutlet weak var email: CustomTextField!
     @IBOutlet weak var address: CustomTextField!
     @IBOutlet weak var titleLbl  : UILabel!
+    @IBOutlet weak var uploadedImage: UIImageView!
+    @IBOutlet weak var profilePicbtn : UIButton!
     private let AuthViewModel = AuthenticationViewModel()
     var disposeBag = DisposeBag()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLbl.text = "changeProfile".localized
+        profilePicbtn.setTitle("changeProfilePic".localized, for: .normal)
+
         AuthViewModel.showIndicator()
         getProfile()
     }
@@ -83,6 +88,11 @@ class ChangeProfileVC: UIViewController {
         self.AuthViewModel.showIndicator()
         updateProfile()
     }
+    
+    @IBAction func chageProfilePicAction(_ sender: UIButton) {
+        showImageActionSheet()
+    }
+    
 }
 
 extension ChangeProfileVC {
@@ -94,6 +104,9 @@ extension ChangeProfileVC {
             self.phone.text = data.data?.phone ?? ""
             self.email.text = data.data?.email ?? ""
             self.address.text = data.data?.address ?? ""
+            guard let imageURL = URL(string: (data.data?.avatar ?? "" ).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else { return }
+              self.uploadedImage.kf.setImage(with: imageURL)
+            
             self.DataBinding()
             }, onError: { (error) in
                 self.AuthViewModel.dismissIndicator()
@@ -108,8 +121,55 @@ extension ChangeProfileVC {
         }).disposed(by: disposeBag)
      }
     
+    func updateAvatar(image : UIImage) {
+        AuthViewModel.showIndicator()
+        self.AuthViewModel.updateAvatar(image: image).subscribe(onNext: { (data) in
+            self.AuthViewModel.dismissIndicator()
+        }, onError: { (error) in
+            self.AuthViewModel.dismissIndicator()
+        }).disposed(by: disposeBag)
+     }
+    
 }
 
+extension ChangeProfileVC : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func showImageActionSheet() {
+        let chooseFromLibraryAction = UIAlertAction(title: "Choose from Library", style: .default) { (action) in
+                self.showImagePicker(sourceType: .photoLibrary)
+            }
+            let cameraAction = UIAlertAction(title: "Take a Picture from Camera", style: .default) { (action) in
+                self.showImagePicker(sourceType: .camera)
+            }
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            AlertService.showAlert(style: .actionSheet, title: "Pick Your Picture", message: nil, actions: [chooseFromLibraryAction, cameraAction, cancelAction], completion: nil)
+    }
+    
+    func showImagePicker(sourceType: UIImagePickerController.SourceType) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.allowsEditing = true
+        imagePickerController.sourceType = sourceType
+        imagePickerController.mediaTypes = ["public.image"]
+        imagePickerController.view.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        self.present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            AuthViewModel.showIndicator()
+            self.uploadedImage.image = editedImage
+            updateAvatar(image: editedImage)
+        } else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            AuthViewModel.showIndicator()
+           self.uploadedImage.image = originalImage
+            updateAvatar(image: originalImage)
+
+        }
+        dismiss(animated: true, completion: nil)
+    }
+}
 
 
 

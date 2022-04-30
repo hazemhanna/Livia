@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ProfilePopUp: UIViewController {
     
@@ -14,14 +16,16 @@ class ProfilePopUp: UIViewController {
     @IBOutlet weak var notificationtn : UIButton!
     @IBOutlet weak var passwordtn : UIButton!
     @IBOutlet weak var profilebtn : UIButton!
-    @IBOutlet weak var titleLbl  : UILabel!
 
+    
     var goToWallet: (() ->Void)? = nil
-
     var goTochangeProfile: (() ->Void)? = nil
     var goTochangePassword: (() ->Void)? = nil
     var goToNotification: (() ->Void)? = nil
 
+    private let AuthViewModel = AuthenticationViewModel()
+    var disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,7 +33,6 @@ class ProfilePopUp: UIViewController {
         passwordtn.setTitle("Password changed".localized, for: .normal)
         notificationtn.setTitle("Notifications".localized, for: .normal)
         profilebtn.setTitle("changeProfile".localized, for: .normal)
-
     }
     
     @IBAction func walletAction(_ sender: UIButton) {
@@ -52,26 +55,9 @@ class ProfilePopUp: UIViewController {
         goTochangeProfile?()
     }
     
-  
+
     @IBAction func dismiss(_ sender: UIButton) {
         self.dismiss(animated: true)
     }
-    
-    @IBAction func scanhButtonPressed(_ sender: Any) {
-        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "ScanVc") as? ScanVc else { return }
-        self.navigationController?.pushViewController(details, animated: true)
-    }
-    
-
-    @IBAction func searchButtonPressed(_ sender: Any) {
-        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as? SearchVC else { return }
-        self.navigationController?.pushViewController(details, animated: true)
-    }
-
-    @IBAction func notificationhButtonPressed(_ sender: Any) {
-        guard let details = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "NotificationsVC") as? NotificationsVC else { return }
-        self.navigationController?.pushViewController(details, animated: true)
-
-    }
-    
 }
+

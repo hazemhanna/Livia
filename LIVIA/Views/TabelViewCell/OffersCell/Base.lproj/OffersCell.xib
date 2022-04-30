@@ -210,6 +210,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="FavoriteBN" destination="EYv-pV-Atn" id="3w1-t4-EUK"/>
+                <outlet property="discountLbl" destination="N2e-Ny-VAh" id="VC3-Bn-IOd"/>
                 <outlet property="name" destination="B3o-El-CPx" id="ySA-4v-bct"/>
                 <outlet property="price" destination="Ugb-kJ-7p9" id="Xry-Hn-tbc"/>
                 <outlet property="quantityTF" destination="qnG-YQ-f61" id="3Ft-G6-1Ft"/>

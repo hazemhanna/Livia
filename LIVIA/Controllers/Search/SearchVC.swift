@@ -166,6 +166,13 @@ extension SearchVC{
     
     func addWishList(id : Int,isWishList : Bool) {
         self.homeViewModel.addWishList(id: id,isWishList :isWishList).subscribe(onNext: { (data) in
+            if data.value ?? false {
+                if isWishList{
+                displayMessage(title: "", message: "remove to favourite".localized, status:.success, forController: self)
+                }else{
+                displayMessage(title: "", message: "Add to favourite".localized, status:.success, forController: self)
+                }
+            }
                 self.getProduct()
             }, onError: { (error) in
                 self.homeViewModel.dismissIndicator()

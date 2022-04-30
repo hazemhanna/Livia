@@ -15,7 +15,7 @@ import RxCocoa
 class MainProfileVC : UIViewController {
 
     @IBOutlet weak var titleLbl  : UILabel!
-    
+    @IBOutlet weak var uploadedImage: UIImageView!
     @IBOutlet weak var nameLbl  : UILabel!
     @IBOutlet weak var addLbl  : UILabel!
     @IBOutlet weak var phoneLbl  : UILabel!
@@ -87,6 +87,9 @@ extension MainProfileVC {
             self.emailLbl.text = data.data?.email ?? ""
             self.phoneLbl.text = data.data?.phone ?? ""
             self.addLbl.text = data.data?.address ?? ""
+            
+            guard let imageURL = URL(string: (data.data?.avatar ?? "" ).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else { return }
+              self.uploadedImage.kf.setImage(with: imageURL)
             
             }, onError: { (error) in
                 self.AuthViewModel.dismissIndicator()

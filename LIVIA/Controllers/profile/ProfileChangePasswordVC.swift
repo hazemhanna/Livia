@@ -18,6 +18,7 @@ class ProfileChangePasswordVC: UIViewController {
     @IBOutlet weak var newPassword: CustomTextField!
     @IBOutlet weak var password_confirmation: CustomTextField!
     @IBOutlet weak var oldPassword: CustomTextField!
+    @IBOutlet weak var uploadedImage: UIImageView!
 
     private let AuthViewModel = AuthenticationViewModel()
     var disposeBag = DisposeBag()
@@ -26,7 +27,8 @@ class ProfileChangePasswordVC: UIViewController {
         super.viewDidLoad()
         titleLbl.text = "Password changed".localized
         DataBinding()
-
+        AuthViewModel.showIndicator()
+        getProfile()
     }
     
     @IBAction func popUpAction(_ sender: UIButton) {
@@ -125,6 +127,17 @@ class ProfileChangePasswordVC: UIViewController {
         }).disposed(by: disposeBag)
      }
     
+    func getProfile() {
+        self.AuthViewModel.getProfile().subscribe(onNext: { (data) in
+            self.AuthViewModel.dismissIndicator()
+            guard let imageURL = URL(string: (data.data?.avatar ?? "" ).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else { return }
+              self.uploadedImage.kf.setImage(with: imageURL)
+            
+            self.DataBinding()
+            }, onError: { (error) in
+                self.AuthViewModel.dismissIndicator()
+            }).disposed(by: disposeBag)
+     }
     
 }
 

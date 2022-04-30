@@ -370,8 +370,11 @@ func addWishList(id : Int,isWishList : Bool) {
     self.cartViewModel.addWishList(id: id,isWishList :isWishList).subscribe(onNext: { (data) in
         
         if data.value ?? false {
-         
-            
+            if isWishList{
+            displayMessage(title: "", message: "remove to favourite".localized, status:.success, forController: self)
+            }else{
+            displayMessage(title: "", message: "Add to favourite".localized, status:.success, forController: self)
+            }
         }
         self.cartViewModel.dismissIndicator()
     }, onError: { (error) in

@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   Shanab
 
@@ -13,6 +13,7 @@
 "Order List" = "Order List";
 "Profile" = "Profile";
 "changeProfile" = "change Profile";
+"changeProfilePic" = "change Profile Picture";
 
 "Favorit Restaurants" = "Favorit Restaurants";
 "Favorite Meals" = "Favorite Meals";
@@ -25,19 +26,14 @@
 "truck" = "truck";
 "family" = "family";
 "new order" = "new orders";
-"new" = "new";
-"preparing" = "preparing";
-"delivering" = "delivering";
-"delivered" = "delivered";
-"competed" = "competed";
 
-"on_way" = "Onway";
-"preparing order" = "preparing";
-"completed" = "completed";
-"arrived" = "Arrived";
+"NEW" = "NEW";
+"PREPARED" = "PREPARED";
+"ON_THE_WAY" = "ON THE WAY";
+"COMPLETED" = "COMPLETED";
+
 "login" = "login";
 "logOut" = "logOut";
-"skip" = "skip";
 "S.R" = "SAR";
 "You should login first" = "You should login first";
 "Add favourite" = "Add favourite";
@@ -51,15 +47,14 @@
 "No address for this user" = "No address for this user";
 
 "Choose payment method" = "Choose payment method";
-
+"Payment" = "Payment";
 "Enter your email" = "Enter your email";
 
 "Done" = "Done";
 
 "Item deleted from cart" = "Item deleted from cart";
 
-"problem" = "problem";
-"suggestion" = "suggestion";
+"Complain" = "Complain";
 "Proposal" = "Proposal";
 
 "Enter Your Email" = "Enter Your Email";
@@ -70,8 +65,6 @@
 
 "Choose the message address" = "Choose the message address";
 
-
-"Enter your address" = "Enter your address";
 "Enter Your name" = "Enter Your name";
 
 "Your message was sent" = "Your message was sent";
@@ -85,21 +78,16 @@
 "Please enter a deposit of " = "Please enter a deposit of ";
 
 "S.R to confirm reservation" = "SAR to confirm reservation";
-
 "Reserve Table" = "Reserve Table";
-
 "People Number" = "People Number";
-
-
 "Item deleted from cart" = "Item deleted from cart";
-
 "Order added successfully" = "Order added successfully";
 
 "You logged out now" = "You logged out now";
 
 "phone or password wrong" =  "phone or password wrong";
 
-"Add to cart" = "done Add to cart";
+"Add to cart" = "Add to cart";
 
 "Password changed" = "changed Password";
 
@@ -112,8 +100,12 @@
 "Code is invalid" = "Code is invalid";
 
 "Enter new password" = "Enter new password";
-
 "Enter confirm password" = "Enter confirm password";
+
+"new password" = "new password";
+"confirm password" = "confirm password";
+
+
 
 "The total price includes " = "The total price includes ";
 "VAT tax" = "VAT tax";
@@ -137,8 +129,6 @@
 "logged in successfully" = "logged in successfully";
 
 "Enter your password" = "Enter your password";
-
-"your password not match" = "your password not match";
 
 "Enter your phone number" = "Enter your phone number";
 
@@ -196,7 +186,7 @@
 "prvious order" = "prvious orders";
 "emptyCart" = "empty Cart";
 "minumam" = "minumam price for this restaurant is";
-"bill" = "your password should be more than 8 character";
+"bill" = "to see your bill press this link";
 "Shanab" = "Shanab";
 "privouse Order" = "privouse Order";
 "order Number" = "order Number";
@@ -220,6 +210,11 @@
 "building" = "building";
 "lat" = "lat";
 "long" = "long";
+"phone number" = "phone number";
+"email" = "email";
+"userName" = "user Name";
+"search" = "search";
+
 "phone" =  "phone";
 "small" = "small";
 "large" = "large";
@@ -250,4 +245,4 @@
 "setLocation" = "set Location from map";
 "Enter your address" = "Enter your address";
 "product in cart already"= "product in cart already";
-"product in cart already"= "product in cart already";
+"there is no product" = "there is no product";

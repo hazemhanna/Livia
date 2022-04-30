@@ -177,6 +177,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="bestSellerTableView" destination="reU-ui-Otf" id="aUe-2s-Dok"/>
+                        <outlet property="emptyLbl" destination="eZc-P2-WNW" id="P4c-hS-EUT"/>
                         <outlet property="empyView" destination="dO0-Mo-vNu" id="K7d-3z-Ft6"/>
                         <outlet property="titleLbl" destination="B7t-Yx-BDq" id="eVN-yf-lhy"/>
                     </connections>

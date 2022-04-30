@@ -1232,7 +1232,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="locationBtn:" destination="ZcR-UA-Kjp" eventType="touchDragInside" id="qiX-w6-M0x"/>
+                                            <action selector="locationBtn:" destination="ZcR-UA-Kjp" eventType="touchUpInside" id="iPV-ti-GNR"/>
                                         </connections>
                                     </button>
                                 </subviews>

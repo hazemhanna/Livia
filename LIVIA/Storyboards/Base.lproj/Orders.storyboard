@@ -773,6 +773,7 @@
                     <navigationItem key="navigationItem" title="Cart" id="CSW-qL-pN8"/>
                     <connections>
                         <outlet property="TableHeight" destination="hIg-ZH-fj2" id="x48-vO-mPo"/>
+                        <outlet property="canceBtn" destination="ZPK-UI-jKG" id="QPr-Ie-ZAb"/>
                         <outlet property="cartTableView" destination="gtx-8Z-592" id="IW7-IF-sd5"/>
                         <outlet property="deliveryLbl" destination="AFK-Se-XXM" id="FLA-Pk-NGX"/>
                         <outlet property="discreption" destination="0jJ-wj-D3h" id="lqy-dq-Z6E"/>
