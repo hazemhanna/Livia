@@ -773,10 +773,12 @@
                     <navigationItem key="navigationItem" title="Cart" id="CSW-qL-pN8"/>
                     <connections>
                         <outlet property="TableHeight" destination="hIg-ZH-fj2" id="x48-vO-mPo"/>
+                        <outlet property="billBtn" destination="ULh-tw-qyW" id="acp-20-jmD"/>
                         <outlet property="canceBtn" destination="ZPK-UI-jKG" id="QPr-Ie-ZAb"/>
                         <outlet property="cartTableView" destination="gtx-8Z-592" id="IW7-IF-sd5"/>
                         <outlet property="deliveryLbl" destination="AFK-Se-XXM" id="FLA-Pk-NGX"/>
                         <outlet property="discreption" destination="0jJ-wj-D3h" id="lqy-dq-Z6E"/>
+                        <outlet property="followBtn" destination="zrc-XK-F2C" id="fPF-D1-NNv"/>
                         <outlet property="titleLbl" destination="JEI-Ss-vXa" id="wNV-Lm-oYJ"/>
                         <outlet property="totalLbl" destination="MEm-h6-isv" id="qre-Sr-WX3"/>
                     </connections>

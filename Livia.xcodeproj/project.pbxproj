@@ -115,7 +115,6 @@
 		FA5B25C62434B4A7004F52DE /* PreviosListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5B25C42434B4A7004F52DE /* PreviosListCell.swift */; };
 		FA5B25D32434DC1D004F52DE /* DateFSCalnder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5B25D22434DC1D004F52DE /* DateFSCalnder.swift */; };
 		FA5E5A4C2487D3BF005213F7 /* NumberListPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E5A4B2487D3BF005213F7 /* NumberListPopUp.swift */; };
-		FA62F5F624331EAC00A7EEB9 /* OrderReceiptVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA62F5F524331EAC00A7EEB9 /* OrderReceiptVC.swift */; };
 		FA62F5F9243328C300A7EEB9 /* OrderReceiptCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA62F5F7243328C300A7EEB9 /* OrderReceiptCell.swift */; };
 		FA62F5FA243328C300A7EEB9 /* OrderReceiptCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA62F5F8243328C300A7EEB9 /* OrderReceiptCell.xib */; };
 		FA62F6002433572300A7EEB9 /* OrderConfirmationPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA62F5FF2433572300A7EEB9 /* OrderConfirmationPopUp.swift */; };
@@ -333,7 +332,6 @@
 		FA5B25C42434B4A7004F52DE /* PreviosListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviosListCell.swift; sourceTree = "<group>"; };
 		FA5B25D22434DC1D004F52DE /* DateFSCalnder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFSCalnder.swift; sourceTree = "<group>"; };
 		FA5E5A4B2487D3BF005213F7 /* NumberListPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberListPopUp.swift; sourceTree = "<group>"; };
-		FA62F5F524331EAC00A7EEB9 /* OrderReceiptVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderReceiptVC.swift; sourceTree = "<group>"; };
 		FA62F5F7243328C300A7EEB9 /* OrderReceiptCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderReceiptCell.swift; sourceTree = "<group>"; };
 		FA62F5F8243328C300A7EEB9 /* OrderReceiptCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderReceiptCell.xib; sourceTree = "<group>"; };
 		FA62F5FF2433572300A7EEB9 /* OrderConfirmationPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationPopUp.swift; sourceTree = "<group>"; };
@@ -1053,7 +1051,6 @@
 				0401A96527C1FC29009082B8 /* OrderDetailsVC.swift */,
 				FA110DF324ACC191007A403D /* UserOrderDetailsVC.swift */,
 				FA0F3ED3243218B300D3D6C6 /* OrderFollowingVC.swift */,
-				FA62F5F524331EAC00A7EEB9 /* OrderReceiptVC.swift */,
 				FA62F5FF2433572300A7EEB9 /* OrderConfirmationPopUp.swift */,
 				0401A96D27C21ED5009082B8 /* CancelOrder.swift */,
 			);
@@ -1365,7 +1362,6 @@
 				04ABAB8127110D2700BC0F71 /* FoodPackagesVC.swift in Sources */,
 				FA564CDF242A248D00A4A627 /* ListCell.swift in Sources */,
 				FADBB14C24279F200044936E /* BeautifulBarChartPresenter.swift in Sources */,
-				FA62F5F624331EAC00A7EEB9 /* OrderReceiptVC.swift in Sources */,
 				FADBB14724279F200044936E /* CustomImageView.swift in Sources */,
 				048A085F27CBD27800C49D1A /* SideMenuModel.swift in Sources */,
 				0426E29627EE824E001C8EAA /* CategoriesModel.swift in Sources */,
@@ -1782,7 +1778,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = 5R2Z9F2376;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/Livia/AppFiles/Info.plist";
@@ -1812,7 +1808,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = 5R2Z9F2376;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/Livia/AppFiles/Info.plist";

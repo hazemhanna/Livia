@@ -30,7 +30,7 @@ class FoodPackgeCell: UITableViewCell {
     func config(imagePath: String ,date: String ,price: String, time: String,pakageName : String ) {
         packageLbl.text = pakageName
         validLbl.text = date
-        PriceLbl.text = price + "" + "EGP".localized
+        PriceLbl.text = price + " " + "EGP".localized
         timeLbl.text = time
         guard let imageURL = URL(string: (imagePath).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else { return }
           self.resturantImage.kf.setImage(with: imageURL)

@@ -31,7 +31,7 @@
 "PREPARED" = "PREPARED";
 "ON_THE_WAY" = "ON WAY";
 "COMPLETED" = "COMPLETED";
-
+"CANCELED" = "CANCELED";
 "login" = "login";
 "logOut" = "logOut";
 "S.R" = "SAR";
@@ -39,13 +39,9 @@
 "Add favourite" = "Add favourite";
 
 "Apartment needed" = "Apartment needed";
-
 "Building needed" = "Building needed";
-
 "Floor needed" = "Floor needed";
-
 "No address for this user" = "No address for this user";
-
 "Choose payment method" = "Choose payment method";
 "Payment" = "Payment";
 "Enter your email" = "Enter your email";

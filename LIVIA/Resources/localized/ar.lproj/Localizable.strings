@@ -33,9 +33,9 @@
 "delivering" = "في الطريق";
 "delivered" = "تم التوصيل";
 "COMPLETED" = "منتهي";
+"CANCELED" = "ملغي";
 
 "preparing order" = "طلبات قيد التحضير";
-
 "ON_THE_WAY" = "طلبات قيد التوصيل";
 "completed" = "طلبات منتهية";
 "arrived" = "طلبات تم التوصيل";

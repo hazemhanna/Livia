@@ -34,7 +34,7 @@ class OffersCell: UITableViewCell {
     
     func config(name: String,price: String, imagePath: String, type: String,isWishlist : Bool,discount : Double) {
         self.name.text = name
-        self.type.text = type.parseHtml
+        self.type.text = type
         self.discountLbl.text =  "discount".localized  +  " "  + String(Int(discount)) + "%"
         
         if "lang".localized == "ar" {

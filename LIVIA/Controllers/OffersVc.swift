@@ -54,22 +54,36 @@ extension OffersVc: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! OffersCell
         
+        var price =  ""
+        var image = ""
+
+        if products[indexPath.row].variants?.count ?? 0 > 0 {
+            price = products[indexPath.row].variants?[0].price ?? ""
+        }
+    
+        if products[indexPath.row].images?.count ?? 0 > 0 {
+            image = products[indexPath.row].images?[0].image ?? ""
+        }
+        
         if "lang".localized == "ar" {
         cell.config(name: products[indexPath.row].title?.ar ?? ""
-                    , price: products[indexPath.row].variants?[0].price ?? ""
-                    , imagePath: products[indexPath.row].images?[0].image ?? ""
-                    , type: products[indexPath.row].desc?.ar ?? ""
+                    , price: price
+                    , imagePath:  image
+                    , type: products[indexPath.row].category?.title?.ar ?? ""
                     , isWishlist: products[indexPath.row].isWishlist ?? false
                     , discount: Double(products[indexPath.row].discount ?? "") ?? 0)
         }else{
             cell.config(name: products[indexPath.row].title?.en ?? ""
-                        , price: products[indexPath.row].variants?[0].price ?? ""
-                        , imagePath: products[indexPath.row].images?[0].image ?? "",
-                        type: products[indexPath.row].desc?.en ?? ""
+                        , price:  price
+                        , imagePath: image
+                        ,type: products[indexPath.row].category?.title?.en ?? ""
                         ,isWishlist: products[indexPath.row].isWishlist ?? false
                         , discount: Double(products[indexPath.row].discount ?? "") ?? 0)
 
         }
+        
+        
+        
         cell.goToFavorites = {
             self.homeViewModel.showIndicator()
             self.addWishList(id: self.products[indexPath.row].id ?? 0 , isWishList: self.products[indexPath.row].isWishlist ?? false)

@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SwiftUI
 
 
 class FavoriteMealsVC: UIViewController {
@@ -80,23 +81,35 @@ extension FavoriteMealsVC: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ValiableResturantCell else {return UITableViewCell()}
          cell.FavoriteBN.setImage(UIImage(named: "222"), for: .normal)
         
+        var price =  ""
+        var image = ""
+
+        if products[indexPath.row].variants?.count ?? 0 > 0 {
+            price = products[indexPath.row].variants?[0].price ?? ""
+        }
+    
+        if products[indexPath.row].images?.count ?? 0 > 0 {
+            image = products[indexPath.row].images?[0].image ?? ""
+        }
+        
         
         if "lang".localized == "ar" {
         cell.config(name: products[indexPath.row].title?.ar ?? ""
-                    , price: products[indexPath.row].variants?[0].price ?? ""
-                    , imagePath: products[indexPath.row].images?[0].image ?? ""
+                    , price: price
+                    , imagePath: image
                     , type: products[indexPath.row].desc?.ar ?? ""
                     , isWishlist: products[indexPath.row].isWishlist ?? false
                     , discount: Double(products[indexPath.row].discount ?? "") ?? 0)
         }else{
             cell.config(name: products[indexPath.row].title?.en ?? ""
-                        , price: products[indexPath.row].variants?[0].price ?? ""
-                        , imagePath: products[indexPath.row].images?[0].image ?? "",
-                        type: products[indexPath.row].desc?.en ?? ""
+                        , price: price
+                        , imagePath: image
+                        ,type: products[indexPath.row].desc?.en ?? ""
                         ,isWishlist: products[indexPath.row].isWishlist ?? false
                         , discount: Double(products[indexPath.row].discount ?? "") ?? 0)
 
         }
+        
         
         cell.goToFavorites = {
             self.homeViewModel.showIndicator()

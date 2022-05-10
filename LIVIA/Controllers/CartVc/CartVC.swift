@@ -106,18 +106,23 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ValiableResturantCell else {return UITableViewCell()}
         
         let product = cart[indexPath.row].product
+        var image = ""
         
+        if product?.images?.count ?? 0 > 0 {
+            image = product?.images?[0].image ?? ""
+        }
+     
         if "lang".localized == "ar" {
         cell.configCart(name: product?.title?.ar ?? ""
                      ,price: cart[indexPath.row].price ?? ""
-                    , imagePath: product?.images?[0].image ?? ""
+                    , imagePath: image
                     , type: product?.desc?.ar ?? ""
                     , quantity: cart[indexPath.row].quantity ?? 0
                     , discount: Double(cart[indexPath.row].product?.discount ?? "") ?? 0)
         }else{
             cell.configCart(name: product?.title?.en ?? ""
                          ,price: (cart[indexPath.row].price ?? "")
-                         ,imagePath: product?.images?[0].image ?? ""
+                         ,imagePath: image
                          ,type: product?.desc?.en ?? ""
                          ,quantity: cart[indexPath.row].quantity ?? 0
                          , discount: Double(cart[indexPath.row].product?.discount ?? "") ?? 0)
